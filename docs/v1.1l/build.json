@@ -1,0 +1,13 @@
+{
+  "command": "npm run build",
+  "passed": true,
+  "modules": 104,
+  "chunks": {
+    "main": "index-DYTAublB.js",
+    "three": "three-engine-DAwOYz9r.js",
+    "victory": "victory-card-DXPq7CRN.js"
+  },
+  "mainGzipKB": 164.95,
+  "threeGzipKB": 129.98,
+  "knownWarning": "Three engine minified chunk exceeds Vite 500 kB recommendation; engine remains separate and cacheable."
+}

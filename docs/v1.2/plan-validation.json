@@ -1,0 +1,22 @@
+{
+  "status": "planning-data-validated",
+  "webItems": 40,
+  "categoryCounts": {
+    "title": 12,
+    "icon": 8,
+    "cursor": 6,
+    "theme": 4,
+    "share": 6,
+    "notice": 4
+  },
+  "environmentFacility": 1,
+  "instruments": 5,
+  "legacyEntriesCovered": 37,
+  "acyclicNodesIncludingBaseline": 195,
+  "pricesFixed": true,
+  "acceptanceGroups": 40,
+  "planningGroupsPassed": 4,
+  "runtimeGroupsPending": 36,
+  "visualAcceptanceExecuted": false,
+  "gameRuntimeModified": false
+}

@@ -1,0 +1,15 @@
+{
+  "baseline": "2fb9652e55a2ada1f5014f47e9c74ae13e2b7fe3",
+  "existingSourceFilesMatched": 41,
+  "newPathsWithoutCollision": [
+    "projects/mc-clicker-2/src/share-style.css",
+    "projects/mc-clicker-2/src/keyboard-mining.js",
+    "projects/mc-clicker-2/src/sharing.js",
+    "projects/mc-clicker-2/src/guidance-style.css",
+    "projects/mc-clicker-2/src/mob-models.js",
+    "projects/mc-clicker-2/src/share-platform.js",
+    "projects/mc-clicker-2/src/guidance-ui.js",
+    "projects/mc-clicker-2/src/guidance.js",
+    "projects/mc-clicker-2/src/share-ui.js"
+  ]
+}

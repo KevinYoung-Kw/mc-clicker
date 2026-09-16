@@ -1,0 +1,11 @@
+{
+  "baseline": "a1f4ee3771ff1a149d71edf7e2771ee704ab818a",
+  "existingSourceFilesMatched": 58,
+  "newPathsWithoutCollision": [
+    "projects/mc-clicker-2/src/mail-style.css",
+    "projects/mc-clicker-2/src/mail.js",
+    "projects/mc-clicker-2/src/mail-content.js",
+    "projects/mc-clicker-2/src/mail-ui.js",
+    "projects/mc-clicker-2/src/mailbox-model.js"
+  ]
+}

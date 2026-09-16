@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-10",
+  "status": "local-candidate-not-deployed",
+  "performanceBackport": "not-applied",
+  "webVersion": "1.8.4",
+  "xhsVersion": "1.8.4-xhs.1",
+  "uiScenarios": 18,
+  "syncFiles": 528,
+  "reviewedPlatformDifferences": 51,
+  "testRuns": {
+    "web": {
+      "tests": 717,
+      "pass": 717,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0
+    },
+    "xhs": {
+      "tests": 716,
+      "pass": 716,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "purchases": 96,
+    "three_dimensions": true,
+    "dispatch": true,
+    "live_camera": true,
+    "cosmetics": true,
+    "png_download": true,
+    "reload_and_cancel_reset": true,
+    "touch_hold_mine": true,
+    "touch_harvest": true,
+    "touch_pan_pinch": true,
+    "touch_sweep_gifts": true,
+    "touch_host": true,
+    "touch_dispatch": true,
+    "responsive_no_overflow": true
+  },
+  "pageErrors": []
+}

@@ -1,0 +1,10 @@
+{
+  "baseline": "a3b90fe12446d0f1f8f2e0037350c73b35c4c36e",
+  "existingSourceFilesMatched": 50,
+  "newPathsWithoutCollision": [
+    "projects/mc-clicker-2/src/facility-models.js",
+    "projects/mc-clicker-2/src/specialty-stalls.js",
+    "projects/mc-clicker-2/src/block-materials.js",
+    "projects/mc-clicker-2/src/studio-device-models.js"
+  ]
+}

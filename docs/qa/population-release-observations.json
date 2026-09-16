@@ -1,0 +1,20 @@
+{
+  "url": "https://www.kw-aigc.cn/projects/mc-clicker-2/?v=b3bba46",
+  "debugAbsent": true,
+  "mobileTouchContext": true,
+  "legacyResidents": 45,
+  "activeResidents": 12,
+  "reserves": 33,
+  "reserveInitiallyCollapsed": true,
+  "recruitmentUnavailableAtCap": true,
+  "resident45FarmingLevel": 4,
+  "swap": {
+    "incoming": "resident-44",
+    "outgoing": "resident-1"
+  },
+  "swapAndPersonalSkillsPersistAfterReload": true,
+  "busySwapOptionsObserved": [],
+  "mobileOverflow": false,
+  "errors": [],
+  "failedRequests": []
+}
