@@ -1,0 +1,631 @@
+{
+  "mature": {
+    "width": 2448,
+    "height": 1424,
+    "comparedPixels": 3485952,
+    "colorBatches": 6,
+    "productionOrderPixelMismatches": 0,
+    "referenceBatches": 181,
+    "instances": 2364,
+    "actual": {
+      "calls": 26,
+      "triangles": 38086
+    },
+    "reference": {
+      "calls": 201,
+      "triangles": 38086
+    },
+    "maxDifference": 8,
+    "changedPixels": 4,
+    "overOnePixels": 4,
+    "alphaMismatches": 0,
+    "meanChannelDifference": 6.215423123056963e-06,
+    "withinOneRgb": false,
+    "samples": [
+      {
+        "x": 1098,
+        "y": 733,
+        "actual": [
+          208,
+          180,
+          133,
+          255
+        ],
+        "reference": [
+          205,
+          177,
+          131,
+          255
+        ]
+      },
+      {
+        "x": 1075,
+        "y": 915,
+        "actual": [
+          144,
+          146,
+          120,
+          255
+        ],
+        "reference": [
+          137,
+          139,
+          115,
+          255
+        ]
+      },
+      {
+        "x": 1075,
+        "y": 916,
+        "actual": [
+          144,
+          146,
+          120,
+          255
+        ],
+        "reference": [
+          137,
+          139,
+          115,
+          255
+        ]
+      },
+      {
+        "x": 1076,
+        "y": 916,
+        "actual": [
+          137,
+          139,
+          115,
+          255
+        ],
+        "reference": [
+          129,
+          133,
+          110,
+          255
+        ]
+      }
+    ],
+    "restoredPixelMismatches": 0,
+    "stateRestored": true,
+    "quality": {
+      "dpr": 1.7,
+      "shadowEnabled": true,
+      "shadowType": 1,
+      "toneMapping": 4,
+      "exposure": 1.05,
+      "outputColorSpace": "srgb"
+    },
+    "resources": {
+      "before": {
+        "geometries": 5,
+        "textures": 13,
+        "programs": 10
+      },
+      "after": {
+        "geometries": 5,
+        "textures": 13,
+        "programs": 16
+      }
+    },
+    "glError": 0,
+    "preservedPrimitiveOrder": false,
+    "orderedReference": {
+      "width": 2448,
+      "height": 1424,
+      "comparedPixels": 3485952,
+      "colorBatches": 6,
+      "productionOrderPixelMismatches": 0,
+      "referenceBatches": 994,
+      "instances": 2364,
+      "actual": {
+        "calls": 26,
+        "triangles": 38086
+      },
+      "reference": {
+        "calls": 1014,
+        "triangles": 38086
+      },
+      "maxDifference": 0,
+      "changedPixels": 0,
+      "overOnePixels": 0,
+      "alphaMismatches": 0,
+      "meanChannelDifference": 0,
+      "withinOneRgb": true,
+      "samples": [],
+      "restoredPixelMismatches": 0,
+      "stateRestored": true,
+      "quality": {
+        "dpr": 1.7,
+        "shadowEnabled": true,
+        "shadowType": 1,
+        "toneMapping": 4,
+        "exposure": 1.05,
+        "outputColorSpace": "srgb"
+      },
+      "resources": {
+        "before": {
+          "geometries": 5,
+          "textures": 13,
+          "programs": 16
+        },
+        "after": {
+          "geometries": 5,
+          "textures": 13,
+          "programs": 16
+        }
+      },
+      "glError": 0,
+      "preservedPrimitiveOrder": true
+    }
+  },
+  "nether": {
+    "width": 2448,
+    "height": 1424,
+    "comparedPixels": 3485952,
+    "colorBatches": 3,
+    "productionOrderPixelMismatches": 0,
+    "referenceBatches": 68,
+    "instances": 1000,
+    "actual": {
+      "calls": 28,
+      "triangles": 13630
+    },
+    "reference": {
+      "calls": 93,
+      "triangles": 13630
+    },
+    "maxDifference": 10,
+    "changedPixels": 6,
+    "overOnePixels": 6,
+    "alphaMismatches": 0,
+    "meanChannelDifference": 1.1665871092506915e-05,
+    "withinOneRgb": false,
+    "samples": [
+      {
+        "x": 763,
+        "y": 435,
+        "actual": [
+          155,
+          100,
+          80,
+          255
+        ],
+        "reference": [
+          145,
+          94,
+          75,
+          255
+        ]
+      },
+      {
+        "x": 1483,
+        "y": 731,
+        "actual": [
+          74,
+          66,
+          57,
+          255
+        ],
+        "reference": [
+          81,
+          72,
+          63,
+          255
+        ]
+      },
+      {
+        "x": 1504,
+        "y": 748,
+        "actual": [
+          38,
+          37,
+          36,
+          255
+        ],
+        "reference": [
+          45,
+          44,
+          41,
+          255
+        ]
+      },
+      {
+        "x": 1506,
+        "y": 748,
+        "actual": [
+          38,
+          37,
+          36,
+          255
+        ],
+        "reference": [
+          45,
+          44,
+          41,
+          255
+        ]
+      },
+      {
+        "x": 1483,
+        "y": 758,
+        "actual": [
+          62,
+          57,
+          50,
+          255
+        ],
+        "reference": [
+          72,
+          67,
+          59,
+          255
+        ]
+      },
+      {
+        "x": 1257,
+        "y": 853,
+        "actual": [
+          100,
+          73,
+          54,
+          255
+        ],
+        "reference": [
+          107,
+          78,
+          57,
+          255
+        ]
+      }
+    ],
+    "restoredPixelMismatches": 0,
+    "stateRestored": true,
+    "quality": {
+      "dpr": 1.7,
+      "shadowEnabled": true,
+      "shadowType": 1,
+      "toneMapping": 4,
+      "exposure": 1.05,
+      "outputColorSpace": "srgb"
+    },
+    "resources": {
+      "before": {
+        "geometries": 6,
+        "textures": 15,
+        "programs": 18
+      },
+      "after": {
+        "geometries": 6,
+        "textures": 15,
+        "programs": 20
+      }
+    },
+    "glError": 0,
+    "preservedPrimitiveOrder": false,
+    "orderedReference": {
+      "width": 2448,
+      "height": 1424,
+      "comparedPixels": 3485952,
+      "colorBatches": 3,
+      "productionOrderPixelMismatches": 0,
+      "referenceBatches": 423,
+      "instances": 1000,
+      "actual": {
+        "calls": 28,
+        "triangles": 13630
+      },
+      "reference": {
+        "calls": 448,
+        "triangles": 13630
+      },
+      "maxDifference": 0,
+      "changedPixels": 0,
+      "overOnePixels": 0,
+      "alphaMismatches": 0,
+      "meanChannelDifference": 0,
+      "withinOneRgb": true,
+      "samples": [],
+      "restoredPixelMismatches": 0,
+      "stateRestored": true,
+      "quality": {
+        "dpr": 1.7,
+        "shadowEnabled": true,
+        "shadowType": 1,
+        "toneMapping": 4,
+        "exposure": 1.05,
+        "outputColorSpace": "srgb"
+      },
+      "resources": {
+        "before": {
+          "geometries": 6,
+          "textures": 15,
+          "programs": 20
+        },
+        "after": {
+          "geometries": 6,
+          "textures": 15,
+          "programs": 20
+        }
+      },
+      "glError": 0,
+      "preservedPrimitiveOrder": true
+    }
+  },
+  "end": {
+    "width": 2448,
+    "height": 1424,
+    "comparedPixels": 3485952,
+    "colorBatches": 3,
+    "productionOrderPixelMismatches": 0,
+    "referenceBatches": 56,
+    "instances": 704,
+    "actual": {
+      "calls": 16,
+      "triangles": 10162
+    },
+    "reference": {
+      "calls": 69,
+      "triangles": 10162
+    },
+    "maxDifference": 14,
+    "changedPixels": 1,
+    "overOnePixels": 1,
+    "alphaMismatches": 0,
+    "meanChannelDifference": 3.824875768035054e-06,
+    "withinOneRgb": false,
+    "samples": [
+      {
+        "x": 658,
+        "y": 746,
+        "actual": [
+          154,
+          149,
+          121,
+          255
+        ],
+        "reference": [
+          168,
+          162,
+          134,
+          255
+        ]
+      }
+    ],
+    "restoredPixelMismatches": 0,
+    "stateRestored": true,
+    "quality": {
+      "dpr": 1.7,
+      "shadowEnabled": true,
+      "shadowType": 1,
+      "toneMapping": 4,
+      "exposure": 1.05,
+      "outputColorSpace": "srgb"
+    },
+    "resources": {
+      "before": {
+        "geometries": 6,
+        "textures": 16,
+        "programs": 20
+      },
+      "after": {
+        "geometries": 6,
+        "textures": 16,
+        "programs": 20
+      }
+    },
+    "glError": 0,
+    "preservedPrimitiveOrder": false,
+    "orderedReference": {
+      "width": 2448,
+      "height": 1424,
+      "comparedPixels": 3485952,
+      "colorBatches": 3,
+      "productionOrderPixelMismatches": 0,
+      "referenceBatches": 301,
+      "instances": 704,
+      "actual": {
+        "calls": 16,
+        "triangles": 10162
+      },
+      "reference": {
+        "calls": 314,
+        "triangles": 10162
+      },
+      "maxDifference": 0,
+      "changedPixels": 0,
+      "overOnePixels": 0,
+      "alphaMismatches": 0,
+      "meanChannelDifference": 0,
+      "withinOneRgb": true,
+      "samples": [],
+      "restoredPixelMismatches": 0,
+      "stateRestored": true,
+      "quality": {
+        "dpr": 1.7,
+        "shadowEnabled": true,
+        "shadowType": 1,
+        "toneMapping": 4,
+        "exposure": 1.05,
+        "outputColorSpace": "srgb"
+      },
+      "resources": {
+        "before": {
+          "geometries": 6,
+          "textures": 16,
+          "programs": 20
+        },
+        "after": {
+          "geometries": 6,
+          "textures": 16,
+          "programs": 20
+        }
+      },
+      "glError": 0,
+      "preservedPrimitiveOrder": true
+    }
+  },
+  "studio": {
+    "width": 2386,
+    "height": 1108,
+    "comparedPixels": 2643688,
+    "colorBatches": 1,
+    "productionOrderPixelMismatches": 0,
+    "referenceBatches": 78,
+    "instances": 289,
+    "actual": {
+      "calls": 8,
+      "triangles": 7552
+    },
+    "reference": {
+      "calls": 85,
+      "triangles": 7552
+    },
+    "maxDifference": 32,
+    "changedPixels": 4,
+    "overOnePixels": 4,
+    "alphaMismatches": 0,
+    "meanChannelDifference": 1.399560008594055e-05,
+    "withinOneRgb": false,
+    "samples": [
+      {
+        "x": 1730,
+        "y": 474,
+        "actual": [
+          101,
+          79,
+          49,
+          255
+        ],
+        "reference": [
+          92,
+          74,
+          48,
+          255
+        ]
+      },
+      {
+        "x": 1529,
+        "y": 531,
+        "actual": [
+          57,
+          42,
+          25,
+          255
+        ],
+        "reference": [
+          25,
+          31,
+          24,
+          255
+        ]
+      },
+      {
+        "x": 1561,
+        "y": 546,
+        "actual": [
+          70,
+          56,
+          37,
+          255
+        ],
+        "reference": [
+          64,
+          56,
+          39,
+          255
+        ]
+      },
+      {
+        "x": 940,
+        "y": 631,
+        "actual": [
+          88,
+          65,
+          39,
+          255
+        ],
+        "reference": [
+          57,
+          54,
+          37,
+          255
+        ]
+      }
+    ],
+    "restoredPixelMismatches": 0,
+    "stateRestored": true,
+    "quality": {
+      "dpr": 1.7,
+      "shadowEnabled": true,
+      "shadowType": 1,
+      "toneMapping": 4,
+      "exposure": 1.05,
+      "outputColorSpace": "srgb"
+    },
+    "resources": {
+      "before": {
+        "geometries": 7,
+        "textures": 17,
+        "programs": 23
+      },
+      "after": {
+        "geometries": 7,
+        "textures": 17,
+        "programs": 24
+      }
+    },
+    "glError": 0,
+    "preservedPrimitiveOrder": false,
+    "orderedReference": {
+      "width": 2386,
+      "height": 1108,
+      "comparedPixels": 2643688,
+      "colorBatches": 1,
+      "productionOrderPixelMismatches": 0,
+      "referenceBatches": 176,
+      "instances": 289,
+      "actual": {
+        "calls": 8,
+        "triangles": 7552
+      },
+      "reference": {
+        "calls": 183,
+        "triangles": 7552
+      },
+      "maxDifference": 0,
+      "changedPixels": 0,
+      "overOnePixels": 0,
+      "alphaMismatches": 0,
+      "meanChannelDifference": 0,
+      "withinOneRgb": true,
+      "samples": [],
+      "restoredPixelMismatches": 0,
+      "stateRestored": true,
+      "quality": {
+        "dpr": 1.7,
+        "shadowEnabled": true,
+        "shadowType": 1,
+        "toneMapping": 4,
+        "exposure": 1.05,
+        "outputColorSpace": "srgb"
+      },
+      "resources": {
+        "before": {
+          "geometries": 7,
+          "textures": 17,
+          "programs": 24
+        },
+        "after": {
+          "geometries": 7,
+          "textures": 17,
+          "programs": 24
+        }
+      },
+      "glError": 0,
+      "preservedPrimitiveOrder": true
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,162 @@
+{
+  "revision": "e07c457",
+  "backup": "/www/backups/mc-clicker-2.0-copy-mail-e07c457",
+  "files": {
+    "index.html": "a35e628ef4a5354577e26cbbfbee722800f36cd809dfd70552228fcda6294982",
+    "assets/collection-ui-2Nmo1_cQ.js": "ce3c2149d9144ec49911a77bfbbcfecefea0614bd91256447adb97628860f503",
+    "assets/share-ui-VBOtx5vb.js": "d8d85e26a660989979eaef2ef0a14312cb167b972cf61a090cb558732eefcd00",
+    "assets/three-engine-B1mwnZ1L.js": "6165d36cc796e5c1ef02c60e0b68f4eeeac7b63f7a9288ffca13dfe46fa352f4",
+    "assets/index-vm3ND1Y_.js": "1b5e64b4aabb9643dbf418faf13086adb524a74cdf054d9e983b2512423adad2",
+    "assets/index-D1xVhH72.css": "d64c6aa7543b592fd15a7daa979a5534dd93b515fa950b9b4ea992aebb2231dd",
+    "assets/collection-ui-4EKbYNF6.css": "621a1f0d96fb228f445a398616db030730bbd7e179232e3763d802c51c822bce",
+    "share/world-invite.svg": "bdee2d4df7feda91b3ec065410d4c0ee6e863bd835ef20fbf89302e2ce3ce506",
+    "icons/V18.png": "b842f1254242ef379b611937a8f16fc9205eccd3243a806765096d09b5fd7f31",
+    "icons/E11.png": "2ec982f1e5c7d2a693d3f97a9f75c974d2bd995b3545927c60b9d11a7915a9b3",
+    "icons/V8.png": "0dfd4b08721f5dcce80b58a068fd599eeb570125cf41acee9e457db9b2d6b551",
+    "icons/V9.png": "1dc3bf4a299fd0e7486cb01a9565dce0fbeada26d6cf38431cbbd0fcbff3d0cb",
+    "icons/V10.png": "e9ef1f83ca126f86edb3fcd16eb7c70c0f75e5ce06755a7cfd7236e416d6e22c",
+    "icons/N2.png": "3f65a479c1e0ecfde29e4784a7b3c48957ba8612cdab4330957aed3e794e947e",
+    "icons/N3.png": "ad61779672b5364f7c1b3a79a5dcbcffc4b258f9b756dcb8ac198d24b538955a",
+    "icons/N5.png": "1cc21f13523524286cf1ca82194c1b3d4cd81b8bd3b14ed4e87613a405b193d1",
+    "icons/N6.png": "abe415e8ffc3be064cd016a85f2d8b0a6bf30e9543a33a9cb0479c5a6e5a5c42",
+    "icons/N8.png": "fc390717a6f23f0a39d8b2e5c2ab33a72ae7bf4218e284b2ec69195db8b30878",
+    "icons/N9.png": "b3436a394f1334e1e4dc480e228291dbc43dc9649f3e54f548c8cb9f2af573cb",
+    "icons/E3.png": "4a9926b20702cbcb51cc451092839d90325a533bf65732b169d39e4af9391393",
+    "icons/E5.png": "62c52e1ca3bbd43e0e862920af626afe7b79f116f64b9e1c421ad102697863d0",
+    "icons/E9.png": "20f9103c0766bfaffca156fd67479cc7d37c5199cc94f5d9e799900311dff2d3",
+    "icons/M18.png": "8c5517d00aadb13e692ca764d750519b1176de3f277e0d8bdf080e2eebb711ba",
+    "mail/wechat-channel-qr.webp": "65cb9928919cefeb1a7d53d0bae4a2e5bf014f0933f55086ed1ed20aaf1f715b",
+    "mail/xiaohongshu-qr.webp": "3ee952853b2ecf8eeea79499c363154b3673d4759f1a7e3655dc265f87c105e4"
+  },
+  "canonicalHtml": {
+    "status": 200,
+    "sha256": "a35e628ef4a5354577e26cbbfbee722800f36cd809dfd70552228fcda6294982"
+  },
+  "publicChecks": {
+    "index.html": {
+      "status": 200,
+      "sha256": "a35e628ef4a5354577e26cbbfbee722800f36cd809dfd70552228fcda6294982",
+      "bytes": 2331
+    },
+    "assets/collection-ui-2Nmo1_cQ.js": {
+      "status": 200,
+      "sha256": "ce3c2149d9144ec49911a77bfbbcfecefea0614bd91256447adb97628860f503",
+      "bytes": 20975
+    },
+    "assets/share-ui-VBOtx5vb.js": {
+      "status": 200,
+      "sha256": "d8d85e26a660989979eaef2ef0a14312cb167b972cf61a090cb558732eefcd00",
+      "bytes": 7157
+    },
+    "assets/three-engine-B1mwnZ1L.js": {
+      "status": 200,
+      "sha256": "6165d36cc796e5c1ef02c60e0b68f4eeeac7b63f7a9288ffca13dfe46fa352f4",
+      "bytes": 516479
+    },
+    "assets/index-vm3ND1Y_.js": {
+      "status": 200,
+      "sha256": "1b5e64b4aabb9643dbf418faf13086adb524a74cdf054d9e983b2512423adad2",
+      "bytes": 374042
+    },
+    "assets/index-D1xVhH72.css": {
+      "status": 200,
+      "sha256": "d64c6aa7543b592fd15a7daa979a5534dd93b515fa950b9b4ea992aebb2231dd",
+      "bytes": 127154
+    },
+    "assets/collection-ui-4EKbYNF6.css": {
+      "status": 200,
+      "sha256": "621a1f0d96fb228f445a398616db030730bbd7e179232e3763d802c51c822bce",
+      "bytes": 18480
+    },
+    "share/world-invite.svg": {
+      "status": 200,
+      "sha256": "bdee2d4df7feda91b3ec065410d4c0ee6e863bd835ef20fbf89302e2ce3ce506",
+      "bytes": 8279
+    },
+    "icons/V18.png": {
+      "status": 200,
+      "sha256": "b842f1254242ef379b611937a8f16fc9205eccd3243a806765096d09b5fd7f31",
+      "bytes": 15384
+    },
+    "icons/E11.png": {
+      "status": 200,
+      "sha256": "2ec982f1e5c7d2a693d3f97a9f75c974d2bd995b3545927c60b9d11a7915a9b3",
+      "bytes": 5653
+    },
+    "icons/V8.png": {
+      "status": 200,
+      "sha256": "0dfd4b08721f5dcce80b58a068fd599eeb570125cf41acee9e457db9b2d6b551",
+      "bytes": 6933
+    },
+    "icons/V9.png": {
+      "status": 200,
+      "sha256": "1dc3bf4a299fd0e7486cb01a9565dce0fbeada26d6cf38431cbbd0fcbff3d0cb",
+      "bytes": 6032
+    },
+    "icons/V10.png": {
+      "status": 200,
+      "sha256": "e9ef1f83ca126f86edb3fcd16eb7c70c0f75e5ce06755a7cfd7236e416d6e22c",
+      "bytes": 5167
+    },
+    "icons/N2.png": {
+      "status": 200,
+      "sha256": "3f65a479c1e0ecfde29e4784a7b3c48957ba8612cdab4330957aed3e794e947e",
+      "bytes": 25636
+    },
+    "icons/N3.png": {
+      "status": 200,
+      "sha256": "ad61779672b5364f7c1b3a79a5dcbcffc4b258f9b756dcb8ac198d24b538955a",
+      "bytes": 7427
+    },
+    "icons/N5.png": {
+      "status": 200,
+      "sha256": "1cc21f13523524286cf1ca82194c1b3d4cd81b8bd3b14ed4e87613a405b193d1",
+      "bytes": 7176
+    },
+    "icons/N6.png": {
+      "status": 200,
+      "sha256": "abe415e8ffc3be064cd016a85f2d8b0a6bf30e9543a33a9cb0479c5a6e5a5c42",
+      "bytes": 6009
+    },
+    "icons/N8.png": {
+      "status": 200,
+      "sha256": "fc390717a6f23f0a39d8b2e5c2ab33a72ae7bf4218e284b2ec69195db8b30878",
+      "bytes": 6539
+    },
+    "icons/N9.png": {
+      "status": 200,
+      "sha256": "b3436a394f1334e1e4dc480e228291dbc43dc9649f3e54f548c8cb9f2af573cb",
+      "bytes": 8336
+    },
+    "icons/E3.png": {
+      "status": 200,
+      "sha256": "4a9926b20702cbcb51cc451092839d90325a533bf65732b169d39e4af9391393",
+      "bytes": 3266
+    },
+    "icons/E5.png": {
+      "status": 200,
+      "sha256": "62c52e1ca3bbd43e0e862920af626afe7b79f116f64b9e1c421ad102697863d0",
+      "bytes": 5718
+    },
+    "icons/E9.png": {
+      "status": 200,
+      "sha256": "20f9103c0766bfaffca156fd67479cc7d37c5199cc94f5d9e799900311dff2d3",
+      "bytes": 8441
+    },
+    "icons/M18.png": {
+      "status": 200,
+      "sha256": "8c5517d00aadb13e692ca764d750519b1176de3f277e0d8bdf080e2eebb711ba",
+      "bytes": 21943
+    },
+    "mail/wechat-channel-qr.webp": {
+      "status": 200,
+      "sha256": "65cb9928919cefeb1a7d53d0bae4a2e5bf014f0933f55086ed1ed20aaf1f715b",
+      "bytes": 44678
+    },
+    "mail/xiaohongshu-qr.webp": {
+      "status": 200,
+      "sha256": "3ee952853b2ecf8eeea79499c363154b3673d4759f1a7e3655dc265f87c105e4",
+      "bytes": 70430
+    }
+  }
+}
