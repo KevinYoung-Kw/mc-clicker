@@ -288,3 +288,308 @@
       },
       "fit": 1.2304,
       "preBatchMeshes": 34,
+      "sampledBounds": {
+        "w": 1.7065,
+        "d": 0.9479,
+        "minY": 0.16,
+        "minX": -0.8533,
+        "maxX": 0.8533,
+        "minZ": -0.4075,
+        "maxZ": 0.5404
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M7",
+      "name": "风车电站",
+      "variant": "upgraded",
+      "level": 1,
+      "upgradeIds": [
+        "wind-blades",
+        "wind-gears",
+        "wind-coils"
+      ],
+      "footprint": {
+        "w": 2,
+        "d": 2
+      },
+      "rawSize": {
+        "w": 1.3752,
+        "h": 1.6956,
+        "d": 0.7733
+      },
+      "fit": 1.2304,
+      "preBatchMeshes": 50,
+      "sampledBounds": {
+        "w": 1.7065,
+        "d": 0.9514,
+        "minY": 0.16,
+        "minX": -0.8533,
+        "maxX": 0.8533,
+        "minZ": -0.4075,
+        "maxZ": 0.5439
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M7",
+      "name": "风车电站",
+      "variant": "maximum",
+      "level": 12,
+      "upgradeIds": [
+        "wind-blades",
+        "wind-gears",
+        "wind-coils"
+      ],
+      "footprint": {
+        "w": 2,
+        "d": 2
+      },
+      "rawSize": {
+        "w": 1.3752,
+        "h": 1.6956,
+        "d": 0.7733
+      },
+      "fit": 1.3671,
+      "preBatchMeshes": 52,
+      "sampledBounds": {
+        "w": 1.8962,
+        "d": 1.0571,
+        "minY": 0.16,
+        "minX": -0.9481,
+        "maxX": 0.9481,
+        "minZ": -0.4528,
+        "maxZ": 0.6044
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M8",
+      "name": "漏斗",
+      "variant": "base",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 0.5,
+        "d": 0.5
+      },
+      "rawSize": {
+        "w": 0.6912,
+        "h": 0.5256,
+        "d": 0.6912
+      },
+      "fit": 0.4948,
+      "preBatchMeshes": 9,
+      "sampledBounds": {
+        "w": 0.342,
+        "d": 0.342,
+        "minY": 0.16,
+        "minX": -0.171,
+        "maxX": 0.171,
+        "minZ": -0.171,
+        "maxZ": 0.171
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M8",
+      "name": "漏斗",
+      "variant": "upgraded",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 0.5,
+        "d": 0.5
+      },
+      "rawSize": {
+        "w": 0.6912,
+        "h": 0.5256,
+        "d": 0.6912
+      },
+      "fit": 0.4948,
+      "preBatchMeshes": 9,
+      "sampledBounds": {
+        "w": 0.342,
+        "d": 0.342,
+        "minY": 0.16,
+        "minX": -0.171,
+        "maxX": 0.171,
+        "minZ": -0.171,
+        "maxZ": 0.171
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M8",
+      "name": "漏斗",
+      "variant": "maximum",
+      "level": 16,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 0.5,
+        "d": 0.5
+      },
+      "rawSize": {
+        "w": 0.8892,
+        "h": 0.5256,
+        "d": 0.6912
+      },
+      "fit": 0.4274,
+      "preBatchMeshes": 12,
+      "sampledBounds": {
+        "w": 0.38,
+        "d": 0.2954,
+        "minY": 0.16,
+        "minX": -0.1477,
+        "maxX": 0.2323,
+        "minZ": -0.1477,
+        "maxZ": 0.1477
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M9",
+      "name": "红石钻机",
+      "variant": "base",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 2,
+        "d": 2
+      },
+      "rawSize": {
+        "w": 1.08,
+        "h": 1.2384,
+        "d": 0.9
+      },
+      "fit": 1.5667,
+      "preBatchMeshes": 16,
+      "sampledBounds": {
+        "w": 1.692,
+        "d": 1.41,
+        "minY": 0.16,
+        "minX": -0.846,
+        "maxX": 0.846,
+        "minZ": -0.705,
+        "maxZ": 0.705
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M9",
+      "name": "红石钻机",
+      "variant": "upgraded",
+      "level": 1,
+      "upgradeIds": [
+        "drill-steel",
+        "drill-diamond",
+        "drill-netherite",
+        "drill-twin",
+        "drill-cooling",
+        "drill-buffer",
+        "drill-outlet"
+      ],
+      "footprint": {
+        "w": 2,
+        "d": 2
+      },
+      "rawSize": {
+        "w": 1.08,
+        "h": 1.2384,
+        "d": 0.9
+      },
+      "fit": 1.5667,
+      "preBatchMeshes": 35,
+      "sampledBounds": {
+        "w": 1.692,
+        "d": 1.41,
+        "minY": 0.16,
+        "minX": -0.846,
+        "maxX": 0.846,
+        "minZ": -0.705,
+        "maxZ": 0.705
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M9",
+      "name": "红石钻机",
+      "variant": "maximum",
+      "level": 20,
+      "upgradeIds": [
+        "drill-steel",
+        "drill-diamond",
+        "drill-netherite",
+        "drill-twin",
+        "drill-cooling",
+        "drill-buffer",
+        "drill-outlet"
+      ],
+      "footprint": {
+        "w": 2,
+        "d": 2
+      },
+      "rawSize": {
+        "w": 1.0836,
+        "h": 1.2384,
+        "d": 0.9
+      },
+      "fit": 1.735,
+      "preBatchMeshes": 38,
+      "sampledBounds": {
+        "w": 1.88,
+        "d": 1.5615,
+        "minY": 0.16,
+        "minX": -0.9369,
+        "maxX": 0.9431,
+        "minZ": -0.7807,
+        "maxZ": 0.7807
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M15",
+      "name": "红石发电机组",
+      "variant": "base",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 2,
+        "d": 1.5
+      },
+      "rawSize": {
+        "w": 1.242,
+        "h": 0.6192,
+        "d": 0.6768
+      },
+      "fit": 1.3623,
+      "preBatchMeshes": 11,
+      "sampledBounds": {
+        "w": 1.692,
+        "d": 0.922,
+        "minY": 0.16,
+        "minX": -0.8337,
+        "maxX": 0.8583,
+        "minZ": -0.461,
+        "maxZ": 0.461
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M15",
+      "name": "红石发电机组",
+      "variant": "upgraded",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 2,
+        "d": 1.5
+      },
+      "rawSize": {
+        "w": 1.242,
+        "h": 0.6192,
+        "d": 0.6768
+      },
+      "fit": 1.3623,
+      "preBatchMeshes": 11,
+      "sampledBounds": {
