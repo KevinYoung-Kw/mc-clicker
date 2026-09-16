@@ -103,7 +103,7 @@
     "productionOrderPixelMismatches": 0,
     "referenceBatches": 68,
     "instances": 1000,
-      "actual": {
+    "actual": {
       "calls": 28,
       "triangles": 13630
     },
