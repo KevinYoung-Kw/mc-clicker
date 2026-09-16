@@ -1,0 +1,200 @@
+{
+  "status": "read_only_source_snapshot",
+  "runtime": "7176ac8",
+  "saveVersion": 7,
+  "catalogItems": 98,
+  "items": [
+    {
+      "id": "M4",
+      "item": {
+        "id": "M4",
+        "name": "储物箱",
+        "cost": 240,
+        "deps": [
+          "T7"
+        ],
+        "desc": "让仓库装下更多原料和成品。仓库装满时，生产会放慢或等待货物运走。",
+        "model": "chest",
+        "max": 16,
+        "growth": 1.55,
+        "gate": null,
+        "family": "M",
+        "realm": "overworld",
+        "place": true
+      },
+      "footprint": {
+        "w": 1,
+        "d": 1
+      }
+    },
+    {
+      "id": "M5",
+      "item": {
+        "id": "M5",
+        "name": "红石铺设与手摇曲柄",
+        "cost": 240,
+        "deps": [
+          "T7",
+          "M4"
+        ],
+        "desc": "建立红石电网并开始储电。长按曲柄可以手动发电，之后可购买自动发电设备。",
+        "model": "crank",
+        "max": 1,
+        "growth": 1.28,
+        "gate": null,
+        "family": "M",
+        "realm": "overworld",
+        "place": true
+      },
+      "footprint": {
+        "w": 1,
+        "d": 1
+      }
+    },
+    {
+      "id": "M6",
+      "item": {
+        "id": "M6",
+        "name": "红石火把",
+        "cost": 320,
+        "deps": [
+          "M5"
+        ],
+        "desc": "每秒自动发电 6 E，为附近设备供电。可以在火把内购买改造，提高发电量和储电上限。",
+        "model": "torch",
+        "max": 12,
+        "growth": 1.5,
+        "gate": null,
+        "family": "M",
+        "realm": "overworld",
+        "place": true
+      },
+      "footprint": {
+        "w": 0.5,
+        "d": 0.5
+      }
+    },
+    {
+      "id": "M7",
+      "item": {
+        "id": "M7",
+        "name": "风车电站",
+        "cost": 7600,
+        "deps": [
+          "M6"
+        ],
+        "desc": "每秒自动发电 32 E，让更多机器同时工作。",
+        "model": "windmill",
+        "max": 12,
+        "growth": 1.6,
+        "gate": null,
+        "family": "M",
+        "realm": "overworld",
+        "place": true
+      },
+      "footprint": {
+        "w": 2,
+        "d": 2
+      }
+    },
+    {
+      "id": "M15",
+      "item": {
+        "id": "M15",
+        "name": "红石发电机组",
+        "cost": 64000,
+        "deps": [
+          "M7",
+          "M10"
+        ],
+        "desc": "每秒自动发电 180 E，支持更多大型机器和下界设施。",
+        "model": "motor",
+        "max": 12,
+        "growth": 1.65,
+        "gate": null,
+        "family": "M",
+        "realm": "overworld",
+        "place": true
+      },
+      "footprint": {
+        "w": 2,
+        "d": 1.5
+      }
+    },
+    {
+      "id": "N4",
+      "item": {
+        "id": "N4",
+        "name": "烈焰熔炉",
+        "cost": 2200000,
+        "deps": [
+          "N3",
+          "M15"
+        ],
+        "desc": "用烈焰人的热能加工原料，同时把加工余热转成电力。停工时不会发电。",
+        "model": "blazefurnace",
+        "max": 12,
+        "growth": 1.7,
+        "gate": null,
+        "family": "N",
+        "realm": "nether",
+        "place": true
+      },
+      "footprint": {
+        "w": 3,
+        "d": 2
+      }
+    },
+    {
+      "id": "E8",
+      "item": {
+        "id": "E8",
+        "name": "末地水晶",
+        "cost": 300000000,
+        "deps": [
+          "E2",
+          "N10"
+        ],
+        "desc": "为末地供电并加工原料，基础每秒发电 400 E；还能为末影龙做准备。",
+        "model": "crystal",
+        "max": 8,
+        "growth": 1.8,
+        "gate": null,
+        "family": "E",
+        "realm": "end",
+        "place": true
+      },
+      "footprint": {
+        "w": 2,
+        "d": 2
+      }
+    },
+    {
+      "id": "M11",
+      "item": {
+        "id": "M11",
+        "name": "中继器",
+        "cost": 8400,
+        "deps": [
+          "M10"
+        ],
+        "desc": "把电送到更远的建筑。每级延长 8 格供电距离，并减少输电损耗，最远可达 56 格。",
+        "model": "repeater",
+        "max": 5,
+        "growth": 1.9,
+        "gate": null,
+        "family": "M",
+        "realm": "overworld",
+        "place": false
+      },
+      "footprint": {
+        "w": 0.5,
+        "d": 0.5
+      }
+    }
+  ],
+  "notes": [
+    "价格、等级、占地为源码读取得到，不是新设计值。",
+    "未模拟新物流，未改变任何游戏存档。"
+  ]
+}
