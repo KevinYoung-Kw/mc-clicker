@@ -1,0 +1,85 @@
+{
+  "revision": "9f2d0d4",
+  "backup": "/www/backups/mc-clicker-2.0-hud-9f2d0d4",
+  "files": {
+    "index.html": "504d06545c185084983b74b6d9248e0d1cafd569bf629069da7f97d3cbbcd62a",
+    "assets/share-ui-Coz3wdj9.js": "85724d321422a44bd9f33353969ecedaebb34bf7df9eeee8a95b1243a613fe18",
+    "assets/collection-ui-Ds1WMXWj.js": "1f03116cabbc37b0b23d7573b2c59354797862390ce8b1a860c347b927ae8b0b",
+    "assets/three-engine-B1mwnZ1L.js": "6165d36cc796e5c1ef02c60e0b68f4eeeac7b63f7a9288ffca13dfe46fa352f4",
+    "assets/index-eonNe2Cu.js": "a335d3eac8ece2f2f58440869c9d0e6068895d0ee615b6276cf492e5097300e1",
+    "assets/index-D4LXF0ff.css": "777febbe7ab3fd5d50d85c6ace04fb950e50f7f08dd2d01bfaf36adc9ff4b376",
+    "assets/collection-ui-4EKbYNF6.css": "621a1f0d96fb228f445a398616db030730bbd7e179232e3763d802c51c822bce",
+    "share/world-invite.svg": "bdee2d4df7feda91b3ec065410d4c0ee6e863bd835ef20fbf89302e2ce3ce506",
+    "icons/V18.png": "b842f1254242ef379b611937a8f16fc9205eccd3243a806765096d09b5fd7f31",
+    "icons/E11.png": "2ec982f1e5c7d2a693d3f97a9f75c974d2bd995b3545927c60b9d11a7915a9b3",
+    "mail/wechat-channel-qr.webp": "65cb9928919cefeb1a7d53d0bae4a2e5bf014f0933f55086ed1ed20aaf1f715b",
+    "mail/xiaohongshu-qr.webp": "3ee952853b2ecf8eeea79499c363154b3673d4759f1a7e3655dc265f87c105e4"
+  },
+  "publicChecks": {
+    "index.html": {
+      "status": 200,
+      "sha256": "504d06545c185084983b74b6d9248e0d1cafd569bf629069da7f97d3cbbcd62a",
+      "bytes": 2331
+    },
+    "assets/share-ui-Coz3wdj9.js": {
+      "status": 200,
+      "sha256": "85724d321422a44bd9f33353969ecedaebb34bf7df9eeee8a95b1243a613fe18",
+      "bytes": 7550
+    },
+    "assets/collection-ui-Ds1WMXWj.js": {
+      "status": 200,
+      "sha256": "1f03116cabbc37b0b23d7573b2c59354797862390ce8b1a860c347b927ae8b0b",
+      "bytes": 21880
+    },
+    "assets/three-engine-B1mwnZ1L.js": {
+      "status": 200,
+      "sha256": "6165d36cc796e5c1ef02c60e0b68f4eeeac7b63f7a9288ffca13dfe46fa352f4",
+      "bytes": 516479
+    },
+    "assets/index-eonNe2Cu.js": {
+      "status": 200,
+      "sha256": "a335d3eac8ece2f2f58440869c9d0e6068895d0ee615b6276cf492e5097300e1",
+      "bytes": 355701
+    },
+    "assets/index-D4LXF0ff.css": {
+      "status": 200,
+      "sha256": "777febbe7ab3fd5d50d85c6ace04fb950e50f7f08dd2d01bfaf36adc9ff4b376",
+      "bytes": 120130
+    },
+    "assets/collection-ui-4EKbYNF6.css": {
+      "status": 200,
+      "sha256": "621a1f0d96fb228f445a398616db030730bbd7e179232e3763d802c51c822bce",
+      "bytes": 18480
+    },
+    "share/world-invite.svg": {
+      "status": 200,
+      "sha256": "bdee2d4df7feda91b3ec065410d4c0ee6e863bd835ef20fbf89302e2ce3ce506",
+      "bytes": 8279
+    },
+    "icons/V18.png": {
+      "status": 200,
+      "sha256": "b842f1254242ef379b611937a8f16fc9205eccd3243a806765096d09b5fd7f31",
+      "bytes": 15384
+    },
+    "icons/E11.png": {
+      "status": 200,
+      "sha256": "2ec982f1e5c7d2a693d3f97a9f75c974d2bd995b3545927c60b9d11a7915a9b3",
+      "bytes": 5653
+    },
+    "mail/wechat-channel-qr.webp": {
+      "status": 200,
+      "sha256": "65cb9928919cefeb1a7d53d0bae4a2e5bf014f0933f55086ed1ed20aaf1f715b",
+      "bytes": 44678
+    },
+    "mail/xiaohongshu-qr.webp": {
+      "status": 200,
+      "sha256": "3ee952853b2ecf8eeea79499c363154b3673d4759f1a7e3655dc265f87c105e4",
+      "bytes": 70430
+    }
+  },
+  "canonicalURLCheck": {
+    "url": "https://www.kw-aigc.cn/projects/mc-clicker-2/",
+    "status": 200,
+    "sha256": "504d06545c185084983b74b6d9248e0d1cafd569bf629069da7f97d3cbbcd62a"
+  }
+}

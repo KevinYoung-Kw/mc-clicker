@@ -1,0 +1,84 @@
+{
+  "revision": "4da2a93",
+  "backup": "/www/backups/mc-clicker-2.0-feedback-4da2a93",
+  "files": {
+    "index.html": "2f86ef0789709d724ecd1d79a016105d2c3d01af488b8dc0957e6c447e0a03e5",
+    "assets/collection-ui-B2PuJ4uD.js": "0c64ec6b651b69f5f64c0c6aa421cbbe0dff3e5bf5dd6e469ac26e72930624f1",
+    "assets/index-C9JI9j-U.js": "8f2c5561b4561ad47ab72e71c50f903da66d51d941daeaa270023b20ec4f64fe",
+    "assets/three-engine-B1mwnZ1L.js": "6165d36cc796e5c1ef02c60e0b68f4eeeac7b63f7a9288ffca13dfe46fa352f4",
+    "assets/share-ui-B3VyC1Fo.js": "fa0b891e566c597e1caf42b69c62de33c3a8838caf537fea358517b59eb880f7",
+    "assets/index-CGXmjuKJ.css": "c49e32c549efc7e95832683a2abe08f1234ca2228467009464ba2aea1bd8f7be",
+    "assets/collection-ui-4EKbYNF6.css": "621a1f0d96fb228f445a398616db030730bbd7e179232e3763d802c51c822bce",
+    "share/world-invite.svg": "bdee2d4df7feda91b3ec065410d4c0ee6e863bd835ef20fbf89302e2ce3ce506",
+    "icons/V18.png": "b842f1254242ef379b611937a8f16fc9205eccd3243a806765096d09b5fd7f31",
+    "icons/E11.png": "2ec982f1e5c7d2a693d3f97a9f75c974d2bd995b3545927c60b9d11a7915a9b3",
+    "mail/wechat-channel-qr.webp": "65cb9928919cefeb1a7d53d0bae4a2e5bf014f0933f55086ed1ed20aaf1f715b",
+    "mail/xiaohongshu-qr.webp": "3ee952853b2ecf8eeea79499c363154b3673d4759f1a7e3655dc265f87c105e4"
+  },
+  "canonicalHtml": {
+    "status": 200,
+    "sha256": "2f86ef0789709d724ecd1d79a016105d2c3d01af488b8dc0957e6c447e0a03e5"
+  },
+  "publicChecks": {
+    "index.html": {
+      "status": 200,
+      "sha256": "2f86ef0789709d724ecd1d79a016105d2c3d01af488b8dc0957e6c447e0a03e5",
+      "bytes": 2331
+    },
+    "assets/collection-ui-B2PuJ4uD.js": {
+      "status": 200,
+      "sha256": "0c64ec6b651b69f5f64c0c6aa421cbbe0dff3e5bf5dd6e469ac26e72930624f1",
+      "bytes": 21880
+    },
+    "assets/index-C9JI9j-U.js": {
+      "status": 200,
+      "sha256": "8f2c5561b4561ad47ab72e71c50f903da66d51d941daeaa270023b20ec4f64fe",
+      "bytes": 364862
+    },
+    "assets/three-engine-B1mwnZ1L.js": {
+      "status": 200,
+      "sha256": "6165d36cc796e5c1ef02c60e0b68f4eeeac7b63f7a9288ffca13dfe46fa352f4",
+      "bytes": 516479
+    },
+    "assets/share-ui-B3VyC1Fo.js": {
+      "status": 200,
+      "sha256": "fa0b891e566c597e1caf42b69c62de33c3a8838caf537fea358517b59eb880f7",
+      "bytes": 7550
+    },
+    "assets/index-CGXmjuKJ.css": {
+      "status": 200,
+      "sha256": "c49e32c549efc7e95832683a2abe08f1234ca2228467009464ba2aea1bd8f7be",
+      "bytes": 124904
+    },
+    "assets/collection-ui-4EKbYNF6.css": {
+      "status": 200,
+      "sha256": "621a1f0d96fb228f445a398616db030730bbd7e179232e3763d802c51c822bce",
+      "bytes": 18480
+    },
+    "share/world-invite.svg": {
+      "status": 200,
+      "sha256": "bdee2d4df7feda91b3ec065410d4c0ee6e863bd835ef20fbf89302e2ce3ce506",
+      "bytes": 8279
+    },
+    "icons/V18.png": {
+      "status": 200,
+      "sha256": "b842f1254242ef379b611937a8f16fc9205eccd3243a806765096d09b5fd7f31",
+      "bytes": 15384
+    },
+    "icons/E11.png": {
+      "status": 200,
+      "sha256": "2ec982f1e5c7d2a693d3f97a9f75c974d2bd995b3545927c60b9d11a7915a9b3",
+      "bytes": 5653
+    },
+    "mail/wechat-channel-qr.webp": {
+      "status": 200,
+      "sha256": "65cb9928919cefeb1a7d53d0bae4a2e5bf014f0933f55086ed1ed20aaf1f715b",
+      "bytes": 44678
+    },
+    "mail/xiaohongshu-qr.webp": {
+      "status": 200,
+      "sha256": "3ee952853b2ecf8eeea79499c363154b3673d4759f1a7e3655dc265f87c105e4",
+      "bytes": 70430
+    }
+  }
+}

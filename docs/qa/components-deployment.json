@@ -1,0 +1,74 @@
+{
+  "revision": "b3327be",
+  "backup": "/www/backups/mc-clicker-2.0-components-b3327be",
+  "files": {
+    "index.html": "a6c1a556179a79a034c0d16535c8007559d447f00cba13192b4e9640ca7b8dd0",
+    "assets/collection-ui-Crh-lOdZ.js": "b3368c5506853888f4c1111c5308dcef41830e69a71ff30fb6e472b5ca8b1e30",
+    "assets/index-vHvJCzsF.js": "f90d9486bcad11e13646249c580308bd298fbac8609b21f97471b2a63748ba1f",
+    "assets/three-engine-BZh_mzQ2.js": "b84ab3b9b3b14725a655c2e3e5981d12fff0e986ad43b2f8b5142c6b4c8cf286",
+    "assets/share-ui-Bzir7NbM.js": "24c51c58e46ed20da5902957b7da9ebd618bd4a214e403d163d50805261e212d",
+    "assets/index-CzU6HcOp.css": "25ab7a8374021802dd25ab1e9bc160e8b89ef94ac828b4449de0685c47ec3d42",
+    "assets/collection-ui-4EKbYNF6.css": "621a1f0d96fb228f445a398616db030730bbd7e179232e3763d802c51c822bce",
+    "icons/L2.png": "cd52caafb21d97211e8a574c2b728abe5a6c8c669b0d19ae8b3379eb8a07756c",
+    "icons/V15.png": "757de8374633ce3d2e07b943e43c787148803c2466e7029c569aa40c8ff3a7a6",
+    "icons/V16.png": "bfec9400390fddf8f6e9b426192eb6f11e3571086e57f51064a05d6d52c9fcf2",
+    "icons/N3.png": "861f3557bb1a04c67314d7b1d9cb1c52400eb708ea7713ad0f3bb186592845b9"
+  },
+  "publicChecks": {
+    "index.html": {
+      "status": 200,
+      "sha256": "a6c1a556179a79a034c0d16535c8007559d447f00cba13192b4e9640ca7b8dd0",
+      "bytes": 2331
+    },
+    "assets/collection-ui-Crh-lOdZ.js": {
+      "status": 200,
+      "sha256": "b3368c5506853888f4c1111c5308dcef41830e69a71ff30fb6e472b5ca8b1e30",
+      "bytes": 21871
+    },
+    "assets/index-vHvJCzsF.js": {
+      "status": 200,
+      "sha256": "f90d9486bcad11e13646249c580308bd298fbac8609b21f97471b2a63748ba1f",
+      "bytes": 279084
+    },
+    "assets/three-engine-BZh_mzQ2.js": {
+      "status": 200,
+      "sha256": "b84ab3b9b3b14725a655c2e3e5981d12fff0e986ad43b2f8b5142c6b4c8cf286",
+      "bytes": 518476
+    },
+    "assets/share-ui-Bzir7NbM.js": {
+      "status": 200,
+      "sha256": "24c51c58e46ed20da5902957b7da9ebd618bd4a214e403d163d50805261e212d",
+      "bytes": 8554
+    },
+    "assets/index-CzU6HcOp.css": {
+      "status": 200,
+      "sha256": "25ab7a8374021802dd25ab1e9bc160e8b89ef94ac828b4449de0685c47ec3d42",
+      "bytes": 101186
+    },
+    "assets/collection-ui-4EKbYNF6.css": {
+      "status": 200,
+      "sha256": "621a1f0d96fb228f445a398616db030730bbd7e179232e3763d802c51c822bce",
+      "bytes": 18480
+    },
+    "icons/L2.png": {
+      "status": 200,
+      "sha256": "cd52caafb21d97211e8a574c2b728abe5a6c8c669b0d19ae8b3379eb8a07756c",
+      "bytes": 12085
+    },
+    "icons/V15.png": {
+      "status": 200,
+      "sha256": "757de8374633ce3d2e07b943e43c787148803c2466e7029c569aa40c8ff3a7a6",
+      "bytes": 6940
+    },
+    "icons/V16.png": {
+      "status": 200,
+      "sha256": "bfec9400390fddf8f6e9b426192eb6f11e3571086e57f51064a05d6d52c9fcf2",
+      "bytes": 6501
+    },
+    "icons/N3.png": {
+      "status": 200,
+      "sha256": "861f3557bb1a04c67314d7b1d9cb1c52400eb708ea7713ad0f3bb186592845b9",
+      "bytes": 6756
+    }
+  }
+}
