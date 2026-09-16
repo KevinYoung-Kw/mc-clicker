@@ -1,0 +1,8 @@
+{
+  "baseline": "948d88f",
+  "existingSourceFilesMatched": 79,
+  "newPathsWithoutCollision": [
+    "projects/mc-clicker-2/src/mobile-sheet.css",
+    "projects/mc-clicker-2/src/mobile-sheet.js"
+  ]
+}

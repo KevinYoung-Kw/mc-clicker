@@ -1,0 +1,10 @@
+{
+  "url": "https://www.kw-aigc.cn/projects/mc-clicker-2/",
+  "name": true,
+  "attribution": true,
+  "mobilePurchase": true,
+  "relativeAssets": true,
+  "noDebug": true,
+  "errors": [],
+  "httpErrors": []
+}

@@ -1,0 +1,8 @@
+{
+  "checks": {
+    "/demos": true,
+    "/en/demos": true
+  },
+  "errors": [],
+  "httpErrors": []
+}
