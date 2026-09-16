@@ -1,0 +1,52 @@
+diff --git a/projects/mc-clicker-2/src/models.js b/projects/mc-clicker-2/src/models.js
+index 16627e2..7dd314d 100644
+--- a/projects/mc-clicker-2/src/models.js
++++ b/projects/mc-clicker-2/src/models.js
+@@ -15,6 +15,7 @@ const ringGeometry = pixelRingGeometry(1, 0.17, 0.1, 0.09);
+ const jewelGeometry = new T.OctahedronGeometry(0.1),
+   sunGeometry = boxGeometry;
+ const materials = new Map();
++const colorSources = new WeakSet(), colorBatches = new Map();
+ const slimeShellMaterial = new T.MeshStandardMaterial({
+   color: "#99c77a", transparent: true, opacity: 0.3,
+   depthWrite: false, roughness: 0.9, side: T.FrontSide,
+@@ -85,8 +86,17 @@ function mat(color, glow = 0) {
+         emissiveIntensity: glow,
+       }),
+     );
++  colorSources.add(materials.get(k));
+   return materials.get(k);
+ }
++// Same surfaces and lighting, with the base tint carried by instanceColor.
++export function colorBatchMaterial(material) {
++  if(!colorSources.has(material)||material.version!==0||material.emissiveIntensity!==0||material.transparent||material.opacity!==1||material.side!==T.FrontSide||material.alphaTest!==0||material.roughness!==.83||material.metalness!==0||material.wireframe||!material.depthWrite||material.onBeforeCompile!==T.Material.prototype.onBeforeCompile)return null;
++  if(material.map&&!Object.values(pixelMaps).includes(material.map))return null;
++  const key=material.map?.uuid||'plain';
++  if(!colorBatches.has(key)){const batch=material.clone();batch.color.set(0xffffff);batch.emissive.set(0x000000);colorBatches.set(key,batch);}
++  return colorBatches.get(key);
++}
+ function shape(parent, geometry, color, x, y, z, sx, sy, sz, glow = 0) {
+   const m = new T.Mesh(geometry, mat(color, glow));
+   m.position.set(x, y, z);
+diff --git a/projects/mc-clicker-2/src/world.js b/projects/mc-clicker-2/src/world.js
+index a6b5324..51d62c8 100644
+--- a/projects/mc-clicker-2/src/world.js
++++ b/projects/mc-clicker-2/src/world.js
+@@ -59,7 +59,7 @@ import {
+ } from "./layout.js";
+ import { CATALOG, ITEMS, REALMS } from "./catalog.js";
+ import { n, rates, sites, frontier } from "./game.js";
+-import { ModelKit, box, cube, group, mat, hardBox, P } from "./models.js";
++import { ModelKit, colorBatchMaterial, box, cube, group, mat, hardBox, P } from "./models.js";
+ import { makeObject, makeActor } from "./objects.js";
+ const rand = (i) => (((Math.sin(i * 71.13 + 42.7) * 43758.54) % 1) + 1) % 1;
+ const terrain = {
+@@ -1581,7 +1581,7 @@ export class World {
+         o.matrixWorldAutoUpdate = false;
+       }
+       if (!o.isMesh) return;
+-      const tintedMaterial = blockBatchMaterial(o.material);
++      const tintedMaterial = blockBatchMaterial(o.material) || colorBatchMaterial(o.material);
+       const key =
+         o.geometry.uuid +
+         (tintedMaterial || o.material).uuid +

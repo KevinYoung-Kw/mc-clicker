@@ -1,0 +1,39 @@
+{
+  "url": "https://www.kw-aigc.cn/projects/mc-clicker-2/?v=9dfad91",
+  "mobileTouchContext": true,
+  "noDebug": true,
+  "checks": {
+    "workshopNotDownloadedBeforeOpening": true,
+    "workshopLoadedOnDemand": true,
+    "previewLeavesSavedCollectionAndActualTitleUnchanged": true,
+    "titlePurchaseUnequipReequipAndReload": true,
+    "frameAppliedToActualInterface": true,
+    "firstFlagIsAnExplicitEquipmentChoice": true,
+    "weatherPurchaseControlAndDisableRestoreClearSky": true,
+    "fourStudioPartsAndViewActualL2": true,
+    "studioCameraUpgradeAddsNoOutsidePlacement": true,
+    "resetDefaultsPreservesCollectionAndProgressAfterReload": true
+  },
+  "ownedExtrasKept": [
+    "flag-0",
+    "frame-1",
+    "studioDesk-0",
+    "studioShelf-0",
+    "studioSign-0",
+    "studioWall-0",
+    "title-0",
+    "world-rain",
+    "world-weather"
+  ],
+  "workshopChunkRequests": [
+    "https://www.kw-aigc.cn/projects/mc-clicker-2/assets/collection-ui-4EKbYNF6.css",
+    "https://www.kw-aigc.cn/projects/mc-clicker-2/assets/collection-ui-7jGEkQeK.js",
+    "https://www.kw-aigc.cn/projects/mc-clicker-2/assets/collection-ui-7jGEkQeK.js",
+    "https://www.kw-aigc.cn/projects/mc-clicker-2/assets/collection-ui-4EKbYNF6.css",
+    "https://www.kw-aigc.cn/projects/mc-clicker-2/assets/collection-ui-4EKbYNF6.css",
+    "https://www.kw-aigc.cn/projects/mc-clicker-2/assets/collection-ui-7jGEkQeK.js"
+  ],
+  "mobileOverflow": false,
+  "errors": [],
+  "failedRequests": []
+}

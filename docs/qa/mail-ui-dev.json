@@ -1,0 +1,53 @@
+{
+  "url": "http://127.0.0.1:8890/",
+  "checks": {
+    "desktop": {
+      "twoLettersUnreadUntilOpened": true,
+      "readDoesNotFreezeReward": true,
+      "postalUpgradeVisible": true,
+      "actualClaimRateReceipt": true,
+      "claimOnceDisabled": true,
+      "readingDOMAndScrollStable": true,
+      "bothQRCodesLoaded": true,
+      "originalQRDownloadBytes": true,
+      "noHorizontalOverflow": true
+    },
+    "phone": {
+      "twoLettersUnreadUntilOpened": true,
+      "readDoesNotFreezeReward": true,
+      "postalUpgradeVisible": true,
+      "actualClaimRateReceipt": true,
+      "claimOnceDisabled": true,
+      "readingDOMAndScrollStable": true,
+      "bothQRCodesLoaded": true,
+      "originalQRDownloadBytes": true,
+      "noHorizontalOverflow": true
+    },
+    "small-phone": {
+      "twoLettersUnreadUntilOpened": true,
+      "readDoesNotFreezeReward": true,
+      "postalUpgradeVisible": true,
+      "actualClaimRateReceipt": true,
+      "claimOnceDisabled": true,
+      "readingDOMAndScrollStable": true,
+      "bothQRCodesLoaded": true,
+      "originalQRDownloadBytes": true,
+      "noHorizontalOverflow": true
+    }
+  },
+  "errors": [],
+  "screenshots": [
+    "mail-ui-dev-desktop-inbox.png",
+    "mail-ui-dev-desktop-wechat.png",
+    "mail-ui-dev-desktop-claimed.png",
+    "mail-ui-dev-desktop-xiaohongshu.png",
+    "mail-ui-dev-phone-inbox.png",
+    "mail-ui-dev-phone-wechat.png",
+    "mail-ui-dev-phone-claimed.png",
+    "mail-ui-dev-phone-xiaohongshu.png",
+    "mail-ui-dev-small-phone-inbox.png",
+    "mail-ui-dev-small-phone-wechat.png",
+    "mail-ui-dev-small-phone-claimed.png",
+    "mail-ui-dev-small-phone-xiaohongshu.png"
+  ]
+}

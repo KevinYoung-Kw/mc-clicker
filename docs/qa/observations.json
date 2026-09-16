@@ -1,0 +1,73 @@
+{
+  "first_purchase": {
+    "state": {
+      "version": 1,
+      "money": 3.3736,
+      "total": 15.373599999999996,
+      "clicks": 14,
+      "manual": 14,
+      "passive": 1.3736000000000002,
+      "offline": 0,
+      "counts": {
+        "hauler": 1
+      },
+      "techs": [],
+      "cosmetics": [],
+      "equipped": [],
+      "achievements": [
+        "first",
+        "colleague"
+      ],
+      "phase": 0,
+      "view": 0,
+      "charge": 0,
+      "burstLeft": 0,
+      "bursts": 0,
+      "peakRate": 0.8,
+      "events": 0,
+      "harvestProgress": 0.8429250000000005,
+      "harvests": 0,
+      "playSeconds": 7.506899999964237,
+      "startedAt": 1788567050137,
+      "savedAt": 1788567056014,
+      "completed": false,
+      "completedAt": null,
+      "sound": false,
+      "reducedMotion": false
+    },
+    "stats": {
+      "rate": 0.8,
+      "baseRate": 0.8,
+      "click": 1.028,
+      "supply": 4,
+      "demand": 0,
+      "efficiency": 1,
+      "burst": 1,
+      "phaseMult": 1,
+      "unitRates": {
+        "hauler": 0.8,
+        "drill": 0,
+        "mill": 0,
+        "balloon": 0,
+        "cloud": 0,
+        "whale": 0,
+        "orbital": 0,
+        "blackhole": 0,
+        "universe": 0
+      },
+      "totalMachines": 1
+    }
+  },
+  "renderer": {
+    "webgl": false,
+    "info": {
+      "frame": 116,
+      "calls": 869,
+      "triangles": 197386,
+      "points": 0,
+      "lines": 0
+    }
+  },
+  "mobile_overflow": false,
+  "errors": []
+}
