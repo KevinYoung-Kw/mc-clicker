@@ -593,3 +593,333 @@
       "fit": 1.3623,
       "preBatchMeshes": 11,
       "sampledBounds": {
+        "w": 1.692,
+        "d": 0.922,
+        "minY": 0.16,
+        "minX": -0.8337,
+        "maxX": 0.8583,
+        "minZ": -0.461,
+        "maxZ": 0.461
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M15",
+      "name": "红石发电机组",
+      "variant": "maximum",
+      "level": 12,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 2,
+        "d": 1.5
+      },
+      "rawSize": {
+        "w": 1.242,
+        "h": 0.6192,
+        "d": 0.6768
+      },
+      "fit": 1.5137,
+      "preBatchMeshes": 13,
+      "sampledBounds": {
+        "w": 1.88,
+        "d": 1.0245,
+        "minY": 0.16,
+        "minX": -0.9264,
+        "maxX": 0.9536,
+        "minZ": -0.5122,
+        "maxZ": 0.5122
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M16",
+      "name": "铁路与矿车",
+      "variant": "base",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 2,
+        "d": 1
+      },
+      "rawSize": {
+        "w": 1.5984,
+        "h": 0.5292,
+        "d": 0.6552
+      },
+      "fit": 1.0586,
+      "preBatchMeshes": 18,
+      "sampledBounds": {
+        "w": 1.692,
+        "d": 0.6936,
+        "minY": 0.16,
+        "minX": -0.846,
+        "maxX": 0.846,
+        "minZ": -0.3468,
+        "maxZ": 0.3468
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M16",
+      "name": "铁路与矿车",
+      "variant": "upgraded",
+      "level": 1,
+      "upgradeIds": [
+        "rail-wagons",
+        "rail-dispatch",
+        "rail-loader"
+      ],
+      "footprint": {
+        "w": 2,
+        "d": 1
+      },
+      "rawSize": {
+        "w": 1.5984,
+        "h": 0.5292,
+        "d": 0.6552
+      },
+      "fit": 1.0586,
+      "preBatchMeshes": 24,
+      "sampledBounds": {
+        "w": 1.692,
+        "d": 0.6936,
+        "minY": 0.16,
+        "minX": -0.846,
+        "maxX": 0.846,
+        "minZ": -0.3468,
+        "maxZ": 0.3468
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M16",
+      "name": "铁路与矿车",
+      "variant": "maximum",
+      "level": 16,
+      "upgradeIds": [
+        "rail-wagons",
+        "rail-dispatch",
+        "rail-loader"
+      ],
+      "footprint": {
+        "w": 2,
+        "d": 1
+      },
+      "rawSize": {
+        "w": 1.5984,
+        "h": 0.5292,
+        "d": 0.6552
+      },
+      "fit": 1.1762,
+      "preBatchMeshes": 27,
+      "sampledBounds": {
+        "w": 1.88,
+        "d": 0.7706,
+        "minY": 0.16,
+        "minX": -0.94,
+        "maxX": 0.94,
+        "minZ": -0.3853,
+        "maxZ": 0.3853
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M17",
+      "name": "自动装卸站",
+      "variant": "base",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 3,
+        "d": 2
+      },
+      "rawSize": {
+        "w": 2.016,
+        "h": 1.3824,
+        "d": 1.296
+      },
+      "fit": 1.2857,
+      "preBatchMeshes": 31,
+      "sampledBounds": {
+        "w": 2.592,
+        "d": 1.6663,
+        "minY": 0.16,
+        "minX": -1.296,
+        "maxX": 1.296,
+        "minZ": -0.8331,
+        "maxZ": 0.8331
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M17",
+      "name": "自动装卸站",
+      "variant": "upgraded",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 3,
+        "d": 2
+      },
+      "rawSize": {
+        "w": 2.016,
+        "h": 1.3824,
+        "d": 1.296
+      },
+      "fit": 1.2857,
+      "preBatchMeshes": 31,
+      "sampledBounds": {
+        "w": 2.592,
+        "d": 1.6663,
+        "minY": 0.16,
+        "minX": -1.296,
+        "maxX": 1.296,
+        "minZ": -0.8331,
+        "maxZ": 0.8331
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M17",
+      "name": "自动装卸站",
+      "variant": "maximum",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 3,
+        "d": 2
+      },
+      "rawSize": {
+        "w": 2.016,
+        "h": 1.3824,
+        "d": 1.296
+      },
+      "fit": 1.2857,
+      "preBatchMeshes": 31,
+      "sampledBounds": {
+        "w": 2.592,
+        "d": 1.6663,
+        "minY": 0.16,
+        "minX": -1.296,
+        "maxX": 1.296,
+        "minZ": -0.8331,
+        "maxZ": 0.8331
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "N4",
+      "name": "烈焰熔炉",
+      "variant": "base",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 3,
+        "d": 2
+      },
+      "rawSize": {
+        "w": 2.016,
+        "h": 2.0556,
+        "d": 1.2977
+      },
+      "fit": 1.2857,
+      "preBatchMeshes": 39,
+      "sampledBounds": {
+        "w": 2.592,
+        "d": 1.6685,
+        "minY": 0.16,
+        "minX": -1.296,
+        "maxX": 1.296,
+        "minZ": -0.8331,
+        "maxZ": 0.8353
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "N4",
+      "name": "烈焰熔炉",
+      "variant": "upgraded",
+      "level": 1,
+      "upgradeIds": [
+        "blaze-exchanger",
+        "blaze-chamber"
+      ],
+      "footprint": {
+        "w": 3,
+        "d": 2
+      },
+      "rawSize": {
+        "w": 2.016,
+        "h": 2.0556,
+        "d": 1.2977
+      },
+      "fit": 1.2857,
+      "preBatchMeshes": 47,
+      "sampledBounds": {
+        "w": 2.592,
+        "d": 1.6685,
+        "minY": 0.16,
+        "minX": -1.296,
+        "maxX": 1.296,
+        "minZ": -0.8331,
+        "maxZ": 0.8353
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "N4",
+      "name": "烈焰熔炉",
+      "variant": "maximum",
+      "level": 12,
+      "upgradeIds": [
+        "blaze-exchanger",
+        "blaze-chamber"
+      ],
+      "footprint": {
+        "w": 3,
+        "d": 2
+      },
+      "rawSize": {
+        "w": 2.016,
+        "h": 2.0556,
+        "d": 1.2977
+      },
+      "fit": 1.4286,
+      "preBatchMeshes": 49,
+      "sampledBounds": {
+        "w": 2.88,
+        "d": 1.8538,
+        "minY": 0.16,
+        "minX": -1.44,
+        "maxX": 1.44,
+        "minZ": -0.9257,
+        "maxZ": 0.9281
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "E8",
+      "name": "末地水晶",
+      "variant": "base",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 2,
+        "d": 2
+      },
+      "rawSize": {
+        "w": 0.756,
+        "h": 1.1923,
+        "d": 0.756
+      },
+      "fit": 2.2381,
+      "preBatchMeshes": 16,
+      "sampledBounds": {
+        "w": 1.692,
+        "d": 1.692,
+        "minY": 0.16,
+        "minX": -0.846,
+        "maxX": 0.846,
+        "minZ": -0.846,
+        "maxZ": 0.846
+      },
