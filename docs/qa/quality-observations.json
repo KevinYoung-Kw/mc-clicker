@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "467_seconds_unfocused_no_change": true,
+    "focus_resumes_without_catchup": true,
+    "freeze_event_no_catchup": true,
+    "reload_no_offline_award": true,
+    "touch_12_eye_activation": true,
+    "portal_enters_end": true,
+    "land_lands_once": true
+  },
+  "errors": []
+}

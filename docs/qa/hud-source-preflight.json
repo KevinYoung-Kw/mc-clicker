@@ -1,0 +1,8 @@
+{
+  "baseline": "fc7341fe301308490499a6ce9cd2d7ee75babd81",
+  "existingSourceFilesMatched": 65,
+  "newPathsWithoutCollision": [
+    "projects/mc-clicker-2/src/hud-style.css",
+    "projects/mc-clicker-2/src/notifications.js"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "baseline": "00b1a5dcc869ecd153a12cca2aaa712306e34a38",
+  "existingSourceFilesMatched": 75,
+  "newPathsWithoutCollision": [
+    "projects/mc-clicker-2/src/mobile-polish.css",
+    "projects/mc-clicker-2/src/site-brand.js",
+    "projects/mc-clicker-2/src/touch-camera.js",
+    "projects/mc-clicker-2/src/input-guidance.js"
+  ]
+}

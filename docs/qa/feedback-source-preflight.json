@@ -1,0 +1,9 @@
+{
+  "baseline": "95ed4a5a5e960b4f13bea7c50b5c015a50d0db7f",
+  "existingSourceFilesMatched": 70,
+  "newPathsWithoutCollision": [
+    "projects/mc-clicker-2/src/gain-layer.js",
+    "projects/mc-clicker-2/src/realm-picker.js",
+    "projects/mc-clicker-2/src/world-projection.js"
+  ]
+}

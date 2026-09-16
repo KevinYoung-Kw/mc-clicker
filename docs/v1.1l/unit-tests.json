@@ -1,0 +1,12 @@
+{
+  "command": "npm test",
+  "tests": 302,
+  "passed": 302,
+  "failed": 0,
+  "durationMs": 30363.786375,
+  "followup": {
+    "command": "node --test tests/purchase-routing.test.js",
+    "passed": 7,
+    "reason": "Updated design-facing power/interaction descriptions; runtime was unchanged."
+  }
+}

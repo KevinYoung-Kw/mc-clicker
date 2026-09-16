@@ -1,0 +1,9 @@
+{
+  "baseline": "9f2d0d43b645f5cf0a42ff8bc675c3a74da4c6af",
+  "existingSourceFilesMatched": 67,
+  "newPathsWithoutCollision": [
+    "projects/mc-clicker-2/src/project.js",
+    "projects/mc-clicker-2/src/project-style.css",
+    "projects/mc-clicker-2/src/project-ui.js"
+  ]
+}

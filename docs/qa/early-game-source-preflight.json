@@ -1,0 +1,9 @@
+{
+  "baseline": "4946504",
+  "existingSourceFilesMatched": 81,
+  "newPathsWithoutCollision": [
+    "projects/mc-clicker-2/src/shop-onboarding.js",
+    "projects/mc-clicker-2/src/purchase-feedback.js",
+    "projects/mc-clicker-2/src/early-game.css"
+  ]
+}

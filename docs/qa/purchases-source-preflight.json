@@ -1,0 +1,8 @@
+{
+  "baseline": "8c1a98514a89908a2e011ff4e32b3a9683edde60",
+  "existingSourceFilesMatched": 63,
+  "newPathsWithoutCollision": [
+    "projects/mc-clicker-2/src/purchase-style.css",
+    "projects/mc-clicker-2/src/task-controls.js"
+  ]
+}

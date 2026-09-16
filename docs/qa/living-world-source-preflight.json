@@ -1,0 +1,10 @@
+{
+  "baseline": "f73621f9f2b6d1a77bdbc724a446121ea54aef6b",
+  "existingSourceFilesMatched": 54,
+  "newPathsWithoutCollision": [
+    "projects/mc-clicker-2/src/studio-staff-ui.js",
+    "projects/mc-clicker-2/src/studio-staff-layout.js",
+    "projects/mc-clicker-2/src/resident-motion.js",
+    "projects/mc-clicker-2/src/mob-motion.js"
+  ]
+}

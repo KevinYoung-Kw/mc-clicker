@@ -1,0 +1,8 @@
+{
+  "baseline": "da7faee6760f0ed11c9316179c30cf4a249f345d",
+  "existingSourceFilesMatched": 73,
+  "newPathsWithoutCollision": [
+    "projects/mc-clicker-2/src/mobile-tools.js",
+    "projects/mc-clicker-2/src/mobile-camera.js"
+  ]
+}
