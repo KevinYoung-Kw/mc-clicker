@@ -1,0 +1,35 @@
+{
+  "early": {
+    "frames": 40,
+    "uploads": 54,
+    "gpuComparedValues": 1472,
+    "gpuMismatches": 0,
+    "cpuMismatches": 0,
+    "glError": 0,
+    "dynamicInstances": 26,
+    "shadowEnabled": true,
+    "shadowType": 1,
+    "pixelRatio": 1,
+    "memory": {
+      "geometries": 3,
+      "textures": 4
+    }
+  },
+  "mature": {
+    "frames": 40,
+    "uploads": 2291,
+    "gpuComparedValues": 148656,
+    "gpuMismatches": 0,
+    "cpuMismatches": 0,
+    "glError": 0,
+    "dynamicInstances": 642,
+    "shadowEnabled": true,
+    "shadowType": 1,
+    "pixelRatio": 1,
+    "memory": {
+      "geometries": 9,
+      "textures": 6
+    }
+  },
+  "errors": []
+}

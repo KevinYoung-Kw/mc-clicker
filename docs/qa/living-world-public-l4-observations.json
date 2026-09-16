@@ -1,0 +1,21 @@
+{
+  "url": "https://www.kw-aigc.cn/projects/mc-clicker-2/?v=19b99e6",
+  "checks": {
+    "hostEquipmentFixedPreviewCancelsWithoutPayment": true,
+    "hostEquipmentConfirmedOnceAtItsReservedSeat": true,
+    "reservedStaffLandingRejectsRealTouchBuildWithoutSpending": true,
+    "cameraStillBuildsNormallyBesideNewHostSeat": true,
+    "noProductionConsoleOrNetworkErrors": true
+  },
+  "errors": [],
+  "failedRequests": [],
+  "reservedLandingTap": {
+    "x": 144.95587597360793,
+    "y": 496.21902523852106
+  },
+  "legalCameraTap": {
+    "x": 253.5,
+    "y": 482.2
+  },
+  "passed": true
+}

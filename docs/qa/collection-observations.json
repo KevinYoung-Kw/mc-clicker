@@ -1,0 +1,34 @@
+{
+  "pickaxeContact": {
+    "error": 5.551115123125783e-17,
+    "tip": [
+      -5.551115123125783e-17,
+      1.3884999999999998,
+      0.306
+    ],
+    "top": [
+      0,
+      1.3884999999999998,
+      0.306
+    ],
+    "minToolY": 1.3885000016391276,
+    "angle": -1.5707963267948966
+  },
+  "errors": [],
+  "ownedTabs": true,
+  "facilityPurchases": true,
+  "singleItemOwnership": true,
+  "previewDoesNotEquip": true,
+  "studioIndependentSlots": true,
+  "foregroundPause": true,
+  "cropGroundY": 0.15999999999999998,
+  "performance": {
+    "rebuilds": 0,
+    "maxClick": 2.3000000715255737,
+    "frameMedian": 16.69999999999709,
+    "frameP95": 17.600000000002183,
+    "drawCalls": 221,
+    "triangles": 25482
+  },
+  "mobile": true
+}

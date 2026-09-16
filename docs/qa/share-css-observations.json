@@ -1,0 +1,62 @@
+{
+  "results": [
+    {
+      "width": 1360,
+      "initialCanvas": 0,
+      "modal": {
+        "x": 185,
+        "y": 101.96875,
+        "width": 990,
+        "height": 696.046875
+      },
+      "initialOverflow": false,
+      "generated": true,
+      "preview": {
+        "x": 252.109375,
+        "y": 274.046875,
+        "width": 475.265625,
+        "height": 495
+      },
+      "bottomReachable": true
+    },
+    {
+      "width": 390,
+      "initialCanvas": 0,
+      "modal": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "initialOverflow": false,
+      "generated": true,
+      "preview": {
+        "x": 28,
+        "y": 211.6875,
+        "width": 334,
+        "height": 347.828125
+      },
+      "bottomReachable": true
+    },
+    {
+      "width": 320,
+      "initialCanvas": 0,
+      "modal": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 720
+      },
+      "initialOverflow": false,
+      "generated": true,
+      "preview": {
+        "x": 28,
+        "y": 211.6875,
+        "width": 264,
+        "height": 274.90625
+      },
+      "bottomReachable": true
+    }
+  ],
+  "errors": []
+}

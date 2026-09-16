@@ -1,0 +1,32 @@
+[
+  {
+    "version": "before",
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+    "panelSwitches": 16,
+    "rebuilds": 16,
+    "drawingBufferResizes": 172,
+    "syncMs": 57.10000002384186,
+    "clickP50": 3.6999999284744263,
+    "clickP95": 9.599999904632568,
+    "frameMedian": 16.699999999999818,
+    "frameP95": 17.100000000000364,
+    "trianglesWithShadows": 229986,
+    "instances": 1188,
+    "uploadedInstancesPerFrame": 1188
+  },
+  {
+    "version": "after",
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+    "panelSwitches": 16,
+    "rebuilds": 0,
+    "drawingBufferResizes": 16,
+    "syncMs": 2.3999998569488525,
+    "clickP50": 1.2999999523162842,
+    "clickP95": 2.399999976158142,
+    "frameMedian": 16.699999999999818,
+    "frameP95": 17.299999999999272,
+    "trianglesWithShadows": 172554,
+    "instances": 1190,
+    "uploadedInstancesPerFrame": 337
+  }
+]

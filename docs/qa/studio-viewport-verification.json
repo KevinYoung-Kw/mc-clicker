@@ -1,0 +1,30 @@
+{
+  "baseline": "4aef9aa",
+  "runtime": "f541a73",
+  "unitTests": 260,
+  "browserChecks": {
+    "dev": {
+      "checks": 8,
+      "report": "docs/qa/studio-viewport-dev/observations.json",
+      "renderedFrames": 6809,
+      "distortedFrames": 0
+    },
+    "short-dev": {
+      "checks": 4,
+      "report": "docs/qa/studio-viewport-short-dev/observations.json",
+      "renderedFrames": 3855,
+      "distortedFrames": 0
+    },
+    "production": {
+      "checks": 4,
+      "report": "docs/qa/studio-viewport-production/observations.json"
+    },
+    "live": {
+      "checks": 4,
+      "report": "docs/qa/studio-viewport-live/observations.json"
+    }
+  },
+  "productionHtmlSha256": "d89e9a9ac4fcf5be779344a35379be7d4294e17b1f0832510aaf115164d4d57a",
+  "mobileScope": "Chromium and WebKit simulated viewports; no physical iPhone assertion",
+  "publicFilesVerified": 25
+}

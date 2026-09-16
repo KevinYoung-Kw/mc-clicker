@@ -1,0 +1,44 @@
+[
+  {
+    "file": "cavern.mp3",
+    "seconds": 89.27,
+    "channels": 2,
+    "integratedLUFS": -20.0,
+    "truePeakDBFS": -5.3
+  },
+  {
+    "file": "copper.mp3",
+    "seconds": 69.37,
+    "channels": 2,
+    "integratedLUFS": -19.8,
+    "truePeakDBFS": -7.1
+  },
+  {
+    "file": "end.mp3",
+    "seconds": 102.0,
+    "channels": 2,
+    "integratedLUFS": -19.8,
+    "truePeakDBFS": -6.9
+  },
+  {
+    "file": "meadow.mp3",
+    "seconds": 85.48,
+    "channels": 2,
+    "integratedLUFS": -19.8,
+    "truePeakDBFS": -4.9
+  },
+  {
+    "file": "nether.mp3",
+    "seconds": 82.0,
+    "channels": 2,
+    "integratedLUFS": -19.8,
+    "truePeakDBFS": -8.2
+  },
+  {
+    "file": "rain.mp3",
+    "seconds": 82.0,
+    "channels": 2,
+    "integratedLUFS": -19.8,
+    "truePeakDBFS": -5.0
+  }
+]

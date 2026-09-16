@@ -1,0 +1,20 @@
+{
+  "url": "http://127.0.0.1:8890/",
+  "desktop": "1360x900",
+  "touch": [
+    "390x844",
+    "320x720"
+  ],
+  "fixture": "residentFixture + open stall; garden count injected for upgrade/toggle UI",
+  "previewDoesNotEquip": true,
+  "purchaseThenUnequipThenEquip": true,
+  "defaultSceneVisible": true,
+  "resetPreservesCollectionAfterReload": true,
+  "worldEffectsIndividuallyToggle": true,
+  "gardenUpgradeAndToggleCoexist": true,
+  "keyboardCategoryNavigation": true,
+  "touchCursorAndSharePreview": true,
+  "nineCategoriesWithoutOverflow": true,
+  "fixedPhoneActions": true,
+  "errors": []
+}

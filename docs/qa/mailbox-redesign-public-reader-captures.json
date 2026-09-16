@@ -1,0 +1,34 @@
+{
+  "url": "https://www.kw-aigc.cn/projects/mc-clicker-2/?v=30ab95f",
+  "scope": "Visual recapture only; original 49-check functional report is unchanged",
+  "fixture": "Paid early APIs plus owned V18 before load; actual UI opens and reads the letter",
+  "originalFunctionalReportSha256": "e988be838e77f5fc0e755451456e3beb8b7e2e15807653c7b1244a468d969617",
+  "viewports": {
+    "1440": {
+      "complete": true,
+      "width": 1816,
+      "height": 624,
+      "readerScrollTop": 0,
+      "capture": "mailbox-redesign-public-1440-reader-top.png",
+      "captureSha256": "8a5ddb5e83b89ca6c0eee3e505764f8e8c4002b7328e24f6c7782bb8409b3b2b"
+    },
+    "390": {
+      "complete": true,
+      "width": 1816,
+      "height": 624,
+      "readerScrollTop": 0,
+      "capture": "mailbox-redesign-public-390-reader-top.png",
+      "captureSha256": "396a8576911ef70a5334fa68754357dd720a69682a1af7ed7f297b87b1eb9c9a"
+    },
+    "320": {
+      "complete": true,
+      "width": 1816,
+      "height": 624,
+      "readerScrollTop": 0,
+      "capture": "mailbox-redesign-public-320-reader-top.png",
+      "captureSha256": "f61b6212a01d94fb6d40cd538308d39a7f70aed9ddfa8a1c6c8073251d2dfbd5"
+    }
+  },
+  "errors": [],
+  "passed": true
+}
