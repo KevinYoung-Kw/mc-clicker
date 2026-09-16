@@ -1,0 +1,48 @@
+{
+  "url": "https://www.kw-aigc.cn/projects/mc-clicker-2/?v=6d77814",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "checks": {
+    "isolatedProductionContext": true,
+    "villageWellCancellationPreservesProgress": true,
+    "villageWellRequiresSiteThenOnePayment": true,
+    "industrialClockRequiresSiteThenOnePayment": true,
+    "studioEntryIsASceneWithoutAnOpenPanel": true,
+    "firstAndSecondCameraUseDistinctIndoorSites": true,
+    "freeRoomArrangementPreservesOtherCamera": true,
+    "decorationPlacementCancellationPreservesCollection": true,
+    "twoStudioDecorationsRemainVisibleCollectibles": true,
+    "unloadingAndReequippingStudioDecorationsAreFree": true,
+    "outdoorWorkshopDoesNotSellStudioDecorations": true,
+    "version4ExportImportsWithoutLosingRoomLayout": true,
+    "roomLayoutSurvivesReload": true,
+    "noHorizontalOverflowConsoleErrorsOrFailedRequests": true
+  },
+  "errors": [],
+  "failedRequests": [],
+  "touchPlacements": {
+    "well": {
+      "x": 117.0,
+      "y": 527.2
+    },
+    "clock": {
+      "x": 214.5,
+      "y": 487.6
+    },
+    "camera1": {
+      "x": 253.5,
+      "y": 482.2
+    },
+    "camera2": {
+      "x": 117.0,
+      "y": 482.2
+    },
+    "shelf": {
+      "x": 117.0,
+      "y": 428.5
+    }
+  },
+  "passed": true
+}

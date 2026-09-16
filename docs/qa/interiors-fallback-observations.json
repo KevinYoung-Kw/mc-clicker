@@ -1,0 +1,23 @@
+{
+  "url": "http://127.0.0.1:8891/projects/mc-clicker-2/",
+  "checks": {
+    "newPlayerMinesForFirstToolWithoutDebugState": true,
+    "woodPickaxeNeedsConfirmationAndCancelDoesNotCharge": true,
+    "noWebGLFallbackSelectsAValidSiteWithoutBuying": true,
+    "fallbackCameraCommitsOnlyAfterExplicitConfirmation": true,
+    "fallbackIndoorPurchaseSurvivesReload": true
+  },
+  "pageErrors": [],
+  "expectedWebGLConsoleErrors": [
+    "THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.",
+    "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new Rf (http://127.0.0.1:8891/projects/mc-clicker-2/assets/three-engine-DVFYVVG_.js:4108:24436)\n    at new or (http://127.0.0.1:8891/projects/mc-clicker-2/assets/index-C_SHMN3K.js:2:160426)\n    at http://127.0.0.1:8891/projects/mc-clicker-2/assets/index-C_SHMN3K.js:17:4528",
+    "THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.",
+    "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new Rf (http://127.0.0.1:8891/projects/mc-clicker-2/assets/three-engine-DVFYVVG_.js:4108:24436)\n    at new or (http://127.0.0.1:8891/projects/mc-clicker-2/assets/index-C_SHMN3K.js:2:160426)\n    at http://127.0.0.1:8891/projects/mc-clicker-2/assets/index-C_SHMN3K.js:17:4528"
+  ],
+  "expectedFallbackSite": {
+    "x": -1.25,
+    "z": 0.75,
+    "rotation": 0
+  },
+  "passed": true
+}

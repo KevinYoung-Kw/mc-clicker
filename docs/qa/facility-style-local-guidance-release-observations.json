@@ -1,0 +1,34 @@
+{
+  "url": "http://127.0.0.1:8891/projects/mc-clicker-2/",
+  "checks": {
+    "freshWoodPickaxeThenSixEmeraldGoalsRequiresConfirmationAndPrecedesLand": true,
+    "twelveEmeraldInfoRequiresConfirmationAndUnlocksBothFirstWorkerAndWorkbench": true,
+    "firstVillagerStillProducesRealAutomaticIncome": true,
+    "goalCollapseAndShowAndNotificationOffAndOnPersistAcrossReloads": true,
+    "legacyAlreadyBuiltTechnologyRestoresGuidanceWithoutCharging": true,
+    "spaceKeydownImmediatelyMinesExactlyOnce": true,
+    "spaceHoldRepeatsAtOneClockStopsOnKeyupAndDoesNotDoubleClickFocusedMine": true,
+    "blurAndHiddenStopHoldingAndReturningDoesNotCatchUp": true,
+    "inputsContenteditableOtherButtonsNeverMineAndMovingFocusStopsAnActiveHold": true
+  },
+  "errors": [],
+  "keyboard": {
+    "normal1500ms": 6,
+    "repeatedKeydown1500ms": 7,
+    "focusedMine1500ms": 6,
+    "blur": {
+      "before": 21,
+      "paused": 23,
+      "after": 23
+    },
+    "hidden": {
+      "before": 23,
+      "paused": 25,
+      "after": 25
+    }
+  },
+  "isolatedContexts": true,
+  "lifecycleSimulation": "QA dispatches blur/focus and overrides visibilityState inside an isolated context; physical OS lock-screen behavior is not exercised.",
+  "stateInspection": "production real export-save download",
+  "passed": true
+}
