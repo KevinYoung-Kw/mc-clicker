@@ -1,0 +1,99 @@
+{
+  "minDistance": 0.544058820349416,
+  "maxVisible": 6,
+  "mismatches": 0,
+  "reserveCount": 33,
+  "workers": [
+    {
+      "id": "resident-2",
+      "job": "farmer",
+      "completed": 3,
+      "status": "照料 32%"
+    },
+    {
+      "id": "resident-3",
+      "job": "rancher",
+      "completed": 5,
+      "status": "还需 23 秒"
+    },
+    {
+      "id": "resident-4",
+      "job": "rancher",
+      "completed": 5,
+      "status": "还需 23 秒"
+    },
+    {
+      "id": "resident-5",
+      "job": "hauler",
+      "completed": 0,
+      "status": "抱箱送往交接点"
+    },
+    {
+      "id": "resident-6",
+      "job": "hauler",
+      "completed": 1,
+      "status": "抱箱送往交接点"
+    },
+    {
+      "id": "resident-7",
+      "job": "miner",
+      "completed": 19,
+      "status": "开采矿料"
+    },
+    {
+      "id": "resident-8",
+      "job": "crafter",
+      "completed": 21,
+      "status": "精制货物"
+    },
+    {
+      "id": "resident-9",
+      "job": "musician",
+      "completed": 10,
+      "status": "村庄演出 70%"
+    },
+    {
+      "id": "resident-10",
+      "job": "engineer",
+      "completed": 11,
+      "status": "还需 1 秒"
+    },
+    {
+      "id": "resident-11",
+      "job": "stagehand",
+      "completed": 0,
+      "status": "抱箱送往交接点"
+    },
+    {
+      "id": "resident-44",
+      "job": "idle",
+      "completed": 0,
+      "status": "自由活动 · 完整基础收入"
+    },
+    {
+      "id": "resident-45",
+      "job": "farmer",
+      "completed": 3,
+      "status": "照料 33%"
+    }
+  ],
+  "golems": [
+    {
+      "id": "golem-1",
+      "trips": 1,
+      "status": "前往小麦取货点"
+    },
+    {
+      "id": "golem-2",
+      "trips": 1,
+      "status": "前往小麦取货点"
+    },
+    {
+      "id": "golem-3",
+      "trips": 0,
+      "status": "抱箱送往交接点"
+    }
+  ],
+  "budget": 6,
+  "errors": []
+}

@@ -1,0 +1,99 @@
+{
+  "checkedAt": "2026-09-08T08:36:40.550Z",
+  "runtimeVersion": "1.5.6-local",
+  "scope": "Read-only design probe, not a proposed population implementation or playthrough",
+  "catalogMaximumJobs": [
+    {
+      "job": "farmer",
+      "name": "农民",
+      "facility": "V4",
+      "capacity": 3
+    },
+    {
+      "job": "rancher",
+      "name": "牧工",
+      "facility": "V7",
+      "capacity": 2
+    },
+    {
+      "job": "merchant",
+      "name": "售货员",
+      "facility": "V3",
+      "capacity": 3
+    },
+    {
+      "job": "hauler",
+      "name": "搬运工",
+      "facility": "M4",
+      "capacity": 3
+    },
+    {
+      "job": "miner",
+      "name": "矿工",
+      "facility": "M1",
+      "capacity": 3
+    },
+    {
+      "job": "crafter",
+      "name": "工匠",
+      "facility": "M2",
+      "capacity": 3
+    },
+    {
+      "job": "musician",
+      "name": "乐师",
+      "facility": "L1",
+      "capacity": 1
+    },
+    {
+      "job": "host",
+      "name": "主持人",
+      "facility": "L4",
+      "capacity": 1
+    },
+    {
+      "job": "engineer",
+      "name": "音序师",
+      "facility": "M20",
+      "capacity": 1
+    },
+    {
+      "job": "stagehand",
+      "name": "场务",
+      "facility": "L2",
+      "capacity": 2
+    }
+  ],
+  "catalogMaximumTotal": 22,
+  "beforeFirstResident": {
+    "owned": [
+      "T1",
+      "V1",
+      "V18",
+      "T7"
+    ],
+    "jobs": [],
+    "afterBuyingM4": [
+      {
+        "job": "hauler",
+        "name": "搬运工",
+        "facility": "M4",
+        "capacity": 1
+      }
+    ],
+    "stillWithoutResident": true
+  },
+  "sceneryHouse": {
+    "beforeBuilding": true,
+    "overlappingBuildingVisible": false,
+    "visibleAgainAfterBuildingMoved": true,
+    "house": {
+      "x": 1.4,
+      "z": -1.9,
+      "w": 1,
+      "d": 1,
+      "kind": "house",
+      "variant": 0
+    }
+  }
+}

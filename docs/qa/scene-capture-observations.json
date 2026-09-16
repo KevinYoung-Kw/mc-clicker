@@ -1,0 +1,110 @@
+{
+  "early": {
+    "photo": {
+      "realm": "overworld",
+      "label": "主世界",
+      "background": "rgb(229, 234, 220)",
+      "width": 1440,
+      "height": 1000
+    },
+    "unchanged": true,
+    "milliseconds": 90,
+    "sceneBackground": "rgb(229,234,220)"
+  },
+  "mature": {
+    "photo": {
+      "realm": "overworld",
+      "label": "主世界",
+      "background": "rgb(188, 214, 201)",
+      "width": 1440,
+      "height": 1000
+    },
+    "unchanged": true,
+    "milliseconds": 70.80000007152557,
+    "sceneBackground": "rgb(188,214,201)"
+  },
+  "nether": {
+    "photo": {
+      "realm": "nether",
+      "label": "下界",
+      "background": "rgb(71, 62, 61)",
+      "width": 1440,
+      "height": 1000
+    },
+    "unchanged": true,
+    "milliseconds": 92.70000004768372,
+    "sceneBackground": "rgb(71,62,61)"
+  },
+  "end": {
+    "photo": {
+      "realm": "end",
+      "label": "末地",
+      "background": "rgb(41, 47, 67)",
+      "width": 1440,
+      "height": 1000
+    },
+    "unchanged": true,
+    "milliseconds": 45.10000002384186,
+    "sceneBackground": "rgb(41,47,67)"
+  },
+  "studio": {
+    "photo": {
+      "realm": "studio",
+      "label": "我的直播间",
+      "background": "rgb(233, 227, 208)",
+      "width": 1440,
+      "height": 1000
+    },
+    "unchanged": true,
+    "milliseconds": 44,
+    "sceneBackground": "rgb(233,227,208)"
+  },
+  "resourceStability": {
+    "warmupCaptures": 1,
+    "repeatedCaptures": 5,
+    "before": {
+      "geometries": 11,
+      "textures": 6,
+      "programs": 8
+    },
+    "after": {
+      "geometries": 11,
+      "textures": 6,
+      "programs": 8
+    },
+    "samples": [
+      {
+        "geometries": 11,
+        "textures": 6,
+        "programs": 8
+      },
+      {
+        "geometries": 11,
+        "textures": 6,
+        "programs": 8
+      },
+      {
+        "geometries": 11,
+        "textures": 6,
+        "programs": 8
+      },
+      {
+        "geometries": 11,
+        "textures": 6,
+        "programs": 8
+      },
+      {
+        "geometries": 11,
+        "textures": 6,
+        "programs": 8
+      }
+    ],
+    "stable": true
+  },
+  "failure": {
+    "message": "injected GPU read failure",
+    "unchanged": true
+  },
+  "overlayExclusion": true,
+  "errors": []
+}

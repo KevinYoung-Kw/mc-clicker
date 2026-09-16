@@ -1,0 +1,54 @@
+{
+  "initialToolbar": [
+    "世界1",
+    "建造2"
+  ],
+  "navigation60Seconds": {
+    "actors": 11,
+    "active": 11,
+    "moved": 9,
+    "wallViolations": 0,
+    "pairViolations": 0,
+    "edgeViolations": 0,
+    "obstacles": 59
+  },
+  "sceneCache": {
+    "panelBuilds": 0,
+    "firstRealmBuilds": 2,
+    "repeatedRealmBuilds": 0,
+    "restoresSameGraph": true
+  },
+  "otherRealms": {
+    "nether": {
+      "walkers": 1,
+      "active": 1,
+      "blocked": 0,
+      "flyers": {
+        "N6": {
+          "x": -0.2358335404567598,
+          "y": 0.15745680694069508
+        },
+        "N9": {
+          "x": 0.35789839986035493,
+          "y": 0.026195273793405353
+        }
+      }
+    },
+    "end": {
+      "walkers": 1,
+      "active": 1,
+      "blocked": 0,
+      "flyers": {
+        "E9": {
+          "x": -0.09094127673897698,
+          "y": 0.3584626648555195
+        }
+      }
+    }
+  },
+  "icons": {
+    "count": 96,
+    "uniqueImages": 96
+  },
+  "errors": []
+}
