@@ -1,0 +1,102 @@
+/* Themes own all UI surfaces, while world materials and furniture are independent. */
+body[data-theme="web-theme-backpack"]{--paper:#d3d4ca;--web-inner:#f0efe5;--ink:#26362c;--muted:#535d4c;--line:#858d78;--green:#466a37;--web-action-text:#fff;--web-edge:#777e6c;--web-highlight:#f8f6ea;--web-shadow:#666d5d;--web-pattern:repeating-linear-gradient(0deg,transparent 0 30px,#777e6c0a 30px 32px)}
+body[data-theme="web-theme-oak"]{--paper:#e8d9b4;--web-inner:#f8f0d9;--ink:#433620;--muted:#685d42;--line:#99815a;--green:#526638;--web-action-text:#fff;--web-edge:#85603c;--web-highlight:#e9c996;--web-shadow:#795937;--web-pattern:repeating-linear-gradient(0deg,transparent 0 27px,#85603c0d 27px 28px)}
+body[data-theme="web-theme-redstone"]{--paper:#303c39;--web-inner:#202e2a;--ink:#eff3e5;--muted:#bac8b3;--line:#7b9385;--green:#a9d5ad;--web-action-text:#173221;--web-edge:#788778;--web-highlight:#93b9a1;--web-shadow:#14251e;--web-pattern:linear-gradient(90deg,transparent 0 15px,#93b9a10b 15px 16px,transparent 16px)}
+body[data-theme="web-theme-end"]{--paper:#282335;--web-inner:#191922;--ink:#f2eaf9;--muted:#c4b7d3;--line:#907ea1;--green:#d5bcf1;--web-action-text:#292034;--web-edge:#837295;--web-highlight:#b69bcf;--web-shadow:#17121f;--web-pattern:linear-gradient(135deg,#b69bcf0c 0 6px,transparent 6px)}
+body[data-theme^="web-theme-"]{color:var(--ink)}
+body[data-theme^="web-theme-"] :is(.hud,.hotbar,#panel,#modal,#hud-tools,.placement-bar,#placement-bar,.mobile-menu,.record-library,.mail-reader,.mail-list,#goal-tracker,.observatory){background-color:var(--paper);color:var(--ink);border-color:var(--web-edge);background-image:var(--web-pattern)}
+body[data-theme^="web-theme-"] :is(#panel,#modal,.hotbar){box-shadow:inset 2px 2px var(--web-highlight),inset -2px -2px var(--web-shadow),3px 4px #132e2924}
+body[data-theme^="web-theme-"] :is(.build-card,.resident-detail,.mail-envelope,.mail-letter,.mail-message,.record-row,.share-details,.share-stat-grid>div,.task-card,.facility-status,.upgrade-card,.guidance-card,.empty-state,.appearance-tile,.electricity-dashboard,.management-intro,.share-qr,.share-url input,.mail-content,.mail-detail){background:var(--web-inner);color:var(--ink);border-color:var(--line)}
+body[data-theme^="web-theme-"] :is(.panel-header,.card-bottom,.dependency-list,.shop-tabs,.management-tabs,.live-tabs,.mail-tabs,.mail-toolbar,.share-header,.settings-row,.facility-status-row,.record-library header,.share-section-heading){border-color:var(--line)}
+body[data-theme^="web-theme-"] :is(h1,h2,h3,h4,strong,b,label,.card-main,.share-step,.mail-title,.mail-subject,.mail-body,.mail-letter-title,.resident-story,.mail-reader-body,.live-badge,.panel-note,.mail-copy,.setting){color:var(--ink)}
+body[data-theme^="web-theme-"] #game #panel :is(.item-effect,.observation-instruments p,.facility-mod>p,.personal-school>p,.resident-assignment-note){color:var(--ink)}
+body[data-theme^="web-theme-"] :is(small,.eyebrow,.panel-note,.item-next,.mail-meta,.mail-sender,.mail-date,.record-description>small,.share-kicker,.share-note,.share-section-heading p,.record-audio-note,.cs-kicker,.stat-label,.list-label,.mail-empty){color:var(--muted)}
+body[data-theme^="web-theme-"] :is(input,select,textarea,.share-url,.mail-tabs button,.card-bottom>span,.mail-reward,.mail-claim,.record-now){color:var(--ink);background-color:var(--web-inner);border-color:var(--line)}
+body[data-theme^="web-theme-"] :is(button,.tab,.mail-row){border-color:var(--line);color:var(--ink)}
+body[data-theme^="web-theme-"] :is(.primary,.buy[data-purchase-state=ready],.cs-primary,button.active,button[aria-selected=true],button[aria-pressed=true],.mail-claim-button){background-color:var(--green);color:var(--web-action-text);border-color:var(--green);box-shadow:inset 0 1px #ffffff36,inset 0 -2px #00000020}
+body[data-theme^="web-theme-"] :is(button.active,button[aria-selected=true],button[aria-pressed=true],.primary) :is(span,b,strong,small,svg){color:inherit}
+body[data-theme^="web-theme-"] button:active:not(:disabled){box-shadow:inset 2px 2px var(--web-shadow);filter:brightness(.97)}
+body[data-theme^="web-theme-"] button:disabled{opacity:.65}body[data-theme^="web-theme-"] button[data-purchase-state=short]{opacity:1;background:var(--web-inner);color:var(--muted)}
+body[data-theme^="web-theme-"] :is([data-purchase-state=locked],.locked){opacity:1}body[data-theme^="web-theme-"] .complete-badge{color:var(--green);border-color:var(--line);background:var(--web-inner)}
+body[data-theme^="web-theme-"] :is(.progress,.task-meter,.facility-status-progress,.progress-track,.project-meter){background:var(--web-shadow)}body[data-theme^="web-theme-"] :is(.task-meter>i,.facility-status-progress>i,.project-meter>i){background:var(--green)}
+body[data-theme^="web-theme-"] :focus-visible{outline-color:var(--green)}
+body[data-theme^="web-theme-"] ::-webkit-scrollbar-thumb{background:var(--web-edge);border-color:var(--paper)}body[data-theme^="web-theme-"] ::-webkit-scrollbar-track{background:var(--paper)}
+/* Structural materials: item slots, bound paper, circuit tracks, crystal inlays. */
+body[data-theme="web-theme-backpack"] :is(.item-art,.record-cover,.resident-portrait,.appearance-art){box-shadow:inset 2px 2px #777e6c,inset -2px -2px #f8f6ea;background:#a7ae9b}
+body[data-theme="web-theme-backpack"] :is(.build-card,.record-row,.mail-row){box-shadow:inset 1px 1px #fff8,inset -1px -1px #777e6c50}
+body[data-theme="web-theme-backpack"] :is(.hotbar,.hud){background-image:repeating-linear-gradient(90deg,transparent 0 71px,#777e6c16 71px 73px)}
+body[data-theme="web-theme-oak"] :is(#panel,#modal){background-image:linear-gradient(#85603c,#85603c),linear-gradient(#85603c,#85603c),linear-gradient(#85603c,#85603c),linear-gradient(#85603c,#85603c),var(--web-pattern);background-size:18px 4px,4px 18px,18px 4px,4px 18px,100% 100%;background-position:4px 4px,4px 4px,calc(100% - 4px) calc(100% - 4px),calc(100% - 4px) calc(100% - 4px),0 0;background-repeat:no-repeat}
+body[data-theme="web-theme-oak"] :is(.mail-row,.build-card,.record-row){background-image:linear-gradient(90deg,#85603c16 0 3px,transparent 3px)}
+body[data-theme="web-theme-oak"] :is(.shop-tabs,.management-tabs,.appearance-tabs) button[aria-selected=true]{box-shadow:inset 0 -4px #bda775,inset 0 2px #f8f0d9}
+body[data-theme="web-theme-oak"] .complete-badge{outline:1px solid var(--green);outline-offset:-4px}
+body[data-theme="web-theme-redstone"] :is(.hud,.panel-header,.share-header){background-image:linear-gradient(90deg,transparent 96%,#93b9a127 96%),linear-gradient(0deg,transparent 95%,#93b9a127 95%);background-size:32px 16px}
+body[data-theme="web-theme-redstone"] :is(.build-card,.record-row,.facility-status){box-shadow:inset 3px 0 #789f8e,inset -1px 0 #93b9a132}
+body[data-theme="web-theme-redstone"] :is(.buy,.primary){background-image:linear-gradient(90deg,transparent calc(100% - 6px),#17322135 calc(100% - 6px))}
+body[data-theme="web-theme-end"] :is(#panel,#modal,.hotbar){box-shadow:inset 0 2px #b69bcf,inset 2px 0 #837295,inset 0 -2px #17121f,3px 4px #1a10292b;background-image:linear-gradient(135deg,#b69bcf 0 5px,transparent 5px),linear-gradient(315deg,#837295 0 5px,transparent 5px)}
+body[data-theme="web-theme-end"] :is(.build-card,.record-row,.share-details){background-image:linear-gradient(90deg,#b69bcf50 0 2px,transparent 2px);box-shadow:inset 0 -1px #b69bcf22}
+body[data-theme="web-theme-end"] :is(.shop-tabs,.management-tabs,.appearance-tabs) button[aria-selected=true]{background:var(--web-inner);color:var(--green);box-shadow:inset 0 -3px var(--green)}
+/* Explicit notice skin overrides the theme shell; semantic icon and text remain. */
+body[data-theme^="web-theme-"] #notification-shell{background:var(--web-inner);color:var(--ink);border-color:var(--line);box-shadow:inset 3px 0 var(--green),2px 3px #13231f25}
+body[data-notice="web-notice-paper"] #notification-shell{background:#f8f0d9;color:#433620;border-color:#85603c;box-shadow:inset 5px 0 #d4ba82,2px 3px #33250e25}
+body[data-notice="web-notice-stone"] #notification-shell{background:#d5dccb;color:#2a3e32;border-color:#71816c;box-shadow:inset 2px 2px #f3f3df,inset -2px -2px #93a18a,2px 3px #24332325}
+body[data-notice="web-notice-signal"] #notification-shell{background:#273b32;color:#e8f1dd;border-color:#93b9a1;box-shadow:inset 4px 0 #a9d5ad,inset 0 -2px #10271c,2px 3px #10271c25}
+body[data-notice="web-notice-crystal"] #notification-shell{background:#30283e;color:#f3eafa;border-color:#bca2d6;background-image:linear-gradient(135deg,#c1a5d9 0 5px,transparent 5px),linear-gradient(315deg,#89709e 0 5px,transparent 5px);box-shadow:2px 3px #30204425}
+#toast[data-kind=success] svg{color:inherit}#toast[data-kind=error] svg{color:#c64f35}
+/* The unscaled operation assets keep the tip at pixel (0,0). */
+@media(pointer:fine){body[data-cursor^="web-cursor-"]{cursor:var(--web-cursor)}body[data-cursor^="web-cursor-"] :is(button:not(:disabled),a,[role=button]){cursor:var(--web-pointer)}body[data-cursor^="web-cursor-"] #world canvas{cursor:var(--web-cursor)}body[data-cursor^="web-cursor-"] #world canvas[data-pointer=interactive]{cursor:var(--web-pointer)}body[data-cursor^="web-cursor-"] #world canvas[data-pointer=grab]{cursor:grab}body[data-cursor^="web-cursor-"] #world canvas[data-pointer=grabbing]{cursor:grabbing}body[data-cursor^="web-cursor-"] :is(input:not([type=range]):not([type=checkbox]),textarea,[contenteditable=true]){cursor:text}body[data-cursor^="web-cursor-"] input[type=range]{cursor:ew-resize}body[data-cursor^="web-cursor-"] :disabled{cursor:not-allowed}}
+#world-label[data-title-style^="web-title-"] .eyebrow{background-image:var(--title-art);background-size:100% 100%;display:inline-block;padding:8px 17px;font-size:10px;letter-spacing:.7px;font-weight:700;min-width:156px;color:#433722}
+#world-label:is([data-title-style="web-title-redstone"],[data-title-style="web-title-rail"],[data-title-style="web-title-diamond"],[data-title-style="web-title-amethyst"],[data-title-style="web-title-obsidian"]) .eyebrow{color:#f1e8d6}
+@media(max-width:759px){body[data-theme^="web-theme-"] :is(#panel,#modal,.hotbar){box-shadow:inset 1px 1px var(--web-highlight),inset -1px -1px var(--web-shadow),2px 2px #132e2924;border-width:1px}body[data-theme="web-theme-oak"] :is(#panel,#modal){background-size:10px 2px,2px 10px,10px 2px,2px 10px,100% 100%}#world-label[data-title-style^="web-title-"] .eyebrow{font-size:9px;padding:6px 12px;min-width:128px}}
+.web-share-effect{position:fixed;width:32px;height:32px;z-index:150;pointer-events:none;color:var(--green);display:grid;place-items:center}.web-share-effect b{border:2px solid currentColor;background:var(--web-inner,var(--paper));padding:3px;font-size:20px}.web-share-effect i{position:absolute;left:16px;top:16px;transform:translate(var(--x),var(--y));width:5px;height:5px;background:#b49ccf;box-shadow:2px 2px #695681}
+body[data-cursor="web-cursor-stone"] .hit-chip{background:#95a390;box-shadow:2px 2px #52604e}body[data-cursor="web-cursor-oak"] .hit-chip{background:#c19d61;width:8px;height:3px}body[data-cursor="web-cursor-copper"] .hit-chip{background:#b98562;box-shadow:2px 0 #659a84}body[data-cursor="web-cursor-diamond"] .hit-chip{background:#83d3cc;box-shadow:2px 2px #d9f8e9}body[data-cursor="web-cursor-amethyst"] .hit-chip{background:#a887c9;height:8px;width:3px}body[data-cursor="web-cursor-obsidian"] .hit-chip{background:#514461;border:1px solid #c0a9d6}
+/* Existing legacy panels used ID-specific hard-coded shells. Override their
+   surfaces at the same scope instead of relying on inherited text colors. */
+body[data-theme^="web-theme-"] #modal:has(#modal-content),body[data-theme^="web-theme-"] #game #panel{background-color:var(--paper);border-color:var(--web-edge);color:var(--ink)}
+body[data-theme^="web-theme-"] .primary{background:var(--green)!important;color:var(--web-action-text)!important;border-color:var(--web-edge)!important}
+body[data-theme^="web-theme-"] #modal-content .appearance-heading h2{margin:5px 0 0;font-size:25px;line-height:1.3}
+body[data-theme^="web-theme-"] button[data-control]{background:var(--web-inner)!important;color:var(--ink)!important;border-color:var(--line)!important}
+body[data-theme^="web-theme-"] button[data-control=redstone]{box-shadow:inset 3px 0 #d38b62}body[data-theme^="web-theme-"] button[data-control=villager]{box-shadow:inset 3px 0 #87ac6b}body[data-theme^="web-theme-"] button[data-control=blocked]{box-shadow:inset 3px 0 #c9a76d}
+@media(max-width:759px){body[data-theme^="web-theme-"] #modal-content .appearance-heading h2{font-size:21px}}
+body[data-theme^="web-theme-"] #modal #modal-close{background:var(--web-inner);color:var(--ink);border-color:var(--line)}
+#modal-content .appearance-heading h2{margin:5px 0 0;line-height:1.3}
+@media(max-width:759px){.appearance-heading{padding-right:44px}}
+
+/* Floating controls have their own surfaces, independent of world lighting. */
+body[data-theme^="web-theme-"] #game :is(.hotbar,.hotbar button,.realm-switch,.realm-switch button,.mission,.mission button,.home-view,#mine,#room-tools,#room-tools button,#room-camera-tools,#room-camera-tools button,#studio-console,#studio-console button,.interaction-chips button){background-color:var(--paper);color:var(--ink);border-color:var(--line)}
+body[data-theme^="web-theme-"] #game :is(.hotbar button,.realm-switch button,#room-tools button)[aria-selected=true],body[data-theme^="web-theme-"] #game :is(.hotbar button,#room-tools button).active{background-color:var(--green);color:var(--web-action-text)}
+body[data-theme^="web-theme-"] #game :is(#mine,.hotbar button,.realm-switch button,.mission button,#room-tools button,#room-camera-tools button) :is(span,strong,b,small,svg){color:inherit}
+body[data-theme^="web-theme-"] #game #mail-panel .mail-tabs button{background:var(--web-inner);color:var(--ink);border-color:var(--line)}
+body[data-theme^="web-theme-"] #game #mail-panel .mail-tabs button[aria-pressed=true]{background:var(--green);color:var(--web-action-text)}
+body[data-theme^="web-theme-"] #game #mail-panel :is(.mail-postal-progress li.current,.mail-envelope:hover){background:var(--web-inner)}
+body[data-theme^="web-theme-"] #game #mail-panel .mail-tabs button :is(span,b,small,svg){color:inherit}
+body[data-theme^="web-theme-"] #game:not(.dark-world) #world-label :is(h1,p){color:#334a37}
+body[data-theme^="web-theme-"] #game:not(.dark-world) #world-label:not([data-title-style^="web-title-"]) .eyebrow{color:#647b5d}
+#game.dark-world #world-label :is(h1,p),#game.dark-world #world-label:not([data-title-style^="web-title-"]) .eyebrow{color:#eef0df;text-shadow:0 1px 2px #1d3548}
+#game.dark-world .gesture-hint,#game.dark-world #resonance{color:#e0e5d5;text-shadow:0 1px 2px #1d3548}
+
+body[data-theme^="web-theme-"] #game #stage #mission.goal-prompt:not(.collapsed){background:var(--paper);border-color:var(--line)}
+body[data-theme^="web-theme-"] #game #stage #mission :is(button,strong,small,svg){color:var(--ink)}
+body[data-theme^="web-theme-"] .hud :is(.site-link,.square){color:var(--ink)}
+body[data-theme^="web-theme-"] :is(.mail-inbox-scroll,.mail-postal-scroll,.mail-letter-scroll){scrollbar-color:var(--web-edge) transparent}
+body[data-theme^="web-theme-"] #game #panel :is(.construction-tabs,.family-tabs){background:var(--paper);border-color:var(--line)}
+body[data-theme^="web-theme-"] #game #panel :is(.construction-tabs,.family-tabs) button{background:var(--web-inner);color:var(--ink);border-color:var(--line)}
+body[data-theme^="web-theme-"] #game #panel :is(.construction-tabs,.family-tabs) button[aria-selected=true]{background:var(--green);color:var(--web-action-text)}
+body[data-theme^="web-theme-"] #game #panel :is(.construction-tabs,.family-tabs) button :is(span,small,b){color:inherit}
+body[data-theme^="web-theme-"] #game #panel button[data-purchase-state=ready]{background:var(--green);color:var(--web-action-text);border-color:var(--green)}
+body[data-theme^="web-theme-"] #game #panel button[data-purchase-state=ready] :is(span,b,strong,svg){color:inherit}
+body[data-theme^="web-theme-"] #game #panel button:is([data-purchase-state=locked],[data-purchase-state=short]){background:var(--web-inner);color:var(--muted)}
+body[data-theme^="web-theme-"] #game #panel .management-equipment .equipment-mod-link{color:var(--green)}
+/* Management and room cards are separate families in the legacy markup. */
+body[data-theme^="web-theme-"] #game #panel :is(.management-equipment article,.resident-detail,.task-card,.personal-school,.golem-stops label,.engineering-panel,.engineering-layers li,.room-decor-choices>article,.room-inventory>button,.camera-list>button,.room-complete,.order,.guidance-card,.resident-roster>button){background:var(--web-inner);color:var(--ink);border-color:var(--line)}
+body[data-theme^="web-theme-"] #game #panel :is(.resident-roster>button.selected,.room-decor-tabs button[aria-selected=true],.camera-list>button.active,.studio-tabs button.active,.topic-tabs button.active){background:var(--green);color:var(--web-action-text);border-color:var(--green)}
+body[data-theme^="web-theme-"] #game #panel :is(.room-decor-tabs,.studio-tabs,.topic-tabs,.room-inspect-art,.room-decor-art,.guidance-glyph){background:var(--paper);color:var(--ink);border-color:var(--line)}
+body[data-theme^="web-theme-"] #game #panel :is(.quiet-button,.room-decor-choices button,.room-decor-tabs button,.personal-school button,.electricity-dashboard button,.management-equipment button:not([data-purchase-state]),.facility-mod button[data-state=short]){background:var(--web-inner);color:var(--ink);border-color:var(--line)}
+body[data-theme^="web-theme-"] #game #panel :is(.facility-mod button[data-state=ready],.guidance-card>button:not(:disabled)){background:var(--green);color:var(--web-action-text);border-color:var(--green)}
+body[data-theme^="web-theme-"] #game #panel :is(.personal-school button,.facility-mod button,.camera-list>button.active,.resident-roster>button.selected,.guidance-card>button) :is(strong,b,small,span,svg){color:inherit}
+body[data-theme^="web-theme-"] #game #panel :is(.management-intro p,.electricity-dashboard p,.task-card p,.resident-income strong){color:var(--ink)}
+body[data-theme^="web-theme-"] #game #panel :is(.management-equipment small,.resident-roster small,.power-load small,.golem-upgrade small,.resident-detail header span,.resident-income small,.electricity-dashboard>span,.electricity-dashboard small,.cargo-list span){color:var(--muted)}
+body[data-theme^="web-theme-"] #game #panel :is(.management-field input,.management-field select,.personal-school select,.golem-detail select){background:var(--web-inner);color:var(--ink);border-color:var(--line)}
+body[data-theme^="web-theme-"] #modal #info-panel .info-togglebutton{background:var(--web-inner);color:var(--ink);border-color:var(--line)}
+body[data-theme^="web-theme-"] #game #panel :is(.engineering-layers i,.engineering-meter,.order i){background:var(--web-shadow)}
+body[data-theme^="web-theme-"] #game #panel :is(.engineering-layers em,.engineering-meter i,.order i b){background:var(--green)}
+body[data-theme^="web-theme-"] #game #stage #mission.collapsed svg{color:#496540}body[data-theme^="web-theme-"] #game.dark-world #stage #mission.collapsed svg{color:#e0e5d5}

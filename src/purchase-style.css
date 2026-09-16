@@ -1,0 +1,110 @@
+/* Confirmation belongs to the open shop; placement keeps the world reachable. */
+#panel:has(> .purchase-dock:not([hidden])) #panel-content {
+  flex: 1;
+  min-height: 0;
+}
+body #placement-bar.purchase-dock {
+  position: static;
+  inset: auto;
+  transform: none;
+  width: auto;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  padding: 12px 16px;
+  flex: 0 0 auto;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--paper);
+  box-shadow: 0 -5px 0 #899e6010;
+  text-align: left;
+}
+body #placement-bar.purchase-dock p {
+  font-size: 11px;
+  line-height: 1.6;
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+body #placement-bar.purchase-dock > div {
+  display: flex;
+  gap: 8px;
+}
+body #placement-bar.purchase-dock button {
+  min-height: 44px;
+  font-size: 12px;
+  padding: 8px 12px;
+}
+body #placement-bar.purchase-dock #placement-confirm {
+  flex: 1;
+}
+#modal-content > #placement-bar.purchase-dock {
+  position: sticky;
+  bottom: 0;
+  z-index: 6;
+}
+#modal:has(#placement-bar:not([hidden])) .cs-actions {
+  visibility: hidden;
+}
+.purchase-setting {
+  gap: 20px;
+}
+.purchase-setting small {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+button[data-control]::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 7px;
+  background: currentColor;
+}
+button[data-control="villager"] {
+  background: #e6e8d4 !important;
+  color: #5b7147 !important;
+  border-color: #9aaa7c !important;
+}
+button[data-control="redstone"] {
+  background: #f0dfd2 !important;
+  color: #925c42 !important;
+  border-color: #bc987e !important;
+}
+button[data-control="blocked"] {
+  background: #ece5d2 !important;
+  color: #877243 !important;
+  border-color: #b4a579 !important;
+}
+button[data-control]:disabled {
+  opacity: 0.8;
+}
+.task-control-detail {
+  display: block;
+  flex: 1 0 100%;
+  font-size: 11px;
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 5px 0 10px;
+}
+body.live-page #game.panel-open:has(#panel > .purchase-dock) #stage {
+  bottom: 124px;
+}
+@media (max-width: 759px) {
+  #game.panel-open.choosing-site #stage {
+    bottom: calc(49svh + 89px);
+  }
+  #game.choosing-site #world-label,
+  #game.choosing-site #mission {
+    display: none;
+  }
+  body.live-page #game.panel-open:has(#panel > .purchase-dock) #stage {
+    bottom: calc(var(--room-sheet) + 108px);
+  }
+  body #placement-bar.purchase-dock {
+    padding: 8px 12px;
+  }
+}

@@ -1,0 +1,308 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-09-14",
+  "webVersion": "2.0.0-alpha.8",
+  "xhsVersion": "2.0.0-alpha.8-xhs.1",
+  "sourceBases": {
+    "webMonorepo": "f6be42fea89fc6ae2df17707918e8529e9f18498",
+    "gameOnlySubtree": "db4094847e629c74f7d8b0073af6e9dc1034d916",
+    "xhs": "c85903bf2a60b708a330754b5b9ce2b2ef696bfb"
+  },
+  "reviewedDifferences": {
+    "index.html": {
+      "web": "69188449deb75871c42368ac57be0e0645616545b572bc25253cc1768159ba00",
+      "xhs": "ea9297cff85313879e6b9654efff7a0c10cecffdd9fa73a916dd42ae79ddb50e",
+      "reason": "平台入口／CSP／分享元数据不同，发行号均从 package.json 读取；公共启动保护已逐段核查。"
+    },
+    "package-lock.json": {
+      "web": "7664f7b92624175fa37e021d66a358b269eb1f2c5ac1530a1d83fee41d16a053",
+      "xhs": "9064d9e93de319ef9d8b171c658c4c9599541a14c7389a6a1c7466ce54ed1e9c",
+      "reason": "Alpha.8 仅更新各自发行号，保留平台构建命令、依赖与锁文件。"
+    },
+    "package.json": {
+      "web": "eaaf98e0f58685d93c63aa82a54ec575f58a355d1ca930f9e654e9b35cd5951e",
+      "xhs": "bb056cf45d0c7cfc368a5872601a094a034fcfca2127d9a1d46202125a9bbfe1",
+      "reason": "Alpha.8 仅更新各自发行号，保留平台构建命令、依赖与锁文件。"
+    },
+    "public/mail/mc-clicker-group-20260907.png": {
+      "web": "883d4a61761afc47824e3d0be96e11739612503e3b65ee03f290c30fd9733bbe",
+      "xhs": null,
+      "reason": "原站二维码／邀请素材，小红书源码与产物中不包含。"
+    },
+    "public/mail/wechat-channel-qr.webp": {
+      "web": "65cb9928919cefeb1a7d53d0bae4a2e5bf014f0933f55086ed1ed20aaf1f715b",
+      "xhs": null,
+      "reason": "原站二维码／邀请素材，小红书源码与产物中不包含。"
+    },
+    "public/mail/xiaohongshu-qr.webp": {
+      "web": "3ee952853b2ecf8eeea79499c363154b3673d4759f1a7e3655dc265f87c105e4",
+      "xhs": null,
+      "reason": "原站二维码／邀请素材，小红书源码与产物中不包含。"
+    },
+    "public/share/world-invite.svg": {
+      "web": "bdee2d4df7feda91b3ec065410d4c0ee6e863bd835ef20fbf89302e2ce3ce506",
+      "xhs": null,
+      "reason": "原站二维码／邀请素材，小红书源码与产物中不包含。"
+    },
+    "src/game-audio.js": {
+      "web": "dd7e934af8208b683fbe5197da430b15d620bb91f4d1e0a8147618cd14db9d55",
+      "xhs": "9472a8ff40c8e9737eec4f8e3a8cf2114c19945368504f080a27e58efdc57a91",
+      "reason": "网页版保留原音轨；小红书使用离线本地合成播放器。"
+    },
+    "src/guidance-ui.js": {
+      "web": "737b9a350c29ba9771bec1254dc6f42b06d6aa6a5438a6f20fa541ef85c30f10",
+      "xhs": "4e21a29d11e7e3e1a0c66775706e456c453bf47c9c44f1f2385e3f3197408f4c",
+      "reason": "小红书保留平台适配后的存档与说明文案。"
+    },
+    "src/guidance.js": {
+      "web": "29a74f785e2a3299a119e68bf92a83864b387fa2debc9afbac8d8143d6ce4009",
+      "xhs": "e5364cc3d5d248b9182beec35cf58112b908ffb6882c26d0d69cab7a8d825733",
+      "reason": "公共推荐时机已同步；小红书世界铭牌说明去除 kw-aigc 主站标志。"
+    },
+    "src/mail-content.js": {
+      "web": "d436d2e2020f310b21d85a1910851ad8f07d833c4e367e3a7b03529102c6dd99",
+      "xhs": "36b0bacd8e82be325313493d909edd6d1900bb3a1d0e7613ee71351bd280b521",
+      "reason": "邮件 ID、奖励与领取状态相同；小红书仅游戏内来信，无推广／二维码。"
+    },
+    "src/mail-ui.js": {
+      "web": "c5beac2b87972735a64e3f4f19404431fff86a39cd8f68b696b5185de27f9cd5",
+      "xhs": "fe992812f17ce8b01ff844a4c0d0fe830b4e34134f1e4905e33db71e62374a80",
+      "reason": "小红书移除社交平台标签、图片外链及浏览器下载；保留游戏来信与邮政。"
+    },
+    "src/main.js": {
+      "web": "3e1b7b1de2ebb37879f99ea67c42585d88fce3ca316b2d3e4e3bb19e1ab7cd38",
+      "xhs": "d51341b35fe306e7d7cbb92015d4db2999c9b85f26fd7e8f5e119917b3b978e0",
+      "reason": "Alpha.8 仅按段同步图鉴分类、设施入口、局部刷新与返回；保留各平台菜单、启动、分享、音频及前台规则。"
+    },
+    "src/narrator-copy.js": {
+      "web": "493b655037cc1247e9ccbdd9847329f10a37dbc36b61e408fd2686cc61b29066",
+      "xhs": "1f6a7e4ba32328f2e8667d6ba3c644c28f10095978c2c6ffde24aa654ba2cbc3",
+      "reason": "广播、电视与流媒体文案共同同步；保留原有平台分享入口和保存相册两处表述差异。"
+    },
+    "src/record-scores.json": {
+      "web": null,
+      "xhs": "2c3c2924801b9fbc05ca31833202a6c5b93245e3f03a9230d5aeba3f24e95b3c",
+      "reason": "小红书本地合成的六张原创唱片曲谱。"
+    },
+    "src/save-brotli.js": {
+      "web": "fa49572d13180e7f8c0fb7926204a613732bf34d6f24014b238f66f51d6363d0",
+      "xhs": "efb92f66fae31f2752a28e167af5b4cfed0456cbb34533a80247029987f59074",
+      "reason": "旧格式均可读；网页版保留 WASM，离线版使用 JS 历史解码。"
+    },
+    "src/save-image-worker.js": {
+      "web": "b98afd25a33d6151d22f9e6c7c1df1f5824a03b6a52b04215bf1d2c5cb25ceed",
+      "xhs": "35e5e39977d3a706c60d351e132cf70b0c4144e81813956e821c808906f5ef40",
+      "reason": "小红书移除 Worker 入口，保留对应主线程任务。"
+    },
+    "src/save-task.js": {
+      "web": null,
+      "xhs": "d5780466da3eb54d12a5f31ab74426a81d3fe192b800371e73aedd481237ac69",
+      "reason": "小红书本地主线程存档任务，代替 Worker。"
+    },
+    "src/save-ui.js": {
+      "web": "1f2aea91607bf404131d5796a50bdce4108714625e342e8e46cdd3420ce40c28",
+      "xhs": "f983d2609b87cc05ab4eb8a8444c680c29849964b02b875eb271552eab9cb788",
+      "reason": "公共：导入备份读取回退 previous。小红书保留主线程 saveTask；网页保留 Worker。"
+    },
+    "src/score-player.js": {
+      "web": null,
+      "xhs": "173185bd803fb0797244915f2f3667cb135922ed8609b78d5ed7824077fe497f",
+      "reason": "小红书曲谱合成播放，网页版保留原音轨。"
+    },
+    "src/share-platform.js": {
+      "web": "9e76d41d0824bd2e3f5f795c824359462670830fcb443b76f7a1679a9b6265c5",
+      "xhs": null,
+      "reason": "网站分享接口仅网页版存在。"
+    },
+    "src/share-ui.js": {
+      "web": "6bc8e9c26a48afc09065eb88c8a67acd58ca269522ab85700572337b900799c2",
+      "xhs": "5bb0e75f7d3a91d650d95d23393e33729091791681004efac7a127d381abc42c",
+      "reason": "共用内容卡面 controller；网页保留文件分享和邀请链接，小红书存相册与 postNote 原生编辑页。"
+    },
+    "src/site-brand.js": {
+      "web": "3c5ecae567a8b56a9dc0c7fadd55232301bf6de93952e374c3949d01b89f1a1c",
+      "xhs": "1dc73d476bcd4a45b23b1558060aaa197431ac6dc5a08ee8d756c7c2e6330bc7",
+      "reason": "小红书主站品牌入口为空；原站入口保留。"
+    },
+    "src/vendor/brotli/bit_reader.js": {
+      "web": null,
+      "xhs": "1c7488ebdbcb2dba8a61965f5458452fe8cac38c06c3db0cc5184408a5aacf77",
+      "reason": "小红书历史 Brotli 纯 JS 解码依赖；网页版保持原路径。"
+    },
+    "src/vendor/brotli/context.js": {
+      "web": null,
+      "xhs": "5cd72c7ce643693ff902cd9c1ada003b45f70b4daec1bfb1a6a4a842efca811e",
+      "reason": "小红书历史 Brotli 纯 JS 解码依赖；网页版保持原路径。"
+    },
+    "src/vendor/brotli/decode.js": {
+      "web": null,
+      "xhs": "7110957e493317aeddc1b46e0914676733ea0320478dab29023fde75d4700a27",
+      "reason": "小红书历史 Brotli 纯 JS 解码依赖；网页版保持原路径。"
+    },
+    "src/vendor/brotli/dictionary-data.js": {
+      "web": null,
+      "xhs": "e2a9bd8348d01afc08f49730d08b7f33fc5dbbc198cdea54da49afbeae45da4d",
+      "reason": "小红书历史 Brotli 纯 JS 解码依赖；网页版保持原路径。"
+    },
+    "src/vendor/brotli/dictionary.js": {
+      "web": null,
+      "xhs": "f7bd7462acad204047edc609009dfeb28239f14fe6f06ca42661f1d751382946",
+      "reason": "小红书历史 Brotli 纯 JS 解码依赖；网页版保持原路径。"
+    },
+    "src/vendor/brotli/huffman.js": {
+      "web": null,
+      "xhs": "69cb67902c20896c89ae679d7c71b1f2274b34c51d4b235865396187f6d7e572",
+      "reason": "小红书历史 Brotli 纯 JS 解码依赖；网页版保持原路径。"
+    },
+    "src/vendor/brotli/package.json": {
+      "web": null,
+      "xhs": "21f27c86daff5db989008e4ad4203fd1cfd8134e3e0de987c524230c7a3ea891",
+      "reason": "小红书历史 Brotli 纯 JS 解码依赖；网页版保持原路径。"
+    },
+    "src/vendor/brotli/prefix.js": {
+      "web": null,
+      "xhs": "e65fb2183d6fc1058020ba55939ea08334d39ae33bf4832d952d9acab5db2d8a",
+      "reason": "小红书历史 Brotli 纯 JS 解码依赖；网页版保持原路径。"
+    },
+    "src/vendor/brotli/streams.js": {
+      "web": null,
+      "xhs": "90e23fca221adbfafd4cda38934920648781f4bb65d993fd6187fb7b270513ea",
+      "reason": "小红书历史 Brotli 纯 JS 解码依赖；网页版保持原路径。"
+    },
+    "src/vendor/brotli/transform.js": {
+      "web": null,
+      "xhs": "56c0ebea0ce70b4d7afa7225eca2e5c9e0046dbdc9a4d6b568c5d5f4b47f170b",
+      "reason": "小红书历史 Brotli 纯 JS 解码依赖；网页版保持原路径。"
+    },
+    "src/web-catalog.js": {
+      "web": "555377958ca3e30133f3a681a0ea0e240f8f2b090ae52af501e3682408ce3514",
+      "xhs": "0ef7be6cb84dab25c517828679c48833593889452dcadfd3930a35038a9f15a4",
+      "reason": "小红书网页装扮说明去除站外网址／二维码语义。"
+    },
+    "src/world.js": {
+      "web": "234d8f081951ba157a1a5184c021efdd089fd3964f0d81a680a549f9f0d8ec3c",
+      "xhs": "d2c938435fd81bbc5c6338ff4031d86b6fe29c3e037f3c07a6387dc1bbfe3285",
+      "reason": "本批选址优化共用；仅小红书用自适应帧率替代固定 30FPS。旧平台材料、备用渲染与安全区差异逐段保留。"
+    },
+    "src/xhs-album.js": {
+      "web": null,
+      "xhs": "ceb9d9118ec7c83e7b5575d8ee39c276d5bbabcac6733dcf9915859e0e657366",
+      "reason": "小红书相册桥接 API。"
+    },
+    "src/xhs-compat.js": {
+      "web": null,
+      "xhs": "177a0f162a18afd9a05438fff27e25af13434ed0a5d9499fe95b82fe1a476a23",
+      "reason": "小红书旧 API 兼容与容器安全区读取；支持平台 CSS 变量、系统 env 和零值回退。"
+    },
+    "src/xhs-entry.js": {
+      "web": null,
+      "xhs": "0e8272c0b096442f2275defeb0a04934b466d897ec5aa5bf11837bd3d1fbaebb",
+      "reason": "小红书独立启动与安全区样式；网页版不加载平台布局。"
+    },
+    "tests/narrative-copy-round-one.test.js": {
+      "web": "e887ec100a0c2e41af471518e7a1f3205b03cf43ed2289898ff927a27a2af370",
+      "xhs": "41a082d54447da86a561703a48cceb1841953313e8c67b9672d98c23fd9f0a30",
+      "reason": "小红书朋友介绍期望包含下方菜单位置；未放宽时序、重复播放或开场引导断言。"
+    },
+    "tests/narrative-purchase-order.test.js": {
+      "web": "3b6903ae6317903d0f722477095f049987ddf50fc6e3ae4670af7c4bdb96efd8",
+      "xhs": "d50821fffe39cd0b19c143b611d5ffa0a3a82fc3dfca01f0263470dfa5d64d04",
+      "reason": "已核查的平台差异测试：离线解码、分享／来信文案、渲染预算或发行后缀；公共断言保留。"
+    },
+    "tests/release.test.js": {
+      "web": "7d6347a918b895ad9035391087a501c0c8c7433d98d01e587e957e65ff0b79ed",
+      "xhs": "5776ed6b682ab91e636deeab26330d5aa345f865f50fa71e5e52072424a3a48b",
+      "reason": "小红书 changelog 版本正则额外匹配 -xhs.N；schema 断言相同。"
+    },
+    "tests/save-brotli.test.js": {
+      "web": "743934d06e366be9dadd77450c13abf06be6b5474589fb5a43aa309a34b57548",
+      "xhs": "2d44d16075f8e51cb7011909961414b52bf409abd113c353e2aff530679aafa3",
+      "reason": "已核查的平台差异测试：离线解码、分享／来信文案、渲染预算或发行后缀；公共断言保留。"
+    },
+    "tests/save-transcripts.test.js": {
+      "web": "b0996e37c106a45dc7395bf04ae25dbd90b2f5302525c36facfcc48bd5a7d8ed",
+      "xhs": "ba3855416d344d3dd01216a922ce5b5dc8606fffe63073e9d3ffb92c5b4af267",
+      "reason": "已核查的平台差异测试：离线解码、分享／来信文案、渲染预算或发行后缀；公共断言保留。"
+    },
+    "tests/share-platform.test.js": {
+      "web": "232fef83f0abc8ae2254d60c8b8d32eabcf2b23fec40514902b5c76b33af6ab5",
+      "xhs": null,
+      "reason": "已核查的平台差异测试：离线解码、分享／来信文案、渲染预算或发行后缀；公共断言保留。"
+    },
+    "tests/studio-people-view.test.js": {
+      "web": "ffacb6a637d49c666176611931b9d56f7f37fc0627ba0bc17f147bb6b48346b2",
+      "xhs": "4586159638d19b4e36a5c41d8e8dc80bd7de3f3e194b236f4d2186447623a3ae",
+      "reason": "已核查的平台差异测试：离线解码、分享／来信文案、渲染预算或发行后缀；公共断言保留。"
+    },
+    "tests/viewport-sync.test.js": {
+      "web": "b39605bf0184d9fd07e40a7b423b31c327fd45c8e589045be3f518171bd9fdaa",
+      "xhs": "7095c118b7fbdeee421320494c8ed39b6dc6b3b34d832649df673831d5ad1c88",
+      "reason": "已核查的平台差异测试：离线解码、分享／来信文案、渲染预算或发行后缀；公共断言保留。"
+    },
+    "tests/xhs-adaptation.test.js": {
+      "web": null,
+      "xhs": "116db1f86e1244ea8405dad8712080c9734f6f7a1a58499f7d461aa0cd313f6a",
+      "reason": "已核查的平台差异测试：离线解码、分享／来信文案、渲染预算或发行后缀；公共断言保留。"
+    },
+    "src/xhs-layout.css": {
+      "web": null,
+      "xhs": "551e4d6c8985999c65e8eb8babf059f950720909545e7038e19fb4e12a594fc6",
+      "reason": "小红书独有原生安全区与底部菜单；从旧分享 CSS 接回既有渲染降级提示样式。"
+    },
+    "tests/xhs-safe-area.test.js": {
+      "reason": "小红书离线 CSS 安全区兼容回归，覆盖带 fallback 的 env 转换。",
+      "web": null,
+      "xhs": "ba87832802bee32afda803f2248e3dab009500b124101864e99f0e5b3cbc29ee"
+    },
+    "src/xhs-session.js": {
+      "web": null,
+      "xhs": "910861334d889d07aa6e0854abcb139ac695697851615629ae93b858cd3f225a",
+      "reason": "小红书独立启动门槛与原生容器生命周期，网页版保留原窗口焦点与直接进入规则。"
+    },
+    "src/xhs-start.js": {
+      "web": null,
+      "xhs": "46d45fa14220cb0264b1a9af7fc1e01f09a0d2d9ec97421b0395fe1912e72459",
+      "reason": "小红书独立启动门槛与原生容器生命周期，网页版保留原窗口焦点与直接进入规则。 本批公共启动保护已逐段核查；保持原平台入口、布局与渲染预算。"
+    },
+    "tests/xhs-session.test.js": {
+      "web": null,
+      "xhs": "8f4a97336a44de1976feea5a3390df5bcd5c8c48cecd060fc27ffae36e755ccf",
+      "reason": "小红书独立启动门槛与原生容器生命周期，网页版保留原窗口焦点与直接进入规则。"
+    },
+    "public/cover/village.webp": {
+      "web": null,
+      "xhs": "f532b17ce74944cba0b5fe2531df743adc2aa1989e7950395a7e740c44052e62",
+      "reason": "小红书开始屏专用静态封面，由本游戏真实模型离线渲染；网页版保持直接进入自己的世界。"
+    },
+    "src/catalog.js": {
+      "web": "e66e157f2116a92930c2da85fd71cf642723e0d9b83952207ffd0b4195104bdc",
+      "xhs": "bde405bd8061e9dafc8fed0e6294c39133221b5823a3fd25540f15b2ff08a92b",
+      "reason": "广播价格与研究分期共同同步；唯一差异仍是小红书图鉴在下方菜单的说明。"
+    },
+    "src/mobile-tools.js": {
+      "web": "b6f5e7d01ab17e62f2517b1f44fc8d4cc0647efb16448ef5b30c37f1adc7ead6",
+      "xhs": "bee00ab81f7d1f03a49fdc826aa76c43cb86662cd403db0bdd67a05ec725d4c0",
+      "reason": "小红书菜单按底部按钮位置向上展开，active 同快捷栏，调整尺寸关闭；网页版沿用顶部菜单。"
+    },
+    "src/xhs-note.js": {
+      "web": null,
+      "xhs": "75de0dfe54eda42f058846d7bf2a70737ce7ee9810695493049944ca4648ba06",
+      "reason": "小红书独有 postNote / writeTempFile 桥接；只打开可编辑草稿，不自行发布，不含外链或二维码。"
+    },
+    "src/xhs-frame-pacer.js": {
+      "web": null,
+      "xhs": "1d7e79da11ca429f0ef8814c01c391c0190f4547e612f75ecd068158cb59c8d5",
+      "reason": "小红书独有帧调度：60 起步、低负载允许 90/120、持续吃紧降至 30；不修改经济时钟、像素尺寸或场景细节。"
+    },
+    "tests/xhs-note.test.js": {
+      "web": null,
+      "xhs": "9766f973b5931cf603c9d51bfdb410c19c9d3bfece459232237282389f4ea384",
+      "reason": "小红书独有原生笔记桥接与帧率调度回归，所有调用为受控 mock。"
+    }
+  },
+  "visualTolerance": {
+    "changedPixelFraction": 0.05,
+    "normalizedMeanChannelDifference": 0.05,
+    "geometryAndEconomyMustRemainUnchanged": true
+  }
+}

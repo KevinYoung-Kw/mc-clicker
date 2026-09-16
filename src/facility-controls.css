@@ -1,0 +1,199 @@
+/* Shared equipment tools: position, layout, management and run control. */
+body #panel button.facility-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
+  flex: 0 0 36px;
+  padding: 0;
+  margin: 0;
+  color: var(--ink);
+  background: var(--web-inner, var(--paper));
+  border: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+  vertical-align: middle;
+}
+body #panel button.facility-icon:hover { border-color: var(--green); }
+body #panel button.facility-icon:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+body #panel button.facility-icon:active { translate: 0 1px; }
+body #panel button.device-toggle[data-run-state="enabled"] {
+  background: var(--green);
+  color: var(--web-action-text, #fffaf0);
+  border-color: var(--green);
+}
+body #panel button.device-toggle[data-run-state="paused"] {
+  background: #88888820;
+  border-color: #88888870;
+  color: var(--muted);
+}
+.item-toolbar, .room-item-tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.item-toolbar > div, .room-item-tools { display: flex; gap: 8px; }
+.item-toolbar .item-back { margin: 0; padding: 6px 0; min-height: 36px; }
+.room-item-tools { justify-content: flex-end; }
+body #panel .item-hero { margin-bottom: 20px; }
+body #panel .detail-stats { padding: 0 0 18px; gap: 28px; }
+body #panel .detail-stats strong { margin-top: 6px; font-size: 18px; font-variant-numeric: tabular-nums; }
+body #panel .management-equipment .equipment-heading {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+}
+.equipment-heading > strong { font-size: 14px; line-height: 1.5; }
+.task-card > header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.connection-actions > div { min-height: 40px; }
+
+/* The balance and rate own their space. Neither moves its neighbours per tick. */
+.hud { gap: 18px; }
+.hud > .wallet { flex-shrink: 0; gap: 8px; }
+.hud .wallet > .emerald { width: 15px; height: 23px; flex: 0 0 15px; }
+.hud #income-open { display: grid; grid-template-columns: 9.2ch 134px; gap: 12px; font-size: 28px; }
+.hud #income-open #money {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hud .income-rate { display: grid; grid-template-columns: minmax(0,1fr) auto 14px; gap: 4px; min-width: 0; width: 100%; }
+.hud #rate { display: block; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.hud .income-indicator { margin: 0; }
+.hud #population { min-width: 74px; font-variant-numeric: tabular-nums; }
+.hud #power-top { width: 116px; font-variant-numeric: tabular-nums; }
+.income-balance { display: grid; gap: 6px; margin-top: 18px; }
+.income-balance small, .income-units { color: var(--muted); font-size: 11px; line-height: 1.6; }
+.income-balance b { font-variant-numeric: tabular-nums; overflow-wrap: anywhere; font-size: 18px; }
+.income-units { display: block; margin: 6px 0 14px; }
+#modal .income-total { display: block; }
+
+@media (min-width: 760px) and (max-width: 1100px) {
+  .hud { gap: 10px; padding-inline: 14px; }
+  .hud #income-open { font-size: 24px; grid-template-columns: 9.2ch 124px; gap: 8px; }
+  .hud #income-open #money { font-size: 24px; }
+  .hud #population { display: none; }
+  .hud-tools { gap: 3px; }
+}
+@media (max-width: 759px) {
+  .hud { gap: 7px; }
+  .hud > .wallet { min-width: 0; }
+  .hud > .wallet > div { width: 100%; }
+  .hud .wallet > .emerald { width: 10px; height: 18px; flex-basis: 10px; }
+  .hud #income-open { display: grid; grid-template-columns: minmax(0,1fr); grid-template-rows: 27px 18px; gap: 0; width: 100%; min-height: 45px; }
+  .hud #income-open #money { font-size: 23px; line-height: 27px; }
+  .hud .income-rate { width: min(116px,100%); min-height: 18px; padding: 0 2px; gap: 2px; }
+  .hud #power-top { width: 98px; max-width: 98px; }
+  body #panel button.facility-icon { width: 44px; height: 44px; min-width: 44px; min-height: 44px; flex-basis: 44px; }
+  .item-toolbar, .room-item-tools { gap: 8px; margin-bottom: 10px; }
+  .item-toolbar > div { gap: 6px; }
+  body #panel-content[data-item-view] > .item-toolbar { order: -4; }
+  body #panel .item-hero { margin-bottom: 16px; }
+  body #panel .detail-stats { padding-bottom: 14px; }
+  .equipment-heading > strong { font-size: 13px; }
+  body #panel .management-equipment .equipment-heading { gap: 4px; }
+}
+
+/* Live cargo changes inside a stable ledger, not a growing sentence. */
+.market-shipped { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 28px; }
+.market-shipped b { width: 14ch; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.market-cargo { margin: 12px 0 20px; border: 1px solid var(--line); padding: 10px; }
+.market-cargo-summary { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+.market-cargo-summary > span { display: grid; gap: 4px; color: var(--muted); font-size: 11px; }
+.market-cargo-summary b { display: block; height: 22px; font-size: 13px; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.market-cargo .cargo-list { height: 184px; overflow-y: auto; overflow-x: hidden; scrollbar-gutter: stable; overscroll-behavior: contain; }
+.market-cargo .cargo-columns, .market-cargo .cargo-list > div {
+  display: grid; grid-template-columns: minmax(0,1fr) 9ch 5em; align-items: center; gap: 10px;
+  font-size: 12px; line-height: 20px;
+}
+.market-cargo .cargo-columns { padding: 4px 10px 7px 0; color: var(--muted); border-bottom: 1px solid var(--line); }
+.market-cargo .cargo-list > div { height: 44px; padding: 8px 0; border-color: var(--line); }
+.market-cargo :is(.cargo-columns, .cargo-list > div) > :nth-child(2) { text-align: right; font-variant-numeric: tabular-nums; }
+.market-cargo :is(.cargo-columns, .cargo-list > div) > :last-child { text-align: center; }
+.market-cargo .cargo-list :is(strong,span) { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.market-cargo .cargo-list .cargo-state { color: var(--muted); }
+.market-cargo .cargo-list [data-cargo-state="moving"] .cargo-state { color: var(--green); font-weight: 650; }
+.cargo-empty { margin: 14px 0; color: var(--muted); font-size: 12px; }
+.production-summary { margin: 8px 0 20px; border-block: 1px solid var(--line); padding: 12px 0; }
+.production-summary header, .production-cause { display:flex; justify-content:space-between; align-items:center; gap:12px; min-height:36px; }
+.production-summary header span { color:var(--muted); font-size:11px; }
+.production-summary dl { margin:10px 0; display:grid; grid-template-columns:1fr 1fr; gap:8px 16px; }
+.production-summary dl > div { min-width:0; }
+.production-summary dt { color:var(--muted); font-size:11px; line-height:20px; }
+.production-summary dd { margin:0; display:flex; align-items:baseline; gap:5px; height:24px; }
+.production-summary dd b { font-size:14px; font-variant-numeric:tabular-nums; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.production-summary dd small { white-space:nowrap; color:var(--muted); font-size:10px; }
+.production-cause { border-top:1px solid var(--line); padding-top:8px; font-size:12px; }
+.production-cause span { min-width:0; }
+.production-cause button { flex-shrink:0; }
+.production-summary[data-tone="blocked"] .production-cause span { font-weight:650; }
+.market-cargo { border:0; border-block:1px solid var(--line); padding-inline:0; }
+.market-cargo h4,.market-receipts h4 { font-size:13px; margin:0 0 10px; }
+.market-receipts { margin:16px 0 20px; }
+.receipt-columns, [data-market-receipts] > [data-receipt] { display:grid; grid-template-columns:minmax(0,1fr) 8ch 10ch; gap:8px; align-items:center; font-size:12px; }
+.receipt-columns { color:var(--muted); padding:6px 0; border-bottom:1px solid var(--line); }
+[data-market-receipts] { height:144px; overflow:auto; scrollbar-gutter:stable; overscroll-behavior:contain; }
+[data-receipt] { height:44px; border-bottom:1px solid var(--line); }
+[data-receipt] > * { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+[data-receipt] > :not(:first-child), .receipt-columns > :not(:first-child) { text-align:right; font-variant-numeric:tabular-nums; }
+.market-receipts > small { display:block; margin-top:8px; color:var(--muted); font-size:11px; }
+.trade-contract { font-variant-numeric: tabular-nums; }
+.trade-contract header { display: grid; grid-template-columns: minmax(0,1fr) 17ch; gap: 10px; min-height: 40px; }
+.trade-contract header strong { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.trade-contract header > span { white-space: nowrap; text-align: right; }
+.trade-contract .trade-receipt { display: flex; justify-content: space-between; gap: 8px; min-height: 28px; align-items: center; font-size: 11px; }
+.trade-receipt [data-order-time] { width: 6ch; white-space: nowrap; }
+.trade-receipt [data-order-reward] { white-space: nowrap; }
+@media(max-width:759px) {
+ .market-cargo { padding: 8px; }
+ .market-cargo .cargo-list { height: 140px; }
+ .market-cargo .cargo-columns, .market-cargo .cargo-list > div { font-size: 11px; gap: 6px; }
+}
+
+/* Shared world-management entry and storage review; secondary actions stay quiet. */
+.building-management-toolbar, .building-management-toolbar > div {
+  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+}
+.building-management-toolbar { justify-content:space-between; padding-bottom:12px; margin-bottom:10px; border-bottom:1px solid var(--line); }
+body #panel .building-management-toolbar button { display:inline-flex; align-items:center; gap:6px; min-height:40px; padding:7px 9px; margin:0; font-size:12px; }
+.storage-review { color:var(--ink); }
+.storage-review > header { display:flex; align-items:flex-start; gap:12px; margin-bottom:20px; }
+.storage-review > header > span { padding-top:4px; color:var(--muted); }
+.storage-review h2 { margin:0 0 8px; font-size:20px; line-height:1.4; }
+.storage-review p { font-size:13px; line-height:1.75; margin:0; }
+.storage-review header p, .storage-hint { color:var(--muted); }
+.storage-review dl { margin:0 0 18px; }
+.storage-review dl > div { display:grid; grid-template-columns:72px minmax(0,1fr); gap:12px; padding:12px 0; border-bottom:1px solid var(--line); font-size:13px; line-height:1.6; }
+.storage-review dt { color:var(--muted); }.storage-review dd { margin:0; }
+.storage-blocker strong { display:block; margin-bottom:6px; font-size:14px; }
+.storage-review .modal-actions { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px; margin-top:22px; }
+.storage-review .modal-actions button { display:inline-flex; align-items:center; justify-content:center; gap:6px; min-height:44px; margin:0; }
+.housing-building-tools { display:flex; gap:6px; }
+body #panel .housing-address-heading { grid-template-columns:56px minmax(0,1fr) auto; gap:10px; }
+body #panel .housing-address-heading img { width:56px; height:56px; }
+body #panel .housing-address-heading h3 { margin:0 0 6px; line-height:1.5; overflow-wrap:anywhere; }
+@media(max-width:400px){
+  body #panel .building-management-toolbar { gap:4px; }
+  body #panel .building-management-toolbar button { padding-inline:5px; }
+  body #panel .housing-address-heading { grid-template-columns:44px minmax(0,1fr) auto; gap:7px; }
+  body #panel .housing-address-heading img { width:44px; height:44px; }
+  .housing-building-tools { gap:4px; }
+}
+body #panel .building-management-toolbar button { width:auto; flex:0 0 auto; }
+#modal-content .storage-review h2 { margin:0 24px 8px 0; font-size:20px; line-height:1.4; }

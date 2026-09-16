@@ -1,0 +1,29 @@
+/* Atlas pages share the game's flat rows, theme palette and touch targets. */
+.achievement-heading{display:flex;align-items:center;gap:12px;padding:24px 0 18px}
+.achievement-bookmark{display:grid;place-items:center;width:46px;height:52px;color:var(--green);border:1px solid var(--line);border-bottom:4px solid var(--green);flex:none}
+.achievement-heading h3{font-size:17px;margin:0 0 5px;font-weight:700}
+.achievement-heading p{font-size:12px;margin:0;color:var(--muted);font-variant-numeric:tabular-nums}
+.achievement-heading p b{color:var(--ink)}
+.achievement-toggle{margin-left:auto;display:flex;align-items:center;gap:5px;min-height:44px;font-size:12px;white-space:nowrap;cursor:pointer}
+.achievement-toggle input{accent-color:var(--green);width:16px;height:16px}
+.achievement-filters{display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid var(--line)}
+.achievement-filters button{border:0;border-bottom:2px solid transparent;background:transparent;color:var(--muted);min-height:44px;padding:8px 3px;font-size:12px;box-shadow:none}
+.achievement-filters button.active{border-bottom-color:var(--green);color:var(--ink);font-weight:700;background:var(--paper)}
+.achievement-note{font-size:11px;color:var(--muted);margin:12px 0 0}
+.achievement-row{display:flex;gap:13px;padding:22px 0;border-bottom:1px solid var(--line)}
+.achievement-medal{position:relative;display:grid;place-items:center;flex:none;width:40px;height:44px;color:var(--muted);border:1px solid var(--line);border-bottom-width:3px;background:var(--paper)}
+.achievement-medal i{display:none;position:absolute;right:-4px;bottom:-4px;background:var(--green);color:var(--paper);padding:2px;line-height:0}
+.achievement-row.earned .achievement-medal{color:var(--ink);border-color:var(--gold);background:color-mix(in srgb,var(--gold) 20%,var(--paper))}
+.achievement-row.earned .achievement-medal i{display:block}
+.achievement-body{min-width:0;flex:1}
+.achievement-title{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.achievement-title h3{font-size:14px;line-height:1.5;margin:0;font-weight:700;color:var(--ink)}
+.achievement-title [data-achievement-status]{flex:none;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.achievement-row.earned [data-achievement-status]{color:var(--green)}
+.achievement-condition{font-size:12px;line-height:1.75;margin:7px 0 10px;color:var(--ink)}
+.achievement-progress{height:3px;background:var(--line);overflow:hidden}
+.achievement-progress>span{display:block;height:100%;background:var(--green)}
+.achievement-flavor{font-size:11px;line-height:1.7;margin:10px 0 0;color:var(--muted)}
+.achievement-go{display:flex;align-items:center;gap:6px;min-height:36px;margin:7px 0 -8px;padding:0;border:0;background:transparent;color:var(--green);font-size:12px;box-shadow:none}
+.achievement-empty{display:flex;gap:10px;align-items:center;font-size:13px;color:var(--muted);line-height:1.8;padding:30px 0}
+@media(max-width:760px){.achievement-heading{gap:9px;padding-top:18px}.achievement-heading h3{font-size:15px}.achievement-bookmark{width:34px;height:42px}.achievement-row{gap:10px}.achievement-medal{width:32px;height:38px}.achievement-title{flex-wrap:wrap;gap:2px 10px}.achievement-title h3{font-size:14px}.achievement-go{min-height:44px}.achievement-note{font-size:11px}}

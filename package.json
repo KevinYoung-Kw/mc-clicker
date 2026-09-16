@@ -1,0 +1,23 @@
+{
+  "name": "mc-clicker",
+  "version": "2.0.0-alpha.8",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test tests/*.test.js",
+    "balance": "node scripts/balance.mjs",
+    "check:editions": "node scripts/check-edition-sync.mjs"
+  },
+  "dependencies": {
+    "@zxing/library": "0.21.3",
+    "brotli-wasm": "3.0.1",
+    "fflate": "0.8.3",
+    "three": "0.185.1"
+  },
+  "devDependencies": {
+    "vite": "^7.3.0"
+  }
+}

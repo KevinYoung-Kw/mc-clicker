@@ -1,0 +1,15 @@
+<!doctype html><meta charset="utf-8"><title>存档卡 · 离屏取景</title>
+<script type="module">
+import {World} from '../../src/world.js';
+window.captureSaveWorld=async snapshot=>{
+ const host=document.createElement('div');
+ host.style.cssText='position:fixed;left:-10000px;top:0;width:800px;height:500px;pointer-events:none;visibility:hidden;contain:strict';
+ document.body.append(host);let world;
+ try{
+  world=new World(host,()=>{},{autoStart:false});
+  world.renderer.setPixelRatio(1);world.time=snapshot.play;world.view='overworld';
+  world.sync(snapshot);world.update(true,true);
+  return world.captureCurrentScene({width:1296,height:790});
+ }finally{if(world){world.destroy();world.renderer.forceContextLoss()}host.remove()}
+};
+</script>

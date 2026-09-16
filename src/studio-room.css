@@ -1,0 +1,1124 @@
+/* A room to inhabit. These overrides replace the old television/console layout. */
+.broadcast-stage{padding:0 0 18px;margin:0 0 20px;border-bottom:1px solid var(--line)}
+.broadcast-stage ol{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;list-style:none;padding:0;margin:0 0 18px}
+.broadcast-stage li{display:flex;align-items:center;justify-content:center;gap:5px;padding:8px 1px;color:var(--muted);font-size:12px;border-bottom:2px solid var(--line)}
+.broadcast-stage li[aria-current]{color:var(--ink);border-color:var(--green);background:color-mix(in srgb,var(--green) 13%,transparent);font-weight:700}
+.broadcast-stage li[data-complete="true"]{color:var(--green);border-color:var(--green)}
+.broadcast-heading{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:4px 10px}
+.broadcast-heading h4{margin:0!important}.broadcast-heading>span{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.broadcast-stage p{margin:8px 0 4px;font-size:13px;line-height:1.7;color:var(--muted)}
+.broadcast-stage>button{display:flex;align-items:center;gap:8px;min-height:40px;padding:6px 0;margin-top:4px;font-size:13px}
+@media(max-width:360px){.broadcast-stage li{gap:3px}.broadcast-stage li svg{width:14px;height:14px}}
+body.live-page {
+  --paper: #f4efdf;
+  --ink: #4e5541;
+  --muted: #8a9278;
+  --line: #d4d5bc;
+  --green: #7c9767;
+  background: #e9e3d0;
+  color: #4e5541;
+}
+body.live-page .hud {
+  background: #f3eedf;
+  border-color: #d6d4bb;
+  color: #62774f;
+  box-shadow: none;
+}
+body.live-page .hud .square {
+  color: #7c8b6c;
+}
+body.live-page #game {
+  --room-side: 0px;
+  --room-sheet: min(36svh, 330px);
+  background: #e9e3d0;
+}
+body.live-page #game.panel-open {
+  --room-side: 374px;
+}
+body.live-page #game #stage,
+body.live-page #game.panel-open #stage {
+  inset: 62px calc(18px + var(--room-side)) 124px 18px;
+  width: auto;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: hidden;
+  transition: none;
+}
+body.live-page #stage > #world {
+  border: 0;
+  border-radius: 0;
+}
+body.live-page #studio-header {
+  inset: 0 24px auto;
+  height: 56px;
+  gap: 22px;
+  z-index: 12;
+  color: #6c785a;
+  pointer-events: none;
+}
+body.live-page #studio-header > * {
+  pointer-events: auto;
+}
+body.live-page #studio-header > button {
+  min-height: 44px;
+  color: #667953;
+  font-size: 12px;
+  padding: 9px 0;
+}
+body.live-page #studio-header > span {
+  font-size: 15px;
+  color: #646d50;
+  letter-spacing: 0.7px;
+  gap: 9px;
+}
+body.live-page #studio-header > span i {
+  width: 6px;
+  height: 6px;
+  background: #b19463;
+  box-shadow: none;
+}
+body.live-page #studio-header > span b {
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  color: #a39776;
+}
+body.live-page #studio-header small {
+  margin-left: auto;
+  color: #9b9c82;
+  font-size: 10px;
+}
+body.live-page #room-tools {
+  position: absolute;
+  bottom: 16px;
+  left: calc((100% - var(--room-side)) / 2);
+  transform: translateX(-50%);
+  display: flex;
+  align-items: stretch;
+  gap: 5px;
+  width: max-content;
+  max-width: calc(100% - var(--room-side) - 28px);
+  min-height: 65px;
+  padding: 6px;
+  background: #f4efdf;
+  border: 1px solid #bdc6a9;
+  box-shadow: 3px 4px 0 #9b9b7340;
+  z-index: 13;
+}
+body.live-page #room-tools > button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-width: 64px;
+  min-height: 50px;
+  padding: 7px 13px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0;
+  color: #7c8768;
+  font-size: 10px;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+body.live-page #room-tools > button svg {
+  width: 19px;
+  height: 19px;
+}
+body.live-page #room-tools > button.active,
+body.live-page #room-tools > button[aria-selected="true"],
+body.live-page #room-tools > button[aria-pressed="true"] {
+  background: #e2e8d1;
+  border-color: #bccaa3;
+  color: #5d7746;
+  box-shadow: inset 0 -2px #91a570;
+}
+body.live-page #room-tools #room-close-panel {
+  min-width: 42px;
+  padding-inline: 10px;
+  border-left-color: #d9dcc6;
+  color: #9c977c;
+}
+body.live-page #game:not(.panel-open) #room-close-panel {
+  display: none;
+}
+body.live-page #room-tools #room-gifts {
+  color: #8c7952;
+}
+body.live-page #room-gifts b {
+  font-size: 10px;
+  color: #9b7646;
+}
+body.live-page #room-camera-tools {
+  position: absolute;
+  display: flex;
+  gap: 4px;
+  bottom: 92px;
+  left: 24px;
+  padding: 4px;
+  border: 1px solid #c8cdb1;
+  background: #f2eddd;
+  box-shadow: 2px 2px 0 #b5b49830;
+  z-index: 12;
+}
+body.live-page #room-camera-tools button {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 12px;
+  font-size: 11px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0;
+  color: #7c8868;
+}
+body.live-page #room-camera-tools #room-rotate-left,
+body.live-page #room-camera-tools #room-rotate-right {
+  font-size: 23px;
+}
+body.live-page #room-camera-tools #room-monitor {
+  border-left-color: #d7d9c2;
+  color: #8b805f;
+}
+body.live-page #room-camera-tools #room-monitor.active,
+body.live-page #room-camera-tools #room-monitor[aria-pressed="true"] {
+  background: #e2e7d2;
+  color: #587347;
+}
+body.live-page #game #studio-console {
+  inset: auto calc(24px + var(--room-side)) 92px auto;
+  width: auto;
+  height: auto;
+  min-height: 52px;
+  display: flex;
+  gap: 5px;
+  padding: 4px;
+  border: 1px solid #c9c9ac;
+  border-radius: 0;
+  background: #f3eddb;
+  color: #747f5e;
+  box-shadow: 2px 2px 0 #b5b49830;
+  z-index: 12;
+}
+body.live-page #studio-console .console-channel,
+body.live-page #studio-console .studio-heat,
+body.live-page #studio-console #studio-prev,
+body.live-page #studio-console #studio-next {
+  display: none !important;
+}
+body.live-page #studio-console button,
+body.live-page #studio-console #studio-host,
+body.live-page #studio-console #studio-respond {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 13px;
+  background: #e1e7cd;
+  border: 1px solid #b6c29e;
+  border-radius: 0;
+  color: #62794b;
+  font-size: 11px;
+  box-shadow: inset 0 2px #f4f3df;
+  transform: none;
+}
+body.live-page #studio-console #studio-respond {
+  background: #ece8d4;
+  border-color: #c7c8aa;
+  color: #8b815d;
+}
+body.live-page #studio-console button:active,
+body.live-page #studio-console button.holding {
+  background: #ccd8b4;
+  box-shadow: inset 0 2px #aab88e;
+}
+body.live-page #room-tools button:focus-visible,
+body.live-page #room-camera-tools button:focus-visible,
+body.live-page #studio-console button:focus-visible,
+body.live-page #panel-content button:focus-visible {
+  outline: 2px solid #aa925b;
+  outline-offset: 2px;
+}
+body.live-page #game #panel {
+  inset: 62px 18px 16px auto;
+  width: 350px;
+  height: auto;
+  border: 1px solid #bbc7a6;
+  border-radius: 0;
+  background: #f4efdf;
+  color: #566047;
+  box-shadow: 4px 4px 0 #8e987238;
+  z-index: 11;
+  padding-bottom: 0;
+}
+body.live-page #panel-content {
+  padding: 20px 17px 24px;
+  min-height: 0;
+  flex: 1;
+  color: #667355;
+  scrollbar-color: #bfcaab transparent;
+}
+body.live-page #panel-content .room-panel-heading {
+  padding-bottom: 16px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #d5d9bd;
+}
+body.live-page .room-panel-heading .eyebrow {
+  font-size: 8px;
+  letter-spacing: 1.2px;
+  color: #a2a487;
+}
+body.live-page .room-panel-heading h2 {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #566247;
+  margin: 6px 0 7px;
+  letter-spacing: 0.3px;
+}
+body.live-page .room-panel-heading p {
+  font-size: 11px;
+  line-height: 1.8;
+  margin: 0;
+  color: #8b9478;
+}
+body.live-page #panel-content h4 {
+  color: #71815a;
+  font-size: 12px;
+}
+body.live-page .panel-note,
+body.live-page .empty-note,
+body.live-page .chat-head span {
+  color: #919b7c;
+  font-size: 11px;
+  line-height: 1.8;
+}
+body.live-page .quiet-button {
+  min-height: 44px;
+  border: 1px solid #c9d1b4;
+  padding: 9px 13px;
+  color: #788961;
+  background: #ecefdc;
+  font-size: 11px;
+  border-radius: 0;
+}
+body.live-page #panel-content > .primary {
+  width: 100%;
+  min-height: 44px;
+  border-radius: 0;
+  font-size: 12px;
+  background: #819960;
+  color: #fbf5df;
+  border: 1px solid #708851;
+  margin: 9px 0;
+}
+body.live-page .room-inventory {
+  display: grid;
+  gap: 8px;
+}
+body.live-page .room-inventory > button {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 15px;
+  align-items: center;
+  gap: 11px;
+  min-height: 68px;
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #d0d7bb;
+  background: #fbf6e9;
+  border-radius: 0;
+  text-align: left;
+}
+body.live-page .room-inventory > button > span:first-child {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: #e8ebd6;
+}
+body.live-page .room-inventory > button img,
+body.live-page .room-inventory > button svg {
+  max-width: 48px;
+  max-height: 48px;
+  width: 100%;
+  height: auto;
+}
+body.live-page .room-inventory strong {
+  display: block;
+  font-size: 12px;
+  color: #657653;
+}
+body.live-page .room-inventory small {
+  display: block;
+  margin-top: 6px;
+  font-size: 10px;
+  color: #98a083;
+}
+body.live-page .room-inventory b {
+  color: #a2ad8e;
+  font-size: 12px;
+  font-weight: 400;
+}
+body.live-page .room-decor-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+body.live-page .room-decor-tabs button {
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid #d0d7bb;
+  background: #eaeedc;
+  color: #82906d;
+  border-radius: 0;
+  font-size: 10px;
+}
+body.live-page .room-decor-tabs button[aria-selected="true"] {
+  border-color: #9eaf83;
+  background: #d6e1c0;
+  color: #617849;
+  box-shadow: inset 0 -2px #a4b98a;
+}
+body.live-page .room-decor-choices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+body.live-page .room-decor-choices > article {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 9px;
+  border: 1px solid #cdd5b8;
+  background: #faf5e6;
+}
+body.live-page .room-decor-art {
+  background: #e4e8d3;
+  padding: 7px;
+}
+body.live-page .room-decor-art svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+body.live-page .room-decor-choices strong {
+  font-size: 12px;
+  color: #687a52;
+}
+body.live-page .room-decor-choices small {
+  color: #98a183;
+  font-size: 9px;
+  line-height: 1.7;
+}
+body.live-page .room-decor-choices button {
+  margin-top: auto;
+  min-height: 44px;
+  padding: 8px 5px;
+  color: #677d4f;
+  font-size: 10px;
+  background: #e0e8cd;
+  border: 1px solid #b8c6a1;
+  border-radius: 0;
+}
+body.live-page .room-decor-choices button:disabled {
+  background: #eeedde;
+  border-color: #d9dcc5;
+  color: #a0a78c;
+}
+body.live-page .room-decor-choices + .quiet-button {
+  width: 100%;
+  margin-top: 14px;
+}
+body.live-page .room-inspect-art {
+  min-height: 135px;
+  padding: 14px;
+  margin-bottom: 15px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d1d8bd;
+  background: #e7ebd7;
+}
+body.live-page .room-inspect-art img,
+body.live-page .room-inspect-art svg {
+  display: block;
+  width: 140px;
+  height: 120px;
+  object-fit: contain;
+}
+body.live-page .room-entrance-upgrade {
+  margin-top: 23px;
+  padding-top: 12px;
+  border-top: 1px dashed #c3cdae;
+}
+body.live-page .room-complete {
+  font-size: 11px;
+  padding: 12px;
+  color: #8b9875;
+  background: #e7ecd6;
+}
+body.live-page .build-card {
+  background: #faf6e9;
+  border-color: #ccd5b8;
+  color: #667a50;
+  box-shadow: none;
+}
+body.live-page .build-card h3 {
+  color: #63754e;
+  font-size: 13px;
+}
+body.live-page .build-card p {
+  color: #8d9978;
+  font-size: 10px;
+}
+body.live-page .build-card small,
+body.live-page .card-bottom > span {
+  color: #99a482;
+}
+body.live-page .item-art {
+  background: #e4e9d0;
+  border-color: #c7d1b2;
+}
+body.live-page .card-bottom {
+  border-color: #d5dcc2;
+}
+body.live-page .card-bottom .buy {
+  background: #dfe7ca;
+  color: #647c4b;
+  border-color: #becaa8;
+  min-height: 44px;
+}
+body.live-page .complete-badge {
+  color: #95a67f;
+  background: #e9eddb;
+  border-color: #ccd7b8;
+}
+body.live-page .studio-tabs {
+  background: #f4efdf;
+  padding: 9px 0;
+  border-color: #d0d7bb;
+}
+body.live-page .studio-tabs button {
+  color: #939d81;
+  font-size: 12px;
+  min-height: 44px;
+}
+body.live-page .studio-tabs button.active {
+  background: #e0e8cd;
+  color: #6d8451;
+  box-shadow: inset 0 -2px #9ab27a;
+}
+body.live-page .audience {
+  padding: 12px 0 16px;
+}
+body.live-page .audience > strong {
+  color: #768e57;
+  font-size: 35px;
+}
+body.live-page .audience > span,
+body.live-page .audience p,
+body.live-page .audience > div {
+  color: #919d7d;
+  border-color: #d5ddbf;
+}
+body.live-page .audience > div strong {
+  color: #6d8a4f;
+}
+body.live-page .topic-tabs {
+  background: #e8ecd8;
+  padding: 3px;
+}
+body.live-page .topic-tabs button:not(.active) {
+  color: #8e9a79;
+}
+body.live-page .topic-tabs button.active {
+  color: #6b8251;
+  background: #d4dfbd;
+}
+body.live-page .camera-list > button {
+  min-height: 85px;
+  padding: 10px;
+  background: #f4f1e2;
+  border-color: #d0d8bb;
+  color: #70835a;
+}
+body.live-page .camera-list > button.active {
+  background: #e4ebd2;
+  border-color: #a5b88b;
+}
+body.live-page .camera-list small {
+  color: #9aa787;
+}
+body.live-page .director-button {
+  color: #8d9b75;
+  border-color: #ccd5b6;
+}
+body.live-page .live-actions button {
+  color: #819365;
+  border-color: #c6d1b0;
+}
+body.live-page .live-actions .primary {
+  background: #cedbb5;
+  color: #687e4e;
+}
+body.live-page #chat p {
+  color: #819371;
+  border-color: #d4ddbf;
+  font-size: 12px;
+}
+body.live-page #chat b {
+  color: #a18d5d;
+  font-size: 11px;
+}
+body.live-page .order {
+  background: #e9eed9;
+  border-color: #c7d1b1;
+  color: #82946b;
+}
+body.live-page .order i {
+  background: #d7dfc5;
+}
+body.live-page .order i b {
+  background: #a0b784;
+}
+body.live-page .home-view {
+  width: 44px;
+  height: 44px;
+  top: 8px;
+  right: 8px;
+  background: #f2eddd;
+  color: #8b9878;
+  border-color: #c6cfb2;
+  box-shadow: none;
+  border-radius: 0;
+}
+body.live-page #live-overlay {
+  border: 0;
+}
+body.live-page #live-overlay > div {
+  left: 12px;
+  right: auto;
+  bottom: 12px;
+  max-width: calc(100% - 24px);
+  background: #f4efdfed;
+  border: 1px solid #bdc9a9;
+  padding: 9px 12px;
+  border-radius: 0;
+}
+body.live-page #live-overlay strong {
+  color: #708457;
+  font-size: 13px;
+}
+body.live-page #live-overlay > div span {
+  color: #9ba789;
+  font-size: 10px;
+}
+body.live-page #live-overlay .live-badge {
+  left: 12px;
+  top: 12px;
+  background: #f3eddb;
+  color: #879b6c;
+  border-color: #c7d2b4;
+  font-size: 10px;
+  box-shadow: none;
+}
+body.live-page #placement-bar {
+  position: fixed;
+  left: calc((100% - var(--room-side)) / 2);
+  bottom: 96px;
+  width: min(560px, calc(100vw - var(--room-side) - 36px));
+  min-width: 0;
+  padding: 12px 15px;
+  background: #f7f1de;
+  border: 2px solid #b5c198;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 #8b986534;
+  z-index: 15;
+}
+body.live-page #placement-bar p {
+  color: #8e9978;
+  font-size: 11px;
+  line-height: 1.6;
+  margin: 0 0 10px;
+}
+body.live-page #placement-bar > div {
+  gap: 7px;
+}
+body.live-page #placement-bar button {
+  min-height: 44px;
+  padding: 8px 12px;
+  font-size: 11px;
+  border: 1px solid #bdc7a3;
+  border-radius: 0;
+  color: #7b8e5e;
+  background: #e8edd6;
+}
+body.live-page #placement-bar #placement-confirm {
+  flex: 1;
+  color: #fff8df;
+  background: #819d5d;
+  border-color: #72894f;
+}
+body.live-page #placement-bar #placement-confirm:disabled {
+  color: #a3ab90;
+  background: #e3e8d2;
+  border-color: #cbd4b5;
+}
+body.live-page #game:has(#placement-bar:not([hidden])) #stage {
+  bottom: 202px;
+}
+body.live-page #game:has(#placement-bar:not([hidden])) #studio-console,
+body.live-page #game:has(#placement-bar:not([hidden])) #room-camera-tools {
+  bottom: 204px;
+}
+/* Receipt queue stays in the drawer; it never scatters across the room. */
+body.live-page #panel > #gift-layer.gift-tray {
+  background: #e4ead2;
+  border-color: #c5d1ad;
+}
+body.live-page #gift-layer.gift-tray .gift-tray-meta {
+  color: #859b69;
+}
+body.live-page .gift-tray-meta span {
+  color: #97a883;
+}
+body.live-page #gift-layer.gift-tray .gift {
+  background: #d6e1b9;
+  border-color: #b6c799;
+  border-bottom-color: #96ad72;
+  color: #718c50;
+}
+body.live-page #gift-layer.gift-tray .gift-tray-empty:not([hidden]) {
+  border-color: #bfceaa;
+  color: #9aad88;
+}
+@media (max-width: 759px) {
+  body.live-page #game,
+  body.live-page #game.panel-open {
+    --room-side: 0px;
+  }
+  body.live-page #studio-header {
+    inset: 0 13px auto;
+    height: 49px;
+    gap: 15px;
+  }
+  body.live-page #studio-header > button {
+    font-size: 11px;
+  }
+  body.live-page #studio-header > span {
+    font-size: 13px;
+    gap: 7px;
+  }
+  body.live-page #studio-header > span b {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+  body.live-page #studio-header small {
+    display: none;
+  }
+  body.live-page #game #stage,
+  body.live-page #game.panel-open #stage {
+    inset: 108px 0 102px;
+    width: auto;
+    height: auto;
+    border: 0;
+    box-shadow: none;
+  }
+  body.live-page #game.panel-open #stage {
+    bottom: calc(var(--room-sheet) + 108px);
+  }
+  body.live-page #room-camera-tools {
+    top: 51px;
+    bottom: auto;
+    left: 12px;
+    height: 48px;
+    padding: 1px;
+    gap: 2px;
+    box-shadow: none;
+  }
+  body.live-page #room-camera-tools button {
+    padding: 0;
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 10px;
+  }
+  body.live-page #room-camera-tools #room-monitor {
+    width: 44px;
+    font-size: 0;
+  }
+  body.live-page #room-camera-tools #room-monitor::after {
+    content: "节目";
+    font-size: 10px;
+  }
+  body.live-page #game #studio-console {
+    inset: 51px 12px auto auto;
+    padding: 1px;
+    gap: 2px;
+    min-height: 48px;
+    height: 48px;
+    box-shadow: none;
+  }
+  body.live-page #studio-console #studio-host {
+    flex: none;
+    width: 88px;
+    min-height: 44px;
+    font-size: 10px;
+    padding: 0 4px;
+  }
+  body.live-page #studio-console #studio-respond {
+    display: block;
+    width: 56px;
+    min-height: 44px;
+    font-size: 10px;
+    padding: 0 4px;
+  }
+  body.live-page #room-tools {
+    left: 12px;
+    right: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    transform: none;
+    width: auto;
+    max-width: none;
+    gap: 2px;
+    min-height: 65px;
+    padding: 5px;
+  }
+  body.live-page #room-tools > button {
+    min-width: 44px;
+    min-height: 53px;
+    flex: 1;
+    gap: 5px;
+    padding: 6px 2px;
+    font-size: 9px;
+  }
+  body.live-page #room-tools > button svg {
+    width: 18px;
+    height: 18px;
+  }
+  body.live-page #room-tools #room-close-panel {
+    min-width: 30px;
+    flex: 0 0 30px;
+    padding-inline: 3px;
+  }
+  body.live-page #game #panel {
+    inset: auto 12px 88px;
+    width: auto;
+    height: var(--room-sheet);
+    max-height: 40svh;
+    background: #f4efdf;
+    border: 1px solid #b9c7a3;
+    box-shadow: 3px 3px 0 #8d987038;
+    padding-bottom: 0;
+  }
+  body.live-page #panel-content {
+    padding: 14px 13px 18px;
+    flex: 1;
+    min-height: 0;
+  }
+  body.live-page #panel-content .room-panel-heading {
+    padding-bottom: 11px;
+    margin-bottom: 11px;
+  }
+  body.live-page .room-panel-heading h2 {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  body.live-page .room-panel-heading p {
+    font-size: 10px;
+    line-height: 1.7;
+  }
+  body.live-page .room-panel-heading .eyebrow {
+    font-size: 7px;
+  }
+  body.live-page .room-inventory > button {
+    min-height: 60px;
+    grid-template-columns: 40px minmax(0, 1fr) 14px;
+    padding: 7px;
+    gap: 10px;
+  }
+  body.live-page .room-inventory > button > span:first-child {
+    width: 40px;
+    height: 40px;
+  }
+  body.live-page .room-inventory > button img,
+  body.live-page .room-inventory > button svg {
+    max-width: 40px;
+    max-height: 40px;
+  }
+  body.live-page .room-inventory strong {
+    font-size: 11px;
+  }
+  body.live-page .room-inventory small {
+    font-size: 9px;
+    margin-top: 4px;
+  }
+  body.live-page .room-decor-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 5px;
+    margin-bottom: 11px;
+    scrollbar-width: thin;
+  }
+  body.live-page .room-decor-tabs button {
+    flex: 1 0 auto;
+    min-height: 44px;
+    font-size: 10px;
+    padding: 7px 8px;
+  }
+  body.live-page .room-decor-choices {
+    gap: 8px;
+  }
+  body.live-page .room-decor-choices > article {
+    padding: 8px;
+    gap: 6px;
+  }
+  body.live-page .room-decor-art {
+    padding: 4px;
+  }
+  body.live-page .room-decor-art svg {
+    max-height: 75px;
+  }
+  body.live-page .room-decor-choices strong {
+    font-size: 11px;
+  }
+  body.live-page .room-inspect-art {
+    min-height: 100px;
+    margin-bottom: 10px;
+    padding: 8px;
+  }
+  body.live-page .room-inspect-art img,
+  body.live-page .room-inspect-art svg {
+    height: 86px;
+    width: 110px;
+  }
+  body.live-page .camera-list > button {
+    min-height: 82px;
+  }
+  body.live-page .studio-tabs {
+    top: -14px;
+    padding: 7px 0;
+  }
+  body.live-page .studio-tabs button {
+    font-size: 11px;
+    min-height: 44px;
+  }
+  body.live-page #live-overlay > div {
+    bottom: 6px;
+    left: 9px;
+    padding: 7px 10px;
+  }
+  body.live-page #live-overlay strong {
+    font-size: 11px;
+  }
+  body.live-page #live-overlay > div span {
+    font-size: 9px;
+  }
+  body.live-page #placement-bar {
+    bottom: 88px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    min-width: 0;
+    transform: none;
+    padding: 10px;
+    box-shadow: 3px 3px 0 #8d98702b;
+  }
+  body.live-page #placement-bar p {
+    font-size: 10px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+  body.live-page #placement-bar > div {
+    gap: 5px;
+  }
+  body.live-page #placement-bar button {
+    min-height: 44px;
+    font-size: 10px;
+    padding: 7px;
+  }
+  body.live-page #game:has(#placement-bar:not([hidden])) #stage {
+    bottom: 202px;
+  }
+  body.live-page #game:has(#placement-bar:not([hidden])) #studio-console {
+    top: 51px;
+    bottom: auto;
+  }
+  body.live-page #game:has(#placement-bar:not([hidden])) #room-camera-tools {
+    top: 51px;
+    bottom: auto;
+  }
+}
+@media (max-height: 500px) and (min-width: 760px) {
+  body.live-page #game.panel-open {
+    --room-side: 320px;
+  }
+  body.live-page #studio-header {
+    height: 43px;
+  }
+  body.live-page #game #stage,
+  body.live-page #game.panel-open #stage {
+    top: 44px;
+    bottom: 88px;
+  }
+  body.live-page #game #panel {
+    top: 44px;
+    width: 300px;
+    bottom: 12px;
+  }
+  body.live-page #room-tools {
+    bottom: 10px;
+    min-height: 60px;
+  }
+  body.live-page #room-camera-tools {
+    bottom: 82px;
+    left: 13px;
+  }
+  body.live-page #game #studio-console {
+    bottom: 82px;
+    right: calc(13px + var(--room-side));
+  }
+  body.live-page #placement-bar {
+    bottom: 79px;
+  }
+}
+/* The same receipt drawer works with a mouse, phone, or tablet. */
+body.live-page #panel > #gift-layer.gift-tray {
+  position: relative;
+  inset: auto;
+  z-index: 2;
+  flex: 0 0 88px;
+  width: 100%;
+  height: 88px;
+  padding: 8px 12px 10px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(44px, 1fr));
+  grid-template-rows: 17px 44px;
+  gap: 6px 8px;
+  border-bottom: 1px solid #c5d1ad;
+  touch-action: none;
+}
+body.live-page #gift-layer.gift-tray .gift-tray-meta {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+body.live-page #gift-layer.gift-tray .gift {
+  position: relative;
+  grid-column: var(--gift-slot);
+  grid-row: 2;
+  inset: auto;
+  width: 100%;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  animation: none;
+  border-radius: 0;
+}
+body.live-page #gift-layer.gift-tray .gift-tray-empty:not([hidden]) {
+  display: grid;
+  place-items: center;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  border: 1px dashed #bfceaa;
+  font-size: 10px;
+}
+body.live-page #room-tools #room-gifts.has-gifts {
+  background: #eae5cd;
+  border-color: #cbbd94;
+}
+body.live-page.room-monitor #room-camera-tools #room-monitor {
+  background: #e2e7d2;
+  color: #60794c;
+}
+body.live-page.room-placing #placement-bar {
+  bottom: 24px;
+}
+body.live-page.room-placing #game #stage {
+  bottom: 156px;
+}
+body.live-page.room-placing #game #studio-console,
+body.live-page.room-placing #game #room-camera-tools {
+  bottom: 152px;
+}
+@media (max-width: 759px) {
+  body.live-page #room-tools #room-close-panel {
+    flex-basis: 44px;
+    min-width: 44px;
+  }
+  body.live-page.room-monitor #room-camera-tools #room-monitor::after {
+    content: "房间";
+  }
+  body.live-page.room-placing #placement-bar {
+    bottom: max(16px, env(safe-area-inset-bottom));
+  }
+  body.live-page.room-placing #game #stage {
+    bottom: 147px;
+  }
+  body.live-page.room-placing #game #studio-console,
+  body.live-page.room-placing #game #room-camera-tools {
+    top: 51px;
+    bottom: auto;
+  }
+}
+body.live-page .facility-shop {
+  border-color: #cbd5b6;
+}
+body.live-page #game:has(#placement-bar:not([hidden])) #stage {
+  bottom: 156px;
+}
+body.live-page #game:has(#placement-bar:not([hidden])) #studio-console,
+body.live-page #game:has(#placement-bar:not([hidden])) #room-camera-tools {
+  bottom: 152px;
+}
+@media (max-width: 759px) {
+  body.live-page #game:has(#placement-bar:not([hidden])) #stage {
+    bottom: 147px;
+  }
+  body.live-page #game:has(#placement-bar:not([hidden])) #studio-console,
+  body.live-page #game:has(#placement-bar:not([hidden])) #room-camera-tools {
+    top: 51px;
+    bottom: auto;
+  }
+}
+.studio-staff {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0;
+}
+.studio-staff article {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 8px 10px;
+  padding: 12px;
+  border: 1px solid var(--line, #c9cdb8);
+  background: rgba(230, 224, 198, 0.35);
+}
+.studio-staff .resident-portrait {
+  width: 38px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+}
+.studio-staff strong,
+.studio-staff small {
+  display: block;
+}
+.studio-staff strong {
+  font-size: 12px;
+}
+.studio-staff small {
+  margin-top: 5px;
+  font-size: 10px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+.studio-staff button {
+  grid-column: 2;
+  justify-self: start;
+  min-height: 36px;
+  font-size: 10px;
+}

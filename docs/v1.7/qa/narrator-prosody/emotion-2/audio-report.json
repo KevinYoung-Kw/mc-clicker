@@ -1,0 +1,1042 @@
+{
+  "revision": "emotion-2",
+  "comparison": "Previous emotion-1 versus connected / accented delivery; identical copy and phrase windows.",
+  "sampleRate": 48000,
+  "voice": "C / reed",
+  "pulseRate": 1.45,
+  "volume": 0.189,
+  "original": true,
+  "examples": [
+    {
+      "id": "manual",
+      "label": "家传秘诀",
+      "note": "前半句连着说，秘诀放低了讲",
+      "text": "如果你还想知道更多内容，我这里还有一本操作指南，这可是家传秘诀。你要想看的话，可以去那里了解一下。",
+      "delivery": {
+        "mood": "plain",
+        "phrases": [
+          {
+            "match": "家传秘诀",
+            "mood": "secret"
+          }
+        ]
+      },
+      "face": "<svg class=\"notice-face\" data-accessory=\"\" data-expression=\"plain\" viewBox=\"0 0 16 16\" width=\"32\" height=\"32\" fill=\"currentColor\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path opacity=\".13\" d=\"M2 1h10v2h2v11H2z\"/><path opacity=\".7\" d=\"M2 0h10v1H2zM1 1h1v13H1zM2 14h12v1H2zM14 3h1v11h-1zM12 1h1v1h-1zM13 2h1v1h-1z\"/><g class=\"notice-eyes-open\"><rect x=\"5\" y=\"6\" width=\"2\" height=\"2\"/><rect x=\"10\" y=\"6\" width=\"2\" height=\"2\"/></g><g class=\"notice-eyes-closed\" opacity=\"0\"><rect x=\"5\" y=\"7\" width=\"2\" height=\"1\"/><rect x=\"10\" y=\"7\" width=\"2\" height=\"1\"/></g><rect x=\"6\" y=\"11\" width=\"5\" height=\"1\"/></svg>",
+      "phrases": [
+        {
+          "text": "如果你还想知道更多内容，",
+          "at": 0.12,
+          "end": 2.1
+        },
+        {
+          "text": "我这里还有一本操作指南，",
+          "at": 2.3600000000000003,
+          "end": 4.34
+        },
+        {
+          "text": "这可是家传秘诀。",
+          "at": 4.6,
+          "end": 5.859999999999999
+        },
+        {
+          "text": "你要想看的话，",
+          "at": 6.359999999999999,
+          "end": 7.4399999999999995
+        },
+        {
+          "text": "可以去那里了解一下。",
+          "at": 7.699999999999999,
+          "end": 9.319999999999999
+        }
+      ],
+      "notes": [
+        {
+          "at": 0.12,
+          "tone": 0,
+          "pitch": -1,
+          "kind": "joined",
+          "duration": 0.287,
+          "joinAt": 0.159,
+          "pitchEnd": 0,
+          "level": 0.94
+        },
+        {
+          "at": 0.46482758620689657,
+          "tone": 1,
+          "pitch": -1,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": -1.5,
+          "level": 0.55
+        },
+        {
+          "at": 0.7062068965517242,
+          "tone": 3,
+          "pitch": 1,
+          "kind": "joined",
+          "duration": 0.294,
+          "joinAt": 0.166,
+          "pitchEnd": 1,
+          "level": 0.94
+        },
+        {
+          "at": 1.0717241379310345,
+          "tone": 1,
+          "pitch": 1,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": 1.5,
+          "level": 1
+        },
+        {
+          "at": 1.2303448275862068,
+          "tone": 2,
+          "pitch": 2,
+          "kind": "accent",
+          "duration": 0.16,
+          "pitchEnd": 2.5,
+          "level": 1.06
+        },
+        {
+          "at": 1.416551724137931,
+          "tone": 3,
+          "pitch": -1,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": -0.5,
+          "level": 1
+        },
+        {
+          "at": 1.6579310344827585,
+          "tone": 0,
+          "pitch": -0.5,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": -1,
+          "level": 0.55
+        },
+        {
+          "at": 1.8234482758620691,
+          "tone": 6,
+          "pitch": -2.5,
+          "kind": "accent",
+          "duration": 0.16,
+          "pitchEnd": -3.5,
+          "level": 1.06
+        },
+        {
+          "at": 2.3600000000000003,
+          "tone": 1,
+          "pitch": -1,
+          "kind": "joined",
+          "duration": 0.287,
+          "joinAt": 0.159,
+          "pitchEnd": -0.5,
+          "level": 0.94
+        },
+        {
+          "at": 2.704827586206897,
+          "tone": 5,
+          "pitch": 0.5,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": 1,
+          "level": 1
+        },
+        {
+          "at": 2.9462068965517245,
+          "tone": 1,
+          "pitch": -0.5,
+          "kind": "joined",
+          "duration": 0.294,
+          "joinAt": 0.166,
+          "pitchEnd": 1.5,
+          "level": 0.94
+        },
+        {
+          "at": 3.311724137931035,
+          "tone": 3,
+          "pitch": 1,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": 0.5,
+          "level": 0.55
+        },
+        {
+          "at": 3.4703448275862074,
+          "tone": 0,
+          "pitch": 1.5,
+          "kind": "accent",
+          "duration": 0.16,
+          "pitchEnd": 2,
+          "level": 1.06
+        },
+        {
+          "at": 3.6565517241379313,
+          "tone": 2,
+          "pitch": 0.5,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": 0,
+          "level": 0.55
+        },
+        {
+          "at": 3.8979310344827587,
+          "tone": 1,
+          "pitch": -2,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": -1.5,
+          "level": 1
+        },
+        {
+          "at": 4.063448275862069,
+          "tone": 7,
+          "pitch": -2,
+          "kind": "accent",
+          "duration": 0.16,
+          "pitchEnd": -3,
+          "level": 1.06
+        },
+        {
+          "at": 4.6,
+          "tone": 0,
+          "pitch": -4,
+          "kind": "joined",
+          "duration": 0.287,
+          "joinAt": 0.159,
+          "pitchEnd": -4,
+          "level": 0.94
+        },
+        {
+          "at": 4.944827586206896,
+          "tone": 2,
+          "pitch": -4.5,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": -5,
+          "level": 0.55
+        },
+        {
+          "at": 5.186206896551724,
+          "tone": 3,
+          "pitch": -3.5,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": -3,
+          "level": 1
+        },
+        {
+          "at": 5.3517241379310345,
+          "tone": 0,
+          "pitch": -3,
+          "kind": "accent",
+          "duration": 0.16,
+          "pitchEnd": -2.5,
+          "level": 1.06
+        },
+        {
+          "at": 5.551724137931034,
+          "tone": 2,
+          "pitch": -4.5,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": -4,
+          "level": 1
+        },
+        {
+          "at": 5.710344827586207,
+          "tone": 6,
+          "pitch": -6.5,
+          "kind": "accent",
+          "duration": 0.125,
+          "pitchEnd": -7,
+          "level": 1.06
+        },
+        {
+          "at": 6.359999999999999,
+          "tone": 3,
+          "pitch": -0.5,
+          "kind": "joined",
+          "duration": 0.287,
+          "joinAt": 0.159,
+          "pitchEnd": 0,
+          "level": 0.94
+        },
+        {
+          "at": 6.704827586206896,
+          "tone": 1,
+          "pitch": 0.5,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": 1,
+          "level": 1
+        },
+        {
+          "at": 6.946206896551724,
+          "tone": 2,
+          "pitch": 2,
+          "kind": "accent",
+          "duration": 0.141,
+          "pitchEnd": 2.5,
+          "level": 1.06
+        },
+        {
+          "at": 7.111724137931034,
+          "tone": 3,
+          "pitch": -1,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": -0.5,
+          "level": 1
+        },
+        {
+          "at": 7.311724137931034,
+          "tone": 7,
+          "pitch": -2,
+          "kind": "accent",
+          "duration": 0.103,
+          "pitchEnd": -3,
+          "level": 1.06
+        },
+        {
+          "at": 7.699999999999999,
+          "tone": 2,
+          "pitch": -0.5,
+          "kind": "joined",
+          "duration": 0.287,
+          "joinAt": 0.159,
+          "pitchEnd": -1.5,
+          "level": 0.94
+        },
+        {
+          "at": 8.044827586206896,
+          "tone": 4,
+          "pitch": 1,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": 1.5,
+          "level": 1
+        },
+        {
+          "at": 8.286206896551723,
+          "tone": 0,
+          "pitch": 1,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": 0.5,
+          "level": 0.55
+        },
+        {
+          "at": 8.451724137931034,
+          "tone": 1,
+          "pitch": 1,
+          "kind": "accent",
+          "duration": 0.16,
+          "pitchEnd": 1.5,
+          "level": 1.06
+        },
+        {
+          "at": 8.651724137931033,
+          "tone": 2,
+          "pitch": 1.5,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": 1,
+          "level": 0.55
+        },
+        {
+          "at": 8.810344827586206,
+          "tone": 3,
+          "pitch": -2,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": -1.5,
+          "level": 1
+        },
+        {
+          "at": 8.99655172413793,
+          "tone": 6,
+          "pitch": -2,
+          "kind": "accent",
+          "duration": 0.16,
+          "pitchEnd": -3,
+          "level": 1.06
+        }
+      ],
+      "duration": 11.27455172413793,
+      "audio": {
+        "old": {
+          "file": "manual-old.mp3",
+          "duration": 11.2745625,
+          "peak": 0.10863235592842102,
+          "rms": 0.031591842265134756
+        },
+        "new": {
+          "file": "manual-new.mp3",
+          "duration": 11.2745625,
+          "peak": 0.11715684831142426,
+          "rms": 0.030504694275715432
+        }
+      }
+    },
+    {
+      "id": "rescued",
+      "label": "高兴",
+      "note": "重音抬起来，末尾稍微拖一下",
+      "text": "哈哈，重见天日了。",
+      "delivery": {
+        "mood": "bright"
+      },
+      "face": "<svg class=\"notice-face\" data-accessory=\"\" data-expression=\"smirk\" viewBox=\"0 0 16 16\" width=\"32\" height=\"32\" fill=\"currentColor\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path opacity=\".13\" d=\"M2 1h10v2h2v11H2z\"/><path opacity=\".7\" d=\"M2 0h10v1H2zM1 1h1v13H1zM2 14h12v1H2zM14 3h1v11h-1zM12 1h1v1h-1zM13 2h1v1h-1z\"/><g class=\"notice-eyes-open\"><rect x=\"6\" y=\"7\" width=\"2\" height=\"2\"/><rect x=\"11\" y=\"8\" width=\"2\" height=\"1\"/></g><g class=\"notice-eyes-closed\" opacity=\"0\"><rect x=\"6\" y=\"8\" width=\"2\" height=\"1\"/><rect x=\"11\" y=\"8\" width=\"2\" height=\"1\"/></g><rect x=\"4\" y=\"5\" width=\"4\" height=\"1\"/><rect x=\"10\" y=\"6\" width=\"3\" height=\"1\"/><rect x=\"6\" y=\"11\" width=\"4\" height=\"1\"/><rect x=\"10\" y=\"10\" width=\"2\" height=\"1\"/></svg>",
+      "phrases": [
+        {
+          "text": "哈哈，",
+          "at": 0.12,
+          "end": 0.48
+        },
+        {
+          "text": "重见天日了。",
+          "at": 0.74,
+          "end": 1.64
+        }
+      ],
+      "notes": [
+        {
+          "at": 0.12,
+          "tone": 0,
+          "pitch": 2.5,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": 3,
+          "level": 1
+        },
+        {
+          "at": 0.2786206896551724,
+          "tone": 6,
+          "pitch": 1.5,
+          "kind": "accent",
+          "duration": 0.16,
+          "pitchEnd": 0.5,
+          "level": 1.06
+        },
+        {
+          "at": 0.74,
+          "tone": 1,
+          "pitch": 2,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": 2.5,
+          "level": 1
+        },
+        {
+          "at": 0.8986206896551724,
+          "tone": 3,
+          "pitch": 2.5,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": 2,
+          "level": 0.55
+        },
+        {
+          "at": 1.0848275862068966,
+          "tone": 5,
+          "pitch": 5,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": 5.5,
+          "level": 1
+        },
+        {
+          "at": 1.3262068965517242,
+          "tone": 1,
+          "pitch": 3,
+          "kind": "accent",
+          "duration": 0.141,
+          "pitchEnd": 3.5,
+          "level": 1.06
+        },
+        {
+          "at": 1.4917241379310346,
+          "tone": 7,
+          "pitch": 2.5,
+          "kind": "accent",
+          "duration": 0.123,
+          "pitchEnd": 1.5,
+          "level": 1.06
+        }
+      ],
+      "duration": 4.7,
+      "audio": {
+        "old": {
+          "file": "rescued-old.mp3",
+          "duration": 4.7,
+          "peak": 0.10861428081989288,
+          "rms": 0.020217756632294123
+        },
+        "new": {
+          "file": "rescued-new.mp3",
+          "duration": 4.7,
+          "peak": 0.1155872717499733,
+          "rms": 0.020061303060997293
+        }
+      }
+    },
+    {
+      "id": "rescue-price",
+      "label": "吐槽",
+      "note": "有轻有重，最后落下来",
+      "text": "商城卖我十颗，第一块地二十五。我得找它谈谈。",
+      "delivery": {
+        "mood": "wry",
+        "phrases": []
+      },
+      "face": "<svg class=\"notice-face\" data-accessory=\"\" data-expression=\"smirk\" viewBox=\"0 0 16 16\" width=\"32\" height=\"32\" fill=\"currentColor\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path opacity=\".13\" d=\"M2 1h10v2h2v11H2z\"/><path opacity=\".7\" d=\"M2 0h10v1H2zM1 1h1v13H1zM2 14h12v1H2zM14 3h1v11h-1zM12 1h1v1h-1zM13 2h1v1h-1z\"/><g class=\"notice-eyes-open\"><rect x=\"6\" y=\"7\" width=\"2\" height=\"2\"/><rect x=\"11\" y=\"8\" width=\"2\" height=\"1\"/></g><g class=\"notice-eyes-closed\" opacity=\"0\"><rect x=\"6\" y=\"8\" width=\"2\" height=\"1\"/><rect x=\"11\" y=\"8\" width=\"2\" height=\"1\"/></g><rect x=\"4\" y=\"5\" width=\"4\" height=\"1\"/><rect x=\"10\" y=\"6\" width=\"3\" height=\"1\"/><rect x=\"6\" y=\"11\" width=\"4\" height=\"1\"/><rect x=\"10\" y=\"10\" width=\"2\" height=\"1\"/></svg>",
+      "phrases": [
+        {
+          "text": "商城卖我十颗，",
+          "at": 0.12,
+          "end": 1.2000000000000002
+        },
+        {
+          "text": "第一块地二十五。",
+          "at": 1.4600000000000002,
+          "end": 2.72
+        },
+        {
+          "text": "我得找它谈谈。",
+          "at": 3.22,
+          "end": 4.300000000000001
+        }
+      ],
+      "notes": [
+        {
+          "at": 0.12,
+          "tone": 0,
+          "pitch": 0,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": 0.5,
+          "level": 1
+        },
+        {
+          "at": 0.2786206896551724,
+          "tone": 2,
+          "pitch": 1,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": 1.5,
+          "level": 1
+        },
+        {
+          "at": 0.46482758620689657,
+          "tone": 1,
+          "pitch": 1,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": 0.5,
+          "level": 0.55
+        },
+        {
+          "at": 0.7062068965517242,
+          "tone": 3,
+          "pitch": 3.5,
+          "kind": "accent",
+          "duration": 0.141,
+          "pitchEnd": 4,
+          "level": 1.06
+        },
+        {
+          "at": 0.8717241379310345,
+          "tone": 0,
+          "pitch": 0,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": -0.5,
+          "level": 0.55
+        },
+        {
+          "at": 1.0717241379310345,
+          "tone": 6,
+          "pitch": -3.5,
+          "kind": "accent",
+          "duration": 0.103,
+          "pitchEnd": -4.5,
+          "level": 1.06
+        },
+        {
+          "at": 1.4600000000000002,
+          "tone": 2,
+          "pitch": 1.5,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": 2,
+          "level": 1
+        },
+        {
+          "at": 1.6186206896551727,
+          "tone": 3,
+          "pitch": 1,
+          "kind": "joined",
+          "duration": 0.314,
+          "joinAt": 0.186,
+          "pitchEnd": 2,
+          "level": 0.94
+        },
+        {
+          "at": 2.046206896551724,
+          "tone": 2,
+          "pitch": 2,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": 1.5,
+          "level": 0.55
+        },
+        {
+          "at": 2.211724137931035,
+          "tone": 1,
+          "pitch": 4.5,
+          "kind": "accent",
+          "duration": 0.16,
+          "pitchEnd": 5,
+          "level": 1.06
+        },
+        {
+          "at": 2.4117241379310346,
+          "tone": 3,
+          "pitch": 0,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": -0.5,
+          "level": 0.55
+        },
+        {
+          "at": 2.570344827586207,
+          "tone": 7,
+          "pitch": -3,
+          "kind": "accent",
+          "duration": 0.125,
+          "pitchEnd": -4,
+          "level": 1.06
+        },
+        {
+          "at": 3.22,
+          "tone": 1,
+          "pitch": -1,
+          "kind": "joined",
+          "duration": 0.287,
+          "joinAt": 0.159,
+          "pitchEnd": 1,
+          "level": 0.94
+        },
+        {
+          "at": 3.5648275862068965,
+          "tone": 3,
+          "pitch": 1,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": 0.5,
+          "level": 0.55
+        },
+        {
+          "at": 3.8062068965517244,
+          "tone": 0,
+          "pitch": 2.5,
+          "kind": "accent",
+          "duration": 0.141,
+          "pitchEnd": 3,
+          "level": 1.06
+        },
+        {
+          "at": 3.9717241379310346,
+          "tone": 2,
+          "pitch": -1,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": -1.5,
+          "level": 0.55
+        },
+        {
+          "at": 4.171724137931035,
+          "tone": 6,
+          "pitch": -3.5,
+          "kind": "accent",
+          "duration": 0.103,
+          "pitchEnd": -4.5,
+          "level": 1.06
+        }
+      ],
+      "duration": 6.449724137931035,
+      "audio": {
+        "old": {
+          "file": "rescue-price-old.mp3",
+          "duration": 6.449729166666667,
+          "peak": 0.10862600803375244,
+          "rms": 0.02843406386757472
+        },
+        "new": {
+          "file": "rescue-price-new.mp3",
+          "duration": 6.449729166666667,
+          "peak": 0.11714700609445572,
+          "rms": 0.02522657772992213
+        }
+      }
+    },
+    {
+      "id": "work",
+      "label": "琢磨",
+      "note": "中间带过去，问句尾部上扬",
+      "text": "你有没有想过，你能在商城里面买村民，这是一件细思极恐的事情？",
+      "delivery": {
+        "mood": "thoughtful",
+        "phrases": []
+      },
+      "face": "<svg class=\"notice-face\" data-accessory=\"\" data-expression=\"thinking\" viewBox=\"0 0 16 16\" width=\"32\" height=\"32\" fill=\"currentColor\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path opacity=\".13\" d=\"M2 1h10v2h2v11H2z\"/><path opacity=\".7\" d=\"M2 0h10v1H2zM1 1h1v13H1zM2 14h12v1H2zM14 3h1v11h-1zM12 1h1v1h-1zM13 2h1v1h-1z\"/><g class=\"notice-eyes-open\"><rect x=\"5\" y=\"7\" width=\"2\" height=\"2\"/><rect x=\"10\" y=\"7\" width=\"2\" height=\"2\"/></g><g class=\"notice-eyes-closed\" opacity=\"0\"><rect x=\"5\" y=\"8\" width=\"2\" height=\"1\"/><rect x=\"10\" y=\"8\" width=\"2\" height=\"1\"/></g><rect x=\"4\" y=\"5\" width=\"4\" height=\"1\"/><rect x=\"8\" y=\"11\" width=\"2\" height=\"1\"/><rect x=\"10\" y=\"12\" width=\"3\" height=\"2\"/></svg>",
+      "phrases": [
+        {
+          "text": "你有没有想过，",
+          "at": 0.12,
+          "end": 1.2000000000000002
+        },
+        {
+          "text": "你能在商城里面买村民，",
+          "at": 1.4600000000000002,
+          "end": 3.26
+        },
+        {
+          "text": "这是一件细思极恐的事情？",
+          "at": 3.5199999999999996,
+          "end": 5.5
+        }
+      ],
+      "notes": [
+        {
+          "at": 0.12,
+          "tone": 0,
+          "pitch": -2,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": -1.5,
+          "level": 1
+        },
+        {
+          "at": 0.2786206896551724,
+          "tone": 2,
+          "pitch": -1,
+          "kind": "joined",
+          "duration": 0.314,
+          "joinAt": 0.186,
+          "pitchEnd": 0.5,
+          "level": 0.94
+        },
+        {
+          "at": 0.7062068965517242,
+          "tone": 3,
+          "pitch": 0.5,
+          "kind": "accent",
+          "duration": 0.141,
+          "pitchEnd": 1,
+          "level": 1.06
+        },
+        {
+          "at": 0.8717241379310345,
+          "tone": 0,
+          "pitch": -0.5,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": -1,
+          "level": 0.55
+        },
+        {
+          "at": 1.0717241379310345,
+          "tone": 6,
+          "pitch": -2,
+          "kind": "accent",
+          "duration": 0.103,
+          "pitchEnd": -3,
+          "level": 1.06
+        },
+        {
+          "at": 1.4600000000000002,
+          "tone": 2,
+          "pitch": -1,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": -0.5,
+          "level": 1
+        },
+        {
+          "at": 1.6186206896551727,
+          "tone": 3,
+          "pitch": -2,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": -1.5,
+          "level": 1
+        },
+        {
+          "at": 1.8048275862068968,
+          "tone": 5,
+          "pitch": -2,
+          "kind": "joined",
+          "duration": 0.369,
+          "joinAt": 0.241,
+          "pitchEnd": -1,
+          "level": 0.94
+        },
+        {
+          "at": 2.211724137931035,
+          "tone": 1,
+          "pitch": 0.5,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": 0,
+          "level": 0.55
+        },
+        {
+          "at": 2.4117241379310346,
+          "tone": 3,
+          "pitch": 0.5,
+          "kind": "accent",
+          "duration": 0.134,
+          "pitchEnd": 1,
+          "level": 1.06
+        },
+        {
+          "at": 2.570344827586207,
+          "tone": 0,
+          "pitch": -0.5,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": -1,
+          "level": 0.55
+        },
+        {
+          "at": 2.756551724137931,
+          "tone": 1,
+          "pitch": -1.5,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": -1,
+          "level": 1
+        },
+        {
+          "at": 2.9979310344827588,
+          "tone": 7,
+          "pitch": -1.5,
+          "kind": "accent",
+          "duration": 0.16,
+          "pitchEnd": -2.5,
+          "level": 1.06
+        },
+        {
+          "at": 3.5199999999999996,
+          "tone": 3,
+          "pitch": -2,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": -1.5,
+          "level": 1
+        },
+        {
+          "at": 3.678620689655172,
+          "tone": 0,
+          "pitch": -1,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": -1.5,
+          "level": 0.55
+        },
+        {
+          "at": 3.8648275862068964,
+          "tone": 2,
+          "pitch": -1.5,
+          "kind": "joined",
+          "duration": 0.369,
+          "joinAt": 0.241,
+          "pitchEnd": -2,
+          "level": 0.94
+        },
+        {
+          "at": 4.2717241379310344,
+          "tone": 3,
+          "pitch": -1,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": -0.5,
+          "level": 1
+        },
+        {
+          "at": 4.471724137931034,
+          "tone": 0,
+          "pitch": 1,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": 0.5,
+          "level": 0.55
+        },
+        {
+          "at": 4.630344827586207,
+          "tone": 1,
+          "pitch": 1.5,
+          "kind": "accent",
+          "duration": 0.16,
+          "pitchEnd": 2,
+          "level": 1.06
+        },
+        {
+          "at": 4.8165517241379305,
+          "tone": 2,
+          "pitch": 0.5,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": 0,
+          "level": 0.55
+        },
+        {
+          "at": 5.057931034482758,
+          "tone": 3,
+          "pitch": 0.5,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": 1,
+          "level": 1
+        },
+        {
+          "at": 5.223448275862069,
+          "tone": 8,
+          "pitch": 1,
+          "kind": "accent",
+          "duration": 0.16,
+          "pitchEnd": 2.5,
+          "level": 1.06
+        }
+      ],
+      "duration": 7.7299999999999995,
+      "audio": {
+        "old": {
+          "file": "work-old.mp3",
+          "duration": 7.73,
+          "peak": 0.10861943662166595,
+          "rms": 0.0297929241316153
+        },
+        "new": {
+          "file": "work-new.mp3",
+          "duration": 7.73,
+          "peak": 0.11716266721487045,
+          "rms": 0.028460995794043556
+        }
+      }
+    },
+    {
+      "id": "rescue",
+      "label": "着急",
+      "note": "一口气带过去，句尾着重喊出来",
+      "text": "救命，商城来抓我了！",
+      "delivery": {
+        "mood": "urgent",
+        "phrases": []
+      },
+      "face": "<svg class=\"notice-face\" data-accessory=\"\" data-expression=\"notice\" viewBox=\"0 0 16 16\" width=\"32\" height=\"32\" fill=\"currentColor\" shape-rendering=\"crispEdges\" aria-hidden=\"true\"><path opacity=\".13\" d=\"M2 1h10v2h2v11H2z\"/><path opacity=\".7\" d=\"M2 0h10v1H2zM1 1h1v13H1zM2 14h12v1H2zM14 3h1v11h-1zM12 1h1v1h-1zM13 2h1v1h-1z\"/><rect x=\"7\" y=\"4\" width=\"2\" height=\"5\"/><rect x=\"7\" y=\"11\" width=\"2\" height=\"2\"/></svg>",
+      "phrases": [
+        {
+          "text": "救命，",
+          "at": 0.12,
+          "end": 0.48
+        },
+        {
+          "text": "商城来抓我了！",
+          "at": 0.74,
+          "end": 1.82
+        }
+      ],
+      "notes": [
+        {
+          "at": 0.12,
+          "tone": 0,
+          "pitch": 2,
+          "kind": "plain",
+          "duration": 0.128,
+          "pitchEnd": 2.5,
+          "level": 1
+        },
+        {
+          "at": 0.2786206896551724,
+          "tone": 6,
+          "pitch": 2.5,
+          "kind": "accent",
+          "duration": 0.16,
+          "pitchEnd": 1.5,
+          "level": 1.06
+        },
+        {
+          "at": 0.74,
+          "tone": 1,
+          "pitch": 1,
+          "kind": "joined",
+          "duration": 0.287,
+          "joinAt": 0.159,
+          "pitchEnd": 1,
+          "level": 0.94
+        },
+        {
+          "at": 1.0848275862068966,
+          "tone": 5,
+          "pitch": 5,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": 4.5,
+          "level": 0.55
+        },
+        {
+          "at": 1.3262068965517242,
+          "tone": 1,
+          "pitch": 4,
+          "kind": "accent",
+          "duration": 0.141,
+          "pitchEnd": 4.5,
+          "level": 1.06
+        },
+        {
+          "at": 1.4917241379310346,
+          "tone": 2,
+          "pitch": 3,
+          "kind": "light",
+          "duration": 0.072,
+          "pitchEnd": 2.5,
+          "level": 0.55
+        },
+        {
+          "at": 1.6917241379310344,
+          "tone": 5,
+          "pitch": 2,
+          "kind": "accent",
+          "duration": 0.103,
+          "pitchEnd": 1,
+          "level": 1.06
+        }
+      ],
+      "duration": 4.7,
+      "audio": {
+        "old": {
+          "file": "rescue-old.mp3",
+          "duration": 4.7,
+          "peak": 0.10861600935459137,
+          "rms": 0.02161369098263087
+        },
+        "new": {
+          "file": "rescue-new.mp3",
+          "duration": 4.7,
+          "peak": 0.11713924258947372,
+          "rms": 0.020026038036860806
+        }
+      }
+    }
+  ],
+  "sequence": {
+    "file": "sequence-emotion-2.mp3",
+    "duration": 34.85429166666667,
+    "peak": 0.11716266721487045,
+    "rms": 0.02658507200995401
+  }
+}

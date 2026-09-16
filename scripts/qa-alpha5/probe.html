@@ -1,0 +1,8 @@
+<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>html,body{margin:0;height:100%;overflow:hidden}#game,#world{position:absolute;inset:0}</style></head><body><div id="game"><div id="world"></div></div><script type="module">
+import {World} from '/src/world.js';
+window.probe={async setup(seed){this.state=structuredClone(seed);this.world=new World(document.querySelector('#world'),()=>{},{autoStart:false});this.world.active=true;this.world.sync(this.state);this.world.update(true,true);this.frames=[];const original=this.world.update.bind(this.world);this.world.update=(...args)=>{const t=performance.now();const r=original(...args);this.frames.push({at:t,ms:performance.now()-t});return r;};},
+ place(id){const samples=[];this.world.setMode(null);for(let i=0;i<3;i++){const t=performance.now();this.world.setMode({id,kind:'move',rotation:0});samples.push(performance.now()-t);this.world.setMode(null);}this.world.setMode({id,kind:'move',rotation:0});return samples;},
+ shot(){this.world.time=this.state.play;this.world.update(true,true);return this.world.renderer.domElement.toDataURL('image/png');},
+ start(){this.frames=[];this.world.last=performance.now();this.world.frame();},
+ stop(){this.world.halt();}};
+</script></body></html>

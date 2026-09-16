@@ -1,0 +1,11 @@
+<!doctype html><meta charset="utf-8"><title>大存档图片验证</title><script type="module">
+import {encodeImageData,decodeImageFile} from '/src/save-image-worker.js';
+import {paintSaveImage} from '/src/save-image-card.js';
+import {codeFromArchive} from '/src/save-image-codec.js';
+window.qa={async generate({length,theme='',code}){
+ if(!code){const bytes=new Uint8Array(length);let n=123456;for(let i=0;i<length;i++){n^=n<<13;n^=n>>>17;n^=n<<5;bytes[i]=n&255;}bytes[0]=3;code=codeFromArchive(bytes);}
+ const start=performance.now(),encoded=await encodeImageData(code,theme),blob=await paintSaveImage(encoded,{money:987654321,play:7200,counts:{V2:24},chunks:{overworld:Array(80)},webAppearance:{equipped:{theme}}},'QA',String);
+ const url=await new Promise(resolve=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.readAsDataURL(blob)});window.expected=code;
+ return {url,size:encoded.size,chars:code.length,ms:performance.now()-start};
+},async read(base64){try{const blob=await(await fetch(base64)).blob();return {ok:(await decodeImageFile(blob))===window.expected};}catch(e){return {ok:false,error:e.message};}}};
+</script>

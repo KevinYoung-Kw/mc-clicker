@@ -1,0 +1,842 @@
+/* Operational controls share the purchased theme; the world keeps its own light. */
+.management-page {
+  min-width: 0;
+  padding-bottom: 12px;
+  --management-surface: var(--web-inner, var(--paper));
+}
+.management-page :is(h3, h4, p) {
+  overflow-wrap: anywhere;
+}
+.management-page p {
+  font-size: 12px;
+  line-height: 1.65;
+  margin: 12px 0;
+}
+.management-page :is(.panel-note, .empty-note) {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+.management-page h3 {
+  font-size: 17px;
+  line-height: 1.5;
+}
+.management-page h4 {
+  font-size: 13px;
+  margin: 18px 0 10px;
+}
+.management-page :is(button, input, select) {
+  font: inherit;
+}
+.management-page
+  :is(
+    .management-actions button,
+    .roster-top button,
+    .actuator-stepper button,
+    .golem-upgrade button,
+    .dispatch-candidates > button,
+    .workplace-card button,
+    .network-map-tools button,
+    .network-map-realms button,
+    .network-map-view > header button
+  ) {
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  padding: 8px 10px;
+  color: var(--ink);
+  background: var(--management-surface);
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.management-page button:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+.management-page button:focus-visible,
+.management-page summary:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+}
+.management-page button:not(:disabled):active {
+  translate: 0 1px;
+}
+.management-page button.primary {
+  background: var(--green);
+  color: var(--paper);
+  border-color: var(--green);
+}
+.management-page .management-tabs {
+  gap: 4px;
+  padding: 3px;
+  background: color-mix(in srgb, var(--green) 7%, var(--paper));
+}
+.management-page .management-tabs button {
+  flex: 1;
+  padding: 8px;
+  font-size: 12px;
+}
+.management-page .management-tabs .active {
+  background: var(--green);
+  color: var(--paper);
+}
+.management-page .roster-top {
+  min-height: 48px;
+  line-height: 1.6;
+  padding-block: 8px;
+}
+.management-page .roster-top > span {
+  color: var(--muted);
+}
+.management-page .roster-top button {
+  flex-shrink: 0;
+}
+.management-page .resident-roster {
+  gap: 6px;
+  padding: 0 3px 8px 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--green) transparent;
+}
+.management-page .resident-roster > button {
+  background: var(--management-surface);
+  border-color: var(--line);
+  color: var(--ink);
+  min-height: 78px;
+}
+.management-page .resident-roster > button.selected {
+  background: color-mix(in srgb, var(--green) 14%, var(--paper));
+  border-color: var(--green);
+  box-shadow: inset 0 -2px var(--green);
+}
+.management-page
+  :is(
+    .task-card,
+    .resident-detail,
+    .workplace-card,
+    .network-device,
+    .dispatch-source
+  ) {
+  background: var(--management-surface);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  margin: 10px 0;
+  padding: 12px;
+}
+.management-page :is(.task-card, .resident-detail, .workplace-card) > header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.management-page :is(.resident-detail, .task-card) :is(small, p),
+.management-page .resident-detail > header span {
+  color: var(--muted);
+}
+.management-page .resident-income {
+  background: color-mix(in srgb, var(--green) 6%, var(--paper));
+  border-color: var(--line);
+}
+.management-page .resident-income strong {
+  color: var(--ink);
+}
+.management-page .resident-income em {
+  color: var(--muted);
+}
+.management-page .management-field input {
+  min-width: 0;
+  min-height: 44px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+.management-page .management-field > div {
+  display: flex;
+  gap: 6px;
+}
+.management-page .management-field > div input {
+  flex: 1;
+  width: 0;
+}
+.management-page .management-field button {
+  min-width: 52px;
+  min-height: 44px;
+  background: var(--management-surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+.management-page details {
+  border: 1px solid var(--line);
+  background: var(--management-surface);
+  margin: 12px 0;
+  padding: 0;
+}
+.management-page details > summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 10px 12px;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.management-page details > summary::-webkit-details-marker {
+  display: none;
+}
+.management-page details > summary::after {
+  content: "+";
+  margin-left: auto;
+  font: 18px/1 monospace;
+  color: var(--muted);
+}
+.management-page details[open] > summary {
+  border-bottom: 1px solid var(--line);
+}
+.management-page details[open] > summary::after {
+  content: "−";
+}
+.management-page details > :not(summary) {
+  margin-inline: 10px;
+}
+.management-page .device-status-details {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin-bottom: 0;
+}
+.management-page .device-status-details > summary {
+  min-height: 38px;
+  font-size: 11px;
+  font-weight: 400;
+  padding: 8px 0;
+  color: var(--muted);
+}
+.management-page .device-status-details > .facility-status {
+  margin-inline: 0;
+}
+.management-page .network-hub {
+  margin: 16px 0;
+}
+.management-page .network-tools {
+  border: 0;
+  gap: 8px;
+  padding: 0;
+}
+.management-page .network-tools:empty {
+  display: none;
+}
+.management-page .network-title {
+  font-size: 13px;
+  min-height: 40px;
+}
+.management-page .connection-actions {
+  padding-top: 6px;
+}
+.management-page .connection-benefit {
+  color: var(--ink);
+  line-height: 1.7;
+  margin-bottom: 9px;
+}
+.management-page .electricity-dashboard {
+  background: var(--management-surface);
+  border: 1px solid var(--line);
+  padding: 14px;
+  color: var(--ink);
+}
+.management-page .electricity-dashboard > strong {
+  font-weight: 700;
+  line-height: 1.2;
+  font-family: inherit;
+  font-size: 27px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.5px;
+  margin: 6px 0;
+}
+.management-page .electricity-dashboard :is(p, small, span),
+.management-page .electricity-metrics small {
+  color: var(--muted);
+}
+.management-page .electricity-metrics {
+  padding-top: 4px;
+  gap: 0;
+}
+.management-page .electricity-metrics > div {
+  padding: 4px 8px;
+  border-left: 1px solid var(--line);
+}
+.management-page .electricity-metrics > div:first-child {
+  border: 0;
+  padding-left: 0;
+}
+.management-page .electricity-dashboard .task-meter {
+  height: 6px;
+  margin: 10px 0;
+  background: color-mix(in srgb, var(--green) 15%, var(--paper));
+}
+.management-page .electricity-dashboard .task-meter i {
+  background: var(--green);
+}
+.management-page .electricity-dashboard .management-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.management-page .electricity-dashboard > small {
+  font-size: 11px;
+}
+.management-page .management-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  background: var(--management-surface);
+  min-height: 52px;
+  margin: 8px 0;
+  cursor: pointer;
+  font-size: 12px;
+}
+.management-switch > span {
+  min-width: 0;
+}
+.management-switch strong,
+.management-switch small {
+  display: block;
+}
+.management-switch small {
+  margin-top: 4px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.management-page input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--muted);
+  border-bottom-width: 2px;
+  background: var(--paper);
+  border-radius: 0;
+  display: inline-grid;
+  place-content: center;
+  margin: 0;
+}
+.management-page input[type="checkbox"]:checked {
+  background: var(--green);
+  border-color: var(--green);
+}
+.management-page input[type="checkbox"]:checked::after {
+  content: "";
+  width: 9px;
+  height: 5px;
+  border-left: 2px solid var(--paper);
+  border-bottom: 2px solid var(--paper);
+  transform: translateY(-1px) rotate(-45deg);
+}
+.management-page input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+.management-page .golem-stops label {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+}
+.management-count {
+  font-size: 11px;
+  color: var(--muted);
+}
+.allocation-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: color-mix(in srgb, var(--green) 7%, var(--paper));
+  border: 1px solid var(--line);
+  font-size: 12px;
+}
+.allocation-summary span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  color: var(--muted);
+}
+.allocation-summary span + span {
+  border-left: 1px solid var(--line);
+}
+.allocation-summary b {
+  font-size: 18px;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.management-page .actuator-stepper {
+  gap: 0;
+  border: 1px solid var(--line);
+  background: var(--management-surface);
+}
+.management-page .actuator-stepper button {
+  width: 42px;
+  border: 0;
+  padding: 6px;
+  font-size: 20px;
+}
+.management-page .actuator-stepper output {
+  width: 3ch;
+  font-size: 14px;
+  font-weight: 600;
+}
+.management-page .dispatch-candidates {
+  max-height: min(50dvh, 420px);
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--green) transparent;
+}
+.management-page .dispatch-candidates > button {
+  background: var(--paper);
+  border-color: var(--line);
+}
+.management-page .dispatch-fields dd {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+@media (max-width: 759px) {
+  .management-page {
+    font-size: 13px;
+  }
+  .management-page
+    :is(
+      .task-card,
+      .resident-detail,
+      .workplace-card,
+      .network-device,
+      .dispatch-source
+    ) {
+    padding: 10px;
+  }
+  .management-page .electricity-dashboard {
+    padding: 12px;
+  }
+  .management-page .electricity-dashboard > strong {
+    font-size: 24px;
+  }
+  .management-page .electricity-metrics b {
+    font-size: 11px;
+  }
+  .management-page .management-actions {
+    gap: 6px;
+  }
+  .management-page .management-actions button {
+    padding: 7px 9px;
+  }
+  .management-page .resident-roster {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-height: 225px;
+  }
+  .management-page .network-title img {
+    width: 32px;
+    height: 32px;
+  }
+  .management-page .dispatch-source > header > strong {
+    margin-left: 40px;
+  }
+}
+.population-support {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  font-size: 11px;
+  padding: 8px 0 12px;
+  margin-top: -8px;
+  color: var(--muted);
+}
+.population-support b {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.population-support button {
+  margin-left: auto;
+  padding: 4px 0;
+  min-height: 36px;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+  color: var(--green);
+  font-size: 11px;
+}
+/* Keep the two roster controls close to the people they manage. */
+.management-page .management-tabs {
+  margin-bottom: 8px;
+}
+.management-page .roster-top {
+  min-height: 44px;
+  padding-block: 2px;
+  margin-bottom: 0;
+}
+.management-page .roster-top:not(:has(button)) {
+  min-height: 30px;
+}
+.management-page .population-support {
+  margin-top: 0;
+  padding: 0 0 8px;
+}
+
+/* A group owns the frame. Its entries read as shop rows, not more cards.
+   Scope beats purchased-theme card fills without changing interactive controls. */
+body #game #panel .management-page :is(
+  .management-equipment article, .network-device, .dispatch-source, .workplace-card
+) {
+  margin: 0;
+  padding: 16px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  box-shadow: none;
+}
+body #game #panel .management-page .management-equipment {
+  gap: 0;
+  margin-block: 8px 20px;
+}
+body #game #panel .management-page details .management-equipment {
+  margin: 0 12px;
+}
+body #game #panel .management-page .disclosure-body {
+  margin-inline: 0;
+}
+body #game #panel .management-page details > :is(.network-device, .dispatch-source, .workplace-card) {
+  margin-inline: 12px;
+}
+body #game #panel .management-page :is(details .management-equipment, details) > article:last-child {
+  border-bottom: 0;
+}
+body #game #panel .management-page :is(.network-device, .dispatch-source, .workplace-card) > header {
+  padding-bottom: 0;
+  border: 0;
+  gap: 12px;
+  min-height: 28px;
+}
+body #game #panel .management-page .workplace-card > header > strong {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.management-page .workplace-card > header > span {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+body #game #panel .management-page .workplace-card > p {
+  margin: 12px 0 0;
+}
+body #game #panel .management-page .management-equipment .equipment-heading + small {
+  margin-top: 6px;
+}
+body #game #panel .management-page .management-equipment .equipment-content > small {
+  font-size: 12px;
+  line-height: 1.65;
+}
+body #game #panel .management-page :is(.management-equipment, .task-card, .network-device, .dimension-logistics) .facility-status {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 10px 0;
+}
+body #game #panel .management-page .resident-income {
+  background: transparent;
+}
+body #game #panel .management-page .personal-school {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--line);
+  padding: 14px 0 0;
+}
+body #game #panel .management-page .personal-school h4 {
+  margin-top: 0;
+}
+body #game #panel .management-page details details {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+body #game #panel .management-page .dispatch-candidates > button {
+  margin: 0;
+  padding: 10px 2px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  box-shadow: none;
+}
+body #game #panel .management-page .dispatch-candidates > button:last-child {
+  border-bottom: 0;
+}
+body #game #panel .management-page .dispatch-candidates > button:not(:disabled):hover {
+  background: color-mix(in srgb, var(--green) 8%, var(--paper));
+}
+.management-page .delivery-record {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.management-page .delivery-record:last-child {
+  border-bottom: 0;
+}
+
+/* Picking a worker stays in the workplace row, with one direct action per person. */
+.workplace-staff { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.workplace-entry { margin-top: 12px; }
+.workplace-entry:has(> button[hidden] + p[hidden]) { margin-top: 0; }
+.workplace-entry .empty-note { margin: 0; }
+body #game #panel .management-page .workplace-worker {
+  display: inline-flex; align-items: center; gap: 8px; padding: 5px 8px;
+  font-size: 12px; min-height: 44px;
+}
+.workplace-worker .resident-portrait { width: 24px; height: 28px; }
+.workplace-worker small { color: var(--muted); font-size: 11px; }
+.workplace-picker { margin-top: 12px; padding-top: 8px; border-top: 1px solid var(--line); }
+.workplace-picker > header { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.workplace-picker > header > strong { font-size: 12px; font-weight: 500; color: var(--muted); }
+.workplace-picker [data-candidate-count] { font-variant-numeric: tabular-nums; }
+body #game #panel .management-page .workplace-picker > header > button {
+  width: 44px; min-height: 44px; padding: 0; border: 0; background: transparent;
+  font-size: 20px; color: var(--muted);
+}
+.workplace-candidates {
+  max-height: min(42dvh, 300px); overflow-y: auto; overscroll-behavior: contain;
+  scrollbar-width: thin; scrollbar-color: var(--green) transparent;
+}
+body #game #panel .management-page .workplace-candidate {
+  display: grid; grid-template-columns: 32px minmax(0, 1fr) auto;
+  gap: 10px; align-items: center; width: 100%; min-height: 64px; padding: 10px 2px;
+  text-align: left; background: transparent; border: 0; border-bottom: 1px solid var(--line);
+}
+body #game #panel .management-page .workplace-candidate:last-child { border-bottom: 0; }
+body #game #panel .management-page .workplace-candidate:hover { background: color-mix(in srgb, var(--green) 8%, var(--paper)); }
+body #game #panel .management-page .workplace-candidate:focus-visible { outline-offset: -2px; }
+.workplace-candidate .resident-portrait { width: 32px; height: 38px; }
+.workplace-candidate-copy { display: grid; gap: 5px; min-width: 0; }
+.workplace-candidate-copy strong { display: flex; flex-wrap: wrap; align-items: baseline; gap: 3px 8px; font-size: 13px; }
+.workplace-candidate-copy small, .workplace-candidate-copy > span { font-size: 11px; font-weight: 400; color: var(--muted); }
+.workplace-candidate-action { font-size: 12px; font-weight: 650; color: var(--green); white-space: nowrap; }
+@media (max-width: 759px) {
+  body #game #panel .management-page :is(
+    .management-equipment article, .network-device, .dispatch-source, .workplace-card
+  ) {
+    padding-block: 14px;
+  }
+  body #game #panel .management-page details .management-equipment,
+  body #game #panel .management-page details > :is(.network-device, .dispatch-source, .workplace-card) {
+    margin-inline: 10px;
+  }
+}
+
+/* Equipment lists use one divider per item, like the shop's purchased list. */
+body #panel .management-page :is(.task-card,.network-device) {
+  border:0; border-bottom:1px solid var(--line); background:transparent;
+  box-shadow:none; padding:18px 0; margin:0;
+}
+body #panel .management-page .task-card > header { border:0; padding-bottom:14px; gap:12px; }
+body #panel .management-page :is(.task-card,.network-device) > header strong { line-height:1.6; }
+
+/* One recruitment row; show only the current blocker beneath it. */
+#panel .resident-recruitment {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+#panel .resident-recruitment .roster-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+#panel .resident-recruitment .roster-top > span {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  font-size: 13px;
+}
+#panel .resident-recruitment .roster-top small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+#panel .resident-recruitment [data-equipment-buy] {
+  min-height: 44px;
+  padding: 8px 10px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+#panel .resident-recruitment .recruitment-help {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+}
+#panel .resident-recruitment .recruitment-help .purchase-reason {
+  flex: 1 1 150px;
+  margin: 4px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+#panel .resident-recruitment .requirement-links { margin: 4px 0 0; max-width: 100%; }
+#panel .resident-recruitment .requirement-links button {
+  min-height: 40px;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  font-size: 12px;
+}
+#panel .resident-recruitment[data-purchase-state="complete"] .recruitment-help { display: none; }
+#panel .shop-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  margin: 0 0 8px;
+  border-bottom: 1px solid var(--line);
+}
+#panel .shop-toolbar .shop-order { width: 102px; margin-left: auto; flex-shrink: 0; }
+#panel .shop-toolbar .game-select-trigger {
+  min-height: 44px;
+  padding: 8px 0 8px 8px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--muted);
+  font-size: 12px;
+}
+#panel .recruitment-entry {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--ink);
+  text-align: left;
+}
+#panel .recruitment-entry > span { font-size: 13px; font-weight: 600; white-space: nowrap; }
+#panel .recruitment-entry > svg { flex-shrink: 0; }
+
+/* Operations first: one ledger surface, editable rows only on demand. */
+.operations-heading { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:6px 0 12px; }
+.operations-heading h3 { margin:0; }
+.operations-heading > span { color:var(--muted); font-size:11px; white-space:nowrap; }
+#panel-content > .management-tabs { overflow-x:auto; scrollbar-width:thin; }
+#panel-content > .management-tabs > button { flex:1 0 auto; min-width:40px; white-space:nowrap; }
+.management-page .network-region > header { margin-bottom:8px; }
+.management-page .network-region > header strong { font-size:13px; }
+.management-page .flow-chain > span { min-width:0; border-radius:0; background:var(--web-inner,var(--paper)); border-bottom:2px solid var(--line); }
+.management-page .flow-chain .limiting { border-color:var(--green); background:color-mix(in srgb,var(--green) 12%,var(--paper)); }
+.management-page .flow-chain small { color:var(--ink); font-size:12px; font-variant-numeric:tabular-nums; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; height:18px; }
+.region-cause { display:flex; align-items:center; justify-content:space-between; gap:10px; min-height:50px; font-size:12px; line-height:1.6; }
+.region-cause span { min-width:0; }
+.region-cause button { flex-shrink:0; }
+.management-page .buffer-row { color:var(--muted); font-size:11px; gap:8px; }
+.management-page .buffer-row small { width:15ch; white-space:nowrap; font-variant-numeric:tabular-nums; font-size:11px; }
+.region-actuals { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:12px; font-size:11px; color:var(--muted); }
+.region-actuals span { min-width:0; line-height:1.8; }
+.region-actuals b { color:var(--ink); font-variant-numeric:tabular-nums; }
+body #game #panel .dispatch-source > header { align-items:center; }
+body #game #panel .dispatch-edit { flex-shrink:0; display:flex; align-items:center; gap:5px; min-height:44px; padding:6px 8px; font-size:12px; }
+body #game #panel .dispatch-source .network-title { font-size:13px; line-height:1.5; }
+body #game #panel .dispatch-source .network-title img { width:32px; height:32px; }
+.dispatch-cargo { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); margin:10px 0 0; gap:8px; }
+.dispatch-cargo > div { display:flex; align-items:baseline; gap:7px; min-width:0; }
+.dispatch-cargo dt { font-size:11px; color:var(--muted); white-space:nowrap; }
+.dispatch-cargo dd { margin:0; font-size:13px; font-variant-numeric:tabular-nums; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+body #game #panel .dispatch-assigned { margin:7px 0 0; font-size:11px; color:var(--muted); }
+.dispatch-editor { border-top:1px solid var(--line); margin-top:12px; padding-top:8px; }
+.dispatch-editor > header { display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:13px; }
+.dispatch-person,.dispatch-golem { display:flex; align-items:center; gap:10px; min-height:56px; border-bottom:1px solid var(--line); padding:6px 0; }
+.dispatch-person > div,.dispatch-golem > span:nth-child(2) { flex:1; min-width:0; }
+.dispatch-person strong,.dispatch-golem strong { display:block; font-size:12px; }
+.dispatch-person small,.dispatch-golem small { display:block; color:var(--muted); font-size:11px; line-height:1.6; }
+.dispatch-person > button { flex-shrink:0; }
+.dispatch-golem { cursor:pointer; }
+.dispatch-golem:has(input:disabled) { color:var(--muted); cursor:default; }
+.dispatch-golem input { accent-color:var(--green); width:20px; height:20px; margin:10px; flex-shrink:0; }
+.dispatch-editor .resident-portrait { width:28px; height:36px; flex-shrink:0; }
+body #game #panel .dispatch-editor .dispatch-candidates { max-height:260px; overflow-y:auto; padding:0; border-top:0; margin-top:6px; overscroll-behavior:contain; }
+body #game #panel .dispatch-candidates > button { border:0; border-bottom:1px solid var(--line); background:transparent; padding:8px 0; text-align:left; }
+.dispatch-candidates small { display:block; line-height:1.6; }
+.village-people-summary { display:flex; gap:16px; margin:12px 0 18px; color:var(--muted); font-size:12px; }
+.village-people-summary b { color:var(--ink); font-variant-numeric:tabular-nums; }
+.village-cargo-flow { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0; border-block:1px solid var(--line); }
+body #game #panel .village-cargo-flow button { min-width:0; display:flex; align-items:flex-start; flex-direction:column; gap:6px; border:0; border-right:1px solid var(--line); background:transparent; box-shadow:none; padding:12px 8px; text-align:left; }
+body #game #panel .village-cargo-flow button:last-child { border-right:0; }
+.village-cargo-flow button > span { font-size:11px; display:flex; align-items:center; gap:4px; color:var(--muted); white-space:nowrap; }
+.village-cargo-flow strong { font-size:24px; font-variant-numeric:tabular-nums; line-height:1.3; max-width:100%; overflow:hidden; text-overflow:ellipsis; }
+.village-cargo-flow small { display:flex; width:100%; justify-content:space-between; color:var(--muted); font-size:11px; }
+.village-sale { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 0; border-bottom:1px solid var(--line); font-size:12px; }
+.village-sale small { display:block; color:var(--muted); font-size:10px; margin-top:5px; }
+.village-sale strong { font-variant-numeric:tabular-nums; white-space:nowrap; font-size:15px; }
+.village-attention { display:flex; align-items:center; gap:12px; min-height:80px; border-bottom:1px solid var(--line); }
+.village-attention > span { font-size:12px; line-height:1.7; flex:1; }
+.village-attention button { flex-shrink:0; }
+body #game #panel .village-vacancies > button { display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; border:0; border-bottom:1px solid var(--line); box-shadow:none; background:transparent; padding:12px 0; font-size:12px; text-align:left; }
+.village-vacancies small { display:block; color:var(--muted); font-size:11px; margin-top:5px; }
+.village-vacancies > button > span:last-child { color:var(--muted); white-space:nowrap; }
+.overview-links { display:flex; gap:8px; padding:14px 0; }
+body #game #panel .overview-links button { min-height:44px; flex:1; display:flex; justify-content:space-between; align-items:center; gap:6px; font-size:12px; }
+@media(max-width:380px) {
+ .village-people-summary { gap:10px; font-size:11px; }
+ .village-cargo-flow button > span svg { display:none; }
+ .region-actuals { gap:4px; font-size:10px; }
+ body #game #panel .dispatch-edit { padding-inline:5px; }
+ body #game #panel .dispatch-edit > span { font-size:11px; }
+}
+body #game #panel :is(.operations-heading,.village-attention,.network-hub > header) > button,
+body #game #panel .dispatch-edit { width:auto; flex:0 0 auto; }
+body #game #panel .operations-heading > h3,
+body #game #panel .network-hub > header > h3 { flex:1; min-width:0; margin:0; }
+body #game #panel .village-attention > button { max-width:38%; }
+.region-goods { margin-top:8px; }
+.dispatch-person small { min-height:32px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+
+/* Warm warning chips keep the bottleneck visible without coloring the whole panel. */
+.regional-overview { --flow-warning:#b18424; --flow-blocked:#ba613b; --flow-ok:#668064; }
+body #game #panel .flow-chain > button {
+ display:flex;flex:1;min-width:0;flex-direction:column;align-items:center;gap:5px;padding:9px 3px;
+ border:0;border-bottom:3px solid var(--line);background:var(--web-inner,var(--paper));box-shadow:none;
+ color:var(--ink);border-radius:0;cursor:pointer;min-height:78px;
+}
+body #game #panel .flow-chain > button[data-signal="warning"] { border-color:var(--flow-warning);background:color-mix(in srgb,#e8b844 25%,var(--paper)); }
+body #game #panel .flow-chain > button[data-signal="blocked"] { border-color:var(--flow-blocked);background:color-mix(in srgb,#d47b45 24%,var(--paper)); }
+body #game #panel .flow-chain > button[data-signal="idle"] { border-color:var(--muted);background:var(--web-inner,var(--paper)); }
+body #game #panel .flow-chain > button[aria-expanded="true"] { outline:2px solid var(--ink);outline-offset:2px; }
+.flow-chain button small { display:block;max-width:100%;height:18px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-variant-numeric:tabular-nums; }
+.flow-chain button em { font-size:10px;line-height:1.3;font-style:normal;opacity:.85; }
+.region-cause { margin:8px 0;border-bottom:1px solid var(--line);padding-left:10px;border-left:3px solid var(--flow-ok); }
+.region-cause[data-signal="warning"] { border-left-color:var(--flow-warning); }
+.region-cause[data-signal="blocked"] { border-left-color:var(--flow-blocked); }
+.region-cause[data-signal="idle"] { border-left-color:var(--muted); }
+body #game #panel .guide-help { display:flex;align-items:center;justify-content:center;gap:5px;min-height:44px;padding:6px 8px;font-size:12px;border:0;background:transparent;box-shadow:none; }
+body #game #panel .buffer-row > button { width:auto;min-width:0;flex-shrink:0;padding:8px 0;min-height:40px;border:0;background:transparent;box-shadow:none;color:var(--muted);font-size:11px; }
+body #game #panel .buffer-row > button[data-signal="warning"] { color:var(--ink);text-decoration:underline;text-decoration-color:var(--flow-warning);text-decoration-thickness:3px;text-underline-offset:5px; }
+.production-solutions { margin:16px 0 4px;border-top:2px solid var(--line);padding-top:8px; }
+.production-solutions > header { display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0; }
+.production-solutions h4 { margin:0;font-size:14px; }
+.production-solutions .guide-note { color:var(--muted);font-size:12px;line-height:1.7;margin:8px 0 12px; }
+.production-offer { display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px;padding:14px 0;border-bottom:1px solid var(--line); }
+body #game #panel .production-offer > button { min-height:44px;width:auto;border:0;box-shadow:none; }
+body #game #panel .guide-offer-name { text-align:left;padding:0;background:transparent;color:var(--ink); }
+.guide-offer-name strong { display:block;font-size:13px;line-height:1.6; }
+.guide-offer-name small { display:block;color:var(--muted);font-size:11px;margin-top:3px; }
+body #game #panel .guide-offer-buy { display:flex;align-items:center;justify-content:center;gap:5px;align-self:center;padding:8px;font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap;background:var(--green);color:var(--web-action-text,#fff); }
+body #game #panel .guide-offer-buy[data-state="locked"],body #game #panel .guide-offer-buy[data-state="short"],body #game #panel .guide-offer-buy:disabled { color:var(--ink);background:var(--web-inner,var(--paper)); }
+.production-offer p { grid-column:1/-1;margin:0;font-size:11px;line-height:1.7; }
+.production-offer .guide-offer-purpose { color:var(--muted); }
+.production-offer .guide-offer-reason { color:var(--ink); }
+.guide-locked { margin-top:8px; }
+.guide-locked > summary { padding:12px 0;font-size:12px;cursor:pointer;color:var(--muted); }
+.guide-free-action:not([hidden]) { display:flex;align-items:center;gap:12px;border-block:1px solid var(--line);padding:12px 0; }
+.guide-free-action > span { flex:1;font-size:12px;line-height:1.7; }
+body #game #panel .guide-free-action > button { width:auto;flex-shrink:0;min-height:44px;font-size:12px; }

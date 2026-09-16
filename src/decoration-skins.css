@@ -1,0 +1,176 @@
+/* Persisted skins are part of the initial page, independent of the lazy shop. */
+body[data-frame="frame-0"],
+.skin-surface[data-frame="frame-0"] {
+  --skin-edge: #88623e;
+  --skin-light: #d9ba83;
+  --skin-dark: #5d4835;
+  --skin-mark: #d6bb83;
+}
+body[data-frame="frame-1"],
+.skin-surface[data-frame="frame-1"] {
+  --skin-edge: #a77552;
+  --skin-light: #d7ad78;
+  --skin-dark: #574f3b;
+  --skin-mark: #7caa96;
+}
+body[data-frame="frame-2"],
+.skin-surface[data-frame="frame-2"] {
+  --skin-edge: #584c69;
+  --skin-light: #a898bb;
+  --skin-dark: #302d41;
+  --skin-mark: #ae99ce;
+}
+body[data-frame^="frame-"] :is(#panel, .hotbar, #modal),
+.skin-surface[data-frame^="frame-"] {
+  border: 5px solid var(--skin-edge);
+  outline: 1px solid var(--skin-dark);
+  outline-offset: -1px;
+  box-shadow:
+    inset 0 2px var(--skin-light),
+    inset 2px 0 var(--skin-light),
+    inset -2px -2px var(--skin-dark),
+    4px 5px 0 #293f3629;
+}
+body[data-frame^="frame-"] #panel .panel-header {
+  border-bottom: 3px solid var(--skin-edge);
+  padding-bottom: 18px;
+  position: relative;
+}
+body[data-frame^="frame-"] #panel .panel-header::after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  background: var(--skin-mark);
+  bottom: -4px;
+  left: 0;
+  box-shadow:
+    9px 0 var(--skin-edge),
+    18px 0 var(--skin-mark),
+    27px 0 var(--skin-edge),
+    36px 0 var(--skin-mark);
+}
+body[data-frame="frame-1"] :is(.hotbar, #panel),
+.skin-surface[data-frame="frame-1"] {
+  border-left-color: #779985;
+  border-right-color: #779985;
+  box-shadow:
+    inset 3px 0 #c2d0a9,
+    inset -3px 0 #466b60,
+    inset 0 2px #e1b989,
+    4px 5px 0 #293f3629;
+}
+body[data-frame="frame-2"] .hotbar button.active {
+  background: #71627f;
+  border-color: #b8a6cc;
+}
+body[data-frame="frame-1"] .hotbar button.active {
+  background: #507969;
+  border-color: #bbcca9;
+}
+body[data-frame^="frame-"] .build-card {
+  border-left: 4px solid var(--skin-mark);
+}
+#world-label[data-title-style^="title-"] .eyebrow,
+.title-sample[data-title-style^="title-"] {
+  display: inline-block;
+  position: relative;
+  min-width: 136px;
+  padding: 9px 18px;
+  border: 3px solid #76583c;
+  background: #b18c58;
+  color: #fff1ce;
+  box-shadow:
+    inset 0 2px #d8b777,
+    3px 4px 0 #4c53333b;
+  text-align: center;
+  font-weight: 750;
+  letter-spacing: 1.5px;
+}
+#world-label[data-title-style^="title-"] .eyebrow::before,
+.title-sample[data-title-style^="title-"]::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  left: 5px;
+  top: 5px;
+  background: #604c39;
+  box-shadow: 0 12px #604c39;
+}
+#world-label[data-title-style^="title-"] .eyebrow::after,
+.title-sample[data-title-style^="title-"]::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  right: 5px;
+  top: 5px;
+  background: #604c39;
+  box-shadow: 0 12px #604c39;
+}
+#world-label[data-title-style="title-1"] .eyebrow,
+.title-sample[data-title-style="title-1"] {
+  background: #984f3f;
+  border-color: #633e32;
+  color: #ffe2b6;
+  box-shadow:
+    inset 0 2px #cc8d60,
+    inset 0 -3px #723f34,
+    3px 4px 0 #4c53333b;
+}
+#world-label[data-title-style="title-2"] .eyebrow,
+.title-sample[data-title-style="title-2"] {
+  background: #514961;
+  border-color: #373546;
+  color: #e2d5f0;
+  box-shadow:
+    inset 0 2px #a497b9,
+    inset 0 -3px #766487,
+    3px 4px 0 #4c53333b;
+}
+.channel-flag {
+  display: inline-flex;
+  width: 32px;
+  height: 25px;
+  align-items: center;
+}
+.channel-flag svg {
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+body[data-flag^="flag-"] .live-badge {
+  border-left: 4px solid var(--flag-color);
+  padding: 5px 10px;
+}
+body[data-cursor="cursor-1"] .hit-chip {
+  box-shadow:
+    3px 0 #c8f2dd,
+    0 3px #3e8389;
+}
+body[data-cursor="cursor-2"] .hit-chip {
+  border: 1px solid #d9c9ee;
+  box-shadow: 3px 3px #71528c;
+}
+.share-pixels[data-effect="share-1"] i {
+  height: 4px;
+  width: 14px;
+  box-shadow: -5px 5px var(--piece);
+}
+.share-pixels[data-effect="share-2"] i {
+  background: #3e354d;
+  border: 2px solid var(--piece);
+  box-shadow: 3px 3px #c6b3df88;
+}
+@media (max-width: 759px) {
+  body[data-frame^="frame-"] #modal {
+    border-width: 3px;
+  }
+  #world-label[data-title-style^="title-"] .eyebrow {
+    min-width: 112px;
+    padding: 6px 13px;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+  }
+}

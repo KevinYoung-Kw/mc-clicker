@@ -1,0 +1,259 @@
+/* Normal modal typography, with short readable chapters instead of a new HUD. */
+#info-panel .info-section {
+  margin: 18px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid #cbd5b8;
+}
+#info-panel .info-section h3 {
+  margin: 0 0 8px;
+  color: #5e764c;
+  font-size: 15px;
+  line-height: 1.6;
+}
+#info-panel .info-section p,
+#info-panel > p {
+  color: #849574;
+  font-size: 12px;
+  line-height: 1.85;
+  margin: 5px 0;
+}
+#info-panel .info-section ul {
+  margin: 8px 0 0;
+  padding-left: 19px;
+  color: #76896b;
+  font-size: 12px;
+  line-height: 1.9;
+}
+#info-panel .info-togglebutton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border: 1px solid #bfceaa;
+  border-radius: 0;
+  background: #e7eed7;
+  color: #698453;
+  font-size: 12px;
+  text-align: left;
+}
+#info-panel .info-togglebutton[aria-pressed="false"] {
+  background: #f1efdf;
+  color: #8a947c;
+  border-color: #d2d7c0;
+}
+.guidance-card {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: start;
+  gap: 10px 12px;
+  min-width: 0;
+  margin: 0 0 12px;
+  padding: 15px;
+  border: 1px solid #bdccaa;
+  border-radius: 0;
+  background: #ecf0df;
+  box-shadow: inset 0 2px #f9f7e9;
+}
+.guidance-card .guidance-glyph {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #c9d5b6;
+  background: #e2eacc;
+  color: #8ba66a;
+}
+.guidance-card .guidance-glyph svg {
+  width: 20px;
+  height: 20px;
+}
+.guidance-card > div {
+  min-width: 0;
+}
+.guidance-card > div > small {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 9px;
+  line-height: 1.5;
+  color: #92a47a;
+}
+.guidance-card > div > h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.guidance-card > div > p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.8;
+  color: #81946f;
+}
+.guidance-card > button {
+  grid-column: 1 / -1;
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  background: #6e8953;
+  border: 1px solid #597345;
+  border-radius: 0;
+  box-shadow:
+    inset 0 2px #93aa75,
+    0 2px #50683d;
+  color: #f6f2e2;
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+}
+.guidance-card > button:disabled {
+  opacity: 1;
+  background: #e5e9d6;
+  border-color: #c6d1b5;
+  box-shadow: none;
+  color: #99a58a;
+}
+.guidance-card.owned {
+  background: #f0f1e5;
+  border-color: #cbd5bc;
+}
+.guidance-card.owned > button {
+  background: #e5ecd5;
+  border-color: #c0ceaa;
+  color: #78945d;
+  box-shadow: inset 0 2px #f8f8e9;
+}
+#info-panel .info-events {
+  list-style: none;
+  padding: 0;
+}
+#info-panel .info-events > li {
+  padding: 9px 0;
+  border-bottom: 1px dashed #d6ddc8;
+}
+#info-panel .info-events > li:last-child {
+  border-bottom: 0;
+}
+#info-panel .info-events small {
+  display: block;
+  color: #a0ad8c;
+  font-size: 10px;
+}
+#info-panel .info-events p {
+  margin: 4px 0 0;
+  color: #728566;
+  font-size: 12px;
+  line-height: 1.8;
+}
+#info-panel .setting {
+  min-height: 56px;
+  gap: 15px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+#info-panel .setting input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+}
+.guidance-card h3,
+.guidance-card h4 {
+  color: #657e50;
+}
+.guidance-card button {
+  min-height: 44px;
+}
+.info-mailbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
+  margin: 16px 0;
+  text-align: left;
+}
+.info-mailbox > span {
+  flex: 1;
+  min-width: 0;
+}
+.info-mailbox strong,
+.info-mailbox small {
+  display: block;
+}
+.info-mailbox small {
+  margin-top: 5px;
+  line-height: 1.6;
+}
+
+/* The narrator's desk: one flat page, shared game colors, no nested cards. */
+#info-panel.world-info{min-width:0;}
+.world-info .info-persona{display:flex;align-items:center;gap:16px;margin:0 0 16px;}
+.world-info [data-narrator-avatar]{display:grid;place-items:center;flex:0 0 56px;width:56px;height:64px;color:var(--ink);}
+.world-info [data-narrator-avatar] .notice-face{width:48px;height:auto;}
+.world-info .info-persona small{color:var(--muted);font-size:11px;line-height:1.5;}
+#info-panel .info-persona h2{margin:5px 0 0;font-size:25px;line-height:1.2;}
+#info-panel.world-info .info-introduction{color:var(--ink);font-size:13px;line-height:1.8;margin:0;max-width:38em;}
+.world-info .info-narration-toggle{display:flex;align-items:center;gap:8px;min-height:44px;margin:8px 0 14px;padding:6px 0;border:0;background:none;color:var(--green);font-size:12px;box-shadow:none;}
+.world-info .info-narration-toggle[aria-pressed="true"]{color:var(--muted);}
+.world-info .info-tabs{display:flex;border-bottom:1px solid var(--line);gap:24px;margin-top:12px;}
+.world-info .info-tabs button{min-height:44px;padding:9px 0;border:0;border-bottom:2px solid transparent;background:none;color:var(--muted);box-shadow:none;font-size:13px;}
+.world-info .info-tabs button[aria-selected="true"]{border-bottom-color:var(--green);color:var(--ink);font-weight:700;}
+.world-info .info-tabs small{font-variant-numeric:tabular-nums;margin-left:5px;color:var(--muted);font-size:10px;}
+#info-panel.world-info .info-section{margin:0;padding:0;border:0;}
+#info-panel.world-info .info-section[hidden]{display:none;}
+#info-panel.world-info .info-guide-list,#info-panel.world-info .info-events{list-style:none;padding:0;margin:0;}
+#info-panel.world-info .info-guide-list li{padding:16px 0;border-bottom:1px solid var(--line);}
+#info-panel.world-info .info-guide-list strong{color:var(--ink);font-size:13px;font-weight:600;}
+#info-panel.world-info .info-guide-list p{color:var(--muted);font-size:13px;line-height:1.8;margin:6px 0 0;}
+#info-panel.world-info .info-events li{display:grid;grid-template-columns:42px minmax(0,1fr);gap:14px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line);}
+#info-panel.world-info .info-events small{font-size:11px;font-variant-numeric:tabular-nums;color:var(--muted);}
+#info-panel.world-info .info-events p{margin:0;font-size:13px;line-height:1.75;color:var(--ink);}
+#info-panel.world-info .info-events .info-empty{display:block;padding:24px 0;}
+#info-panel.world-info .info-events .info-empty p{color:var(--muted);}
+#info-panel.world-info .info-mailbox{padding:14px 0;margin:12px 0;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);box-shadow:none;background:none;}
+#info-panel.world-info .info-mailbox small{font-size:11px;color:var(--muted);}
+#info-panel.world-info #info-return{display:block;margin:20px 0 0;padding:10px 0;border:0;background:none;color:var(--muted);box-shadow:none;font-size:12px;}
+@media(max-width:759px){.world-info .info-persona{gap:12px;margin-bottom:12px}.world-info [data-narrator-avatar]{flex-basis:44px;width:44px;height:52px}.world-info [data-narrator-avatar] .notice-face{width:40px}#info-panel .info-persona h2{font-size:23px}.world-info .info-tabs{gap:22px}#info-panel.world-info .info-events li{gap:10px;grid-template-columns:36px minmax(0,1fr)}#info-panel.world-info .info-guide-list li{padding:14px 0}}
+body[data-theme^="web-theme-"] #modal #info-panel.world-info :where(.info-tabs button,.info-narration-toggle,#info-return,.info-mailbox){background:transparent;background-image:none;box-shadow:none;color:var(--muted);border-color:transparent;}
+body[data-theme^="web-theme-"] #modal #info-panel.world-info .info-tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--green);}
+body[data-theme^="web-theme-"] #modal #info-panel.world-info .info-narration-toggle[aria-pressed="false"]{color:var(--green);}
+body[data-theme^="web-theme-"] #modal #info-panel.world-info .info-mailbox{border-top-color:var(--line);border-bottom-color:var(--line);}
+
+/* Major releases use the same flat dividers as the guide, without nested cards. */
+#info-panel.world-info .version-current{margin:16px 0 0;color:var(--muted);font-size:12px;}
+#info-panel.world-info .version-current strong{color:var(--ink);font-weight:600;}
+#info-panel.world-info .version-history{list-style:none;margin:0;padding:0;}
+#info-panel.world-info .version-history>li{padding:18px 0;border-bottom:1px solid var(--line);}
+#info-panel.world-info .version-history h3{display:flex;flex-wrap:wrap;gap:6px 12px;margin:0 0 8px;font-size:14px;line-height:1.6;color:var(--ink);}
+#info-panel.world-info .version-history h3 span{color:var(--green);font-variant-numeric:tabular-nums;}
+#info-panel.world-info .version-history ul{margin:0;padding-left:17px;color:var(--muted);font-size:13px;line-height:1.8;}
+#info-panel.world-info .version-history ul li+li{margin-top:5px;}
+@media(max-width:759px){.world-info .info-tabs{gap:clamp(10px,4vw,22px);}.world-info .info-tabs button{white-space:nowrap;}#info-panel.world-info .version-history>li{padding:15px 0;}}
+
+/* A compact field manual. Reuse the game's themed selector and flat separators. */
+#info-panel[data-info-tab="guide"] :is(.info-introduction,.info-narration-toggle,[data-narrator-activities]) { display:none; }
+#info-panel[data-info-tab="guide"] .info-persona { margin-bottom:16px; }
+#info-panel .manual-controls { display:grid; grid-template-columns:minmax(0,1fr) 36px 36px; align-items:center; gap:8px; margin:18px 0; scroll-margin-top:44px; }
+#info-panel .manual-controls .game-select-trigger { background:transparent; border:0; border-bottom:1px solid var(--line); box-shadow:none; padding:8px 0; font-size:14px; font-weight:600; min-height:40px; }
+#info-panel button.manual-turn { display:grid; place-items:center; width:36px; min-height:36px; padding:0; border:1px solid var(--line); background:transparent; color:var(--ink); box-shadow:none; }
+#info-panel .manual-turn:disabled { opacity:.3; }
+#guide-prev svg { transform:rotate(180deg); }
+#info-panel .manual-page[hidden] { display:none; }
+#info-panel .tutorial-figure { margin:0; }
+#info-panel .tutorial-figure img { display:block; width:100%; height:auto; margin:0; border:0; }
+#info-panel .manual-page > p { font-size:13px; line-height:1.9; color:var(--ink); margin:16px 0 0; }
+#info-panel:has(.illustrated-manual) #info-return { margin-top:22px; }
+#modal:has(.illustrated-manual) > #modal-close { position:sticky; float:right; top:0; right:0; margin:-8px -2px 0 8px; background:var(--paper); }
+@media(max-width:759px) {
+  #modal:has(.illustrated-manual) { width:calc(100vw - 24px); max-height:calc(100dvh - 24px); padding:22px 16px 18px; }
+  #info-panel .manual-controls { grid-template-columns:minmax(0,1fr) 40px 40px; gap:6px; margin:14px 0; }
+  #info-panel button.manual-turn { width:40px; min-height:40px; }
+  #info-panel .manual-page > p { margin-top:14px; }
+}
+#info-panel[data-info-tab="guide"] .info-mailbox, #info-panel:not(.world-info):has(.illustrated-manual) .info-mailbox { display:none; }
+.world-info .info-narrator-controls{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin:8px 0 14px}
+.world-info .info-narrator-controls .info-narration-toggle{margin:0}
+#info-panel[data-info-tab="guide"] .info-narrator-controls{display:none}

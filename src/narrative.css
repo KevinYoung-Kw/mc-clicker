@@ -1,0 +1,184 @@
+/* Same pixel materials as the game; a subtitle strip, not another modal. */
+#narrator .narrator-body {min-width:0;flex:1;}
+#narrator p {margin:0;font-size:14px;line-height:1.65;white-space:normal;overflow-wrap:anywhere;font-weight:500;letter-spacing:0;}
+#narrator .narrator-actions {display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+#narrator .narrator-actions button {pointer-events:auto;min-height:40px;padding:6px 12px;font-size:13px;}
+.narrator-activity {display:flex;align-items:center;gap:8px;padding:12px 0;border-bottom:1px solid var(--line,#c6cfba);font-size:14px;}
+.narrator-activity>span {flex:1;}
+.narrator-activity button {min-height:40px;padding:6px 10px;}
+.hud:has(.wallet[hidden]) .hud-tools {margin-left:auto;}
+body.interface-minimal {--hud:46px;}
+body.interface-minimal .hud {height:var(--hud);}
+body.interface-minimal .hud #hud-more {margin-left:auto;}
+.hud [hidden],#world-label[hidden],#narrator[hidden],#narrator [hidden] {display:none!important;}
+@media(max-width:759px){
+ #narrator p {font-size:14px;line-height:1.6;}
+ body.interface-minimal .hud {grid-template-columns:auto 1fr auto;}
+ .guidance-card h3 {font-size:15px;}
+}
+.guidance-card p:not(.purchase-reason) {font-size:13px;line-height:1.65;}
+@media(max-width:759px){.guidance-card p:not(.purchase-reason){font-size:13px;line-height:1.65;}}
+
+/* Shared shell: receipts, pause, world events and narration have one face. */
+#notice-center {width:max-content;max-width:min(var(--narrator-width,400px),calc(100vw - 24px))}
+#notification-shell {display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:0;background:var(--paper);color:var(--ink);box-shadow:0 2px #24362418;text-align:left;box-sizing:border-box;pointer-events:none}
+#notification-shell .notification-avatar {width:32px;height:32px;flex:none;line-height:0}
+#notification-shell .notice-face {width:32px;height:32px;display:block;color:inherit}
+#notification-shell .notice-face[data-accessory=date-bow] {height:40px}
+#notification-shell .notification-avatar:has([data-accessory=date-bow]) {height:40px}
+#notification-shell:has(#narrator:not([hidden]) .narrator-actions:not([hidden])) .notification-avatar {align-self:flex-start;margin-top:3px}
+#notification-shell[data-kind=error] .notification-avatar {color:#c64f35}
+#notification-shell[data-kind=pause] .notification-avatar {opacity:.65}
+#notification-shell .notification-content {min-width:0;flex:1;align-self:center}
+#notice-center :is(#toast,#foreground-status,#narrator) {display:block;position:static;inset:auto;width:100%;max-width:none;min-height:0;margin:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none;color:inherit;font-size:14px;font-weight:500;line-height:1.6;text-align:left;opacity:1;transform:none;animation:none;transition:none}
+#notice-center :is(#toast,#foreground-status,#narrator)[hidden] {display:none!important}
+#notice-center .scene-notice span {white-space:normal;overflow:visible;text-overflow:clip}
+#notice-center .notice-title {display:block;overflow-wrap:anywhere}
+#notice-center .notice-receipt {display:flex;flex-wrap:wrap;column-gap:12px;row-gap:2px;margin-top:3px;font-size:12px;font-weight:400;line-height:1.5;opacity:.8}
+#notice-center .notice-receipt b {font:inherit;font-variant-numeric:tabular-nums;white-space:nowrap}
+@media(max-width:759px){
+ #notice-center {top:calc(var(--hud) + 8px);max-width:calc(100vw - 24px)}
+ #notification-shell {gap:8px;padding:8px 10px}
+ body:has(#game.sheet-expanded) #notice-center {top:var(--notice-y,calc(var(--hud) + 76px));max-width:calc(100vw - 24px)}
+ body:has(#game.sheet-expanded) #notice-center .scene-notice {padding:0;font-size:14px;line-height:1.6}
+ body:has(#game.sheet-expanded) #notice-center .scene-notice span {white-space:normal;overflow:visible;text-overflow:clip}
+}
+
+/* Eyelids change on the pixel grid. No face scaling or JS animation loop. */
+.notice-face .notice-eyes-open {animation:notice-eyes-open 6.2s step-end infinite}
+.notice-face .notice-eyes-closed {animation:notice-eyes-closed 6.2s step-end infinite}
+@keyframes notice-eyes-open {0%,44%,48%,100%{opacity:1}45%,47%{opacity:0}}
+@keyframes notice-eyes-closed {0%,44%,48%,100%{opacity:0}45%,47%{opacity:1}}
+body.reduce-motion .notice-face :is(.notice-eyes-open,.notice-eyes-closed),
+#notification-shell[data-kind=pause] .notice-face :is(.notice-eyes-open,.notice-eyes-closed) {animation:none}
+@media(prefers-reduced-motion:reduce){.notice-face :is(.notice-eyes-open,.notice-eyes-closed){animation:none}}
+
+/* The same muted yellow as the opening shop cue; a finite pulse, then a ring. */
+.tutorial-entry-highlight {outline:2px solid #b39a57!important;outline-offset:3px;animation:first-shop-pulse 1.1s ease-in-out 2;scroll-margin-top:12px}
+#manual-entry-hint {position:fixed;z-index:90;inset:auto;transform:translateX(-50%);display:flex;align-items:center;gap:7px;width:max-content;max-width:calc(100vw - 24px);min-height:40px;padding:8px 12px;border:1px solid #b39a57;border-radius:0;background:var(--paper);color:var(--ink);box-shadow:0 2px #24362418;font-family:inherit;font-weight:500;font-size:13px;line-height:1.4;white-space:nowrap}
+#manual-entry-hint[hidden] {display:none!important}
+#manual-entry-hint::before {content:"";position:absolute;top:-5px;left:var(--hint-arrow-x,50%);width:7px;height:7px;border-left:1px solid #b39a57;border-top:1px solid #b39a57;background:var(--paper);transform:translateX(-50%) rotate(45deg)}
+body.reduce-motion .tutorial-entry-highlight {animation:none}
+@media(prefers-reduced-motion:reduce){.tutorial-entry-highlight{animation:none}}
+
+/* One recognisable captive: a paper face poking out of the shop's bag. */
+.captive-bag-art {display:block;position:relative;width:72px;height:72px;color:var(--ink);flex:none;image-rendering:pixelated}
+.captive-handle {position:absolute;left:20px;top:22px;width:32px;height:22px;border:4px solid var(--ink);opacity:.55}
+.captive-face {position:absolute;left:18px;top:2px;width:36px;height:40px;transform:rotate(-8deg);color:var(--ink);background:var(--paper);clip-path:polygon(8% 0,80% 0,100% 20%,100% 100%,0 100%,0 8%)}
+.captive-face .notice-face {display:block;width:36px;height:36px}
+.captive-bag-front {position:absolute;left:9px;top:32px;width:54px;height:35px;background:var(--green);border:2px solid var(--ink);box-shadow:inset 4px 0 #ffffff20,inset -4px -4px #00000015;clip-path:polygon(4px 0,calc(100% - 4px) 0,calc(100% - 4px) 4px,100% 4px,100% calc(100% - 4px),calc(100% - 4px) calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,4px calc(100% - 4px),0 calc(100% - 4px),0 4px,4px 4px)}
+.captive-seal {position:absolute;left:29px;top:40px;width:16px;height:20px;display:grid;place-items:center;background:var(--paper);color:var(--ink);font:700 15px/1 monospace;box-shadow:2px 2px #00000020}
+.narrator-capture {position:fixed;inset:auto;margin:0;padding:0;border:0;width:72px;height:72px;overflow:visible;background:transparent;color:var(--ink);pointer-events:none;z-index:10000;transform-origin:center;will-change:transform,opacity}
+.narrator-capture::backdrop {background:transparent;pointer-events:none}
+.narrator-capture .captive-bag-front {animation:captive-clasp .26s steps(3,end)}
+@keyframes captive-clasp {from{translate:0 18px}to{translate:0 0}}
+.hotbar button.has-captive-notice {position:relative}
+.shop-captive-token {display:none;position:absolute;inset:5px 0 auto;justify-content:center;pointer-events:none;height:30px;overflow:visible}
+.has-captive-notice .shop-captive-token {display:flex}
+.shop-captive-token .captive-bag-art {transform:scale(.46);transform-origin:top center}
+.hotbar .has-captive-notice>svg {visibility:hidden}
+#first-shop-hint {position:fixed;z-index:25;inset:auto;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:8px;width:max-content;max-width:calc(100vw - 24px);min-height:44px;padding:8px 14px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:0;box-shadow:0 2px #24362418;font-size:13px;line-height:1.4;white-space:nowrap}
+#first-shop-hint[hidden] {display:none!important}
+#first-shop-hint .captive-bag-art {display:none}
+#first-shop-hint::after {content:"";position:absolute;bottom:-5px;left:var(--hint-arrow-x,50%);width:7px;height:7px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper);transform:translateX(-50%) rotate(45deg)}
+
+/* Opening shop: a few flat product rows, then a deliberate path to the catalogue. */
+#panel .panel-header>div:has(#shop-wallet:not([hidden])) {display:grid;grid-template-columns:1fr auto;align-items:center;gap:6px 14px;flex:1;min-width:0;margin-right:12px}
+#panel .panel-header #panel-kicker {grid-column:1/-1}
+#shop-wallet {display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:13px;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+#shop-wallet strong {font-weight:600;max-width:100px;overflow:hidden;text-overflow:ellipsis}
+#shop-wallet[hidden] {display:none}
+#panel[data-shop-opening=true] #panel-kicker {display:none}
+#panel[data-shop-opening=true] .panel-header h2 {margin:0}
+#panel[data-shop-opening=true] .panel-header {padding-bottom:14px}
+.opening-store {padding-top:0}
+.opening-captive {display:flex;align-items:center;justify-content:center;gap:14px;min-height:126px;margin:0 0 12px;background:color-mix(in srgb,var(--green) 7%,transparent);border-bottom:1px solid var(--line)}
+.opening-captive>span:last-child {font-size:12px;color:var(--muted);padding:5px 0;border-block:1px solid var(--line)}
+#panel .opening-product {display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:6px 10px;padding:18px 0;border:0;border-bottom:1px solid var(--line);background:transparent;box-shadow:none;border-radius:0}
+#panel .opening-product:first-child {padding-top:8px}
+#panel .opening-product h3 {margin:0;font-size:16px;line-height:1.4;letter-spacing:0;font-weight:600;color:var(--ink)}
+#panel .opening-icon {display:grid;place-items:center;width:44px;height:44px;color:var(--green);background:transparent;border:0}
+#panel .opening-icon img {width:44px;height:44px;object-fit:contain;border:0;background:transparent}
+#panel .opening-icon :is(.item-art,.item-icon) {width:44px;height:44px;border:0;background:transparent}
+#panel .opening-name {grid-column:1/3;display:flex;align-items:center;gap:10px;min-width:0;padding:0;background:none;border:0;box-shadow:none;text-align:left;color:var(--ink);min-height:44px}
+#panel .opening-buy {min-width:90px;min-height:44px;padding:7px 10px;font-size:13px;line-height:1.4;white-space:nowrap;justify-self:end}
+body #panel .opening-buy .buy-action {display:inline}
+#panel .opening-effect {grid-column:2/-1;margin:0;font-size:13px;line-height:1.65;color:var(--muted)}
+#panel .opening-product .purchase-reason {grid-column:2/-1;margin:0;line-height:1.5;font-size:12px}
+#panel .opening-product [hidden] {display:none}
+#panel .shop-recommend-label {display:block;margin-top:2px;font-size:11px;line-height:1.4;color:var(--muted);font-weight:400}
+#panel .development-suggestion {margin-bottom:4px}
+#panel .development-suggestion>.facility-icon {justify-self:end;align-self:center}
+#panel .shop-upgrade-count {white-space:nowrap;font-variant-numeric:tabular-nums}
+body #panel .buy .buy-action:has(svg) {display:inline-flex;align-items:center;vertical-align:middle}
+#first-shop-all,#first-shop-back {display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;font-size:12px;color:var(--muted);margin:14px auto 0;padding:8px 12px}
+#first-shop-back {margin:0 0 12px;padding-left:0}
+.hud #info-open.narrator-away {display:inline-flex;align-items:center;gap:5px;width:auto;min-width:44px;padding:6px;font-size:11px;white-space:nowrap}
+.hud #info-open>.notice-face[data-accessory=date-bow] {width:24px;height:30px}
+.narrator-trip {display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;padding:20px 0;border-bottom:1px solid var(--line);color:var(--ink)}
+.narrator-trip :is(h3,p,dl) {margin:0}
+.narrator-trip h3 {font-size:16px;line-height:1.5}
+.narrator-trip p {font-size:14px;line-height:1.7;margin:6px 0 12px;color:var(--muted)}
+.narrator-trip small {font-size:11px;color:var(--muted)}
+.narrator-trip button {min-height:44px;padding:8px 12px;font-size:13px;background:var(--paper);border:1px solid var(--line);color:var(--ink)}
+.narrator-trip button[aria-pressed=true] {border-color:var(--green)}
+.narrator-trip dl>div {display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:40px;border-top:1px solid var(--line);font-size:13px}
+.narrator-trip dd {margin:0;width:5ch;text-align:right;font:600 20px/1.5 ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.narrator-outfit {display:flex;justify-content:center;padding-top:6px}
+.narrator-outfit .notice-face {width:56px;height:70px}
+.narrator-coat-hook {display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;align-self:start;min-height:80px;color:var(--muted);border-block:1px solid var(--line)}
+.narrator-coat-hook span {font-size:11px}
+.narrator-trip .narrator-expense-note {font-size:11px;margin:8px 0 0}
+.narrator-trip-dialog {width:min(440px,calc(100vw - 64px));max-width:100%}
+.narrator-trip-dialog h2 {font-size:22px;margin:0 0 8px}
+.narrator-trip-dialog .narrator-trip:last-child {border-bottom:0}
+
+#panel-notice-slot {display:none}
+@media(max-width:759px){
+ #game.sheet-expanded #panel-notice-slot:not([hidden]) {display:block;flex:0 0 auto}
+}
+@media(max-width:759px){
+ #panel .panel-header>div:has(#shop-wallet:not([hidden])) {gap:6px 10px;margin-right:4px}
+ #panel[data-shop-opening=true] .panel-header {padding-bottom:5px}
+ #panel .opening-product {grid-template-columns:36px minmax(0,1fr) auto;gap:5px 8px;padding:14px 0}
+ #panel .opening-product h3 {font-size:15px}
+ #panel .opening-icon,#panel .opening-icon img,#panel .opening-icon :is(.item-art,.item-icon) {width:36px;height:36px}
+ #panel .opening-name {gap:8px}
+ #panel .opening-buy {min-width:84px;font-size:12px;padding:7px 9px}
+ .opening-captive {min-height:104px;margin-bottom:10px}
+ #first-shop-all {margin-top:10px}
+}
+
+/* Free companions: a brief paper-token arc, then four pixel glints at the tool. */
+.narrator-companion[popover],.companion-arrival[popover]{position:fixed;inset:auto;margin:0;padding:0;border:0;overflow:visible;background:none;color:var(--ink);pointer-events:none;}
+.narrator-companion{width:40px;height:40px;opacity:0;transform-origin:20px 20px;}
+.companion-token{display:grid;place-items:center;width:40px;height:40px;background:var(--paper);border:2px solid var(--ink);box-shadow:3px 3px 0 color-mix(in srgb,var(--ink) 22%,transparent);}
+.companion-token::before,.companion-token::after{content:'';position:absolute;left:-7px;top:26px;width:4px;height:4px;background:var(--green);}
+.companion-token::after{left:-12px;top:34px;width:3px;height:3px;opacity:.45;}
+.companion-name{display:block;width:48px;margin:4px 0 0 -4px;text-align:center;font-family:inherit;font-weight:600;font-size:11px;line-height:1.6;color:var(--ink);background:var(--paper);}
+.companion-arrival{width:48px;height:48px;background:linear-gradient(var(--green),var(--green)) center top/4px 8px no-repeat,linear-gradient(var(--green),var(--green)) center bottom/4px 8px no-repeat,linear-gradient(var(--green),var(--green)) left center/8px 4px no-repeat,linear-gradient(var(--green),var(--green)) right center/8px 4px no-repeat!important;}
+#notification-shell[data-expression="muffled"] .notice-gag{animation:notice-gag-on 180ms steps(3,end) both;}
+#notification-shell[data-expression="muffled"] .notification-avatar{animation:notice-muffle 480ms steps(4,end) 1;}
+@keyframes notice-gag-on{from{transform:translateY(4px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes notice-muffle{0%,100%{transform:translateX(0)}25%{transform:translateX(-2px) rotate(-4deg)}60%{transform:translateX(2px) rotate(4deg)}}
+@media(prefers-reduced-motion:reduce){#notification-shell[data-expression="muffled"] .notice-gag,#notification-shell[data-expression="muffled"] .notification-avatar{animation:none;}}
+body.reduce-motion #notification-shell[data-expression="muffled"] .notice-gag,body.reduce-motion #notification-shell[data-expression="muffled"] .notification-avatar{animation:none;}
+/* Empty slots exist only while their icon is flying. They cannot receive input. */
+.hud [data-companion-arriving]{visibility:hidden!important;pointer-events:none!important;}
+.hud #info-open>.notice-face{width:22px;height:22px;}
+.companion-token>.notice-face{width:28px;height:28px;}
+.narrator-companion[data-companion="info-open"] .companion-name{width:64px;margin-left:-12px;}
+
+/* A paused world keeps its own scene, with a quiet, centered intermission. */
+#notice-center[data-mode="pause"] { top:50% !important; left:50% !important; width:300px !important; max-width:calc(100vw - 48px) !important; transform:translate(-50%,-50%); }
+#notice-center[data-mode="pause"]::backdrop { background:#25382c24; }
+#notice-center[data-mode="pause"] #notification-shell { display:flex; flex-direction:column; gap:18px; padding:28px 22px 22px; background:var(--paper,#f3f0e4); color:var(--ink,#304d3e); border:1px solid var(--line,#acb99b); box-shadow:0 4px 0 #344b3020,0 20px 60px #243b2b1a; text-align:center; }
+#notice-center[data-mode="pause"] #notification-shell::before,#notice-center[data-mode="pause"] #notification-shell::after { display:none; }
+#notice-center[data-mode="pause"] .notification-avatar { width:44px; height:44px; opacity:.8; }
+#notice-center[data-mode="pause"] .notification-avatar svg { width:44px; height:44px; }
+#notice-center[data-mode="pause"] .notification-content { width:100%; }
+#notice-center[data-mode="pause"] #foreground-status { display:flex; flex-direction:column; align-items:center; gap:0; padding:0; border:0; background:transparent; box-shadow:none; color:inherit; text-align:center; }
+#notice-center[data-mode="pause"] .pause-kicker { color:inherit; opacity:.55; font:10px/1.5 ui-monospace,monospace; letter-spacing:.18em; }
+#notice-center[data-mode="pause"] #foreground-status strong { margin:9px 0 12px; color:inherit; font:600 24px/1.35 system-ui,sans-serif; letter-spacing:.04em; }
+#notice-center[data-mode="pause"] .pause-return { color:inherit; font:13px/1.6 system-ui,sans-serif; opacity:.8; }
+#notice-center[data-mode="pause"] #foreground-status small { align-self:stretch; margin-top:22px; padding-top:14px; border-top:1px solid var(--line,#acb99b); color:inherit; opacity:.6; font:11px/1.5 system-ui,sans-serif; }

@@ -1,0 +1,15 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>V1.6 · 田园布景</title><style>body{margin:0;background:#e5eadc;color:#304f40;font:14px system-ui}header{padding:24px 32px;background:#f2f0e4;border-bottom:1px solid #bbc4ad}h1{font-size:22px;margin:0 0 8px}header p{margin:0;color:#667963}main{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;padding:24px 32px}article{min-width:0;border-bottom:1px solid #bbc4ad;padding-bottom:14px}article img{display:block;width:100%;aspect-ratio:1;object-fit:contain}article strong{display:block;margin-bottom:6px}small{color:#667963}@media(max-width:700px){main{grid-template-columns:repeat(2,1fr);padding:16px;gap:12px}header{padding:20px 16px}}</style><header><h1>V1.6 · 田园布景</h1><p>27 件可摆放布景 · 使用游戏实际模型与材质</p></header><main></main><script type="module">
+import * as T from '/node_modules/three/build/three.module.js';
+import {natureModel,gardenModel} from '/src/garden-models.js';
+import {GARDEN_ITEMS} from '/src/garden-data.js';
+const renderer=new T.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true});renderer.setSize(256,256);renderer.setClearColor(0,0);renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.12;
+const scene=new T.Scene();scene.add(new T.HemisphereLight('#fff3da','#75856e',2.2));const key=new T.DirectionalLight('#fff0d7',3.2);key.position.set(-4,8,6);scene.add(key);const fill=new T.DirectionalLight('#daeafa',1);fill.position.set(6,3,-4);scene.add(fill);
+const camera=new T.OrthographicCamera(-2,2,2,-2,.01,100);window.gardenArt={};window.gardenArtBounds=[];
+for(const i of [...GARDEN_ITEMS,{id:'V20',name:'园艺台',w:2,d:2}]){
+ const root=i.id==='V20'?gardenModel(1):natureModel(i.id);scene.add(root);root.updateMatrixWorld(true);const size=new T.Box3().setFromObject(root).getSize(new T.Vector3());window.gardenArtBounds.push({id:i.id,x:size.x,z:size.z,fits:size.x<=i.w+.001&&size.z<=i.d+.001});camera.position.set(5,4,6);camera.lookAt(0,0,0);camera.updateMatrixWorld(true);
+ const bounds=new T.Box2(),v=new T.Vector3();root.traverseVisible(m=>{const pos=m.geometry?.attributes.position;if(!pos)return;for(let j=0;j<pos.count;j++){v.fromBufferAttribute(pos,j).applyMatrix4(m.matrixWorld).applyMatrix4(camera.matrixWorldInverse);bounds.expandByPoint(new T.Vector2(v.x,v.y));}});
+ const center=bounds.getCenter(new T.Vector2()),span=bounds.getSize(new T.Vector2()),k=Math.max(span.x,span.y)*.58;camera.left=center.x-k;camera.right=center.x+k;camera.top=center.y+k;camera.bottom=center.y-k;camera.updateProjectionMatrix();renderer.render(scene,camera);const data=renderer.domElement.toDataURL();window.gardenArt[i.id]=data;scene.remove(root);
+ if(i.id!=='V20'){const el=document.createElement('article');el.innerHTML=`<img src="${data}" alt="${i.name}"><strong>${i.name}</strong><small>Lv.${i.level} · ${i.w}×${i.d} 格</small>`;document.querySelector('main').append(el);}
+}
+window.gardenArtReady=true;
+</script></html>

@@ -1,0 +1,10 @@
+node_modules/
+.venv/
+dist/
+.DS_Store
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+docs/qa/full-save.json

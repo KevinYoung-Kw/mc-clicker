@@ -1,0 +1,64 @@
+{
+  "trainingFiles": [
+    "docs/v1.1l/simulation/baseline/industrial-first-save.json",
+    "docs/v1.1l/simulation/baseline/livestream-first-save.json",
+    "docs/v1.1l/simulation/baseline/low-active-save.json",
+    "docs/v1.1l/simulation/baseline/no-livestream-save.json",
+    "docs/v1.1l/simulation/baseline/village-first-save.json",
+    "docs/v1.1l/simulation/calibrated/industrial-first-save.json",
+    "docs/v1.1l/simulation/calibrated/livestream-first-save.json",
+    "docs/v1.1l/simulation/calibrated/low-active-save.json",
+    "docs/v1.1l/simulation/calibrated/no-livestream-save.json",
+    "docs/v1.1l/simulation/calibrated/village-first-save.json",
+    "docs/v1.1l/simulation/complete-mechanisms-candidate/industrial-first-save.json",
+    "docs/v1.1l/simulation/complete-mechanisms-candidate/livestream-first-save.json",
+    "docs/v1.1l/simulation/complete-mechanisms-candidate/low-active-save.json",
+    "docs/v1.1l/simulation/complete-mechanisms-candidate/no-livestream-save.json",
+    "docs/v1.1l/simulation/complete-mechanisms-candidate/village-first-save.json",
+    "docs/v1.1l/simulation/final-candidate/industrial-first-save.json",
+    "docs/v1.1l/simulation/final-candidate/livestream-first-save.json",
+    "docs/v1.1l/simulation/final-candidate/low-active-save.json",
+    "docs/v1.1l/simulation/final-candidate/no-livestream-save.json",
+    "docs/v1.1l/simulation/final-candidate/village-first-save.json",
+    "docs/v1.1l/simulation/network-slice/industrial-first-save.json",
+    "docs/v1.1l/simulation/network-slice/livestream-first-save.json",
+    "docs/v1.1l/simulation/network-slice/low-active-save.json",
+    "docs/v1.1l/simulation/network-slice/no-livestream-save.json",
+    "docs/v1.1l/simulation/network-slice/village-first-save.json"
+  ],
+  "dictionaryBytes": 16384,
+  "evaluationFilesExcludedFromTraining": true,
+  "notes": "Historical simulations may share patterns; optimistic synthetic test, not a guaranteed upper bound for players.",
+  "results": [
+    {
+      "sample": "industrial-first-save.json",
+      "bytes": 3597,
+      "asciiCharacters": 4810,
+      "exact": true
+    },
+    {
+      "sample": "livestream-first-save.json",
+      "bytes": 4648,
+      "asciiCharacters": 6212,
+      "exact": true
+    },
+    {
+      "sample": "low-active-save.json",
+      "bytes": 3676,
+      "asciiCharacters": 4916,
+      "exact": true
+    },
+    {
+      "sample": "no-livestream-save.json",
+      "bytes": 3732,
+      "asciiCharacters": 4990,
+      "exact": true
+    },
+    {
+      "sample": "village-first-save.json",
+      "bytes": 4602,
+      "asciiCharacters": 6150,
+      "exact": true
+    }
+  ]
+}

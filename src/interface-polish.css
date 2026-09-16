@@ -1,0 +1,198 @@
+/* One calm paper surface, clear controls, and room for the actual game. */
+.hud #income-open {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 0;
+  color: var(--ink);
+  text-align: left;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.income-rate {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  min-height: 30px;
+  padding: 3px 8px;
+  background: color-mix(in srgb, var(--green) 8%, var(--paper));
+  color: var(--muted);
+  font-size: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.income-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 7px;
+  color: var(--ink);
+  opacity: 1;
+  font-size: 11px;
+}
+.income-indicator svg { flex: none; }
+#income-open[aria-expanded="true"] .income-indicator svg { transform: rotate(180deg); }
+.hud #income-open:hover .income-rate,
+.hud #income-open:focus-visible .income-rate {
+  background: color-mix(in srgb, var(--green) 16%, var(--paper));
+  border-color: var(--green);
+}
+.hud #income-open #rate { color: var(--green); }
+#modal .income-panel h2 { margin-bottom: 8px; }
+#modal .income-total { font-size: 32px; margin: 12px 0; color: var(--green); }
+#modal .income-lines {
+  background: var(--web-inner, var(--paper));
+  border: 1px solid var(--line);
+  margin: 18px 0;
+  padding: 4px 14px;
+}
+#modal .income-lines > div { min-height: 42px; gap: 12px; }
+#modal .income-lines > div:last-child { border-bottom: 0; }
+#modal .income-lines dd { min-width: 8ch; text-align: right; font-weight: 600; }
+#income-help { min-height: 44px; }
+
+/* Tabs stay within their own scroller and never cover the panel's close action. */
+#panel-content > .management-tabs { position: static; }
+#panel-content > .management-tabs:first-child {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  padding: 6px 0 8px;
+  margin-bottom: 14px;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.management-tabs button { min-height: 40px; font-weight: 600; }
+.management-tabs button:not(.active):hover { background: color-mix(in srgb, var(--green) 8%, var(--paper)); }
+.network-hub > header > button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  background: var(--web-inner, var(--paper));
+  font-size: 12px;
+  white-space: nowrap;
+}
+.network-tools { gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.network-tools > button {
+  min-height: 40px;
+  font-size: 12px;
+  padding: 7px 10px;
+  background: var(--web-inner, var(--paper));
+  border: 1px solid var(--line);
+}
+.network-tools label { min-height: 40px; cursor: pointer; }
+.network-hub summary { display: list-item; min-height: 40px; font-size: 13px; line-height: 1.5; }
+.network-device > header,
+.dispatch-source > header,
+.workplace-card > header { padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.network-device,
+.dispatch-source,
+.workplace-card { background: var(--web-inner, var(--paper)); }
+.network-device .facility-status { margin: 10px 0; }
+
+/* The title and price share a row; explanations and live status use the full width. */
+body #panel .management-equipment { gap: 10px; }
+body #panel .management-equipment article {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 6px 10px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  background: var(--web-inner, var(--paper));
+}
+body #panel .management-equipment article > img { grid-column: 1; grid-row: 1; width: 38px; height: 38px; }
+body #panel .management-equipment article > .equipment-content { display: contents; }
+body #panel .management-equipment .equipment-content > * { grid-column: 1 / -1; min-width: 0; }
+body #panel .management-equipment .equipment-content > strong {
+  grid-column: 2;
+  grid-row: 1;
+  min-height: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+body #panel .management-equipment article > button,
+body #panel .management-equipment article > .complete-badge {
+  position: static;
+  grid-column: 3;
+  grid-row: 1;
+  min-height: 40px;
+  width: auto;
+  max-width: 100px;
+  padding: 7px 9px;
+  font-size: 11px;
+}
+body #panel .management-equipment .equipment-mod-link {
+  order: 1;
+  justify-self: start;
+  min-height: 36px;
+  max-width: none;
+  margin: 0;
+  padding: 6px 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+body #panel .management-equipment .facility-status { margin: 6px 0; }
+body #panel .management-equipment .connection-actions button { max-width: none; }
+body #panel .management-equipment small { margin: 0; line-height: 1.65; }
+body #panel .management-equipment small:empty { display: none; }
+.hotbar > button,
+#room-tools > button { transition: background-color 140ms, color 140ms, box-shadow 140ms; }
+.resident-locate,
+.home-view { display: inline-grid; place-items: center; }
+
+@media (max-width: 759px) {
+  .hud > .wallet > div { gap: 0; }
+  .hud #income-open { flex-direction: column; align-items: flex-start; justify-content: center; gap: 0; min-height: 48px; }
+  .hud #income-open #money { line-height: 27px; }
+  .hud .income-rate { min-height: 20px; padding: 0 4px; font-size: 10px; gap: 2px; }
+  .hud .income-indicator { font-size: 10px; margin-left: 5px; gap: 2px; }
+  #modal .income-total { font-size: 28px; }
+  #modal .income-lines { padding: 3px 10px; }
+  #modal .income-lines > div { min-height: 40px; font-size: 12px; }
+  body #panel .management-equipment article { grid-template-columns: 30px minmax(0, 1fr) auto; padding: 10px; gap: 5px 7px; }
+  body #panel .management-equipment article > img { width: 30px; height: 34px; }
+  body #panel .management-equipment .equipment-content > strong { font-size: 13px; }
+  body #panel .management-equipment article > button { max-width: 88px; min-height: 44px; }
+  .network-hub > header > h3 { font-size: 17px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hotbar > button, #room-tools > button { transition: none; }
+}
+
+/* Keep construction instructions beside the confirmation, clear of the map. */
+#game.choosing-site #placement-label { color: var(--ink); font-weight: 650; margin-bottom: 5px; }
+#game.choosing-site #placement-label[data-state="choose"]::before { content:""; display:inline-block; width:10px; height:10px; margin-right:7px; background:#7da76177; border:1px solid #527b3d; }
+#game.choosing-site #placement-label[data-state="valid"] { color:var(--green); }
+#game.choosing-site #placement-label[data-state="invalid"] { color:var(--danger, #ad5847); }
+#placement-detail { color: var(--muted); font-size: 12px; line-height: 1.55; margin: 0 0 12px; }
+#game.choosing-site #mission, #game.choosing-site #world-label { visibility: hidden; }
+@media (max-width: 759px) {
+  body #game.choosing-site #placement-label { font-size: 13px; margin-bottom: 4px; }
+  #placement-detail { font-size: 11px; line-height: 1.4; margin-bottom: 10px; }
+}
+/* Atlas shares the management tab treatment. Its filters stay below that one toolbar. */
+body #panel-content > .atlas-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px}
+body #panel .atlas-tabs button{min-width:0;min-height:44px;padding:10px 4px}
+body #panel .atlas-tabs button[aria-selected=true]{background:var(--green);color:var(--web-action-text,var(--paper));box-shadow:inset 0 -3px var(--accent)}
+.atlas-content{min-width:0}
+body #panel .atlas-content .family-tabs{position:static;background:var(--paper)}
+.atlas-content .atlas-summary{gap:16px;margin:16px 0;padding:0;align-items:center}
+.atlas-content .atlas-summary>strong{font-weight:600;line-height:1.2;font-variant-numeric:tabular-nums;white-space:nowrap}
+.atlas-content .atlas-summary>strong{font-family:inherit;font-size:32px}
+.atlas-content .atlas-summary p{font-size:12px;line-height:1.7;margin:0}
+.atlas-content .atlas-summary p span{font-size:11px}
+.atlas-content .atlas-node{color:var(--muted);min-height:64px}
+.atlas-content .atlas-node strong{font-size:13px}
+.atlas-content .atlas-node small{font-size:11px;color:var(--muted);margin-top:6px}
+.atlas-content .atlas-node .node-icon{background:var(--wash);color:var(--muted)}
+.atlas-content .atlas-node.done,.atlas-content .atlas-node.available{color:var(--ink)}
+.atlas-content .atlas-node.done .node-icon{color:var(--accent);background:var(--wash)}
+.atlas-content .achievement-grid span{color:var(--muted);background:transparent;border-color:var(--line);line-height:1.6}
+.atlas-content .achievement-grid .earned{color:var(--ink);background:var(--wash);border-color:var(--accent)}

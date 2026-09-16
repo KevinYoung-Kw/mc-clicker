@@ -1,0 +1,9 @@
+/* Editing extends the existing purchase dock; no second sheet or card stack. */
+body #placement-bar #placement-tools{justify-content:flex-start;gap:6px;margin:0 0 8px}
+body #placement-bar #placement-tools button,.garden-mode-row button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-width:44px;min-height:44px;padding:8px;background:transparent;border:1px solid var(--line);color:var(--ink)}
+body #placement-bar #placement-tools button[aria-pressed=true],.garden-mode-row button[aria-pressed=true]{background:var(--paper);box-shadow:inset 0 -2px var(--green)}
+body #placement-bar #placement-tools #placement-undo{margin-left:auto}
+body #placement-bar #placement-tools [hidden]{display:none}
+.garden-mode-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:12px 0;font-size:12px}
+body #placement-bar:has(#placement-tools:not([hidden])) p{margin:0 0 7px}
+@media(max-width:759px){body #game.choosing-site:has(#placement-tools:not([hidden])) #stage{bottom:calc(var(--editing-dock-height,170px) + env(safe-area-inset-bottom,0px))!important}body #game.choosing-site:has(#placement-tools:not([hidden])) #panel{height:auto!important;min-height:0;max-height:calc(100% - 120px)}body #placement-bar #placement-tools{margin-bottom:6px}body #placement-bar #placement-detail{font-size:11px;line-height:1.45}}

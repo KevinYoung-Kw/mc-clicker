@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="zh-CN">
+  <meta charset="utf-8" />
+  <title>MC Clicker facility model audit</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: #e8eadf;
+      color: #314a3d;
+      font:
+        15px system-ui,
+        sans-serif;
+    }
+    header {
+      padding: 24px 28px;
+      background: #f6f1e3;
+      border-bottom: 2px solid #b4bea0;
+    }
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 26px;
+    }
+    header p {
+      margin: 0;
+      color: #657360;
+    }
+    #sheet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      padding: 16px;
+    }
+    article {
+      min-width: 0;
+      background: #f6f1e3;
+      border: 1px solid #c8cfb7;
+      padding: 10px;
+    }
+    article img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: contain;
+    }
+    article strong {
+      display: block;
+      margin-top: 4px;
+      font-size: 14px;
+    }
+    article small {
+      display: block;
+      color: #657360;
+      font-size: 11px;
+      margin-top: 4px;
+    }
+  </style>
+  <header>
+    <h1 id="title">设施原模审计</h1>
+    <p>直接调用游戏场景构造函数 · 同一镜头与光照 · 轮廓等比例居中</p>
+  </header>
+  <main id="sheet"></main>
+  <script type="module">
+    import * as T from "/node_modules/three/build/three.module.js";
+    import { CATALOG } from "/src/catalog.js";
+    import { fresh } from "/src/game.js";
+    import { makeObject, makeActor } from "/src/objects.js";
+    import { cottage, broadcastHouse } from "/src/village-models.js";
+    import { COLLECTION_BY_ID } from "/src/collection.js";
+    import { studioSpec } from "/src/studio-placement.js";
+    const renderer = new T.WebGLRenderer({
+      antialias: true,
+      alpha: true,
+      preserveDrawingBuffer: true,
+    });
+    renderer.setSize(320, 320);
+    renderer.setPixelRatio(1);
+    renderer.toneMapping = T.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.12;
+    const scene = new T.Scene();
+    scene.add(new T.HemisphereLight("#fff3da", "#75856e", 2.2));
+    const key = new T.DirectionalLight("#fff0d7", 3.2);
+    key.position.set(-4, 8, 6);
+    scene.add(key);
+    const fill = new T.DirectionalLight("#daeafa", 1);
+    fill.position.set(6, 3, -4);
+    scene.add(fill);
+    const camera = new T.OrthographicCamera(-2, 2, 2, -2, 0.01, 100);
+    const actors = new Set([
+      "V2",
+      "V8",
+      "V9",
+      "V10",
+      "V15",
+      "V16",
+      "N3",
+      "N5",
+      "N6",
+      "N8",
+      "N9",
+      "E3",
+      "E5",
+      "E9",
+    ]);
+    function state() {
+      const s = fresh(0);
+      s.counts = Object.fromEntries(CATALOG.map((i) => [i.id, 1]));
+      s.counts.L3 = 3;
+      s.project = 180000;
+      s.endEyes = 12;
+      s.live.director = true;
+      s.live.rainCooldown = 60;
+      s.live.gifts = Array.from({ length: 8 }, (_, i) => ({
+        id: i + 1,
+        value: 100,
+        life: 35,
+        expression: false,
+        x: 15 + i * 7,
+        y: 35,
+      }));
+      s.grid.last = { perDevice: { L12: 1 } };
+      for (const item of Object.values(COLLECTION_BY_ID))
+        if (["studio", "flag"].includes(item.category)) {
+          s.collection.owned[item.id] = true;
+          s.collection.equipped[item.slot] = item.id;
+        }
+      return s;
+    }
+    function inspect(root) {
+      root.updateMatrixWorld(true);
+      const bounds = new T.Box3().setFromObject(root),
+        types = {},
+        materials = new Set(),
+        textures = new Set();
+      let meshes = 0,
+        vertices = 0,
+        nonFinite = 0;
+      root.traverse((o) => {
+        if (!o.isMesh) return;
+        meshes++;
+        const p = o.geometry?.attributes.position;
+        types[o.geometry.type] = (types[o.geometry.type] || 0) + 1;
+        if (p) {
+          vertices += p.count;
+          for (const v of p.array) if (!Number.isFinite(v)) nonFinite++;
+        }
+        for (const v of o.matrixWorld.elements)
+          if (!Number.isFinite(v)) nonFinite++;
+        for (const m of Array.isArray(o.material) ? o.material : [o.material]) {
+          materials.add(m.uuid);
+          if (m.map) textures.add(m.map.uuid);
+        }
+      });
+      return {
+        meshes,
+        vertices,
+        nonFinite,
+        geometryTypes: types,
+        materials: materials.size,
+        textures: textures.size,
+        bounds: {
+          min: bounds.min.toArray(),
+          max: bounds.max.toArray(),
+          size: bounds.getSize(new T.Vector3()).toArray(),
+        },
+      };
+    }
+    function image(root) {
+      scene.add(root);
+      root.updateMatrixWorld(true);
+      camera.position.set(5, 4, 6);
+      camera.lookAt(0, 0, 0);
+      camera.updateMatrixWorld(true);
+      const bounds = new T.Box2(),
+        v = new T.Vector3();
+      root.traverseVisible((o) => {
+        const p = o.geometry?.attributes?.position;
+        if (!p) return;
+        for (let j = 0; j < p.count; j++) {
+          v.fromBufferAttribute(p, j)
+            .applyMatrix4(o.matrixWorld)
+            .applyMatrix4(camera.matrixWorldInverse);
+          bounds.expandByPoint(new T.Vector2(v.x, v.y));
+        }
+      });
+      const c = bounds.getCenter(new T.Vector2()),
+        size = bounds.getSize(new T.Vector2()),
+        span = Math.max(size.x, size.y) * 0.58;
+      camera.left = c.x - span;
+      camera.right = c.x + span;
+      camera.top = c.y + span;
+      camera.bottom = c.y - span;
+      camera.updateProjectionMatrix();
+      renderer.render(scene, camera);
+      const url = renderer.domElement.toDataURL("image/png");
+      scene.remove(root);
+      return url;
+    }
+    function card(id, name, root, extra = {}) {
+      const details = { id, name, ...inspect(root), ...extra },
+        el = document.createElement("article"),
+        img = document.createElement("img");
+      img.src = image(root);
+      img.alt = id + " " + name;
+      const title = document.createElement("strong");
+      title.textContent = id + " · " + name;
+      const caption = document.createElement("small");
+      caption.textContent = `${details.meshes} meshes · ${details.bounds.size.map((v) => v.toFixed(2)).join(" × ")}`;
+      el.append(img, title, caption);
+      document.querySelector("#sheet").append(el);
+      return details;
+    }
+    window.renderStudy = (kind) => {
+      document.querySelector("#sheet").replaceChildren();
+      const results = [];
+      const s = state();
+      if (kind === "outdoor") {
+        document.querySelector("#title").textContent =
+          "户外设施 · 实际场景模型";
+        for (const item of CATALOG.filter(
+          (i) => i.place && !actors.has(i.id),
+        )) {
+          const root = new T.Group(),
+            a = [];
+          makeObject(root, item, s, a);
+          for (const f of a) f(0.8);
+          results.push(card(item.id, item.name, root));
+        }
+        for (let variant = 0; variant < 3; variant++) {
+          const root = new T.Group();
+          cottage(root, variant);
+          results.push(
+            card(
+              "house:" + variant,
+              ["平原木屋", "农家小屋", "石基工匠屋"][variant],
+              root,
+            ),
+          );
+        }
+      }
+      if (kind === "studio") {
+        document.querySelector("#title").textContent =
+          "直播间 · 实际室内设备与收藏";
+        const room = new T.Group(),
+          a = [];
+        broadcastHouse(room, a, true, s);
+        for (const f of a) f(0.8);
+        const entities = [];
+        room.traverse((o) => {
+          if (o.userData.studioKey || o.userData.studioFurniture === "desk")
+            entities.push(o);
+        });
+        for (const o of entities) {
+          const id = o.userData.studioKey || "desk";
+          if (id === "studioWall") continue;
+          const root = o.clone(true);
+          root.position.x = 0;
+          root.position.z = 0;
+          root.rotation.y = 0;
+          results.push(
+            card(id, studioSpec(id)?.name || "导播台", root, {
+              layer: studioSpec(id)?.layer || "floor",
+            }),
+          );
+        }
+      }
+      return results;
+    };
+    window.studyReady = true;
+  </script>
+</html>

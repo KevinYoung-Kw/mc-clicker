@@ -1,0 +1,42 @@
+{
+  "controls-mouse": {
+    "width": 1280,
+    "height": 832
+  },
+  "controls-touch": {
+    "width": 1280,
+    "height": 832
+  },
+  "building": {
+    "width": 1280,
+    "height": 832
+  },
+  "foreground": {
+    "width": 1280,
+    "height": 832
+  },
+  "moving": {
+    "width": 1280,
+    "height": 832
+  },
+  "jobs": {
+    "width": 1280,
+    "height": 832
+  },
+  "delivery": {
+    "width": 1280,
+    "height": 832
+  },
+  "power": {
+    "width": 1280,
+    "height": 832
+  },
+  "studio": {
+    "width": 1280,
+    "height": 832
+  },
+  "upgrades": {
+    "width": 1280,
+    "height": 832
+  }
+}

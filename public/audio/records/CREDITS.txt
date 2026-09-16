@@ -1,0 +1,7 @@
+MC Clicker original record collection
+Music: original scores and synthesis authored for this project with GPT-6 Astra.
+Reproducible source: scripts/compose-records.py (six independently written scores).
+No third-party recordings, melodies or official Minecraft audio used.
+Cover artwork: original pixel SVG compositions in src/record-art.js.
+Interaction sounds: original procedural wood/stone/metal/noise synthesis in src/game-audio.js.
+Audio assets and original scores in this collection are released under CC0 1.0.

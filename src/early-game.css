@@ -1,0 +1,57 @@
+/* Action states stay legible in both the compact mobile rows and facility shops. */
+body button[data-purchase-state] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  border-radius: 0;
+}
+body button[data-purchase-state="ready"],
+body #panel .management-page .resident-recruitment button[data-purchase-state="ready"],
+body #panel .card-bottom button[data-purchase-state="ready"] {
+  background: var(--green);
+  border: 1px solid #4e6746;
+  color: #fffcee;
+  box-shadow: inset 0 1px #ffffff30, 0 2px #465e39;
+}
+body button[data-purchase-state="short"],
+body #panel .management-page .resident-recruitment button[data-purchase-state="short"],
+body #panel .card-bottom button[data-purchase-state="short"] {
+  background: #f2ead8;
+  color: #795f37;
+  border: 1px solid #c7b58e;
+  box-shadow: none;
+}
+body button[data-purchase-state="locked"],
+body #panel .management-page .resident-recruitment button[data-purchase-state="locked"],
+body #panel .card-bottom button[data-purchase-state="locked"] {
+  background: #e8e7df;
+  color: #686e65;
+  border: 1px dashed #a4aa9b;
+  box-shadow: none;
+}
+body button[data-purchase-state="placing"] { background: #ebe5d5; color: #7b653c; opacity: 1; }
+.purchase-price { display: inline-flex; align-items: center; gap: 5px; }
+button[data-purchase-state="ready"] .mini-emerald { background: #d9eabb; }
+body #panel .purchase-reason, .guidance-card .purchase-reason {
+  font-size: 11px;
+  line-height: 1.6;
+  margin: 5px 0 0;
+  color: #7a613b;
+}
+.build-card.locked { opacity: 1; }
+.build-card .complete-badge { display: inline-flex; align-items: center; gap: 5px; color: #60764f; }
+.build-card[data-purchase-state="complete"] > .purchase-reason { display: none; }
+.requirement-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 18px; }
+.requirement-links button { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 12px; background: var(--paper); border: 1px solid var(--line); }
+.management-equipment button[data-purchase-state] { flex-wrap: wrap; font-size: 11px; }
+.hotbar .first-shop-highlight { outline: 2px solid #b39a57; outline-offset: 3px; animation: first-shop-pulse 1.1s ease-in-out 3; }
+@keyframes first-shop-pulse { 50% { outline-offset: 6px; outline-color: #d7c080; } }
+@media (prefers-reduced-motion: reduce) { .hotbar .first-shop-highlight { animation: none; } }
+body.reduce-motion .hotbar .first-shop-highlight { animation: none; }
+@media (max-width: 759px) {
+  body #panel .build-card > .purchase-reason { margin: 4px 0 2px 50px; }
+  body #panel .card-bottom button[data-purchase-state] { gap: 4px; font-size: 10px; }
+  .management-equipment button[data-purchase-state] { min-width: 76px; padding: 6px; }
+}

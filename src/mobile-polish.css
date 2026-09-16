@@ -1,0 +1,342 @@
+.site-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 8px;
+  color: #6f825e;
+  text-decoration: none;
+}
+.site-link svg {
+  width: 72px;
+  height: 27px;
+  flex: none;
+}
+.site-link > span {
+  display: none;
+}
+.site-link:hover {
+  color: #385734;
+}
+.site-link:focus-visible {
+  outline: 2px solid #739057;
+  outline-offset: -2px;
+}
+.hud > .site-link {
+  flex: none;
+  padding: 0;
+}
+.construction-tabs:has([data-expand-land]) {
+  grid-template-columns: 68px 1fr 1fr;
+}
+.construction-tabs [data-expand-land] {
+  background: transparent;
+  font-size: 11px;
+  color: #6a805a;
+  border-right: 1px solid #cbd5bd;
+}
+
+@media (max-width: 759px) {
+  .hud .site-link {
+    grid-column: 1 / -1;
+    justify-content: space-between;
+    border-bottom: 1px solid #d9decd;
+    padding: 0 8px;
+  }
+  .hud .site-link > span {
+    display: inline;
+    font-size: 10px;
+  }
+  .hud #power-top,
+  .hud #power-top.warning {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: 4px;
+  }
+  body #game #stage #home-view {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+  body #game #stage #home-view:active {
+    color: #395830;
+    background: #e5ead880;
+  }
+  #panel .panel-header {
+    padding: 5px 12px;
+    gap: 8px;
+    min-height: 54px;
+  }
+  #panel .panel-header h2 {
+    margin: 0;
+    font-size: 19px;
+    line-height: 1.3;
+  }
+  #panel-kicker {
+    display: none;
+  }
+  #panel .construction-tabs {
+    margin-bottom: 8px;
+    padding: 2px;
+  }
+  #panel .family-tabs {
+    padding: 5px 0 8px;
+    gap: 3px;
+  }
+  #panel .panel-tools {
+    padding: 4px 0 8px;
+  }
+  #panel .panel-tools:has(+ .cards:not(:empty)) {
+    display: none;
+  }
+
+  /* The price belongs beside the name. The whole name/art area remains a real
+     details button; CSS never turns that button into display: contents. */
+  body #panel .build-card {
+    position: relative;
+    padding: 10px 0;
+    border-width: 1px 0 0;
+    box-shadow: none;
+    background: transparent;
+  }
+  body #panel .card-main {
+    gap: 8px;
+    align-items: flex-start;
+  }
+  body #panel .card-main .item-art {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 44px;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+  body #panel .item-art .shop-icon {
+    width: 42px;
+    height: 42px;
+  }
+  body #panel .card-main > div:last-child {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--price-width, 88px);
+    column-gap: 8px;
+    min-width: 0;
+  }
+  body #panel .card-main > div > small {
+    display: none;
+  }
+  body #panel .card-main h3 {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 44px;
+    font-size: 13px;
+    line-height: 1.45;
+    margin: 0;
+  }
+  body #panel .card-main h3[data-level]:not([data-level=""])::after {
+    content: attr(data-level);
+    font-size: 9px;
+    font-weight: 400;
+    color: #7c8b70;
+  }
+  body #panel .card-main p {
+    grid-column: 1 / -1;
+    margin: 3px 0 0;
+    font-size: 11px;
+    line-height: 1.55;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  body #panel .card-bottom {
+    margin: 2px 0 0 50px;
+    min-height: 0;
+  }
+  body #panel .card-bottom > span[data-compact] {
+    font-size: 0;
+    max-width: none;
+  }
+  body #panel .card-bottom > span[data-compact]::before {
+    content: attr(data-compact);
+    font-size: 10px;
+    color: #829174;
+  }
+  body #panel .card-bottom > span[data-compact=""] {
+    display: none;
+  }
+  body #panel .card-bottom > button,
+  body #panel .card-bottom > .complete-badge {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: var(--price-width, 88px);
+    min-width: 0;
+    min-height: 44px;
+    padding: 6px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: #e6ebd9;
+    font-size: 11px;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body #panel .card-bottom .buy:disabled {
+    background: #eceee2;
+    opacity: 0.7;
+  }
+  body #panel .card-bottom .complete-badge {
+    background: transparent;
+    font-size: 10px;
+  }
+  body #panel .buy .buy-action {
+    display: none;
+  }
+  #panel .mini-emerald {
+    width: 6px;
+    height: 9px;
+    flex-shrink: 0;
+  }
+
+  body #panel .management-equipment {
+    gap: 0;
+    margin-top: 8px;
+  }
+  body #panel .management-equipment article {
+    position: relative;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-width: 1px 0 0;
+    background: transparent;
+  }
+  body #panel .management-equipment img {
+    width: 36px;
+    height: 44px;
+  }
+  body #panel .management-equipment article > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 98px;
+    gap: 0 6px;
+  }
+  body #panel .management-equipment strong {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 13px;
+  }
+  body #panel .management-equipment small {
+    grid-column: 1 / -1;
+    font-size: 11px;
+  }
+  body #panel .management-equipment article > button,
+  body #panel .management-equipment article > span {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 98px;
+    max-width: 98px;
+    min-height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 4px;
+    font-size: 11px;
+    border: 0;
+    box-shadow: none;
+  }
+  body #panel .equipment-action {
+    display: none;
+  }
+  body #panel .guidance-card {
+    position: relative;
+    padding: 10px 0;
+    gap: 8px;
+    border-width: 1px 0 0;
+    background: transparent;
+    box-shadow: none;
+    margin-bottom: 0;
+  }
+  #panel .guidance-card .guidance-glyph {
+    height: 44px;
+    border: 0;
+    background: transparent;
+  }
+  #panel .guidance-card > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 88px;
+    gap: 0 6px;
+  }
+  #panel .guidance-card > div > small {
+    display: none;
+  }
+  #panel .guidance-card h3 {
+    grid-column: 1;
+    margin: 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+  }
+  #panel .guidance-card p {
+    grid-column: 1 / -1;
+    font-size: 11px;
+    line-height: 1.55;
+  }
+  #panel .guidance-card > button {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 88px;
+    min-height: 44px;
+    padding: 6px;
+    border: 0;
+    box-shadow: none;
+    background: #e6ebd9;
+    color: #526e40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  body.live-page #panel-content .room-panel-heading {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+  body.live-page .room-panel-heading .eyebrow {
+    display: none;
+  }
+  body.live-page .room-panel-heading h2 {
+    font-size: 18px;
+    margin: 0 0 5px;
+  }
+  body.live-page .room-panel-heading p {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  body.live-page .room-panel-heading + .facility-shop {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+  body.live-page .room-panel-heading + .facility-shop > h4:first-child {
+    display: none;
+  }
+  body #placement-bar.purchase-dock {
+    box-shadow: none;
+  }
+  body #placement-bar.purchase-dock button {
+    font-size: 11px;
+    padding: 6px 8px;
+    box-shadow: none;
+  }
+}

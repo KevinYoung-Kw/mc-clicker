@@ -1,0 +1,7 @@
+MC Clicker image saves use the Reed-Solomon implementation from @zxing/library 0.21.3.
+Source: https://github.com/zxing-js/library
+The distributed source files and package LICENSE are under Apache License 2.0.
+The complete license is included in zxing.txt in this directory.
+Copyright 2007-2008 ZXing authors (upstream Reed-Solomon source headers).
+No changes were made to those dependency source files. MC Clicker's image framing,
+art, coefficient embedding, resampling and integration are implemented separately.

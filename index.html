@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f1f0e8" />
+    <meta
+      name="description"
+      content="MC Clicker 2.0 __MC_RELEASE__，由 GPT-6 Astra 制作。从一块方块发展成三维度世界，建设、自动化与直播经营交织的小游戏。"
+    />
+    <meta name="author" content="KevinYoung · GPT-6 Astra" />
+    <title>MC Clicker 2.0 · __MC_RELEASE__</title>
+    <link
+      id="favicon"
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='%235c8255' d='M20 2 38 12 38 29 20 39 2 29 2 12Z'/%3E%3Cpath fill='%23b4d69c' d='m20 2 18 10-18 10L2 12Z'/%3E%3C/svg%3E"
+    />
+    <style>
+      .boot-world {
+        position: fixed;
+        top: 0; right: 0; bottom: 0; left: 0; inset: 0;
+        display: grid;
+        place-content: center;
+        justify-items: center;
+        gap: 18px;
+        background: #e5eadc;
+        color: #355445;
+        font:
+          14px/1.8 ui-monospace,
+          monospace;
+        text-align: center;
+      }
+      .boot-world svg {
+        width: 76px;
+        height: 76px;
+        filter: drop-shadow(0 10px 0 #35544515);
+      }
+      .boot-world strong {
+        font-size: 20px;
+      }
+      .boot-world small {
+        color: #77866c;
+      }
+      .boot-world p {
+        margin: 0;
+      }
+    </style>
+  <script>
+/* Independent ES5 recovery shell. Never includes save contents in diagnostics. */
+(function () {
+  if (window.MCBoot) return;
+  var stage = '载入脚本', ready = false, failed = false, stop, elapsed = 0, last = Date.now(), timer, recovery;
+  var reasons = { SCRIPT_LOAD:'游戏脚本没有加载成功。', STARTUP:'游戏启动时遇到了问题。', TIMEOUT:'启动等待时间过长。', RENDER:'画面运行中断。', WEBGL:'当前内核无法打开 3D 画面。', CONTEXT_LOST:'设备暂时丢失了 3D 画面，请重试。', CONTEXT_RESTORE:'设备没能恢复 3D 画面，请重试。', SAVE_INVALID:'存档暂时无法读取，原始数据已保留。', STORAGE:'浏览器不允许读取存档。' };
+  function node(tag, text, parent) { var n = document.createElement(tag); if (text) n.textContent = text; if(tag==='p')n.style.margin='12px 0'; if (parent) parent.appendChild(n); return n; }
+  function rawSave() { try { return localStorage.getItem('mc-clicker-world-v2') || ''; } catch (_) { return ''; } }
+  function fail(code, error) {
+    if (failed) return;
+    failed = true; clearInterval(timer);
+    var known = reasons[code] ? code : (ready ? 'RENDER' : 'STARTUP');
+    try { if (stop) stop(); } catch (_) {}
+    function show() {
+      if (document.getElementById('boot-recovery')) return;
+      var dialogs=document.querySelectorAll('dialog[open]');for(var i=0;i<dialogs.length;i++)try{dialogs[i].close();}catch(_){}
+      var root = node('section', '', document.body); root.id='boot-recovery'; root.setAttribute('role','alertdialog'); root.setAttribute('aria-modal','true'); root.setAttribute('aria-label','游戏恢复');
+      root.style.cssText='position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483647;overflow:auto;background:#f1f0e8;color:#304d3e;padding:60px 20px 24px;box-sizing:border-box;font:16px/1.6 sans-serif;';
+      var card=node('div','',root);card.style.cssText='max-width:480px;margin:0 auto;';
+      node('h2','小世界暂时停下了',card);node('p',reasons[known],card);node('p','错误编号：MC-'+known,card);
+      node('p','重试不会清空存档；暂停期间不补算收益。',card);
+      var retry=node('button','重新打开',card);retry.id='boot-retry';retry.style.cssText='font:inherit;padding:12px 20px;background:#52754b;color:white;border:1px solid #304d3e;min-height:48px;';retry.onclick=function(){retry.disabled=true;location.reload();};
+      node('p','诊断信息（长按复制，不包含存档）',card);
+      var diag=node('textarea','',card);diag.id='boot-diagnostics';diag.readOnly=true;diag.rows=5;diag.style.cssText='box-sizing:border-box;width:100%;font:13px/1.5 monospace;';
+      var engine=(navigator.userAgent.match(/(?:Chrome|Chromium|AppleWebKit|Firefox|Version)\/[\d.]+/g)||[]).join(' ');
+      // Error messages/stacks may embed JSON or URLs. Only emit a known reason and error type.
+      var name=error && /^(Error|TypeError|SyntaxError|ReferenceError|RangeError|SecurityError|QuotaExceededError)$/.test(error.name)?error.name:'Error';
+      diag.value=JSON.stringify({version:document.title,phase:stage,kernel:engine||'unknown',code:'MC-'+known,summary:reasons[known],errorType:name},null,2);
+      var copy=node('button','选择诊断信息',card);copy.id='boot-copy';copy.style.cssText='font:inherit;padding:10px;margin-top:8px;';copy.onclick=function(){diag.focus();diag.select();diag.setSelectionRange(0,diag.value.length);};
+      var original=rawSave();
+      if(original){
+        var expand=node('button','保留原始存档',card);expand.id='boot-original';expand.style.cssText='font:inherit;padding:10px;margin:8px;';
+        expand.onclick=function(){expand.disabled=true;node('p','以下是原始数据，可长按全选复制保存。不要把它当作诊断信息发送。',card);var data=node('textarea','',card);data.id='boot-raw-save';data.value=original;data.readOnly=true;data.rows=5;data.style.width='100%';data.focus();data.select();};
+      }
+      if(recovery){
+        node('p','也可以从已保存的 JSON 文件恢复。先保留当前原始数据，再选择文件；有效文件会二次确认。',card);
+        var input=node('input','',card);input.id='boot-import';input.type='file';input.accept='.json,application/json';
+        var status=node('p','',card), confirm=node('button','使用此存档并重新打开',card);confirm.id='boot-import-confirm';confirm.hidden=true;var candidate;
+        input.onchange=function(){candidate=null;confirm.hidden=true;var file=input.files[0];if(!file)return;if(file.size>32000000){status.textContent='文件过大，请选择 JSON 存档。';return;}var reader=new FileReader();reader.onload=function(){try{candidate=recovery.validate(String(reader.result));status.textContent='存档可以读取。确认后恢复，当前原始数据会先备份。';confirm.hidden=false;}catch(_){status.textContent='此文件不是可读取的存档，原数据未改变。';}};reader.onerror=function(){status.textContent='文件读取失败，原数据未改变。';};reader.readAsText(file);};
+        confirm.onclick=function(){try{recovery.commit(candidate);confirm.disabled=true;location.reload();}catch(_){status.textContent='无法安全保存备份，已停止恢复，原存档未改变。';}};
+      }
+      retry.focus();
+    }
+    if(document.body)show();else document.addEventListener('DOMContentLoaded',show,{once:true});
+  }
+  window.MCBoot={fail:fail,failed:function(){return failed;},stage:function(s){if(!failed)stage=s;},ready:function(){if(!failed){ready=true;stage='等待开始或运行';clearInterval(timer);}},stopWith:function(fn){stop=fn;if(failed)try{stop();}catch(_){}},recovery:function(api){recovery=api;}};
+  window.addEventListener('error',function(e){if(e.target&&e.target.tagName==='SCRIPT')fail('SCRIPT_LOAD');else if(e.error||e.message)fail(ready?'RENDER':'STARTUP',e.error);},true);
+  window.addEventListener('keydown',function(e){if(failed&&(!e.target.closest||!e.target.closest('#boot-recovery'))){e.preventDefault();e.stopImmediatePropagation();}},true);
+  window.addEventListener('unhandledrejection',function(e){fail(ready?'RENDER':'STARTUP',e.reason);});
+  timer=setInterval(function(){var now=Date.now(),delta=now-last;last=now;if(!document.hidden&&delta<5000)elapsed+=delta;if(elapsed>=45000)fail('TIMEOUT');},1000);
+  document.addEventListener('visibilitychange',function(){last=Date.now();});
+}());
+</script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="boot-world" role="status">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path fill="#9abd7c" d="m8 21 24-13 24 13-24 13Z" />
+          <path fill="#826b4d" d="m8 21 24 13v25L8 45Z" />
+          <path fill="#677c4f" d="m32 34 24-13v24L32 59Z" />
+          <path fill="#c5d6a4" d="m16 21 16-9 8 4-16 9Z" /></svg
+        ><strong>小世界，正在醒来</strong>
+        <p>准备方块、光影和你的建设</p>
+        <small>MC Clicker 2.0 · __MC_RELEASE__ · GPT-6 Astra</small
+        ><noscript>请开启 JavaScript 来进入游戏。</noscript>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

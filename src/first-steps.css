@@ -1,0 +1,49 @@
+/* Pixel-paper onboarding: one purchase, one relevant next step. */
+.first-purchase-title{font-size:15px;font-weight:650;margin:8px 0 16px}
+.first-purchase-route{font-size:11px;color:var(--muted);line-height:1.7}
+.build-card .item-next{font-size:11px;color:var(--muted);margin-top:6px}
+.development-route{padding:12px 0;border-bottom:1px solid var(--line);margin-bottom:16px}
+.development-route ol{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0;font-size:11px}
+.development-route li:not(:last-child)::after{content:'→';margin-left:6px;color:var(--muted)}
+.development-route [aria-current]{color:var(--green);font-weight:700}
+.development-route p{font-size:12px;line-height:1.6;margin:10px 0 0}
+.hud .labeled-tool{display:flex;gap:6px;align-items:center;width:auto;padding:8px;font-size:11px}
+.hud .labeled-tool::after{content:none}
+#quick-help{display:none}
+.wallet{position:relative}
+.hud #income-open{display:inline-flex;gap:3px;align-items:center;min-height:32px;padding:3px 0;border:0;background:none;box-shadow:none;color:var(--muted);font-size:11px;white-space:nowrap}
+#income-open b{color:var(--green);font-variant-numeric:tabular-nums}
+.income-indicator{margin-left:3px;opacity:.65}
+#first-income{position:absolute;top:calc(100% + 7px);left:0;padding:9px 12px;border:1px solid var(--green);background:var(--paper);color:var(--green);font-size:12px;z-index:65;white-space:nowrap}
+.income-total{display:block;font-size:25px;margin:16px 0 8px;font-variant-numeric:tabular-nums}
+.income-lines>div{display:flex;justify-content:space-between;gap:16px;min-height:34px;align-items:center;border-bottom:1px solid var(--line);font-size:13px}
+.income-lines dd{margin:0;font-variant-numeric:tabular-nums;white-space:nowrap}
+[data-income-recent]{font-size:12px;line-height:1.7}
+@media(min-width:760px){.hud-tools #settings{order:1}}
+@media(max-width:759px){
+  body #panel-content[data-item-view]{display:flex;flex-direction:column}
+  body #panel-content[data-item-view]>:not([hidden]){flex-shrink:0}
+  body #panel-content[data-item-view]>.build-card{order:-3;margin-top:0}
+  body #panel-content[data-item-view]>.requirement-links{order:-2}
+  .hud #hud-more{font-size:12px;width:44px}
+  .hud #quick-help{display:flex}
+  .hud .hud-tools .site-link{order:1}
+  .hud .hud-tools .labeled-tool{order:-1;font-size:11px;padding:6px;gap:6px}
+  .hud .hud-tools .labeled-tool::after{content:none}
+  .hud #income-open{font-size:10px;min-height:18px;padding:0}
+  body #panel .item-hero{height:92px;min-height:0;margin:5px 0 10px;padding:8px;display:flex;align-items:center;justify-content:center;gap:16px}
+  body #panel .item-hero img{height:75px;width:75px;object-fit:contain}
+  body #panel .item-hero span{position:static;font-size:10px;max-width:130px}
+  body #panel .build-card .item-effect{font-size:12px;line-height:1.55}
+  body #panel .build-card .item-next{font-size:10px;line-height:1.5}
+  body #game.panel-open.choosing-site #panel{inset:auto 0 0;height:auto;max-height:170px;padding:0 0 env(safe-area-inset-bottom,0px);border-radius:0}
+  body #game.choosing-site #panel-content,body #game.choosing-site #panel .panel-header,body #game.choosing-site #panel .drawer-handle{display:none}
+  body #game.choosing-site .hotbar,body #game.choosing-site #room-tools,body #game.choosing-site #room-camera-tools,body #game.choosing-site #studio-console{visibility:hidden}
+  body #game.panel-open.choosing-site #stage,body #game.panel-open.choosing-site:has(#panel>.purchase-dock) #stage{top:0;bottom:140px;height:auto;min-height:0}
+  body.live-page #game.panel-open.choosing-site #stage,body.live-page #game.panel-open.choosing-site:has(#panel>.purchase-dock) #stage{top:50px;bottom:140px}
+  body #game.choosing-site #placement-bar.purchase-dock{padding:12px;min-height:116px;margin:0;flex:none;box-sizing:border-box}
+  body #game.choosing-site #placement-label{font-size:12px;line-height:1.5;margin:0 0 10px;min-height:18px}
+  body #game.choosing-site #placement-bar>div{display:flex;gap:8px}
+  body #game.choosing-site #placement-bar button{min-height:44px;font-size:12px;white-space:nowrap;padding:8px 10px}
+  body #game.choosing-site #placement-confirm{flex:1}
+}

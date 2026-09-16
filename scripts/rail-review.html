@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<title>V1.2.1 弯轨检查</title>
+<style>
+body { margin:0; background:#e5eadc; color:#355445; font:16px system-ui; }
+header { position:absolute; top:20px; left:30px; }
+canvas { display:block; }
+</style>
+<header><strong>V1.2.1 · 弯轨</strong><p>四向转弯 · 连续短弯 · 共用线路</p></header>
+<script type="module">
+import * as T from 'three';
+import {box} from '../src/models.js';
+import {createRailPath} from '../src/rail-path.js';
+import {drawRailTracks} from '../src/rail-model.js';
+const scene=new T.Scene();scene.background=new T.Color('#e5eadc');
+const renderer=new T.WebGLRenderer({antialias:true});renderer.setSize(innerWidth,innerHeight);
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.shadowMap.enabled=true;
+renderer.shadowMap.type=T.PCFSoftShadowMap;renderer.toneMapping=T.ACESFilmicToneMapping;
+renderer.toneMappingExposure=1.05;document.body.append(renderer.domElement);
+const camera=new T.OrthographicCamera(-5,5,5*innerHeight/innerWidth,-5*innerHeight/innerWidth,.1,100);
+camera.position.set(0,10,6);camera.lookAt(0,0,0);
+scene.add(new T.HemisphereLight('#fff3d9','#7c8f74',1.8));
+const sun=new T.DirectionalLight('#fff1d9',3.2);sun.position.set(-8,20,12);sun.castShadow=true;
+Object.assign(sun.shadow.camera,{left:-6,right:6,top:6,bottom:-6});sun.shadow.mapSize.set(2048,2048);
+sun.shadow.normalBias=.012;sun.shadow.bias=-.00012;scene.add(sun);
+const path=points=>createRailPath({points:points.map(([x,z])=>({x,z}))});
+const cases=[
+ [[[-.9,0],[0,0],[0,.9]]], [[[0,-.9],[0,0],[.9,0]]],
+ [[[-.9,0],[0,0],[0,-.9]]], [[[0,.9],[0,0],[.9,0]]],
+ [[[-.8,-.5],[-.25,-.5],[-.25,-.25],[0,-.25],[0,0],[.7,0]]],
+ [[[-.9,0],[0,0],[0,.9]],[[-.9,0],[.9,0]]]
+];
+cases.forEach((paths,i)=>{const g=new T.Group();g.position.set((i%3-1)*2.5,0,(Math.floor(i/3)-.5)*2.5);scene.add(g);
+ box(g,'#a8b985',0,.07,0,2.2,.19,2.2);
+ drawRailTracks(g,paths.map(path));
+});
+renderer.render(scene,camera);window.railReviewReady=true;
+</script>
+</html>

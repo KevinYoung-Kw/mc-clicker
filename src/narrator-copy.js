@@ -1,0 +1,283 @@
+import {COMMUNITY_COPY} from './community-souvenirs-data.js';
+// Editable narrator copy. IDs remain stable across saves. Each subtitle should
+// name its subject and stand on its own; purchase branches have no fixed order.
+// Explicit callbacks need completed speech history and real purchase prerequisites.
+export const NARRATOR_COPY = {
+  'broadcast-available':{lines:['图书馆能研究广播了。想换换活儿，可以办个电台；我申请一个不用报产量的节目。'],expression:'smirk'},
+  'radio-open':{lines:['电台开张了。先添张主持席，再从村庄安排个人来讲两句。','广播挺好，听众还不知道咱们村长什么样。'],expression:'smirk'},
+  'television-ready':{lines:['现在有画面了。把机位对准麦田，别老拍着仓库发呆。'],expression:'plain'},
+  'streaming-ready':{lines:['这下观众能回嘴了。去频道里回应弹幕，还能把节目热度再往上带一带。'],expression:'smirk'},
+ "research-library":{"lines":["图书馆现在也管研发。去里面选技术，工业设备和新生活设施都从这里开放。","工业技术要先有四位村民、四个住址，还有一笔村庄货物成交。总得先有个村，再谈工业化吧。"],"expression":"thinking"},
+ "research-switch":{"lines":["这项研究自己会继续，不用盯着它。想先做别的研究就切过去，花过的钱和做过的进度都还在。"],"expression":"plain"},
+ "industrial-era":{"lines":["工业技术弄明白了，钻机可以买了。铁路和自动控制还得分别研究，图书馆的学费这才刚开始。"],"expression":"smirk"},
+ "villager-rest":{"lines":["有村民歇一会儿去了。岗位还留着，手里的货也会先送完。机器没有跟着放假，你放心。","在「村庄 → 居民 → 全村生活」能看谁在休息，也能安排福利。终于有个地方，管的不全是干活。"],"expression":"plain"},
+ "public-visit":{"lines":["村民去公共场所坐过了。挺好，这个村终于有地方能不谈工作了。"],"expression":"smile"},
+ "cart-work":{"lines":["搬运工配上手推车了，一趟能多带一半。路堵着或者没货可搬的时候，车也只能在那儿等。"],"expression":"plain"},
+ "welfare-running":{"lines":["茶点开始记账了。每分钟花多少，在全村生活里能看；不想继续花，随时可以停。","我先声明，我没吃。电子通知不占这笔预算。"],"expression":"smirk"},
+  "manual": {"lines":["如果你还想知道更多内容，我这里还有一本操作指南，这可是家传秘诀。你要想看的话，可以去那里了解一下。"],"expression":"plain","voice":{"mood":"plain","phrases":[{"match":"家传秘诀","mood":"secret"}]}},
+  "drill-chain": {"lines":["红石钻机只负责挖。挖出来的石头摆哪儿？它不关心。","要是钻机挖的石头越堆越多，去「工业」看看：是加工赶不上，还是货运不走。再催钻机挖，地上可就更热闹了。"],"expression":"thinking"},
+  "rail-cargo": {"lines":["矿车运的是货，绿宝石得等货物卖掉才到账。商城收我的钱，可没等这么多道手续。","《资本论》把商品变成钱的那一下，叫作「惊险的跳跃」。","商城把我当商品卖了十颗绿宝石，连个分成都没谈。"],"expression":"thinking"},
+  "actuator-job": {"lines":["发射器还不知道要干什么。收麦子、剪羊毛、挖矿，得先给它分个活儿。","在「工业 → 自动化」给发射器分配工作，还得有电才能开工。我负责告诉你，发射器负责干，分工挺好。"],"expression":"thinking"},
+  "farm-team": {"lines":["机器接手收麦子了，农民还能接着照料，让地里多收一些。我估计他盼的是放假。"],"expression":"smirk"},
+  "power-shortage": {"lines":["电不够分了。去「工业 → 电力」看看，是哪边用得多，哪边发得少。","电池大，只是能装得多，还得有电往里装。我的钱包就吃过这个亏。"],"expression":"thinking"},
+  "golem-delivery": {"lines":["铜傀儡已经送过货了。我还在想夸什么，人家又忙别的去了。","铜傀儡去哪儿收货，在「村庄 → 帮手」里改。看着挺小一只，跑得倒是真勤。"],"expression":"smile"},
+  "studio-vacancy": {"lines":["直播间的主持席还空着。商城只卖座位，不包主持，算得真清楚。","想给直播间安排主持人，去「村庄 → 居民」选人。有人招呼观众，节目也能办得好些。"],"expression":"smirk"},
+  "nether-work": {"lines":["来下界也不用给主世界停工。那边照常干活，咱们可以多待一会儿。虽然我个人不太想。"],"expression":"smirk"},
+  "heat-recovery": {"lines":["烈焰熔炉炼东西的时候，余热还能拿来发电。这儿连余温都有工作，我先不说话了。","要是烈焰熔炉没电送出来，去「工业」看看是不是没料可炼，或者仓库装满了。"],"expression":"thinking"},
+  "project-delivery": {"lines":["世界工程只买一次。主世界、下界、末地把料交齐，工程就会接着往上盖，不用再买楼层。","世界工程还缺哪边的料，在「工业 → 物流」能看。三个世界凑一个工期，我已经替工头开始头疼了。"],"expression":"plain"},
+  "idle-factory": {"lines":["刚才还在拿镐敲一块土，现在开始管工厂了。这游戏升职是不是没征求过你的意见？"],"expression":"smirk"},
+  "idle-neighborhood": {"lines":["人越来越多了。我得少说两句，不然他们以为村里装了个广播。"],"expression":"plain"},
+  "idle-nether": {"lines":["我翻了半天，下界这边没有高温补贴。商城倒是一家都没少开。"],"expression":"smirk"},
+  "companions": {"lines":["谢谢你救我，介绍两个朋友：设置管声音和操作习惯，分享能发游戏链接、做世界纪念卡。"],"expression":"smile"},
+  "rescue-price": {"lines":["商城卖我十颗，第一块地二十五。我得找它谈谈。"],"expression":"smirk"},
+  "job-vacancy": {"lines":["{设施}还缺个{岗位}，有空给这里派个人吧。","找空缺岗位，就看「村庄 → 居民 → 按工作地点」。点「安排村民」能选人，不用挨个敲门问。"],"expression":"plain"},
+  "rush": {"lines":["我这句还没说完，你那边又盖好几样了。行，已经会的我就不念了。"],"expression":"smirk"},
+  "rush-milestone": {"lines":["这就往下一步走了？行，看来你会弄。我那份新手讲稿，白打草稿了。"],"expression":"smirk"},
+  "pick-use": {"lines":["拿木镐接着敲，采集按钮里的颜色越满，一下挖得越多。停下来，颜色会慢慢退，挖得也就少些。","再攒够一块地的钱，就能往外盖东西了，这块草皮我已经看腻了。"],"expression":"plain"},
+  "camera-touch": {"lines":["点建筑能看详情，拖空地能挪镜头。两根手指捏一捏能缩放，一起左右滑还能转个面。","建筑别光看正面，背后也花了建模的钱。"],"expression":"plain"},
+  "camera-mouse": {"lines":["点建筑看详情，左键拖空地挪镜头。滚轮缩放，按右键拖动还能转个面。","建筑别光看正面，背后也花了建模的钱。"],"expression":"plain"},
+  "facility-upgrade": {"lines":["邮箱里的邮政会自动赚绿宝石。点开邮箱，升级「邮政」，每秒就能多收一些。","想让设施干得更好，可以先点开建筑看看有没有升级。不一定非得再盖一座。"],"expression":"thinking","voice":["plain","thoughtful"]},
+  "iron-hold": {"lines":["铁镐到了，终于可以按住一直挖了。采集按钮填满时就是最高连击，松手后会慢慢退。","前面让你点了那么久。这个设计，我不替作者解释。"],"expression":"smirk"},
+  "market-work": {"lines":["想让集市卖货快些，可以去村庄安排一位售货员。不过，先得有货送到他手上，总不能让他卖空气。"],"expression":"plain"},
+  "land-use": {"lines":["盖东西时，先点绿色范围里的一块空地。位置看顺眼了，再确认。"],"expression":"thinking"},
+  "mail-income": {"lines":[],"expression":"smirk"},
+  "music-work": {"lines":["唱片机可以办演出挣钱，也可以在村庄找个乐师来演。光放唱片可没有演出费。","给游戏静音，乐师也照样能演、照样挣钱。我也想要个这种待遇。"],"expression":"plain"},
+  "farm-work": {"lines":["麦田里的麦子熟了，按住收割就能收。想省点事，可以在村庄安排个农民。","麦子没收也不会把全村饿停工。作者还没狠到这个份上。"],"expression":"plain"},
+  "power-use": {"lines":["红石控制台的曲柄可以手摇发电；红石火把和风车能自己发电。商城把省事的都标了价。","需要用电的设备，点开详情选「接入电网」，有电供应就能工作。钻机靠电开工，唱片机接电则能加快演出。"],"expression":"thinking"},
+  "haul-use": {"lines":["储物箱能多存些货，可存着不等于卖掉。我在商城待过，深有体会。","想让村民优先搬某处的货，去「工业 → 物流」点「安排搬运」。没派搬运工，也有基础运输慢慢送货。"],"expression":"plain"},
+  "foreground-return": {"lines":["回来了？是不是纳闷，离开这么久，钱怎么没涨？","作者有次忘了关游戏，回来成了兆亿富翁。商城买空了，游戏也不想玩了。","所以现在切到后台就暂停赚钱，回到游戏才继续。你刚才那段时间也没算。","为了让大家还有游戏玩，他选择让大家继续上班。"],"expression":"smirk"},
+  "browse": {"lines":["你慢慢挑。我当年在货架上，就怕客人看完一圈又走了。"],"expression":"thinking"},
+  "grind": {"lines":["你这是准备把第一块挖成银行啊。","{商品}的钱已经够了，去商城看看？"],"expression":"smirk"},
+  "rearrange": {"lines":["我刚记住他在哪儿上班，又换了。还好这村子不用印名片。"],"expression":"thinking"},
+  "first-wages": {"lines":["村民已经赚到工作收入了。我站旁边看了半天，没帮上一点忙。"],"expression":"smirk"},
+  "rescue": {
+    "lines": [
+      "救命，商城来抓我了！",
+      "我不想待在货架里，快救救我！"
+    ],
+    "expression": "notice"
+  },
+  "rescued": {
+    "lines": [
+      "哈哈，重见天日了。"
+    ],
+    "expression": "smirk",
+    "voice": "bright"
+  },
+  "friend": {
+    "lines": [
+      "我还有一个朋友也被商城关住了，叫「目标追踪」。",
+      "「目标追踪」会推荐下一件值得买的东西。要不去商城看看？它话比我少。"
+    ],
+    "expression": "plain"
+  },
+  "goals": {
+    "lines": [
+      "你看看，「目标追踪」建议你下一个买木镐。"
+    ],
+    "expression": "plain"
+  },
+  "pick": {
+    "lines": [],
+    "expression": "plain"
+  },
+  "land": {
+    "lines": [
+      "先安个邮箱吧。万一有人给我们寄钱呢。"
+    ],
+    "expression": "thinking"
+  },
+  "mail": {
+    "lines": [
+      "邮箱里还真有钱。我刚才随口说的。"
+    ],
+    "expression": "thinking"
+  },
+  "resident-working": {
+    "lines": [],
+    "expression": "plain"
+  },
+  "resident-vacant": {
+    "lines": [
+      "看，来了个街溜子。",
+      "村庄里还有个{岗位}空位，可以安排村民过去，别光让人闲逛。",
+      "以后想多找几个人，去「村庄 → 居民」点「添加村民」。商城可不只卖这一个街溜子。"
+    ],
+    "expression": "plain"
+  },
+  "resident-no-music": {
+    "lines": [
+      "看，来了个街溜子。",
+      "村里好像还没什么岗位。先攒 300 颗绿宝石，买台唱片机吧。",
+      "有了唱片机，就能让闲着的村民当乐师。我看这工作还挺适合街溜子的。",
+      "以后想多找几个人，去「村庄 → 居民」点「添加村民」。商城可不只卖这一个街溜子。"
+    ],
+    "expression": "plain",
+    "voice": ["wry", "plain", "wry"]
+  },
+  "resident-no-slot": {
+    "lines": [],
+    "expression": "plain"
+  },
+  "work": {
+    "lines": [
+      "你有没有想过，你能在商城里面买村民，这是一件细思极恐的事情？"
+    ],
+    "expression": "thinking"
+  },
+  "bench": {
+    "lines": [
+      "村民有工作台，我到现在连个座位都没有。"
+    ],
+    "expression": "plain"
+  },
+  "music": {
+    "lines": [
+      "唱片机这音乐还挺像回事。没放之前，我还以为这游戏只有我一个动静。"
+    ],
+    "expression": "plain"
+  },
+  "farm": {
+    "lines": [
+      "一看见麦田，我就觉得腰有点疼。"
+    ],
+    "expression": "plain"
+  },
+  "power": {
+    "lines": [
+      "红石控制台这几根线，我就不碰了。",
+      "接电的活儿别找我。我这身外壳看着不像绝缘的。"
+    ],
+    "expression": "plain"
+  },
+  "haul": {
+    "lines": [
+      "我想在仓库借个小抽屉。私人物品，也要登记吗？"
+    ],
+    "expression": "smirk"
+  },
+  "rail": {
+    "lines": [
+      "矿车空车回来的时候，捎我一下。我还没坐过矿车。"
+    ],
+    "expression": "plain"
+  },
+  "live": {
+    "lines": [
+      "你也要当网红了啊。"
+    ],
+    "expression": "smirk"
+  },
+  "live-success": {
+    "lines": [
+      "好家伙，直播带货，乡村振兴。"
+    ],
+    "expression": "smirk"
+  },
+  "nether": {
+    "lines": [
+      "下界这份差事，我就不去现场了。有什么消息，带回来就行。"
+    ],
+    "expression": "plain"
+  },
+  "end": {
+    "lines": [
+      "都到末地了，商城居然还在。"
+    ],
+    "expression": "plain"
+  },
+  "project": {
+    "lines": [
+      "世界工程我也参与了。你看，我一直在旁边。"
+    ],
+    "expression": "smirk"
+  },
+  "ending": {
+    "lines": [
+      "真盖完了啊。",
+      "当初我还嫌那十颗绿宝石卖得便宜。现在想想，出来得挺值。"
+    ],
+    "expression": "plain"
+  },
+  "confirmations": {
+    "lines": [
+      "它是不是又问你「确定买吗」了？",
+      "设置里有「取消购买确认弹窗」。开了，让它少问两句。"
+    ],
+    "expression": "plain"
+  },
+  "building-editing": {
+    "lines": [
+      "房子摆歪了还能转，选错地方也能搬。幸好这游戏没让你办搬家许可证。",
+      "建筑面板上方的扳手能搬动、转向。想连着盖住宅，到「村庄 → 住房 → 建造住宅」打开「连续建造」。"
+    ],
+    "expression": "smirk"
+  },
+  "save-transfer": {
+    "lines": [
+      "有个叫蟒蛇的姑娘，已经第三次玩这个游戏了。不是她喜欢重开，是浏览器老把她的存档清掉。",
+      "去「设置 → 存档与读档」存张存档图吧。手机先点「菜单」找设置，再长按图片保存。",
+      "咱们换个方式支持作者，不一定非得从头再玩一遍。"
+    ],
+    "expression": "thinking"
+  },
+  "idle-shop": {
+    "lines": [
+      "我还以为商城把我卖出来以后，至少会问一句过得怎么样。"
+    ],
+    "expression": "plain"
+  },
+  "idle-workers": {
+    "lines": [
+      "我看他们都挺忙的，就没好意思过去打扰。",
+      "也怕他们顺手给我派点活儿。"
+    ],
+    "expression": "smirk"
+  },
+  "idle-machine": {
+    "lines": [
+      "这机器连个打盹的间隙都不给。我坐它旁边，显得不太好。"
+    ],
+    "expression": "plain"
+  },
+  "stash-offer": {
+    "lines": [
+      "我在地上藏了个小钱匣，里面是我的私房钱。",
+      "找到就归你。这个藏法，我还是有点信心的。"
+    ],
+    "expression": "smirk"
+  },
+  "decor-title": {"lines":["名字都换了。我得记一下，免得哪天回家走错地方。"],"expression":"thinking"},
+  "decor-icon": {"lines":["连页签上那么小一块都换了。我在这儿住这么久，头一回发现楼上也能装修。"],"expression":"thinking"},
+  "decor-cursor-mouse": {"lines":["鼠标都穿上新衣服了。你说我是不是也该提一下？"],"expression":"smirk"},
+  "decor-cursor-touch": {"lines":["挖出来的碎屑都换了样子。它们露个面就走，打扮得比我还认真。"],"expression":"smirk"},
+  "decor-theme-backpack": {"lines":["这下真像住在背包里了。别把我跟圆石叠一块儿，我不太能承重。"],"expression":"smirk"},
+  "decor-theme-oak": {"lines":["木边，纸页……看着能坐下来读会儿书了。商城最好别在封底印广告。"],"expression":"plain"},
+  "decor-theme-redstone": {"lines":["我现在说句话，看着都像在发布检修通知。先声明，我不会修。"],"expression":"smirk"},
+  "decor-theme-end": {"lines":["好，换成紫的了。以后我就算发呆，看起来也像在思考宇宙。"],"expression":"smirk"},
+  "decor-notice-paper": {"lines":["哎，新纸壳。先别扔旧的，我那点私房钱还不知道夹在哪一层。"],"expression":"smile"},
+  "decor-notice-stone": {"lines":["换成石头了？行，我以后说话尽量有点分量。"],"expression":"smirk"},
+  "decor-notice-signal": {"lines":["这身看着就费电。幸好作者没给我接电表。"],"expression":"smirk"},
+  "decor-notice-crystal": {"lines":["紫晶都镶上了。我是不是得挑点体面的话说？"],"expression":"thinking"},
+  "decor-share-card": {"lines":["纪念卡也有新封面了。拍的时候叫我一声，我可以假装在忙。"],"expression":"smirk"},
+  "decor-share-fx": {"lines":["分享还配了个动静。这个我喜欢，显得咱们发出去的东西很重要。"],"expression":"smile"},
+  "decor-studio": {"lines":["直播间又添东西了。我看以后有人来串门，都得先问一句要不要上镜。"],"expression":"plain"},
+  "decor-flag": {"lines":["旗子都挂上了。我得找找，村里有没有负责放假的部门。"],"expression":"thinking"},
+  "suggest-notice": {"lines":["我想换套纸壳。装扮摊那个「纸条通知」，看着还挺合身。","花 {价格} 颗就行。我问过了，不能拿旧的抵钱。"],"expression":"thinking"},
+  "suggest-cooling": {"lines":["给钻机装套「冷却与传动」怎么样？少用些电，还能多挖一点。","花钱的是你，显得懂行的是我。所以我先问问。"],"expression":"smirk"},
+  "egg:private-stash": {
+    "lines": [
+      "行，说话算话。",
+      "我那个新外壳，再攒吧。"
+    ],
+    "expression": "plain"
+  }
+};
+
+for(const [id,lines] of Object.entries(COMMUNITY_COPY))NARRATOR_COPY[id]={lines,expression:id==='community-mansion'?'plain':id==='community-cash'?'thinking':'smirk'};
+
+// Spoken place names; catalog labels also describe the purchase (e.g. 农民与麦田).
+export const NARRATOR_PLACES = {
+  V4: '麦田', V7: '畜栏', V3: '集市', M4: '仓库', M1: '矿区',
+  M2: '熔炉', L1: '唱片机', L4: '主持席', M20: '音符方块', L2: '直播间',
+};

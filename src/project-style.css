@@ -1,0 +1,124 @@
+.engineering-panel {
+  padding: 18px;
+  border: 1px solid #bacaae;
+  background: #eaf0df;
+}
+.engineering-panel h3 {
+  margin: 7px 0 10px;
+  font-size: 23px;
+  color: #3f6049;
+}
+.engineering-panel > p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #70816a;
+}
+.engineering-layers {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+  margin: 20px 0;
+  padding: 0;
+}
+.engineering-layers li {
+  display: grid;
+  gap: 5px;
+  padding: 10px 9px;
+  border: 1px solid #c6d0b8;
+  background: #f2f0e5;
+  color: #89957d;
+}
+.engineering-layers b {
+  font-size: 22px;
+  line-height: 1.1;
+  color: #a7b594;
+}
+.engineering-layers span {
+  font-size: 12px;
+}
+.engineering-layers small {
+  font-size: 10px;
+}
+.engineering-layers .current {
+  border-color: #879f70;
+  color: #547147;
+}
+.engineering-layers .finished {
+  background: #dce7ca;
+  color: #547147;
+}
+.engineering-layers .finished b {
+  color: #688456;
+}
+.engineering-layers i,
+.engineering-meter {
+  display: block;
+  height: 5px;
+  background: #d9dfca;
+  overflow: hidden;
+}
+.engineering-layers em,
+.engineering-meter i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: #8ea773;
+}
+.engineering-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+.engineering-total strong {
+  font-variant-numeric: tabular-nums;
+}
+.engineering-realms > section {
+  border-top: 1px solid #cbd5bd;
+  padding: 14px 0;
+}
+.engineering-realms header {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: baseline;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+.engineering-realms header span {
+  font-size: 10px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.engineering-realms p {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #7a8b6a;
+  margin: 8px 0 4px;
+}
+.engineering-realms button {
+  padding: 5px 0;
+  min-height: 36px;
+  text-align: left;
+  font-size: 11px;
+  color: #526f44;
+}
+.engineering-panel > button {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+.engineering-panel .engineering-note {
+  font-size: 10px;
+}
+@media (max-width: 759px) {
+  .engineering-panel {
+    padding: 14px;
+  }
+  .engineering-panel h3 {
+    font-size: 21px;
+  }
+}

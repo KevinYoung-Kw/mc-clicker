@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>V1.6 住房与园艺 · 第二轮造型研究</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#e6eadd;color:#314b3b;font:14px system-ui,sans-serif}header{padding:24px 32px;border-bottom:1px solid #b6c1aa;background:#f1efdf}h1{font-size:23px;margin:0 0 6px}p{margin:0;color:#6c7d66;line-height:1.6}nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}button{font:inherit;color:#314b3b;border:1px solid #94a583;background:#f4f0dc;padding:8px 14px;min-height:40px;cursor:pointer}button[aria-pressed=true]{background:#597849;color:#fff}main{padding:24px 32px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px 16px}article{min-width:0;border-bottom:1px solid #b6c1aa;padding-bottom:14px}img{width:100%;display:block;aspect-ratio:1.1}h2{font-size:16px;margin:10px 0 6px}small{display:block;color:#64755e;line-height:1.5}article p{font-size:12px;margin:7px 0 0;color:#68735f}body[data-night=true]{background:#253343;color:#e1e7da}body[data-night=true] header{background:#303f4c}body[data-night=true] p,body[data-night=true] small{color:#b0bfba}body[data-silhouette=true]{background:#f1f0e7;color:#314b3b}@media(max-width:700px){header{padding:18px}main{padding:12px 18px;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px}h1{font-size:18px}h2{font-size:14px}small{font-size:12px}button{padding:7px 10px}}@media(min-width:1200px){main{max-width:1500px;margin:auto}}
+</style>
+<header><h1>V1.6 · 住房与园艺造型研究 / 第二轮</h1><p>8 款住宅 / 3 级园艺台 · 重做轮廓与空间结构 · 独立样板，住址容量和尺寸仍待游戏内验证</p><nav><button id="day" aria-pressed="true">白昼</button><button id="night" aria-pressed="false">夜间</button><button id="scale" aria-pressed="false">统一比例尺</button><button id="silhouette" aria-pressed="false">轮廓检查</button><button id="rotate">转一面</button><a href="./garden-art.html" style="padding:9px 14px;color:inherit;border:1px solid #94a583;text-decoration:none">田园布景 · 27 件 →</a></nav></header>
+<main id="sheet"></main>
+<script type="module">
+import * as T from 'three';
+import {HOMES,homeModel,gardenModel} from './models.mjs';
+const renderer=new T.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true});
+renderer.setSize(440,400);renderer.setPixelRatio(1);renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.12;
+const gardenIdeas=['工具架、露天操作台与苗床','加建尖顶玻璃温室，保留操作区','收藏架跨过前院，增加悬挂盆栽与异域标本'];
+const definitions=[...HOMES,...[1,2,3].map(level=>({id:'garden-'+level,name:['园艺台 · 工具作业区','园艺台 · 育苗温室','园艺台 · 收藏花房'][level-1],w:2,d:2,level,idea:gardenIdeas[level-1]}))];
+let night=false,uniform=false,silhouette=false,angle=0;
+const entries=definitions.map(h=>{
+ const el=document.createElement('article'),img=document.createElement('img'),name=document.createElement('h2'),sub=document.createElement('small'),idea=document.createElement('p');
+ img.alt=h.name;name.textContent=h.name;sub.textContent=h.beds?`${h.w} × ${h.d} 格 · ${h.beds} 个住址`:`2 × 2 格 · Lv.${h.level}`;idea.textContent=h.idea;
+ el.append(img,name,sub,idea);document.querySelector('#sheet').append(el);return{h,img};
+});
+const camera=new T.OrthographicCamera(-2,2,2,-2,.05,60);
+function render(){
+ window.studyReady=false;window.studyStats=[];document.body.dataset.night=night&&!silhouette;document.body.dataset.silhouette=silhouette;
+ for(const {h,img} of entries){
+  const scene=new T.Scene(),root=h.level?gardenModel(h.level,night):homeModel(h,night);scene.add(root);root.updateMatrixWorld(true);
+  const bounds=new T.Box3().setFromObject(root),size=bounds.getSize(new T.Vector3());
+  const ownedMaterials=new Set();root.traverse(o=>{if(o.isMesh&&(o.userData.studyWindow||o.material.transparent))ownedMaterials.add(o.material);});
+  if(silhouette){const mat=new T.MeshBasicMaterial({color:'#33483c'});ownedMaterials.add(mat);root.traverse(o=>{if(o.isMesh)o.material=mat;});}
+  scene.add(new T.HemisphereLight(night?'#adc8e5':'#fff6df',night?'#354540':'#78846a',night?1.5:2.1));
+  const sun=new T.DirectionalLight(night?'#b7cce9':'#fff0d2',night?1.7:3.2);sun.position.set(-4,8,5);sun.castShadow=!silhouette;sun.shadow.mapSize.set(1024,1024);sun.shadow.camera.left=-4;sun.shadow.camera.right=4;sun.shadow.camera.top=5;sun.shadow.camera.bottom=-4;sun.shadow.bias=-.0004;scene.add(sun);
+  const ground=new T.Mesh(new T.BoxGeometry(h.w+.24,.10,h.d+.24),new T.MeshStandardMaterial({color:silhouette?'#d9dfcf':night?'#697f61':'#a6b77c',roughness:1}));ground.position.y=-.05;ground.receiveShadow=true;scene.add(ground);
+  const shadow=new T.Mesh(new T.PlaneGeometry(20,20),new T.ShadowMaterial({opacity:night?.19:.15}));shadow.rotation.x=-Math.PI/2;shadow.position.y=-.105;shadow.receiveShadow=true;scene.add(shadow);
+  const span=uniform?4.3:Math.max(size.x,size.y,size.z)*1.36+.35;camera.left=-span*.55;camera.right=span*.55;camera.top=span*.5;camera.bottom=-span*.5;
+  camera.position.set(6*Math.cos(angle)+8*Math.sin(angle),5.3,8*Math.cos(angle)-6*Math.sin(angle));camera.lookAt(0,size.y*.39,0);camera.updateProjectionMatrix();renderer.render(scene,camera);img.src=renderer.domElement.toDataURL('image/png');
+  let meshes=0,windows=0;root.traverse(o=>{if(o.isMesh)meshes++;if(o.userData.studyWindow)windows++;});
+  window.studyStats.push({id:h.id,width:size.x,depth:size.z,height:size.y,meshes,windows,drawCalls:renderer.info.render.calls,fits:bounds.min.x>=-h.w/2&&bounds.max.x<=h.w/2&&bounds.min.z>=-h.d/2&&bounds.max.z<=h.d/2});
+  for(const m of ownedMaterials)m.dispose();ground.geometry.dispose();ground.material.dispose();shadow.geometry.dispose();shadow.material.dispose();sun.shadow.dispose();
+ }
+ document.querySelector('#day').setAttribute('aria-pressed',!night);document.querySelector('#night').setAttribute('aria-pressed',night);document.querySelector('#scale').setAttribute('aria-pressed',uniform);document.querySelector('#silhouette').setAttribute('aria-pressed',silhouette);window.studyReady=true;
+}
+document.querySelector('#day').onclick=()=>{night=false;silhouette=false;render()};document.querySelector('#night').onclick=()=>{night=true;silhouette=false;render()};document.querySelector('#scale').onclick=()=>{uniform=!uniform;render()};document.querySelector('#silhouette').onclick=()=>{silhouette=!silhouette;render()};document.querySelector('#rotate').onclick=()=>{angle+=Math.PI/2;render()};render();
+</script></html>

@@ -1,0 +1,155 @@
+<!doctype html><meta charset="utf-8" /><title>生物模型核对</title>
+<style>
+  body {
+    margin: 0;
+    background: #e5ead9;
+    color: #35533e;
+    font: 14px system-ui;
+  }
+  canvas {
+    display: block;
+  }
+  #labels {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  #labels div {
+    padding: 12px 18px;
+    border: 1px solid #c5d1b7;
+  }
+  b {
+    font-size: 17px;
+  }
+  small {
+    display: block;
+    color: #75826c;
+    margin-top: 3px;
+  }
+</style>
+<canvas id="canvas"></canvas>
+<div id="labels"></div>
+<script type="module">
+  import * as T from "three";
+  import { makeActor } from "/src/objects.js";
+  import { specialtyStall } from "/src/specialty-stalls.js";
+  import { ModelKit } from "/src/models.js";
+  import { makeResident } from "/src/companion-models.js";
+  import { ensureCommunity } from "/src/residents.js";
+  import { fresh } from "/src/game.js";
+  const sample = fresh();
+  sample.counts.V2 = 1;
+  const resident = ensureCommunity(sample).residents[0];
+  const entries = [
+    ["V2", "村民"],
+    ["V8", "牛"],
+    ["V9", "羊"],
+    ["V10", "猪"],
+    ["V15", "铜傀儡"],
+    ["V16", "铁傀儡"],
+    ["M18", "史莱姆"],
+    ["N2", "猪灵"],
+    ["N3", "烈焰人"],
+    ["N5", "岩浆怪"],
+    ["N6", "恶魂"],
+    ["N8", "凋零骷髅"],
+    ["N9", "凋零"],
+    ["E3", "末影人"],
+    ["E5", "潜影贝"],
+    ["E9", "末影龙"],
+  ];
+  const renderer = new T.WebGLRenderer({
+    canvas,
+    antialias: true,
+    preserveDrawingBuffer: true,
+  });
+  renderer.setPixelRatio(1);
+  renderer.setSize(1400, 1240);
+  renderer.setScissorTest(true);
+  renderer.outputColorSpace = T.SRGBColorSpace;
+  renderer.toneMapping = T.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.1;
+  labels.style.width = "1400px";
+  labels.style.height = "1240px";
+  const scenes = entries.map(([id, name]) => {
+    labels.insertAdjacentHTML(
+      "beforeend",
+      `<div><b>${name}</b><small>${id}</small></div>`,
+    );
+    const scene = new T.Scene();
+    scene.background = new T.Color("#e5ead9");
+    scene.add(new T.HemisphereLight("#fff7df", "#718460", 2.1));
+    const light = new T.DirectionalLight("#fff1d5", 3.1);
+    light.position.set(-3, 7, 5);
+    scene.add(light);
+    const anim = [];
+    let model;
+    if (id === "V2")
+      model = makeResident(scene, { ...resident, job: "farmer" }, anim);
+    else if (id === "N2") model = specialtyStall(scene, id);
+    else if (id === "M18")
+      model = new ModelKit(scene, anim, { counts: {} }).slimeMachine(0, 0);
+    else model = makeActor(scene, id, anim, 0);
+    const bounds = new T.Box3().setFromObject(model),
+      center = bounds.getCenter(new T.Vector3()),
+      size = bounds.getSize(new T.Vector3());
+    const radius = Math.max(size.x, size.y, size.z) * 0.78;
+    const camera = new T.OrthographicCamera(
+      -radius * 1.13,
+      radius * 1.13,
+      radius,
+      -radius,
+      0.01,
+      80,
+    );
+    return { scene, model, anim, camera, center, radius };
+  });
+  window.drawMobs = (t = 0, side = false) => {
+    scenes.forEach((s, i) => {
+      s.anim.forEach((a) => a(t));
+      s.camera.position
+        .copy(s.center)
+        .add(new T.Vector3(side ? 6 : 4, 3.1, side ? 0.15 : 6));
+      s.camera.lookAt(s.center);
+      s.camera.updateMatrixWorld(true);
+      s.model.updateMatrixWorld(true);
+      const projected = new T.Box2(),
+        v = new T.Vector3();
+      s.model.traverseVisible((mesh) => {
+        const ps = mesh.geometry?.attributes?.position;
+        if (!ps) return;
+        for (let j = 0; j < ps.count; j++) {
+          v.fromBufferAttribute(ps, j)
+            .applyMatrix4(mesh.matrixWorld)
+            .applyMatrix4(s.camera.matrixWorldInverse);
+          projected.expandByPoint(new T.Vector2(v.x, v.y));
+        }
+      });
+      const middle = projected.getCenter(new T.Vector2()),
+        bounds = projected.getSize(new T.Vector2()),
+        half = Math.max(bounds.x / 1.25, bounds.y) * 0.62;
+      s.camera.left = middle.x - half * 1.25;
+      s.camera.right = middle.x + half * 1.25;
+      s.camera.top = middle.y + half;
+      s.camera.bottom = middle.y - half;
+      s.camera.updateProjectionMatrix();
+      renderer.setViewport(
+        (i % 4) * 350,
+        1240 - (Math.floor(i / 4) + 1) * 310,
+        350,
+        280,
+      );
+      renderer.setScissor(
+        (i % 4) * 350,
+        1240 - (Math.floor(i / 4) + 1) * 310,
+        350,
+        280,
+      );
+      renderer.render(s.scene, s.camera);
+    });
+  };
+  window.mobReview = scenes;
+  drawMobs();
+</script>

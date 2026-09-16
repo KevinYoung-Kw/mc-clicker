@@ -1,0 +1,10 @@
+<!doctype html><meta charset="utf-8"><title>Save image codec verification</title>
+<p>隔离测试页，不读取浏览器游戏存档。</p><div id="preview"></div>
+<script type="module">
+import {paintSaveImage} from '../../src/save-image-card.js';
+import {formatWallet} from '../../src/game.js';
+import {SAVE_IMAGE_THEMES} from '../../src/save-image-art.js';
+function job(data){return new Promise((resolve,reject)=>{const w=new Worker(new URL('../../src/save-worker.js',import.meta.url),{type:'module'});const timer=setTimeout(()=>{w.terminate();reject(Error('timeout'))},25000);w.onmessage=({data})=>{clearTimeout(timer);w.terminate();data.error?reject(Error(data.error)):resolve(data.result)};w.onerror=e=>{clearTimeout(timer);w.terminate();reject(Error(e.message))};w.postMessage(data)})}
+const toURL=blob=>new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(blob)});
+window.saveImageQA={themes:SAVE_IMAGE_THEMES,async generate({code,save,theme}){save.webAppearance.equipped.theme=theme;const result=await job({action:'image-encode',code,theme}),blob=await paintSaveImage(result,save,'QA',formatWallet);return toURL(blob)},async read(url){const blob=await(await fetch(url)).blob();return job({action:'image-decode',file:blob})}};
+</script>

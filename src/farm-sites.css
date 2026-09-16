@@ -1,0 +1,20 @@
+.farm-sites { margin: 18px 0; }
+.farm-sites > header { display:flex;align-items:center;justify-content:space-between;gap:12px; }
+.farm-sites h4 { margin:0; }
+.farm-sites > header > span { font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums; }
+.farm-sites > .panel-note { margin:10px 0 14px;line-height:1.65; }
+.farm-site-row { display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-top:1px solid var(--line); }
+.farm-site-row > div:first-child { display:grid;gap:6px;min-width:0; }
+.farm-site-row strong { font-size:14px; }
+.farm-site-row small { color:var(--muted);font-size:12px; }
+.farm-site-row [data-farm-status] { font-size:12px;font-variant-numeric:tabular-nums;min-height:18px;line-height:18px; }
+.farm-site-actions { display:flex;justify-content:flex-end;flex-wrap:wrap;gap:4px;flex:0 0 128px; }
+.farm-site-actions .facility-icon { width:36px;height:36px;min-width:36px;padding:7px; }
+.farm-site-actions [data-farm-harvest] { flex-basis:100%;font-size:12px;min-height:34px; }
+.farm-add-row { border-block:1px solid var(--line);padding:12px 0;margin-bottom:8px;display:grid;gap:8px; }
+.farm-add-row > button { display:flex;align-items:center;gap:6px;text-align:left; }
+.farm-add-row b { margin-left:auto;font-size:12px; }
+.farm-add-row small { color:var(--muted);font-size:12px; }
+@media(max-width:420px){.farm-site-actions { flex-basis:108px; }.farm-site-actions .facility-icon{width:32px;height:34px;min-width:32px;padding:5px;}.farm-site-row{gap:8px;}.farm-site-row [data-farm-status]{max-width:160px;}}
+
+.farm-site-row [data-farm-status]{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.farm-site-row [data-farm-worker]{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:180px}

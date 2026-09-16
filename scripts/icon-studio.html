@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>MC Clicker · Icon Studio</title>
+  </head>
+  <body>
+    <script type="module">
+      import * as T from "/node_modules/three/build/three.module.js";
+      import { createPickaxe } from "/src/pickaxe.js";
+      import { CATALOG } from "/src/catalog.js";
+      import {
+        STUDIO_MODEL_IDS,
+        studioDeviceModel,
+      } from "/src/studio-device-models.js";
+      import { fresh } from "/src/game.js";
+      import { makeObject, makeActor } from "/src/objects.js";
+      import {
+        ModelKit,
+        box,
+        cube,
+        cyl,
+        ball,
+        group,
+        mat,
+        ringGeometry,
+        P,
+      } from "/src/models.js";
+      const renderer = new T.WebGLRenderer({
+        antialias: true,
+        alpha: true,
+        preserveDrawingBuffer: true,
+      });
+      renderer.setSize(192, 192);
+      renderer.setPixelRatio(1);
+      renderer.setClearColor(0x000000, 0);
+      renderer.toneMapping = T.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.12;
+      document.body.append(renderer.domElement);
+      const scene = new T.Scene();
+      scene.add(new T.HemisphereLight("#fff3da", "#75856e", 2.2));
+      const key = new T.DirectionalLight("#fff0d7", 3.2);
+      key.position.set(-4, 8, 6);
+      scene.add(key);
+      const fill = new T.DirectionalLight("#daeafa", 1);
+      fill.position.set(6, 3, -4);
+      scene.add(fill);
+      const camera = new T.OrthographicCamera(-2, 2, 2, -2, 0.01, 100);
+      function plate(
+        parent,
+        text,
+        color = "#607f64",
+        width = 0.8,
+        height = 0.5,
+      ) {
+        const canvas = document.createElement("canvas");
+        canvas.width = 256;
+        canvas.height = 192;
+        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = color;
+        ctx.fillRect(0, 0, 256, 192);
+        ctx.fillStyle = "#f8efd8";
+        ctx.font = "bold 95px sans-serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(text, 128, 100);
+        const texture = new T.CanvasTexture(canvas),
+          material = new T.MeshStandardMaterial({
+            map: texture,
+            roughness: 0.85,
+          });
+        const mesh = new T.Mesh(new T.PlaneGeometry(width, height), material);
+        mesh.position.set(0, 0.8, 0.27);
+        parent.add(mesh);
+        return mesh;
+      }
+      function book(parent, color, glyph) {
+        const g = group(parent);
+        box(g, color, 0, 0.65, 0, 0.9, 1.18, 0.36);
+        box(g, P.cream, 0.04, 0.65, 0.195, 0.75, 1.04, 0.08);
+        box(g, color, 0, 0.65, 0.26, 0.91, 1.2, 0.045);
+        plate(g, glyph, color, 0.72, 0.82).position.set(0, 0.67, 0.29);
+        box(g, P.yellow, -0.34, 0.65, 0.29, 0.04, 1.02, 0.025);
+        g.rotation.y = -0.12;
+        return g;
+      }
+      function pick(parent, color) {
+        const g = createPickaxe(color);
+        parent.add(g);
+        g.rotation.z = -0.38;
+        return g;
+      }
+      function portal(parent, color) {
+        for (const x of [-0.5, 0.5])
+          box(parent, "#58615f", x, 0.8, 0, 0.22, 1.6, 0.28);
+        box(parent, "#58615f", 0, 1.63, 0, 1.22, 0.23, 0.28);
+        box(parent, color, 0, 0.86, 0, 0.77, 1.26, 0.06);
+      }
+      const actorIds = [
+        "V2",
+        "V8",
+        "V9",
+        "V10",
+        "V15",
+        "V16",
+        "N3",
+        "N5",
+        "N6",
+        "N8",
+        "N9",
+        "E3",
+        "E5",
+        "E9",
+      ];
+      window.renderIcon = (id) => {
+        const item = CATALOG.find((i) => i.id === id),
+          root = new T.Group(),
+          animations = [],
+          s = fresh();
+        s.counts = Object.fromEntries(CATALOG.map((i) => [i.id, 1]));
+        s.project = 180000;
+        s.endEyes = 12;
+        scene.add(root);
+        if (item.model === "tool" || id === "X5")
+          pick(
+            root,
+            {
+              T1: "#b48a58",
+              T2: "#939e93",
+              T3: "#d0dacf",
+              T4: "#e4bd56",
+              T5: "#77b8af",
+              T6: "#527b7c",
+              X5: "#d6ac60",
+            }[id],
+          );
+        else if (actorIds.includes(id)) makeActor(root, id, animations);
+        else if (["T9", "T10", "V12", "V13", "X1"].includes(id))
+          book(
+            root,
+            {
+              T9: "#a27d59",
+              T10: "#578574",
+              V12: "#728ca2",
+              V13: "#9180a5",
+              X1: "#8b9770",
+            }[id],
+            { T9: "⚡", T10: "♦", V12: "I", V13: "III", X1: "✦" }[id],
+          );
+        else if (id === "V1") {
+          for (let x = 0; x < 2; x++)
+            for (let z = 0; z < 2; z++) {
+              box(root, "#a18a60", x * 0.65, 0.2, z * 0.65, 0.63, 0.4, 0.63);
+              box(root, "#9cba70", x * 0.65, 0.43, z * 0.65, 0.66, 0.08, 0.66);
+            }
+          const a = plate(root, "+", "#779d67", 0.62, 0.6);
+          a.position.set(0.4, 1, 0.4);
+        } else if (["T11", "Z3"].includes(id)) {
+          const kit = new ModelKit(root, animations, s);
+          kit.block();
+          for (let j = 0; j < (id === "T11" ? 2 : 3); j++) {
+            const ring = new T.Mesh(
+              ringGeometry,
+              mat(id === "T11" ? "#a6c6ae" : "#dfbf6b"),
+            );
+            ring.scale.setScalar(1 + j * 0.2);
+            ring.position.y = 0.9 + j * 0.2;
+            ring.rotation.x = 0.7 + j * 0.5;
+            root.add(ring);
+          }
+        } else if (STUDIO_MODEL_IDS.includes(id)) {
+          s.live.gifts = [{ id: 1 }, { id: 2 }, { id: 3 }];
+          s.live.director = true;
+          s.live.rainCooldown = 40;
+          s.grid.last = { perDevice: { L12: 1 } };
+          const model = studioDeviceModel(root, id, s, animations);
+          if (id === "L3" || id === "L7") model.rotation.y = Math.PI;
+        } else if (id === "X3" || id === "X4") {
+          box(root, P.wood, 0, 0.4, 0, 0.12, 0.8, 0.12);
+          box(root, "#afba9d", 0, 1, 0, 1.4, 0.9, 0.16);
+          plate(
+            root,
+            id === "X3" ? "MC" : "◆",
+            id === "X3" ? "#789378" : "#82a778",
+            1.23,
+            0.65,
+          ).position.set(0, 1, 0.1);
+          if (id === "X4") box(root, "#e5d9b3", -0.35, 1.55, 0, 0.6, 0.2, 0.17);
+        } else if (id === "X6") {
+          box(root, P.wood, -0.3, 0.85, 0, 0.08, 1.7, 0.08);
+          box(root, "#93b18a", 0.22, 1.32, 0, 1, 0.57, 0.06);
+          box(root, P.cream, 0.2, 1.32, 0.04, 0.22, 0.22, 0.015);
+          box(root, "#a69a78", -0.3, 0.12, 0, 0.65, 0.22, 0.65);
+        } else if (id === "X8") {
+          box(root, "#9dbbbb", 0, 0.85, 0, 1.3, 1.3, 0.12);
+          ball(root, "#efce81", 0.24, 1.14, 0.15, 0.29);
+          for (let j = 0; j < 3; j++)
+            box(root, P.cream, -0.38 + j * 0.24, 0.62, 0.19, 0.3, 0.25, 0.17);
+        } else makeObject(root, item, s, animations);
+        for (const animate of animations) animate(0.8);
+        // A catalogue icon frames the device and the base of its light column.
+        if (id === 'N10') root.getObjectByName('beacon-light-column').scale.y = .22;
+        root.updateMatrixWorld(true);
+        camera.position.set(5, 4, 6);
+        camera.lookAt(0, 0, 0);
+        camera.updateMatrixWorld(true);
+        // Centre the projected silhouette, not its world-space bounding box.
+        const projected = new T.Box2(),
+          v = new T.Vector3();
+        root.traverseVisible((mesh) => {
+          const positions = mesh.geometry?.attributes?.position;
+          if (!positions) return;
+          for (let j = 0; j < positions.count; j++) {
+            v.fromBufferAttribute(positions, j)
+              .applyMatrix4(mesh.matrixWorld)
+              .applyMatrix4(camera.matrixWorldInverse);
+            projected.expandByPoint(new T.Vector2(v.x, v.y));
+          }
+        });
+        const centre = projected.getCenter(new T.Vector2()),
+          size = projected.getSize(new T.Vector2()),
+          span = Math.max(size.x, size.y) * 0.57;
+        camera.left = centre.x - span;
+        camera.right = centre.x + span;
+        camera.top = centre.y + span;
+        camera.bottom = centre.y - span;
+        camera.updateProjectionMatrix();
+        renderer.render(scene, camera);
+        const data = renderer.domElement.toDataURL("image/png");
+        scene.remove(root);
+        return data;
+      };
+      window.iconIds = CATALOG.map((i) => i.id);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+/* Decorative skins never move the game's controls or recolor the 3D world. */
+body[data-theme="web-theme-macintosh"]{--paper:#fffef4;--web-inner:#f0f0e5;--ink:#20221e;--muted:#56594f;--line:#72766b;--green:#20221e;--web-action-text:#fffef4;--web-edge:#20221e;--web-highlight:#fffef4;--web-shadow:#85897a;--web-pattern:none}
+body[data-theme="web-theme-desktop95"]{--paper:#d0d0c5;--web-inner:#faf9ec;--ink:#262c29;--muted:#535d52;--line:#898e80;--green:#273b78;--web-action-text:#fffef4;--web-edge:#555d51;--web-highlight:#fffef4;--web-shadow:#727a69;--web-pattern:none}
+/* Material belongs to the shell; lists stay flat and easy to scan. */
+body[data-theme^="web-theme-"] #game #panel :is(.build-card,.task-card,.facility-status,.record-row,.management-equipment article){background-image:none;box-shadow:none}
+body[data-theme="web-theme-backpack"] :is(#panel,#modal){border:2px solid #616b57;outline:1px solid #e9eadc;outline-offset:-5px}
+body[data-theme="web-theme-backpack"] :is(.panel-header,.appearance-heading,.share-header,.info-persona,.settings-header){border-bottom:2px solid #828c76;padding-bottom:12px}
+body[data-theme="web-theme-backpack"] :is(.hotbar,.realm-switch) button{box-shadow:inset 2px 2px #f5f3e7,inset -2px -2px #7b866b}
+body[data-theme="web-theme-oak"] :is(.panel-header,.appearance-heading,.share-header,.info-persona,.settings-header){border-bottom:3px double #94754c;padding-bottom:12px}
+body[data-theme="web-theme-oak"] :is(.appearance-tabs,.family-tabs,.management-tabs) button{border-radius:0;box-shadow:none}
+body[data-theme="web-theme-oak"] :is(.appearance-tabs,.family-tabs,.management-tabs) button[aria-selected=true]{border-bottom:4px solid #8f7247;box-shadow:none}
+body[data-theme="web-theme-redstone"] :is(.panel-header,.appearance-heading,.share-header,.info-persona,.settings-header){border-block:1px solid #779684;padding-block:10px;background-image:repeating-linear-gradient(90deg,#779684 0 2px,transparent 2px 10px);background-size:32px 3px;background-repeat:no-repeat;background-position:right bottom}
+body[data-theme="web-theme-redstone"] :is(.electricity-dashboard,.facility-status){border-top:1px solid #789888;border-bottom:1px solid #789888}
+body[data-theme="web-theme-end"] :is(.panel-header,.appearance-heading,.share-header,.info-persona,.settings-header){border-bottom:1px solid #897396;padding-bottom:12px}
+body[data-theme="web-theme-end"] :is(.appearance-tabs,.family-tabs,.management-tabs) button{box-shadow:none}
+/* Macintosh: one-bit window borders, striped title rails, black selection. */
+body[data-theme="web-theme-macintosh"] :is(#panel,#modal,.hud,.hotbar,#hud-tools){border:1px solid var(--ink);background-image:none;box-shadow:2px 2px 0 var(--ink)}
+body[data-theme="web-theme-macintosh"] :is(.panel-header,.appearance-heading,.share-header,.info-persona,.settings-header){border-bottom:1px solid var(--ink);padding-top:16px;padding-bottom:12px;background:repeating-linear-gradient(0deg,var(--ink) 0 1px,transparent 1px 3px) left top/100% 7px no-repeat}
+body[data-theme="web-theme-macintosh"] :is(.eyebrow,.share-kicker){letter-spacing:1px}
+body[data-theme="web-theme-macintosh"] :is(.hud,.hotbar){background-color:#fffef4}
+body[data-theme="web-theme-macintosh"] :is(.buy,.primary,.quiet-button,.setting button,.appearance-actions button){border:1px solid var(--ink);box-shadow:1px 1px var(--ink);border-radius:0;background-image:none}
+body[data-theme="web-theme-macintosh"] :is(.appearance-tabs,.family-tabs,.management-tabs,.construction-tabs,.mail-tabs) button{border:0;background-image:none;box-shadow:none}
+body[data-theme="web-theme-macintosh"] :is(button.active,button[aria-selected=true],button[aria-pressed=true]){box-shadow:none}
+body[data-theme="web-theme-macintosh"] :is(.facility-status-progress,.engineering-meter,.task-meter){border:1px solid var(--ink);background-color:#d5d6c8;background-image:repeating-linear-gradient(90deg,#fffef4 0 1px,transparent 1px 3px)}
+body[data-theme="web-theme-macintosh"] :is(.share-qr,.mail-letter,.info-persona){box-shadow:none}
+body[data-theme="web-theme-macintosh"] ::-webkit-scrollbar{width:10px;height:10px}
+body[data-theme="web-theme-macintosh"] ::-webkit-scrollbar-thumb{border:1px solid var(--ink);background:#fffef4}
+body[data-theme="web-theme-macintosh"] ::-webkit-scrollbar-track{border-left:1px solid var(--ink);background:#d5d6c8}
+/* 95 desktop: raised gray controls and blue window title strips. */
+body[data-theme="web-theme-desktop95"] :is(#panel,#modal,.hotbar,#hud-tools){border:1px solid #4a5447;box-shadow:inset 2px 2px #fffef4,inset -2px -2px #77806e,2px 2px #25392e66;background-image:none}
+body[data-theme="web-theme-desktop95"] :is(.panel-header,.appearance-heading,.share-header,.info-persona,.settings-header){padding:10px 12px;background:#273b78;color:#fffef4;border-bottom:2px solid #fffef4}
+body[data-theme="web-theme-desktop95"] :is(.panel-header,.appearance-heading,.share-header,.info-persona,.settings-header) :is(h2,h3,small,b,span,button,.eyebrow){color:inherit}
+body[data-theme="web-theme-desktop95"] :is(.panel-header,.appearance-heading){padding-right:64px}
+body[data-theme="web-theme-desktop95"] #modal #modal-close{background:#d0d0c5;color:#252d27;border:1px solid #5a6556;box-shadow:inset 1px 1px #fffef4,inset -1px -1px #77806e}
+body[data-theme="web-theme-desktop95"] :is(.hotbar button,.appearance-tabs button,.buy,.primary,.appearance-actions button,.settings-row button){box-shadow:inset 2px 2px #fffef4,inset -2px -2px #788271;border:1px solid #9b9f90}
+body[data-theme="web-theme-desktop95"] :is(.hotbar button.active,.appearance-tabs button[aria-selected=true]){box-shadow:inset 2px 2px #5c6757,inset -1px -1px #fffef4}
+body[data-theme="web-theme-desktop95"] :is(.facility-status,.mail-letter-scroll,.share-url input){box-shadow:inset 1px 1px #7c8774,inset -1px -1px #fffef4}
+/* Title plaques previously lost padding and contrast to high-specificity HUD rules. */
+#game #stage #world-label[data-title-style^="web-title-"] .eyebrow{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:36px;min-width:168px;max-width:100%;padding:9px 18px;font-size:11px;line-height:18px;letter-spacing:.3px;color:var(--title-ink,#393a2b);text-shadow:none;white-space:nowrap;background-size:100% 100%;margin-bottom:6px}
+/* A notice skin owns its text too, including nested receipt and narrator elements. */
+body[data-notice^="web-notice-"] #notification-shell{--paper:var(--notice-paper);--ink:var(--notice-ink);--muted:var(--notice-muted);--line:var(--notice-edge);--green:var(--notice-ink);--web-action-text:var(--notice-paper);background:var(--notice-paper);color:var(--notice-ink);border-color:var(--notice-edge);position:relative}
+body[data-notice="web-notice-paper"] #notification-shell{--notice-paper:#faf0d7;--notice-ink:#413824;--notice-muted:#6e6149;--notice-edge:#a58b5e;box-shadow:2px 2px #705c3424;padding-right:20px}
+body[data-notice="web-notice-paper"] #notification-shell::after{content:'';position:absolute;right:-1px;top:-1px;width:9px;height:9px;background:#d8c292;border-left:1px solid #a58b5e;border-bottom:1px solid #a58b5e}
+body[data-notice="web-notice-stone"] #notification-shell{--notice-paper:#d6ddcc;--notice-ink:#2e3e31;--notice-muted:#566550;--notice-edge:#79866f;box-shadow:inset 1px 2px #f8f8e9,inset -1px -2px #9fae90,2px 2px #34412e22}
+body[data-notice="web-notice-signal"] #notification-shell{--notice-paper:#263c31;--notice-ink:#e7f2de;--notice-muted:#b0c8ae;--notice-edge:#72997d;box-shadow:inset 0 -2px #13271c,2px 2px #142b2022;padding-right:20px}
+body[data-notice="web-notice-signal"] #notification-shell::after{content:'';position:absolute;right:7px;bottom:8px;width:4px;height:4px;background:#a0cf85}
+body[data-notice="web-notice-crystal"] #notification-shell{--notice-paper:#eee4f5;--notice-ink:#4a3458;--notice-muted:#6b5379;--notice-edge:#af91c0;box-shadow:inset 2px 0 #cbb2dd,2px 2px #42295022;background-image:linear-gradient(135deg,#9370aa 0 4px,transparent 4px),linear-gradient(315deg,#b99bcc 0 4px,transparent 4px)}
+body[data-notice^="web-notice-"] #notice-center #notification-shell :is(.notice-title,.notice-receipt,.notice-receipt b,.notice-receipt span,#narrator p,#foreground-status){color:var(--notice-ink);opacity:1}
+body[data-notice^="web-notice-"] #notice-center #notification-shell .notice-receipt{color:var(--notice-muted)}
+body[data-notice^="web-notice-"] #notification-shell[data-kind=error] .notification-avatar{color:#b14731}
+body[data-notice="web-notice-signal"] #notification-shell[data-kind=error] .notification-avatar{color:#ffb59a}
+@media(pointer:fine){
+ body[data-cursor^="web-cursor-"] #world canvas[data-pointer=grab]{cursor:var(--web-grab)}
+ body[data-cursor^="web-cursor-"] #world canvas[data-pointer=grabbing]{cursor:var(--web-grabbing)}
+ body[data-cursor^="web-cursor-"] :is([role=tab],[role=option],summary,input[type=checkbox]){cursor:var(--web-pointer)}
+}
+body[data-cursor="web-cursor-classic"] .hit-chip{background:#fffef4;border:1px solid #262c25}
+body[data-cursor="web-cursor-glove"] .hit-chip{background:#b98e5d;border:1px solid #5e4730}
+body[data-cursor="web-cursor-quill"] .hit-chip{background:#f9f2d7;border:1px solid #6a795c;width:3px;height:8px}
+body[data-cursor="web-cursor-pickaxe"] .hit-chip{background:#72c7c4;box-shadow:1px 1px #375b56}
+@media(max-width:759px){
+ body[data-theme="web-theme-backpack"] :is(#panel,#modal){border-width:1px;outline:none}
+ body[data-theme="web-theme-macintosh"] :is(#panel,#modal,.hud,.hotbar){box-shadow:1px 1px var(--ink)}
+ body[data-theme="web-theme-desktop95"] :is(#panel,#modal,.hotbar){box-shadow:inset 1px 1px #fffef4,inset -1px -1px #77806e,1px 1px #25392e33}
+ body[data-theme^="web-theme-"] :is(.panel-header,.appearance-heading,.share-header,.info-persona,.settings-header){padding-top:10px;padding-bottom:10px}
+ #game #stage #world-label[data-title-style^="web-title-"] .eyebrow{min-height:30px;min-width:140px;padding:6px 14px;font-size:10px;line-height:18px;margin-bottom:4px}
+}
+
+/* Settings and mailbox filters must not keep the default green/light-paper colors. */
+body[data-theme^="web-theme-"] #modal :is(.save-note,.website-link,.settings-note){color:var(--muted)}
+body[data-theme^="web-theme-"] #modal :is(.modal-actions>button,.file-button){color:var(--ink);background:var(--web-inner);border-color:var(--line)}
+body[data-theme^="web-theme-"] :is(.setting,.audio-settings) input{accent-color:var(--green)}
+body[data-theme^="web-theme-"] #game #mail-panel .mail-filters button[aria-pressed=true]{color:var(--web-action-text);background:var(--green)}
+body[data-theme^="web-theme-"] #game #mail-panel .mail-filters button[aria-pressed=true] span{color:inherit}

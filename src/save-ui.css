@@ -1,0 +1,73 @@
+.save-panel { min-width: 0; }
+.save-preview-layout { display: grid; grid-template-columns: minmax(0,1fr) 170px; align-items: center; gap: 24px; }
+.save-picture { margin: 12px 0; min-width: 0; text-align: center; }
+.save-picture figcaption { font-size: 11px; color: var(--muted); margin-top: 8px; }
+.save-card-image { width: 100%; height: auto; display: block; user-select: auto; -webkit-user-select: auto; -webkit-touch-callout: default; }
+.save-image-placeholder { display: grid; place-items: center; min-height: 150px; padding: 10px; border: 1px dashed var(--line); color: var(--muted); font-size: 12px; }
+#load-image-name { overflow-wrap: anywhere; }
+.save-code-details > summary > svg { margin-left: auto; }
+.save-heading { display: flex; align-items: center; gap: 14px; margin: 0 30px 20px 0; }
+.save-heading-icon { display: grid; place-items: center; width: 46px; height: 46px; flex: 0 0 46px; color: var(--ink); background: var(--paper); border: 1px solid var(--line); }
+#modal-content .save-heading h2 { font-size: 24px; margin: 0 0 5px; }
+.save-heading p { font-size: 12px; margin: 0; line-height: 1.6; color: var(--muted, #7d8c73); }
+.save-section-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px 12px; margin: 20px 0 4px; }
+.save-section-heading h3 { font-size: 14px; margin: 0; }
+.save-section-heading > span { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; color: var(--muted, #7d8c73); }
+.save-panel .save-tabs { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line); margin-bottom: 18px; }
+.save-tabs button { min-height: 44px; color: var(--muted, #7d8c73); border-bottom: 3px solid transparent; }
+.save-tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--green, #668557); font-weight: 700; }
+.save-panel .save-intro, .save-panel .save-footnote { font-size: 13px; line-height: 1.8; margin: 12px 0; color: var(--ink); }
+.save-panel .save-footnote { font-size: 12px; color: var(--muted, #7d8c73); }
+.save-summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; font-size: 13px; line-height: 1.5; margin: 8px 0 20px; font-variant-numeric: tabular-nums; }
+.save-stat { min-width: 0; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.save-summary dt { color: var(--muted, #7d8c73); font-size: 12px; margin-bottom: 5px; }
+.save-summary dd { margin: 0; overflow-wrap: anywhere; font-weight: 650; font-size: 18px; }
+.save-stat-date { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; border: 0; padding-bottom: 0; }
+.save-stat-date dt { margin: 0; }
+.save-stat-date dd { font-size: 12px; font-weight: 400; }
+.save-code-details { margin: 8px 0; }
+.save-code-details > summary { display: flex; align-items: center; gap: 10px; min-height: 44px; color: var(--muted, #7d8c73); font-size: 12px; cursor: pointer; list-style: none; }
+.save-code-details > summary::-webkit-details-marker { display: none; }
+#save-code-size { margin-left: auto; font-variant-numeric: tabular-nums; }
+.save-code-details[open] > summary > svg { transform: rotate(180deg); }
+.save-code-details textarea { margin-bottom: 10px; }
+.save-field { display: flex; justify-content: space-between; align-items: center; font-size: 13px; margin: 12px 0 8px; }
+.save-field span { font-size: 11px; color: var(--muted, #7d8c73); }
+.save-panel textarea { display: block; box-sizing: border-box; width: 100%; min-width: 0; height: 108px; resize: vertical; max-height: 30svh; border: 1px solid var(--line); border-radius: 0; padding: 12px; background: var(--paper); color: var(--ink); font: 16px/1.55 ui-monospace, monospace; overflow-wrap: anywhere; word-break: break-all; -webkit-user-select: text; user-select: text; -webkit-touch-callout: default; }
+.save-panel :is(button, textarea, summary):focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.save-buttons { display: flex; gap: 9px; margin: 14px 0; }
+.save-buttons button { min-height: 44px; display: inline-flex; justify-content: center; align-items: center; gap: 8px; padding: 9px 14px; border: 1px solid var(--line); font-size: 13px; }
+.save-buttons .primary { flex: 1; background: var(--green, #668557); color: var(--web-action-text, #fffef2); }
+.save-panel button:disabled { opacity: .5; cursor: default; }
+.save-feedback { font-size: 13px; line-height: 1.8; margin: 12px 0; white-space: pre-line; }
+.save-feedback:empty { display: none; }
+.save-feedback.is-error { color: var(--ink); border-left: 3px solid #ac6f4f; padding-left: 10px; }
+.save-files { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 16px; border-top: 1px solid var(--line); margin-top: 18px; padding-top: 8px; }
+.save-files button { min-height: 44px; display: inline-flex; align-items: center; justify-content: flex-start; gap: 7px; font-size: 12px; color: var(--ink); }
+.save-files small { font-size: 10px; color: var(--muted, #7d8c73); }
+#restore-save-backup { grid-column: 1 / -1; }
+.save-part-tools { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 12px; font-size: 12px; color: var(--muted, #7d8c73); }
+.save-part-tools button { min-height: 44px; color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+#part-navigation { display: inline-flex; align-items: center; gap: 8px; font-variant-numeric: tabular-nums; }
+#part-navigation button { width: 44px; text-decoration: none; }
+.save-panel [hidden] { display: none !important; }
+#load-preview { border-top: 1px solid var(--line); padding-top: 16px; margin-top: 20px; }
+#load-preview h3 { font-size: 16px; margin: 0; }
+@media(max-width: 759px) {
+  .save-preview-layout { grid-template-columns: minmax(0,1fr) 106px; gap: 14px; }
+  .save-preview-layout .save-summary { grid-template-columns: 1fr; }
+  .save-preview-layout .save-stat { display: flex; flex-wrap: wrap; align-items: baseline; gap: 3px 8px; padding: 7px 0; }
+  .save-preview-layout .save-stat dd { font-size: 14px; }
+  .save-preview-layout .save-stat-date dd { font-size: 11px; }
+  .save-picture figcaption { font-size: 10px; }
+  .save-image-placeholder { min-height: 125px; }
+  #modal:has(.save-panel) { width: calc(100% - 20px); max-height: calc(100svh - 24px); padding: 22px 18px; }
+  #modal-content .save-heading h2 { font-size: 21px; margin: 0 0 4px; }
+  .save-heading { gap: 10px; margin-bottom: 16px; }
+  .save-heading-icon { width: 38px; height: 38px; flex-basis: 38px; }
+  .save-summary { margin: 8px 0 16px; column-gap: 16px; }
+  .save-summary dd { font-size: 16px; }
+  .save-stat-date dd { font-size: 12px; }
+  .save-stat { padding-top: 10px; padding-bottom: 10px; }
+  .save-panel textarea { height: 96px; }
+}
