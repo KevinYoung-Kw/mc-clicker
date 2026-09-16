@@ -1,0 +1,83 @@
+{
+  "url": "http://127.0.0.1:8890/",
+  "checks": {
+    "320": {
+      "bothMessagesVisibleOnPortrait": true,
+      "mailboxOneStableHeight": true,
+      "fixedDockAlwaysVisible": true,
+      "bodyScrollAndDOMStable": true,
+      "postalSeparateAndUpgradable": true,
+      "readDoesNotFreezeReward": true,
+      "claimReceiptAndDisabled": true,
+      "keyboardFocusRetained": true,
+      "noSuccessToast": true,
+      "badgeStable": true,
+      "originalDownloadPreserved": true,
+      "noHorizontalOverflow": true
+    },
+    "390": {
+      "bothMessagesVisibleOnPortrait": true,
+      "mailboxOneStableHeight": true,
+      "fixedDockAlwaysVisible": true,
+      "bodyScrollAndDOMStable": true,
+      "postalSeparateAndUpgradable": true,
+      "readDoesNotFreezeReward": true,
+      "claimReceiptAndDisabled": true,
+      "keyboardFocusRetained": true,
+      "noSuccessToast": true,
+      "badgeStable": true,
+      "originalDownloadPreserved": true,
+      "noHorizontalOverflow": true
+    },
+    "desktop": {
+      "bothMessagesVisibleOnPortrait": true,
+      "mailboxOneStableHeight": true,
+      "fixedDockAlwaysVisible": true,
+      "bodyScrollAndDOMStable": true,
+      "postalSeparateAndUpgradable": true,
+      "readDoesNotFreezeReward": true,
+      "claimReceiptAndDisabled": true,
+      "keyboardFocusRetained": true,
+      "noSuccessToast": true,
+      "badgeStable": true,
+      "originalDownloadPreserved": true,
+      "noHorizontalOverflow": true
+    },
+    "landscape": {
+      "mailboxOneStableHeight": true,
+      "fixedDockAlwaysVisible": true,
+      "bodyScrollAndDOMStable": true,
+      "postalSeparateAndUpgradable": true,
+      "readDoesNotFreezeReward": true,
+      "claimReceiptAndDisabled": true,
+      "keyboardFocusRetained": true,
+      "noSuccessToast": true,
+      "badgeStable": true,
+      "originalDownloadPreserved": true,
+      "noHorizontalOverflow": true
+    }
+  },
+  "observations": {
+    "320": {
+      "readerHeight": 258.515625
+    },
+    "390": {
+      "readerHeight": 346.796875
+    },
+    "desktop": {
+      "readerHeight": 534.40625
+    },
+    "largeReward": {
+      "text": "+12.345百万 ",
+      "width": 130.96875,
+      "container": 136,
+      "title": "12345678.900000002"
+    },
+    "landscape": {
+      "readerHeight": 79.625,
+      "inboxNote": "Short landscape uses a scrolling inbox; full two-row visibility is verified on both portrait phones."
+    }
+  },
+  "errors": [],
+  "stateInspection": "isolated development save via real early purchases; mcDebug state read for receipt assertions. One synthetic large rate is used only for layout, never claimed."
+}
