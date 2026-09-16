@@ -923,3 +923,379 @@
         "minZ": -0.846,
         "maxZ": 0.846
       },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "E8",
+      "name": "末地水晶",
+      "variant": "upgraded",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 2,
+        "d": 2
+      },
+      "rawSize": {
+        "w": 0.756,
+        "h": 1.1923,
+        "d": 0.756
+      },
+      "fit": 2.2381,
+      "preBatchMeshes": 16,
+      "sampledBounds": {
+        "w": 1.692,
+        "d": 1.692,
+        "minY": 0.16,
+        "minX": -0.846,
+        "maxX": 0.846,
+        "minZ": -0.846,
+        "maxZ": 0.846
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "E8",
+      "name": "末地水晶",
+      "variant": "maximum",
+      "level": 8,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 2,
+        "d": 2
+      },
+      "rawSize": {
+        "w": 0.9216,
+        "h": 1.1923,
+        "d": 0.756
+      },
+      "fit": 2.0073,
+      "preBatchMeshes": 17,
+      "sampledBounds": {
+        "w": 1.8499,
+        "d": 1.5175,
+        "minY": 0.16,
+        "minX": -0.7588,
+        "maxX": 1.0912,
+        "minZ": -0.7588,
+        "maxZ": 0.7588
+      },
+      "outsideCenteredPlot": true
+    },
+    {
+      "id": "M2",
+      "name": "熔炉",
+      "variant": "base",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 1,
+        "d": 1
+      },
+      "rawSize": {
+        "w": 0.7452,
+        "h": 0.7283,
+        "d": 0.7884
+      },
+      "fit": 1.0046,
+      "preBatchMeshes": 21,
+      "sampledBounds": {
+        "w": 0.7486,
+        "d": 0.792,
+        "minY": 0.16,
+        "minX": -0.3616,
+        "maxX": 0.387,
+        "minZ": -0.3616,
+        "maxZ": 0.4304
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M2",
+      "name": "熔炉",
+      "variant": "upgraded",
+      "level": 1,
+      "upgradeIds": [
+        "furnace-core",
+        "furnace-lining",
+        "furnace-blower",
+        "furnace-feed"
+      ],
+      "footprint": {
+        "w": 1,
+        "d": 1
+      },
+      "rawSize": {
+        "w": 0.7452,
+        "h": 0.7283,
+        "d": 0.7884
+      },
+      "fit": 1.0046,
+      "preBatchMeshes": 29,
+      "sampledBounds": {
+        "w": 0.7486,
+        "d": 0.792,
+        "minY": 0.16,
+        "minX": -0.3616,
+        "maxX": 0.387,
+        "minZ": -0.3616,
+        "maxZ": 0.4304
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M2",
+      "name": "熔炉",
+      "variant": "maximum",
+      "level": 16,
+      "upgradeIds": [
+        "furnace-core",
+        "furnace-lining",
+        "furnace-blower",
+        "furnace-feed"
+      ],
+      "footprint": {
+        "w": 1,
+        "d": 1
+      },
+      "rawSize": {
+        "w": 0.9036,
+        "h": 0.7283,
+        "d": 0.7884
+      },
+      "fit": 0.9739,
+      "preBatchMeshes": 32,
+      "sampledBounds": {
+        "w": 0.88,
+        "d": 0.7678,
+        "minY": 0.16,
+        "minX": -0.3506,
+        "maxX": 0.5294,
+        "minZ": -0.3506,
+        "maxZ": 0.4172
+      },
+      "outsideCenteredPlot": true
+    },
+    {
+      "id": "M19",
+      "name": "红石灯",
+      "variant": "base",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 0.5,
+        "d": 0.5
+      },
+      "rawSize": {
+        "w": 0.6736,
+        "h": 0.6498,
+        "d": 0.6736
+      },
+      "fit": 0.5077,
+      "preBatchMeshes": 14,
+      "sampledBounds": {
+        "w": 0.342,
+        "d": 0.342,
+        "minY": 0.16,
+        "minX": -0.1609,
+        "maxX": 0.1811,
+        "minZ": -0.1609,
+        "maxZ": 0.1811
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M19",
+      "name": "红石灯",
+      "variant": "upgraded",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 0.5,
+        "d": 0.5
+      },
+      "rawSize": {
+        "w": 0.6736,
+        "h": 0.6498,
+        "d": 0.6736
+      },
+      "fit": 0.5077,
+      "preBatchMeshes": 14,
+      "sampledBounds": {
+        "w": 0.342,
+        "d": 0.342,
+        "minY": 0.16,
+        "minX": -0.1609,
+        "maxX": 0.1811,
+        "minZ": -0.1609,
+        "maxZ": 0.1811
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M19",
+      "name": "红石灯",
+      "variant": "maximum",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 0.5,
+        "d": 0.5
+      },
+      "rawSize": {
+        "w": 0.6736,
+        "h": 0.6498,
+        "d": 0.6736
+      },
+      "fit": 0.5077,
+      "preBatchMeshes": 14,
+      "sampledBounds": {
+        "w": 0.342,
+        "d": 0.342,
+        "minY": 0.16,
+        "minX": -0.1609,
+        "maxX": 0.1811,
+        "minZ": -0.1609,
+        "maxZ": 0.1811
+      },
+      "outsideCenteredPlot": false
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "M4",
+      "name": "储物箱",
+      "upgradeFitChangePercent": 0,
+      "baseMeshes": 5,
+      "upgradedMeshes": 17,
+      "upgrades": [
+        "store-shelves",
+        "store-compress",
+        "store-sort"
+      ]
+    },
+    {
+      "id": "M5",
+      "name": "红石铺设与手摇曲柄",
+      "upgradeFitChangePercent": 0,
+      "baseMeshes": 11,
+      "upgradedMeshes": 11,
+      "upgrades": []
+    },
+    {
+      "id": "M6",
+      "name": "红石火把",
+      "upgradeFitChangePercent": 0,
+      "baseMeshes": 3,
+      "upgradedMeshes": 20,
+      "upgrades": [
+        "torch-bank",
+        "torch-core",
+        "torch-module"
+      ]
+    },
+    {
+      "id": "M7",
+      "name": "风车电站",
+      "upgradeFitChangePercent": 0,
+      "baseMeshes": 34,
+      "upgradedMeshes": 50,
+      "upgrades": [
+        "wind-blades",
+        "wind-gears",
+        "wind-coils"
+      ]
+    },
+    {
+      "id": "M8",
+      "name": "漏斗",
+      "upgradeFitChangePercent": 0,
+      "baseMeshes": 9,
+      "upgradedMeshes": 9,
+      "upgrades": []
+    },
+    {
+      "id": "M9",
+      "name": "红石钻机",
+      "upgradeFitChangePercent": 0,
+      "baseMeshes": 16,
+      "upgradedMeshes": 35,
+      "upgrades": [
+        "drill-steel",
+        "drill-diamond",
+        "drill-netherite",
+        "drill-twin",
+        "drill-cooling",
+        "drill-buffer",
+        "drill-outlet"
+      ]
+    },
+    {
+      "id": "M15",
+      "name": "红石发电机组",
+      "upgradeFitChangePercent": 0,
+      "baseMeshes": 11,
+      "upgradedMeshes": 11,
+      "upgrades": []
+    },
+    {
+      "id": "M16",
+      "name": "铁路与矿车",
+      "upgradeFitChangePercent": 0,
+      "baseMeshes": 18,
+      "upgradedMeshes": 24,
+      "upgrades": [
+        "rail-wagons",
+        "rail-dispatch",
+        "rail-loader"
+      ]
+    },
+    {
+      "id": "M17",
+      "name": "自动装卸站",
+      "upgradeFitChangePercent": 0,
+      "baseMeshes": 31,
+      "upgradedMeshes": 31,
+      "upgrades": []
+    },
+    {
+      "id": "N4",
+      "name": "烈焰熔炉",
+      "upgradeFitChangePercent": 0,
+      "baseMeshes": 39,
+      "upgradedMeshes": 47,
+      "upgrades": [
+        "blaze-exchanger",
+        "blaze-chamber"
+      ]
+    },
+    {
+      "id": "E8",
+      "name": "末地水晶",
+      "upgradeFitChangePercent": 0,
+      "baseMeshes": 16,
+      "upgradedMeshes": 16,
+      "upgrades": []
+    },
+    {
+      "id": "M2",
+      "name": "熔炉",
+      "upgradeFitChangePercent": 0,
+      "baseMeshes": 21,
+      "upgradedMeshes": 29,
+      "upgrades": [
+        "furnace-core",
+        "furnace-lining",
+        "furnace-blower",
+        "furnace-feed"
+      ]
+    },
+    {
+      "id": "M19",
+      "name": "红石灯",
+      "upgradeFitChangePercent": 0,
+      "baseMeshes": 14,
+      "upgradedMeshes": 14,
+      "upgrades": []
+    }
+  ]
+}
