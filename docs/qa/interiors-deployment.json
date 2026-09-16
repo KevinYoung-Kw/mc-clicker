@@ -1,0 +1,50 @@
+{
+  "revision": "147a4da",
+  "backup": "/www/backups/mc-clicker-2.0-interiors-147a4da",
+  "files": {
+    "index.html": "dd94ddd8c1d734245fd964a42ce7622c4150276dccbd970e71ffba1d671c4f9e",
+    "assets/index-C_SHMN3K.js": "92ee57e8e76fde037146dcecc208db1506043e16397122284944a733bdc1c664",
+    "assets/three-engine-DVFYVVG_.js": "0813e2c0e165fe8ea51edce85cc664ffb46dfe20807d31abbc1c0a0253d7dca1",
+    "assets/collection-ui-DwNYVtoO.js": "7cd8152c1288a1bd4ff171d16ce7eab30499ea9e20167fc5caad27095c417d7b",
+    "assets/index-DIB-EE__.css": "a9b3751bf96fde81a2e804429897694e5a71a7b5e2810481c349a8c6d37ac59e",
+    "assets/collection-ui-4EKbYNF6.css": "621a1f0d96fb228f445a398616db030730bbd7e179232e3763d802c51c822bce",
+    "icons/L2.png": "cd52caafb21d97211e8a574c2b728abe5a6c8c669b0d19ae8b3379eb8a07756c"
+  },
+  "publicChecks": {
+    "index.html": {
+      "status": 200,
+      "sha256": "dd94ddd8c1d734245fd964a42ce7622c4150276dccbd970e71ffba1d671c4f9e",
+      "bytes": 2331
+    },
+    "assets/index-C_SHMN3K.js": {
+      "status": 200,
+      "sha256": "92ee57e8e76fde037146dcecc208db1506043e16397122284944a733bdc1c664",
+      "bytes": 260713
+    },
+    "assets/three-engine-DVFYVVG_.js": {
+      "status": 200,
+      "sha256": "0813e2c0e165fe8ea51edce85cc664ffb46dfe20807d31abbc1c0a0253d7dca1",
+      "bytes": 518312
+    },
+    "assets/collection-ui-DwNYVtoO.js": {
+      "status": 200,
+      "sha256": "7cd8152c1288a1bd4ff171d16ce7eab30499ea9e20167fc5caad27095c417d7b",
+      "bytes": 21871
+    },
+    "assets/index-DIB-EE__.css": {
+      "status": 200,
+      "sha256": "a9b3751bf96fde81a2e804429897694e5a71a7b5e2810481c349a8c6d37ac59e",
+      "bytes": 82440
+    },
+    "assets/collection-ui-4EKbYNF6.css": {
+      "status": 200,
+      "sha256": "621a1f0d96fb228f445a398616db030730bbd7e179232e3763d802c51c822bce",
+      "bytes": 18480
+    },
+    "icons/L2.png": {
+      "status": 200,
+      "sha256": "cd52caafb21d97211e8a574c2b728abe5a6c8c669b0d19ae8b3379eb8a07756c",
+      "bytes": 12085
+    }
+  }
+}
