@@ -1,30 +1,23 @@
-# Assets skipped in this MCP copy
+# Assets not fully copied
 
-GitHub `get_file_contents` returns text. These binaries/oversize blobs were not copied; they still live in `KevinYoung-Kw/my-profile` under `projects/mc-clicker-2/`. Restore them with a local `git subtree split` if you need a complete tree.
+Most of the web game tree is in this repo, including `cover.png`, `public/icons/*.png`, `public/mail/*`, `src/assets/tutorials/*.webp`, and `public/audio/records/*.mp3` (GitHub blob sizes match the source).
 
-## Audio (too large)
+Still missing or truncated versus `KevinYoung-Kw/my-profile` `projects/mc-clicker-2` because GitHub MCP `push_files` / `get_file_contents` rejected the payload:
 
-- `public/audio/records/cavern.mp3` (1,250,787)
-- `public/audio/records/copper.mp3` (972,113)
-- `public/audio/records/end.mp3` (1,428,890)
-- `public/audio/records/meadow.mp3` (1,197,758)
-- `public/audio/records/nether.mp3` (1,149,118)
-- `public/audio/records/rain.mp3` (1,149,118)
-
-`public/audio/records/CREDITS.txt` is included.
-
-## Images (API UTF-8-corrupts PNG/WebP)
-
-- `cover.png` (513,002)
-- `public/icons/*.png` (catalog / garden / housing icons, ~140 files)
-- `public/mail/mc-clicker-group-20260907.png`
-- `public/mail/wechat-channel-qr.webp`
-- `public/mail/xiaohongshu-qr.webp`
-- `src/assets/tutorials/*.webp` (10 files)
-
-## Oversize JSON (decode failed)
+## Oversize / decode failed
 
 - `docs/maintenance/repository-inventory.json` (1,108,106)
 - `docs/v2.0.0/simulation/research-routes.json` (2,592,224)
+- most `docs/v2.0.0/simulation/*.mjs` above ~400 KB
 
-The game JS/CSS, tests, scripts, and most docs are in this repo. Icons and record MP3s are missing until restored from the source tree.
+## Docs not landed or truncated
+
+- `docs/purchase-catalog.json` (107,656)
+- `docs/balance-results.json` (dest truncated vs 46,121)
+- `docs/v1.5/copy-review/` (large json/csv)
+- `docs/v1.5.5/` narrator review JSON/md
+- `docs/v1.5.6/` narrator review JSON/md
+- `docs/v1.8/narrator-review/`
+- `docs/v1.5.1/NARRATION-TIMING.md` (truncated)
+
+Restore those from the source tree with a local `git subtree split` if you need a byte-identical archive. The playable game (`src/`, `index.html`, `public/` media, `tests/`, `scripts/`) is here.
