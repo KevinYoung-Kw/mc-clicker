@@ -7,7 +7,7 @@
 | catalog / research | 价格、本体与时代许可、专项门槛、研究付款/暂停/切换/完成；RESEARCH_ITEM_GATES 与 RESEARCH_UNLOCKS | research / development / v2-lifecycle |
 | villager-life | 错峰短休、幸福、全球娱乐资格、旧福利开支；serviceRange/serviceCapacity 只给步行动画使用 | villager-life / civic-sites / alpha3-services |
 | food-config / food-service | 全村食物账本、210 秒需求周期、8/16/24 供餐容量、420 秒宽限、两次未吃饱后的温和负面效果 | alpha3-services |
-| service-config / service-economy | 村民基础收入	imes份额，按时代上下限；每 60 秒前台时间报价，不能按钱包/手动暴富定价 | alpha3-services |
+| service-config / service-economy | 村民基础收入×份额，按时代上下限；每 60 秒前台时间报价，不能按钱包/手动暴富定价 | alpha3-services |
 | life-menu | 三组九项互斥选择、实付活动增益、菜品 FIFO；已有饭不能切菜单变成高级饭；余额不足退回免费选项 | alpha3-services / verify-alpha3-ui / verify-save-image-ui --v2 |
 | training-balance / work-quality | 旧书本效果冻结；新书本线性小幅成长与工种改造；货批生成时定价，交付不重复加价 | alpha3-services / work-rounds |
 | power / power-compatibility | 实际需求/耗电/损耗/发电；已购旧供能补偿，不能脱离所属电源发电 | power / alpha3-services |
