@@ -1,1 +1,290 @@
-PLACEHOLDER
+{
+  "date": "2026-09-07",
+  "baseline": "be9ee71 (runtime 7176ac8 / V1.3.2)",
+  "method": "Read-only model construction; current world fitting; 0–32 model-animation seconds sampled every 0.25s; counts=1 except maximum variant. All other catalog prerequisites set owned. No browser/GPU/performance or playthrough verification; pre-batch mesh count is not actual draw calls.",
+  "cases": [
+    {
+      "id": "M4",
+      "name": "储物箱",
+      "variant": "base",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 1,
+        "d": 1
+      },
+      "rawSize": {
+        "w": 0.7236,
+        "h": 0.5256,
+        "d": 0.6844
+      },
+      "fit": 1.0945,
+      "preBatchMeshes": 5,
+      "sampledBounds": {
+        "w": 0.792,
+        "d": 0.7491,
+        "minY": 0.16,
+        "minX": -0.396,
+        "maxX": 0.396,
+        "minZ": -0.3491,
+        "maxZ": 0.3999
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M4",
+      "name": "储物箱",
+      "variant": "upgraded",
+      "level": 1,
+      "upgradeIds": [
+        "store-shelves",
+        "store-compress",
+        "store-sort"
+      ],
+      "footprint": {
+        "w": 1,
+        "d": 1
+      },
+      "rawSize": {
+        "w": 0.7236,
+        "h": 0.5256,
+        "d": 0.6844
+      },
+      "fit": 1.0945,
+      "preBatchMeshes": 17,
+      "sampledBounds": {
+        "w": 0.792,
+        "d": 0.7491,
+        "minY": 0.16,
+        "minX": -0.396,
+        "maxX": 0.396,
+        "minZ": -0.3491,
+        "maxZ": 0.3999
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M4",
+      "name": "储物箱",
+      "variant": "maximum",
+      "level": 16,
+      "upgradeIds": [
+        "store-shelves",
+        "store-compress",
+        "store-sort"
+      ],
+      "footprint": {
+        "w": 1,
+        "d": 1
+      },
+      "rawSize": {
+        "w": 0.9054,
+        "h": 0.5256,
+        "d": 0.693
+      },
+      "fit": 0.9719,
+      "preBatchMeshes": 20,
+      "sampledBounds": {
+        "w": 0.88,
+        "d": 0.6736,
+        "minY": 0.16,
+        "minX": -0.3517,
+        "maxX": 0.5283,
+        "minZ": -0.3184,
+        "maxZ": 0.3551
+      },
+      "outsideCenteredPlot": true
+    },
+    {
+      "id": "M5",
+      "name": "红石铺设与手摇曲柄",
+      "variant": "base",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 1,
+        "d": 1
+      },
+      "rawSize": {
+        "w": 0.7776,
+        "h": 0.6768,
+        "d": 0.6768
+      },
+      "fit": 1.0185,
+      "preBatchMeshes": 11,
+      "sampledBounds": {
+        "w": 0.8261,
+        "d": 0.6893,
+        "minY": 0.16,
+        "minX": -0.396,
+        "maxX": 0.4301,
+        "minZ": -0.3447,
+        "maxZ": 0.3447
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M5",
+      "name": "红石铺设与手摇曲柄",
+      "variant": "upgraded",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 1,
+        "d": 1
+      },
+      "rawSize": {
+        "w": 0.7776,
+        "h": 0.6768,
+        "d": 0.6768
+      },
+      "fit": 1.0185,
+      "preBatchMeshes": 11,
+      "sampledBounds": {
+        "w": 0.8261,
+        "d": 0.6893,
+        "minY": 0.16,
+        "minX": -0.396,
+        "maxX": 0.4301,
+        "minZ": -0.3447,
+        "maxZ": 0.3447
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M5",
+      "name": "红石铺设与手摇曲柄",
+      "variant": "maximum",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 1,
+        "d": 1
+      },
+      "rawSize": {
+        "w": 0.7776,
+        "h": 0.6768,
+        "d": 0.6768
+      },
+      "fit": 1.0185,
+      "preBatchMeshes": 11,
+      "sampledBounds": {
+        "w": 0.8261,
+        "d": 0.6893,
+        "minY": 0.16,
+        "minX": -0.396,
+        "maxX": 0.4301,
+        "minZ": -0.3447,
+        "maxZ": 0.3447
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M6",
+      "name": "红石火把",
+      "variant": "base",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 0.5,
+        "d": 0.5
+      },
+      "rawSize": {
+        "w": 0.1512,
+        "h": 0.6408,
+        "d": 0.1627
+      },
+      "fit": 2.1018,
+      "preBatchMeshes": 3,
+      "sampledBounds": {
+        "w": 0.3178,
+        "d": 0.342,
+        "minY": 0.16,
+        "minX": -0.1589,
+        "maxX": 0.1589,
+        "minZ": -0.1589,
+        "maxZ": 0.1831
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M6",
+      "name": "红石火把",
+      "variant": "upgraded",
+      "level": 1,
+      "upgradeIds": [
+        "torch-bank",
+        "torch-core",
+        "torch-module"
+      ],
+      "footprint": {
+        "w": 0.5,
+        "d": 0.5
+      },
+      "rawSize": {
+        "w": 0.1512,
+        "h": 0.6408,
+        "d": 0.1627
+      },
+      "fit": 2.1018,
+      "preBatchMeshes": 20,
+      "sampledBounds": {
+        "w": 0.3178,
+        "d": 0.342,
+        "minY": 0.16,
+        "minX": -0.1589,
+        "maxX": 0.1589,
+        "minZ": -0.1589,
+        "maxZ": 0.1831
+      },
+      "outsideCenteredPlot": false
+    },
+    {
+      "id": "M6",
+      "name": "红石火把",
+      "variant": "maximum",
+      "level": 12,
+      "upgradeIds": [
+        "torch-bank",
+        "torch-core",
+        "torch-module"
+      ],
+      "footprint": {
+        "w": 0.5,
+        "d": 0.5
+      },
+      "rawSize": {
+        "w": 0.6192,
+        "h": 0.6408,
+        "d": 0.4147
+      },
+      "fit": 0.6137,
+      "preBatchMeshes": 22,
+      "sampledBounds": {
+        "w": 0.38,
+        "d": 0.2545,
+        "minY": 0.16,
+        "minX": -0.0464,
+        "maxX": 0.3336,
+        "minZ": -0.201,
+        "maxZ": 0.0535
+      },
+      "outsideCenteredPlot": true
+    },
+    {
+      "id": "M7",
+      "name": "风车电站",
+      "variant": "base",
+      "level": 1,
+      "upgradeIds": [],
+      "footprint": {
+        "w": 2,
+        "d": 2
+      },
+      "rawSize": {
+        "w": 1.3752,
+        "h": 1.6956,
+        "d": 0.7704
+      },
+      "fit": 1.2304,
+      "preBatchMeshes": 34,
