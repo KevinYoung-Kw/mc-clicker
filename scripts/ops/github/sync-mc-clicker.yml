@@ -1,0 +1,113 @@
+# Install in KevinYoung-Kw/my-profile/.github/workflows/sync-mc-clicker.yml.
+name: Sync MC Clicker build (no deployment)
+run-name: Sync MC Clicker ${{ inputs.source_commit }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_commit:
+        description: Full 40-character commit SHA from mc-clicker main
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sync-mc-clicker
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Validate input
+        env:
+          SOURCE_COMMIT: ${{ inputs.source_commit }}
+        run: '[[ "$SOURCE_COMMIT" =~ ^[0-9a-f]{40}$ ]]'
+      - uses: actions/checkout@v4
+        with:
+          path: website
+          persist-credentials: false
+          sparse-checkout: .github
+      - uses: actions/checkout@v4
+        with:
+          repository: KevinYoung-Kw/mc-clicker
+          ref: ${{ inputs.source_commit }}
+          path: game
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Require a commit already on game main
+        working-directory: game
+        env:
+          SOURCE_COMMIT: ${{ inputs.source_commit }}
+        run: |
+          git fetch origin main
+          git merge-base --is-ancestor "$SOURCE_COMMIT" origin/main
+          test "$(git rev-parse HEAD)" = "$SOURCE_COMMIT"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: game/package-lock.json
+      - name: Test release metadata and game, then build
+        working-directory: game
+        run: |
+          npm ci
+          npm test
+          npm run build
+      - name: Record exact build provenance
+        env:
+          SOURCE_COMMIT: ${{ inputs.source_commit }}
+        run: |
+          python3 website/.github/scripts/sync-mc-clicker.py pack \
+            --game game --revision "$SOURCE_COMMIT" --out build-artifact
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mc-clicker-build
+          path: build-artifact/
+          if-no-files-found: error
+          retention-days: 30
+
+  sync:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: website
+          sparse-checkout: |
+            .github
+            public/projects/mc-clicker-2
+            docs/mc-clicker-sync
+      - uses: actions/download-artifact@v4
+        with:
+          name: mc-clicker-build
+          path: build-artifact
+      - name: Verify and copy only game build files
+        env:
+          SOURCE_COMMIT: ${{ inputs.source_commit }}
+        run: |
+          python3 website/.github/scripts/sync-mc-clicker.py sync \
+            --artifact build-artifact --website website --revision "$SOURCE_COMMIT"
+      - name: Commit to my-profile (never deploy)
+        working-directory: website
+        env:
+          SOURCE_COMMIT: ${{ inputs.source_commit }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- public/projects/mc-clicker-2 docs/mc-clicker-sync
+          if git diff --cached --quiet; then
+            echo 'Build already synchronized; nothing changed.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git commit -m "Sync MC Clicker build from ${SOURCE_COMMIT:0:12}"
+          # A concurrent main update fails safely. Rerun instead of force-pushing.
+          git push origin HEAD:main
+          echo 'Game build synchronized to my-profile. Tencent Cloud is unchanged; manual release validation and deployment are still required.' >> "$GITHUB_STEP_SUMMARY"

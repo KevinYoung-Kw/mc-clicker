@@ -14,6 +14,8 @@
 
 版本由 package.json 维护；线上发布记录见 [DEPLOYMENT.md](DEPLOYMENT.md)。当前规则、计划和历史归档从 [文档首页](docs/README.md) 进入。
 
+构建产物可通过 my-profile 的 GitHub Actions 手动同步，具体见 [GitHub 同步说明](docs/maintenance/GITHUB-SYNC.md)。同步只更新主站仓库，腾讯云仍需独立验收和手动发布。
+
 ## 本地运行
 
 需要 Node.js 22+。
